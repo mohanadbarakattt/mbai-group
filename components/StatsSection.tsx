@@ -1,0 +1,104 @@
+import React, { useEffect, useRef, useState } from 'react';
+import { Quote } from 'lucide-react';
+import testimonials from './data/testimonials';
+
+const stats = [
+  { number: '6', label: 'AI products shipped' },
+  { number: '3', label: 'MENA markets served' },
+  { number: '200+', label: 'leads delivered' },
+];
+
+const StatsSection: React.FC = () => {
+  const ref = useRef<HTMLDivElement>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) setVisible(true);
+      },
+      { threshold: 0.15 }
+    );
+    if (ref.current) observer.observe(ref.current);
+    return () => observer.disconnect();
+  }, []);
+
+  return (
+    <section ref={ref} className="py-20 px-6 bg-[#f8f5f1] border-b border-[#e2d9ce]">
+      <div className="max-w-6xl mx-auto">
+
+        {/* Asymmetric header — left-aligned with large decorative number right */}
+        <div
+          className={`mb-10 flex items-end justify-between gap-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+        >
+          <div className="shrink-0 hidden sm:block select-none pointer-events-none">
+            <p className="text-7xl md:text-8xl font-black text-[#c8bfb4] leading-none">200+</p>
+            <p className="text-xs text-[#6b6460] mt-1 tracking-wide font-medium">leads delivered</p>
+          </div>
+          <div className="sm:text-right">
+            <p className="text-xs uppercase tracking-[0.18em] text-[#9a9490] mb-3">Client Results</p>
+            <h2 className="text-3xl md:text-4xl font-black text-[#111111] tracking-tight leading-snug">
+              Real outcomes,<br className="hidden sm:block" /> real teams.
+            </h2>
+          </div>
+        </div>
+
+        {/* Stats strip */}
+        <div
+          className={`mb-10 grid grid-cols-3 divide-x divide-[#e2d9ce] border border-[#e2d9ce] rounded-xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          style={{ transitionDelay: '100ms' }}
+        >
+          {stats.map((s) => (
+            <div key={s.label} className="bg-white px-4 py-5 text-center">
+              <p className="text-2xl md:text-3xl font-black text-[#111111]">{s.number}</p>
+              <p className="text-xs text-[#9a9490] mt-1">{s.label}</p>
+            </div>
+          ))}
+        </div>
+
+        {/* Testimonials grid */}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {[...testimonials]
+            .sort((a, b) => {
+              const aFeatured = a.featured ? 0 : 1;
+              const bFeatured = b.featured ? 0 : 1;
+              if (aFeatured !== bFeatured) return aFeatured - bFeatured;
+              const aOrder = a.order ?? Infinity;
+              const bOrder = b.order ?? Infinity;
+              return aOrder - bOrder;
+            })
+            .map((t, i) => (
+            <div
+              key={i}
+              className={`bg-white border border-[#e2d9ce] rounded-2xl p-8 flex flex-col gap-5 transition-all duration-700 hover:shadow-md hover:-translate-y-1 ${
+                visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
+              }`}
+              style={{ transitionDelay: `${200 + i * 100}ms` }}
+            >
+              <div className="flex items-start justify-between gap-4">
+                <span className="text-lg font-black text-[#111111] leading-tight tracking-tight">
+                  {t.outcome}
+                </span>
+                <Quote size={18} className="text-[#c8bfb4] shrink-0 mt-0.5" />
+              </div>
+
+              <p className="text-[#555047] text-sm leading-relaxed flex-1">
+                "{t.quote}"
+              </p>
+
+              <div className="pt-4 border-t border-[#e2d9ce]">
+                <p className="text-[#111111] text-sm font-semibold">{t.name}</p>
+                <p className="text-[#9a9490] text-xs mt-0.5">
+                  {t.role} · {t.company}
+                </p>
+              </div>
+            </div>
+          ))}
+        </div>
+
+      </div>
+    </section>
+  );
+};
+
+export default StatsSection;
