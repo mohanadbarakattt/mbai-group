@@ -45,7 +45,7 @@ const HowWeWork: React.FC = () => {
   }, []);
 
   return (
-    <section id="how-we-work" ref={ref} className="py-24 px-6 bg-[#05060c] border-t border-white/10 overflow-hidden">
+    <section id="how-we-work" ref={ref} className="py-24 px-6 bg-transparent border-t border-white/10 overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}

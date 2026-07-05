@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 px-6 bg-[#080b14] border-t border-white/10">
+    <section ref={sectionRef} id="contact" className="py-24 px-6 bg-[#0e1533]/70 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">

@@ -99,7 +99,7 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#05060c]/80 backdrop-blur-xl border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0b1022]/85 backdrop-blur-xl border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
 
         {/* Logo */}
@@ -134,21 +134,21 @@ const Navigation: React.FC = () => {
           )}
           <button
             onClick={() => { if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-            className="text-sm font-semibold px-5 py-2.5 bg-[#111111] hover:bg-[#2a2a2a] text-white rounded-lg transition-colors"
+            className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg"
           >
             Book a 30-min Strategy Call
           </button>
         </div>
 
         {/* Mobile Toggle */}
-        <button className="md:hidden text-[#111111]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#f8f5f1] border-b border-[#e2d9ce]">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#0b1022]/95 backdrop-blur-xl border-b border-white/10">
           <div className="flex flex-col py-4 px-6 gap-4">
             {navLinks.map((link) =>
               'isExternal' in link && link.isExternal ? (
@@ -167,7 +167,7 @@ const Navigation: React.FC = () => {
             )}
             <button
               onClick={() => { setIsMobileMenuOpen(false); if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-              className="text-sm font-semibold px-5 py-2.5 bg-[#111111] text-white rounded-lg w-full"
+              className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg w-full"
             >
               Book a 30-min Strategy Call
             </button>

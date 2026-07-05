@@ -41,18 +41,19 @@ html { scroll-behavior: smooth; }
 
 /* ===================== OBSIDIAN FRONTIER — dark futuristic theme ===================== */
 :root {
-  --bg: #05060c;
-  --bg-2: #0a0e17;
-  --panel: #0d1220;
-  --panel-2: #111726;
-  --ink: #e8ecf4;
-  --muted: #8b93a7;
-  --dim: #5b6478;
-  --line: rgba(255,255,255,0.08);
-  --line-2: rgba(255,255,255,0.16);
+  --bg: #0b1022;
+  --bg-2: #10162e;
+  --panel: #141a33;
+  --panel-2: #1a2140;
+  --ink: #eef1fa;
+  --muted: #9aa3bd;
+  --dim: #6b7699;
+  --line: rgba(255,255,255,0.1);
+  --line-2: rgba(255,255,255,0.2);
   --indigo: #6366f1;
   --cyan: #22d3ee;
   --violet: #a855f7;
+  --pink: #ec4899;
 
   --background: 230 40% 4%;
   --foreground: 220 30% 94%;
@@ -82,6 +83,24 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
+/* Animated colorful ambient behind everything — lifts the palette out of pure black */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  pointer-events: none;
+  background:
+    radial-gradient(38% 46% at 12% 8%,  rgba(99,102,241,0.30), transparent 60%),
+    radial-gradient(42% 52% at 88% 12%, rgba(34,211,238,0.22), transparent 60%),
+    radial-gradient(48% 58% at 78% 88%, rgba(168,85,247,0.26), transparent 60%),
+    radial-gradient(40% 50% at 8% 92%,  rgba(236,72,153,0.20), transparent 60%),
+    radial-gradient(60% 70% at 50% 50%, rgba(56,189,248,0.08), transparent 70%);
+  background-size: 200% 200%;
+  background-repeat: no-repeat;
+  animation: aurora-move 26s ease-in-out infinite;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: 'Space Grotesk', sans-serif;
   letter-spacing: -0.02em;
@@ -97,10 +116,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- Text treatments ---------- */
 .text-gradient {
-  background: linear-gradient(100deg, #a5b4fc 0%, #22d3ee 55%, #818cf8 100%);
+  background: linear-gradient(100deg, #a5b4fc 0%, #22d3ee 40%, #c084fc 72%, #f472b6 100%);
+  background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
+  animation: hue-pan 8s ease-in-out infinite;
 }
+@keyframes hue-pan { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 .text-gradient-violet {
   background: linear-gradient(100deg, #c4b5fd 0%, #a855f7 50%, #6366f1 100%);
   -webkit-background-clip: text; background-clip: text;
@@ -111,13 +133,13 @@ h1, h2, h3, h4, h5, h6 {
 
 /* ---------- Glass surfaces ---------- */
 .glass {
-  background: rgba(255,255,255,0.03);
+  background: rgba(255,255,255,0.06);
   backdrop-filter: blur(14px);
   -webkit-backdrop-filter: blur(14px);
   border: 1px solid var(--line);
 }
 .glass-strong {
-  background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.02));
+  background: linear-gradient(180deg, rgba(255,255,255,0.10), rgba(255,255,255,0.035));
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
   border: 1px solid var(--line);
@@ -130,7 +152,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* Legacy aliases so any leftover markup still renders on dark */
 .glass-panel { background: rgba(255,255,255,0.03); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); }
-.glass-card { background: rgba(255,255,255,0.03); border: 1px solid var(--line); transition: all .3s cubic-bezier(.4,0,.2,1); }
+.glass-card { background: rgba(255,255,255,0.06); border: 1px solid var(--line); transition: all .3s cubic-bezier(.4,0,.2,1); }
 .glass-card:hover { border-color: var(--line-2); box-shadow: 0 20px 50px -24px rgba(99,102,241,0.4); transform: translateY(-3px); }
 
 /* ---------- Gradient hairline border wrapper ---------- */
@@ -167,7 +189,9 @@ h1, h2, h3, h4, h5, h6 {
   -webkit-mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
   mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, #000 40%, transparent 100%);
 }
-.aurora { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: .5; pointer-events: none; }
+.aurora { position: absolute; border-radius: 9999px; filter: blur(90px); opacity: .7; pointer-events: none; }
+.aurora-drift { animation: aurora-drift 18s ease-in-out infinite; }
+@keyframes aurora-drift { 0%,100% { transform: translate(0,0) scale(1);} 33% { transform: translate(30px,-20px) scale(1.1);} 66% { transform: translate(-20px,25px) scale(0.95);} }
 .perspective-grid {
   background-image: linear-gradient(rgba(99,102,241,0.18) 1px, transparent 1px),
                     linear-gradient(90deg, rgba(99,102,241,0.14) 1px, transparent 1px);
@@ -186,6 +210,10 @@ h1, h2, h3, h4, h5, h6 {
 @keyframes gradient-shift { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
 @keyframes shimmer { from { background-position: -200% 0; } to { background-position: 200% 0; } }
 @keyframes rise { from { opacity:0; transform: translateY(24px);} to { opacity:1; transform: translateY(0);} }
+@keyframes aurora-move {
+  0%,100% { background-position: 0% 0%, 100% 0%, 100% 100%, 0% 100%, 50% 50%; }
+  50%     { background-position: 25% 35%, 75% 20%, 65% 80%, 20% 65%, 50% 50%; }
+}
 
 .animate-float-slow { animation: float-slow 9s ease-in-out infinite; }
 .animate-float-slower { animation: float-slower 13s ease-in-out infinite; }

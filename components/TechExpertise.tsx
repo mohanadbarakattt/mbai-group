@@ -31,9 +31,9 @@ const TechExpertise: React.FC = () => {
   const doubled = [...techs, ...techs];
 
   return (
-    <div className="w-full bg-[#080b14] border-y border-white/10 py-5 overflow-hidden relative">
-      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#080b14] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#080b14] to-transparent z-10 pointer-events-none" />
+    <div className="w-full bg-[#0e1533]/70 border-y border-white/10 py-5 overflow-hidden relative">
+      <div className="absolute left-0 top-0 h-full w-20 bg-gradient-to-r from-[#0e1533] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#0e1533] to-transparent z-10 pointer-events-none" />
 
       <div className="flex items-center mb-3 px-6 justify-center">
         <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-cyan-300/80">Technical Competencies</p>

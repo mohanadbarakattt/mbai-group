@@ -24,7 +24,7 @@ const StatsSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-[#05060c] border-y border-white/10 relative overflow-hidden">
+    <section ref={ref} className="py-20 px-6 bg-transparent border-y border-white/10 relative overflow-hidden">
       <div className="aurora w-[420px] h-[420px] bottom-0 left-1/4" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.16), transparent 60%)' }} />
       <div className="max-w-6xl mx-auto relative">
 

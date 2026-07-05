@@ -81,11 +81,11 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
           const b = particles[j];
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < linkDist) {
-            const alpha = (1 - d / linkDist) * 0.16;
+            const alpha = (1 - d / linkDist) * 0.22;
             const nearMouse = Math.hypot((a.x + b.x) / 2 - mouse.x, (a.y + b.y) / 2 - mouse.y) < 160;
             ctx.strokeStyle = nearMouse
-              ? `rgba(99,102,241,${alpha * 2.2})`
-              : `rgba(17,17,17,${alpha})`;
+              ? `rgba(34,211,238,${alpha * 2.4})`
+              : `rgba(148,163,255,${alpha})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -98,7 +98,7 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
       // nodes
       for (const p of particles) {
         const nearMouse = Math.hypot(p.x - mouse.x, p.y - mouse.y) < 160;
-        ctx.fillStyle = nearMouse ? 'rgba(99,102,241,0.7)' : 'rgba(17,17,17,0.28)';
+        ctx.fillStyle = nearMouse ? 'rgba(34,211,238,0.85)' : 'rgba(165,180,252,0.4)';
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
         ctx.fill();

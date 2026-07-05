@@ -63,11 +63,12 @@ const Hero: React.FC = () => {
   const slide = slides[current];
 
   return (
-    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-[#05060c]">
+    <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent">
       {/* Aurora blobs */}
-      <div className="aurora w-[520px] h-[520px] -top-40 -left-24" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.5), transparent 60%)' }} />
-      <div className="aurora w-[560px] h-[560px] top-1/3 -right-40" style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.32), transparent 60%)' }} />
-      <div className="aurora w-[420px] h-[420px] -bottom-32 left-1/3" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.28), transparent 60%)' }} />
+      <div className="aurora aurora-drift w-[520px] h-[520px] -top-40 -left-24" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.6), transparent 60%)' }} />
+      <div className="aurora aurora-drift w-[560px] h-[560px] top-1/4 -right-40" style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.45), transparent 60%)', animationDelay: '3s' }} />
+      <div className="aurora aurora-drift w-[440px] h-[440px] -bottom-32 left-1/4" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.42), transparent 60%)', animationDelay: '6s' }} />
+      <div className="aurora aurora-drift w-[380px] h-[380px] top-1/3 left-1/3" style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.3), transparent 60%)', animationDelay: '9s' }} />
 
       {/* Faded grid + neural links */}
       <div className="absolute inset-0 grid-fade" />
@@ -81,7 +82,7 @@ const Hero: React.FC = () => {
       {/* Perspective floor */}
       <div className="absolute bottom-0 inset-x-0 h-56 perspective-grid opacity-40 pointer-events-none"
         style={{ maskImage: 'linear-gradient(to top, #000, transparent)', WebkitMaskImage: 'linear-gradient(to top, #000, transparent)' }} />
-      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#05060c] to-transparent pointer-events-none" />
+      <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0b1022] to-transparent pointer-events-none" />
 
       {/* Content */}
       <div

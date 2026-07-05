@@ -10,11 +10,11 @@ const AboutPage: React.FC = () => {
   const [avatarSrc, setAvatarSrc] = useState('/avatar.png');
 
   return (
-    <div className="min-h-screen bg-[#05060c] text-[#e8ecf4] overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
       <Navigation />
       <main>
         {/* Profile Header */}
-        <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-[#05060c] border-b border-white/10 overflow-hidden">
+        <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-transparent border-b border-white/10 overflow-hidden">
           <div className="aurora w-[440px] h-[440px] -top-10 left-1/2 -translate-x-1/2" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 60%)' }} />
           <div className="absolute inset-0 grid-fade pointer-events-none" />
           {/* Avatar */}

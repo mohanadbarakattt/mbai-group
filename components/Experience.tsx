@@ -306,7 +306,7 @@ const Experience: React.FC = () => {
         </div>
 
         {/* Bottom Fade */}
-        <div className="absolute bottom-0 left-8 md:left-1/2 w-0.5 h-24 bg-gradient-to-t from-[#05060c] to-transparent md:-translate-x-1/2 z-20"></div>
+        <div className="absolute bottom-0 left-8 md:left-1/2 w-0.5 h-24 bg-gradient-to-t from-[#0b1022] to-transparent md:-translate-x-1/2 z-20"></div>
       </div>
     </section>
   );

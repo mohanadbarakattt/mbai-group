@@ -24,14 +24,14 @@ const IbniPage = lazy(() => import('./pages/ventures/IbniPage'));
 const TutPage = lazy(() => import('./pages/ventures/TutPage'));
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[#05060c] text-[#8b93a7]">Loading…</div>
+  <div className="min-h-screen flex items-center justify-center bg-transparent text-[#8b93a7]">Loading…</div>
 );
 
 const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="min-h-screen bg-[#05060c] text-[#e8ecf4] overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
       <Navigation />
       <main>
         <Hero />

@@ -22,8 +22,8 @@ const MarqueeBanner: React.FC = () => {
 
   return (
     <div className="w-full overflow-hidden border-y border-white/10 bg-white/[0.02] py-4 relative">
-      <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#05060c] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#05060c] to-transparent z-10 pointer-events-none" />
+      <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#0b1022] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#0b1022] to-transparent z-10 pointer-events-none" />
 
       <div className="flex whitespace-nowrap" style={{ animation: 'marquee 32s linear infinite', width: 'max-content' }}>
         {doubled.map((item, i) => (

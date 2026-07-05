@@ -264,7 +264,7 @@ const Demos: React.FC = () => {
   const Demo = entry?.demo;
 
   return (
-    <section id="demos" className="py-24 px-6 relative overflow-hidden bg-[#05060c]">
+    <section id="demos" className="py-24 px-6 relative overflow-hidden bg-transparent">
       <div className="aurora w-[500px] h-[500px] top-10 -right-40" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 60%)' }} />
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-14">
@@ -316,7 +316,7 @@ const Demos: React.FC = () => {
                       </div>
                     </div>
                   )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#05060c]/70 to-transparent" />
+                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1022]/70 to-transparent" />
                 </div>
 
                 <p className="text-[#8b93a7] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
@@ -357,9 +357,9 @@ const Demos: React.FC = () => {
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
           <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={() => setActive(null)} />
-          <div className="relative w-full max-w-5xl glass-strong rounded-2xl border border-white/10 shadow-2xl my-auto" style={{ background: '#080b14' }}>
+          <div className="relative w-full max-w-5xl glass-strong rounded-2xl border border-white/10 shadow-2xl my-auto" style={{ background: '#0e1533' }}>
             {/* Header */}
-            <div className="p-5 md:p-6 flex justify-between items-start border-b border-white/10 sticky top-0 z-10 rounded-t-2xl" style={{ background: '#080b14' }}>
+            <div className="p-5 md:p-6 flex justify-between items-start border-b border-white/10 sticky top-0 z-10 rounded-t-2xl" style={{ background: '#0e1533' }}>
               <div className="flex items-center gap-4">
                 <div className="p-2.5 rounded-xl shrink-0" style={{ color: entry.accent, background: `${entry.accent}16`, border: `1px solid ${entry.accent}33` }}>{entry.icon}</div>
                 <div>

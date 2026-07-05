@@ -317,7 +317,7 @@ const TechStack: React.FC = () => {
 
           {/* Certifications */}
           <div
-            className={`glass-card p-6 rounded-2xl md:col-span-4 flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-indigo-500/50 relative overflow-hidden bg-gradient-to-r from-[#0d1220] to-[#05060c] ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl md:col-span-4 flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-indigo-500/50 relative overflow-hidden bg-gradient-to-r from-[#0d1220] to-[#0b1022] ${cardClass()}`}
             style={cardStyle(10)}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>

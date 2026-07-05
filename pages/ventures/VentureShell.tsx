@@ -25,7 +25,7 @@ const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, c
   };
 
   return (
-    <div className="min-h-screen bg-[#05060c] text-[#e8ecf4] overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
       <Navigation />
       <main className="relative pt-36 pb-24 px-6">
         <div className="aurora w-[520px] h-[520px] -top-20 -right-32" style={{ background: `radial-gradient(circle, ${accent}44, transparent 60%)` }} />

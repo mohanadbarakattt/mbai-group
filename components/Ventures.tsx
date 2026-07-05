@@ -90,7 +90,7 @@ const Ventures: React.FC = () => {
   }, []);
 
   return (
-    <section id="ventures" ref={ref} className="py-24 px-6 bg-[#05060c] border-y border-white/10 relative overflow-hidden">
+    <section id="ventures" ref={ref} className="py-24 px-6 bg-transparent border-y border-white/10 relative overflow-hidden">
       <div className="aurora w-[520px] h-[520px] -top-24 -left-24" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.3), transparent 60%)' }} />
 
       <div className="max-w-7xl mx-auto relative">
