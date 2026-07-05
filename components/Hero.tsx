@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, Calendar, ArrowRight, Sparkles } from 'lucide-react';
-import Globe3D from './effects/Globe3D';
+import AuroraFlow from './effects/AuroraFlow';
 import NeuralBackground from './effects/NeuralBackground';
 
 const slides = [
@@ -74,13 +74,16 @@ const Hero: React.FC = () => {
       <div className="absolute inset-0 grid-fade" />
       <div className="absolute inset-0"><NeuralBackground /></div>
 
-      {/* 3D globe centerpiece */}
-      <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-        <Globe3D className="w-full h-full max-w-[1100px] opacity-90" />
+      {/* Flowing energy field centerpiece */}
+      <div className="absolute inset-0 pointer-events-none">
+        <AuroraFlow className="w-full h-full opacity-95" />
       </div>
 
+      {/* Readability vignette behind copy */}
+      <div className="absolute inset-0 pointer-events-none" style={{ background: 'radial-gradient(ellipse 46% 42% at 50% 44%, rgba(6,8,20,0.72), rgba(6,8,20,0.30) 55%, transparent 78%)' }} />
+
       {/* Perspective floor */}
-      <div className="absolute bottom-0 inset-x-0 h-56 perspective-grid opacity-40 pointer-events-none"
+      <div className="absolute bottom-0 inset-x-0 h-52 perspective-grid opacity-25 pointer-events-none"
         style={{ maskImage: 'linear-gradient(to top, #000, transparent)', WebkitMaskImage: 'linear-gradient(to top, #000, transparent)' }} />
       <div className="absolute inset-x-0 bottom-0 h-40 bg-gradient-to-t from-[#0b1022] to-transparent pointer-events-none" />
 
@@ -94,7 +97,7 @@ const Hero: React.FC = () => {
           {slide.badge}
         </div>
 
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.04]">
+        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.04]" style={{ textShadow: '0 4px 40px rgba(6,8,20,0.85)' }}>
           <span className="text-white">{slide.line1}</span>
           <br />
           <span className="text-gradient">{slide.line2}</span>
@@ -106,7 +109,7 @@ const Hero: React.FC = () => {
           <div className="h-px w-12 bg-gradient-to-l from-transparent to-indigo-500/60" />
         </div>
 
-        <p className="text-base md:text-lg text-[#aab2c5] max-w-2xl mx-auto leading-relaxed">
+        <p className="text-base md:text-lg text-[#cdd4e6] max-w-2xl mx-auto leading-relaxed" style={{ textShadow: '0 2px 20px rgba(6,8,20,0.9)' }}>
           {slide.sub}
         </p>
 
@@ -130,11 +133,11 @@ const Hero: React.FC = () => {
           ))}
         </div>
 
-        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-4 text-[11px] uppercase tracking-[0.15em] text-[#5b6478]">
+        <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-4 text-[11px] uppercase tracking-[0.15em] text-[#9aa3bd] font-medium" style={{ textShadow: '0 2px 16px rgba(6,8,20,0.9)' }}>
           <span>Ex-xAI Human Data Lead</span>
-          <span className="w-1 h-1 rounded-full bg-white/20" />
+          <span className="w-1 h-1 rounded-full bg-cyan-400/60" />
           <span>9 shipped products</span>
-          <span className="w-1 h-1 rounded-full bg-white/20" />
+          <span className="w-1 h-1 rounded-full bg-cyan-400/60" />
           <span>Cairo · Dubai</span>
         </div>
       </div>

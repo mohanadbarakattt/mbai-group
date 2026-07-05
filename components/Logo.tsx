@@ -27,43 +27,56 @@ const Logo: React.FC<LogoProps> = ({ size = 48, dark = false, withWordmark = fal
         style={{ display: 'block' }}
       >
         <defs>
-          <linearGradient id="mbGrad" x1="0" y1="0" x2="96" y2="96" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stopColor={ink} />
-            <stop offset="55%" stopColor={dark ? '#c8bfb4' : '#4a4540'} />
-            <stop offset="100%" stopColor="#6366f1" />
+          <linearGradient id="mbGrad" x1="10" y1="10" x2="86" y2="86" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stopColor="#818cf8" />
+            <stop offset="45%" stopColor="#22d3ee" />
+            <stop offset="100%" stopColor="#c084fc" />
           </linearGradient>
+          <radialGradient id="mbCore" cx="42%" cy="38%" r="70%">
+            <stop offset="0%" stopColor={dark ? 'rgba(99,102,241,0.30)' : 'rgba(255,255,255,0.85)'} />
+            <stop offset="100%" stopColor={dark ? 'rgba(20,26,51,0.55)' : 'rgba(255,255,255,0.4)'} />
+          </radialGradient>
+          <filter id="mbGlow" x="-40%" y="-40%" width="180%" height="180%">
+            <feGaussianBlur stdDeviation="1.4" result="b" />
+            <feMerge><feMergeNode in="b" /><feMergeNode in="SourceGraphic" /></feMerge>
+          </filter>
         </defs>
 
-        {/* outer orbital ring */}
-        <circle cx="48" cy="48" r="44" stroke={faint} strokeWidth="1.5" strokeDasharray="4 6">
-          <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="360 48 48" dur="24s" repeatCount="indefinite" />
+        {/* outer orbital ring — dashed, slow spin */}
+        <circle cx="48" cy="48" r="45" fill="none" stroke={faint} strokeWidth="1.25" strokeDasharray="2 8" strokeLinecap="round">
+          <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="360 48 48" dur="30s" repeatCount="indefinite" />
         </circle>
 
-        {/* orbiting node */}
+        {/* orbiting nodes on the outer ring */}
         <g>
-          <circle cx="48" cy="4" r="3" fill="#6366f1">
-            <animate attributeName="opacity" values="1;0.4;1" dur="2.2s" repeatCount="indefinite" />
+          <circle cx="48" cy="3" r="2.6" fill="#22d3ee">
+            <animate attributeName="opacity" values="1;0.35;1" dur="2.4s" repeatCount="indefinite" />
           </circle>
-          <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="360 48 48" dur="12s" repeatCount="indefinite" />
+          <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="360 48 48" dur="14s" repeatCount="indefinite" />
+        </g>
+        <g>
+          <circle cx="48" cy="93" r="1.8" fill="#c084fc">
+            <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
+          </circle>
+          <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="-360 48 48" dur="20s" repeatCount="indefinite" />
         </g>
 
-        {/* inner hex frame */}
-        <path
-          d="M48 14 L77 31 L77 65 L48 82 L19 65 L19 31 Z"
-          stroke="url(#mbGrad)"
-          strokeWidth="2"
-          fill={dark ? 'rgba(255,255,255,0.04)' : 'rgba(255,255,255,0.6)'}
-        />
+        {/* soft round core */}
+        <circle cx="48" cy="48" r="33" fill="url(#mbCore)" stroke="url(#mbGrad)" strokeWidth="2.25" filter="url(#mbGlow)" />
+        {/* thin inner accent ring */}
+        <circle cx="48" cy="48" r="26" fill="none" stroke={dark ? 'rgba(255,255,255,0.12)' : 'rgba(17,17,17,0.12)'} strokeWidth="1" />
+        {/* accent arc detail */}
+        <path d="M26 60 A26 26 0 0 0 70 60" fill="none" stroke="#22d3ee" strokeWidth="1.5" strokeLinecap="round" opacity="0.55" />
 
         {/* MB monogram */}
         <text
           x="48"
-          y="59"
+          y="58"
           textAnchor="middle"
           fontFamily="'Space Grotesk', sans-serif"
           fontWeight="700"
-          fontSize="30"
-          letterSpacing="-2"
+          fontSize="27"
+          letterSpacing="-1.5"
           fill={ink}
         >
           MB
