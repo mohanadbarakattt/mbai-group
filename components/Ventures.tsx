@@ -90,16 +90,16 @@ const Ventures: React.FC = () => {
   }, []);
 
   return (
-    <section id="ventures" ref={ref} className="py-24 px-6 bg-[#f8f5f1] border-b border-[#e2d9ce] relative overflow-hidden">
-      <div className="absolute -top-24 -left-24 w-96 h-96 bg-indigo-500/5 blur-[120px] rounded-full pointer-events-none" />
+    <section id="ventures" ref={ref} className="py-24 px-6 bg-[#05060c] border-y border-white/10 relative overflow-hidden">
+      <div className="aurora w-[520px] h-[520px] -top-24 -left-24" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.3), transparent 60%)' }} />
 
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[#9a9490] text-xs font-semibold uppercase tracking-[0.2em] mb-3">The MB AI Group Portfolio</p>
-          <h2 className="text-3xl md:text-5xl font-black text-[#111111] mb-4 leading-tight">
-            One group.<br className="sm:hidden" /> Four ventures. One mission.
+          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">The MB AI Group Portfolio</p>
+          <h2 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
+            One group.<br className="sm:hidden" /> Four ventures. <span className="text-gradient">One mission.</span>
           </h2>
-          <p className="text-[#6b6460] max-w-2xl">
+          <p className="text-[#8b93a7] max-w-2xl">
             Every company in the group attacks the same problem from a different angle: bringing frontier-grade AI to the
             markets the frontier forgot. Lead generation, virality intelligence, no-code creation, and education.
           </p>
@@ -109,7 +109,7 @@ const Ventures: React.FC = () => {
           {ventures.map((v, i) => {
             const card = (
               <TiltCard className="h-full">
-                <div className="glass-card rounded-2xl p-8 h-full flex flex-col group relative overflow-hidden">
+                <div className="glass-strong card-fx glow-border rounded-2xl p-8 h-full flex flex-col group relative overflow-hidden">
                   <div
                     className="absolute top-0 left-0 w-full h-1 transform scale-x-0 group-hover:scale-x-100 transition-transform duration-500"
                     style={{ background: `linear-gradient(90deg, transparent, ${v.accent}, transparent)` }}
@@ -117,36 +117,36 @@ const Ventures: React.FC = () => {
                   <div className="flex items-center justify-between mb-6">
                     <div className="flex items-center gap-4">
                       <div
-                        className="p-3 rounded-xl border border-[#e2d9ce] group-hover:scale-110 transition-transform"
-                        style={{ color: v.accent, background: `${v.accent}12` }}
+                        className="p-3 rounded-xl group-hover:scale-110 transition-transform"
+                        style={{ color: v.accent, background: `${v.accent}16`, border: `1px solid ${v.accent}33` }}
                       >
                         {v.icon}
                       </div>
                       <div>
-                        <h3 className="text-2xl font-bold text-[#111111] leading-none">{v.name}</h3>
+                        <h3 className="text-2xl font-bold leading-none">{v.name}</h3>
                         <p className="text-xs font-medium uppercase tracking-wide mt-1.5" style={{ color: v.accent }}>{v.tagline}</p>
                       </div>
                     </div>
                     <span
-                      className={`px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5 shrink-0 ${
-                        v.status === 'Live'
-                          ? 'bg-green-500/10 border-green-500/40 text-green-600'
-                          : 'bg-[#f0ebe3] border-[#e2d9ce] text-[#6b6460]'
-                      }`}
+                      className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5 shrink-0"
+                      style={v.status === 'Live'
+                        ? { color: '#34d399', background: 'rgba(16,185,129,0.12)', borderColor: 'rgba(16,185,129,0.4)' }
+                        : { color: '#93a4c8', background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.12)' }}
                     >
-                      <span className={`w-1.5 h-1.5 rounded-full ${v.status === 'Live' ? 'bg-green-500 animate-pulse' : 'bg-[#c8bfb4]'}`} />
+                      <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: v.status === 'Live' ? '#34d399' : v.accent }} />
                       {v.status}
                     </span>
                   </div>
 
-                  <p className="text-[#6b6460] text-sm leading-relaxed mb-5">{v.description}</p>
+                  <p className="text-[#8b93a7] text-sm leading-relaxed mb-5">{v.description}</p>
 
                   <div className="mt-auto">
-                    <div className="p-4 rounded-xl bg-[#f0ebe3]/50 border border-[#e2d9ce]/60 mb-6">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#9a9490] mb-1.5">Why it matters</p>
-                      <p className="text-[#444444] text-sm leading-relaxed">{v.interpretation}</p>
+                    <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 mb-6">
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>Why it matters</p>
+                      <p className="text-[#cdd4e2] text-sm leading-relaxed">{v.interpretation}</p>
                     </div>
-                    <div className="w-full py-2.5 rounded-lg border border-[#e2d9ce] text-[#444444] group-hover:bg-[#111111] group-hover:text-white transition-all font-medium flex items-center justify-center gap-2 text-sm">
+                    <div className="w-full py-2.5 rounded-lg border font-medium flex items-center justify-center gap-2 text-sm transition-all"
+                      style={{ borderColor: `${v.accent}44`, color: v.accent, background: `${v.accent}0f` }}>
                       {v.status === 'Live' ? 'Visit the live product' : 'Preview the vision'} <ArrowUpRight size={15} />
                     </div>
                   </div>

@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} id="contact" className="py-24 px-6 bg-[#f8f5f1] border-t border-[#e2d9ce]">
+    <section ref={sectionRef} id="contact" className="py-24 px-6 bg-[#080b14] border-t border-white/10">
       <div className="max-w-6xl mx-auto">
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
@@ -46,11 +46,11 @@ const Contact: React.FC = () => {
             <div
               className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             >
-              <p className="text-[#9a9490] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get in Touch</p>
-              <h2 className="text-3xl md:text-4xl font-bold text-[#111111] mb-4 leading-tight">
+              <p className="text-[#8b93a7] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get in Touch</p>
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
                 Let's talk about your project.
               </h2>
-              <p className="text-[#6b6460] leading-relaxed mb-10">
+              <p className="text-[#8b93a7] leading-relaxed mb-10">
                 Book a call directly using the calendar, or reach out through any of the channels below. We typically respond within a few hours.
               </p>
             </div>
@@ -62,7 +62,7 @@ const Contact: React.FC = () => {
                 href="https://wa.me/201100054278"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-4 bg-white border border-[#e2d9ce] rounded-xl px-5 py-4 hover:border-[#b8afa6] hover:shadow-sm transition-all duration-700 group ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                className={`flex items-center gap-4 glass-strong card-fx rounded-xl px-5 py-4 transition-all duration-700 group ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: '100ms' }}
               >
                 <div className="w-10 h-10 rounded-lg bg-[#25D366]/10 flex items-center justify-center shrink-0">
@@ -71,28 +71,28 @@ const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#9a9490] uppercase tracking-wide mb-0.5">WhatsApp</p>
-                  <p className="text-sm font-semibold text-[#111111]">+20 110 005 4278</p>
+                  <p className="text-xs text-[#8b93a7] uppercase tracking-wide mb-0.5">WhatsApp</p>
+                  <p className="text-sm font-semibold text-white">+20 110 005 4278</p>
                 </div>
-                <svg className="text-[#c8bfb4] group-hover:text-[#111111] transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
 
               {/* Email */}
               <a
                 href="mailto:mohanad.barakat@mbai-group.com"
-                className={`flex items-center gap-4 bg-white border border-[#e2d9ce] rounded-xl px-5 py-4 hover:border-[#b8afa6] hover:shadow-sm transition-all duration-700 group ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                className={`flex items-center gap-4 glass-strong card-fx rounded-xl px-5 py-4 transition-all duration-700 group ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: '200ms' }}
               >
-                <div className="w-10 h-10 rounded-lg bg-[#f0ebe3] flex items-center justify-center shrink-0">
+                <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center shrink-0">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#6b6460" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#9a9490] uppercase tracking-wide mb-0.5">Email</p>
-                  <p className="text-sm font-semibold text-[#111111]">mohanad.barakat@mbai-group.com</p>
+                  <p className="text-xs text-[#8b93a7] uppercase tracking-wide mb-0.5">Email</p>
+                  <p className="text-sm font-semibold text-white">mohanad.barakat@mbai-group.com</p>
                 </div>
-                <svg className="text-[#c8bfb4] group-hover:text-[#111111] transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
+                <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
 
               {/* Social row */}
@@ -105,13 +105,13 @@ const Contact: React.FC = () => {
                   href={INSTAGRAM_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 flex-1 bg-white border border-[#e2d9ce] rounded-xl px-4 py-3 hover:border-[#b8afa6] hover:shadow-sm transition-all duration-200 group"
+                  className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
                   aria-label="Instagram"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b6460" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#6b6460"/>
                   </svg>
-                  <span className="text-xs font-medium text-[#6b6460]">Instagram</span>
+                  <span className="text-xs font-medium text-[#8b93a7]">Instagram</span>
                 </a>
 
                 {/* Facebook */}
@@ -119,13 +119,13 @@ const Contact: React.FC = () => {
                   href={FACEBOOK_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 flex-1 bg-white border border-[#e2d9ce] rounded-xl px-4 py-3 hover:border-[#b8afa6] hover:shadow-sm transition-all duration-200 group"
+                  className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
                   aria-label="Facebook"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="#6b6460">
                     <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                   </svg>
-                  <span className="text-xs font-medium text-[#6b6460]">Facebook</span>
+                  <span className="text-xs font-medium text-[#8b93a7]">Facebook</span>
                 </a>
 
                 {/* LinkedIn */}
@@ -133,13 +133,13 @@ const Contact: React.FC = () => {
                   href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 flex-1 bg-white border border-[#e2d9ce] rounded-xl px-4 py-3 hover:border-[#b8afa6] hover:shadow-sm transition-all duration-200 group"
+                  className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
                   aria-label="LinkedIn"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="#6b6460">
                     <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                   </svg>
-                  <span className="text-xs font-medium text-[#6b6460]">LinkedIn</span>
+                  <span className="text-xs font-medium text-[#8b93a7]">LinkedIn</span>
                 </a>
               </div>
 
@@ -148,12 +148,12 @@ const Contact: React.FC = () => {
 
           {/* Right — Calendly inline widget */}
           <div
-            className={`bg-white border border-[#e2d9ce] rounded-2xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`bg-white glass-strong rounded-2xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '200ms' }}
           >
-            <div className="px-6 pt-6 pb-2 border-b border-[#e2d9ce]">
-              <p className="text-sm font-semibold text-[#111111]">Book a 30-min Strategy Call</p>
-              <p className="text-xs text-[#9a9490] mt-0.5">Pick a time that works for you — no commitment required.</p>
+            <div className="px-6 pt-6 pb-2 border-b border-white/10">
+              <p className="text-sm font-semibold text-white">Book a 30-min Strategy Call</p>
+              <p className="text-xs text-[#8b93a7] mt-0.5">Pick a time that works for you — no commitment required.</p>
             </div>
             <div
               ref={calendlyRef}

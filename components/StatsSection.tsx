@@ -24,20 +24,21 @@ const StatsSection: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-[#f8f5f1] border-b border-[#e2d9ce]">
-      <div className="max-w-6xl mx-auto">
+    <section ref={ref} className="py-20 px-6 bg-[#05060c] border-y border-white/10 relative overflow-hidden">
+      <div className="aurora w-[420px] h-[420px] bottom-0 left-1/4" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.16), transparent 60%)' }} />
+      <div className="max-w-6xl mx-auto relative">
 
         {/* Asymmetric header — left-aligned with large decorative number right */}
         <div
           className={`mb-10 flex items-end justify-between gap-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
         >
           <div className="shrink-0 hidden sm:block select-none pointer-events-none">
-            <p className="text-7xl md:text-8xl font-black text-[#c8bfb4] leading-none">200+</p>
-            <p className="text-xs text-[#6b6460] mt-1 tracking-wide font-medium">leads delivered</p>
+            <p className="text-7xl md:text-8xl font-black text-gradient leading-none">200+</p>
+            <p className="text-xs text-[#8b93a7] mt-1 tracking-wide font-medium">leads delivered</p>
           </div>
           <div className="sm:text-right">
-            <p className="text-xs uppercase tracking-[0.18em] text-[#9a9490] mb-3">Client Results</p>
-            <h2 className="text-3xl md:text-4xl font-black text-[#111111] tracking-tight leading-snug">
+            <p className="text-xs uppercase tracking-[0.18em] text-cyan-400 mb-3">Client Results</p>
+            <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-snug">
               Real outcomes,<br className="hidden sm:block" /> real teams.
             </h2>
           </div>
@@ -45,13 +46,13 @@ const StatsSection: React.FC = () => {
 
         {/* Stats strip */}
         <div
-          className={`mb-10 grid grid-cols-3 divide-x divide-[#e2d9ce] border border-[#e2d9ce] rounded-xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          className={`mb-10 grid grid-cols-3 divide-x divide-white/10 glass rounded-xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ transitionDelay: '100ms' }}
         >
           {stats.map((s) => (
-            <div key={s.label} className="bg-white px-4 py-5 text-center">
-              <p className="text-2xl md:text-3xl font-black text-[#111111]">{s.number}</p>
-              <p className="text-xs text-[#9a9490] mt-1">{s.label}</p>
+            <div key={s.label} className="px-4 py-5 text-center">
+              <p className="text-2xl md:text-3xl font-black text-gradient">{s.number}</p>
+              <p className="text-xs text-[#8b93a7] mt-1">{s.label}</p>
             </div>
           ))}
         </div>
@@ -70,25 +71,25 @@ const StatsSection: React.FC = () => {
             .map((t, i) => (
             <div
               key={i}
-              className={`bg-white border border-[#e2d9ce] rounded-2xl p-8 flex flex-col gap-5 transition-all duration-700 hover:shadow-md hover:-translate-y-1 ${
+              className={`glass-strong card-fx rounded-2xl p-8 flex flex-col gap-5 transition-all duration-700 ${
                 visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
               }`}
               style={{ transitionDelay: `${200 + i * 100}ms` }}
             >
               <div className="flex items-start justify-between gap-4">
-                <span className="text-lg font-black text-[#111111] leading-tight tracking-tight">
+                <span className="text-lg font-black text-gradient leading-tight tracking-tight">
                   {t.outcome}
                 </span>
-                <Quote size={18} className="text-[#c8bfb4] shrink-0 mt-0.5" />
+                <Quote size={18} className="text-cyan-400/70 shrink-0 mt-0.5" />
               </div>
 
-              <p className="text-[#555047] text-sm leading-relaxed flex-1">
+              <p className="text-[#aab2c5] text-sm leading-relaxed flex-1">
                 "{t.quote}"
               </p>
 
-              <div className="pt-4 border-t border-[#e2d9ce]">
-                <p className="text-[#111111] text-sm font-semibold">{t.name}</p>
-                <p className="text-[#9a9490] text-xs mt-0.5">
+              <div className="pt-4 border-t border-white/10">
+                <p className="text-white text-sm font-semibold">{t.name}</p>
+                <p className="text-[#8b93a7] text-xs mt-0.5">
                   {t.role} · {t.company}
                 </p>
               </div>

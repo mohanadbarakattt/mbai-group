@@ -45,51 +45,52 @@ const HowWeWork: React.FC = () => {
   }, []);
 
   return (
-    <section id="how-we-work" ref={ref} className="py-24 px-6 bg-[#f8f5f1] border-t border-[#e2d9ce] overflow-hidden">
+    <section id="how-we-work" ref={ref} className="py-24 px-6 bg-[#05060c] border-t border-white/10 overflow-hidden">
       <div className="max-w-6xl mx-auto">
 
         {/* Header */}
         <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#9a9490] mb-3">Our Process</p>
-          <h2 className="text-3xl md:text-5xl font-black text-[#111111] leading-tight">
+          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-400 mb-3">Our Process</p>
+          <h2 className="text-3xl md:text-5xl font-black leading-tight">
             From idea to shipped —<br className="hidden sm:block" />
-            <span className="text-[#c8bfb4]"> in weeks, not months.</span>
+            <span className="text-gradient"> in weeks, not months.</span>
           </h2>
         </div>
 
         {/* Steps */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-[#e2d9ce] rounded-2xl overflow-hidden border border-[#e2d9ce]">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-px bg-white/10 rounded-2xl overflow-hidden border border-white/10">
           {steps.map((step, i) => (
             <div
               key={step.number}
-              className={`relative bg-white hover:bg-[#f8f5f1] transition-all duration-300 p-7 flex flex-col gap-4 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
+              className={`relative bg-[#0a0e17] hover:bg-[#0d1220] transition-all duration-300 p-7 flex flex-col gap-4 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'}`}
               style={{ transitionDelay: visible ? `${i * 100 + 200}ms` : '0ms', transitionProperty: 'opacity, transform, background-color' }}
             >
               {/* Large watermark number */}
-              <span className="absolute top-4 right-5 text-7xl font-black text-[#f0ebe3] select-none leading-none pointer-events-none">
+              <span className="absolute top-4 right-5 text-7xl font-black text-white/[0.04] select-none leading-none pointer-events-none">
                 {step.number}
               </span>
 
               {/* Icon */}
-              <div className="w-10 h-10 rounded-xl bg-[#111111] flex items-center justify-center text-white shrink-0 relative z-10">
+              <div className="w-10 h-10 rounded-xl flex items-center justify-center text-white shrink-0 relative z-10"
+                style={{ background: 'linear-gradient(135deg,#4f46e5,#0ea5b7)', boxShadow: '0 0 20px -6px rgba(99,102,241,0.7)' }}>
                 {step.icon}
               </div>
 
               {/* Text */}
               <div className="relative z-10">
-                <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#9a9490] mb-1">{step.title}</p>
-                <h3 className="text-lg font-black text-[#111111] leading-tight mb-2">{step.punch}</h3>
-                <p className="text-xs text-[#6b6460] leading-relaxed">{step.description}</p>
+                <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-cyan-400 mb-1">{step.title}</p>
+                <h3 className="text-lg font-black text-white leading-tight mb-2">{step.punch}</h3>
+                <p className="text-xs text-[#8b93a7] leading-relaxed">{step.description}</p>
               </div>
             </div>
           ))}
         </div>
 
         {/* Bottom strip */}
-        <div className={`mt-6 flex items-center justify-center gap-2 text-[#9a9490] text-xs transition-all duration-700 delay-700 ${visible ? 'opacity-100' : 'opacity-0'}`}>
-          <span className="w-4 h-px bg-[#e2d9ce]" />
-          Average time to first delivery: <span className="font-semibold text-[#111111]">2–4 weeks</span>
-          <span className="w-4 h-px bg-[#e2d9ce]" />
+        <div className={`mt-6 flex items-center justify-center gap-2 text-[#8b93a7] text-xs transition-all duration-700 delay-700 ${visible ? 'opacity-100' : 'opacity-0'}`}>
+          <span className="w-4 h-px bg-white/15" />
+          Average time to first delivery: <span className="font-semibold text-white">2–4 weeks</span>
+          <span className="w-4 h-px bg-white/15" />
         </div>
 
       </div>

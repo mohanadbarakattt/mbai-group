@@ -10,7 +10,7 @@ import StatsSection from './components/StatsSection';
 import FounderCredentials from './components/FounderCredentials';
 import TechExpertise from './components/TechExpertise';
 import HowWeWork from './components/HowWeWork';
-import Projects from './components/Projects';
+import Demos from './components/Demos';
 import Ventures from './components/Ventures';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
@@ -24,24 +24,24 @@ const IbniPage = lazy(() => import('./pages/ventures/IbniPage'));
 const TutPage = lazy(() => import('./pages/ventures/TutPage'));
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-[#f8f5f1] text-[#111111]">Loading...</div>
+  <div className="min-h-screen flex items-center justify-center bg-[#05060c] text-[#8b93a7]">Loading…</div>
 );
 
 const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="min-h-screen bg-[#f8f5f1] text-[#111111] overflow-x-hidden">
+    <div className="min-h-screen bg-[#05060c] text-[#e8ecf4] overflow-x-hidden">
       <Navigation />
       <main>
         <Hero />
         <MarqueeBanner />
-        <StatsSection />
         <FounderCredentials />
         <Ventures />
+        <Demos />
         <TechExpertise />
         <HowWeWork />
-        <Projects />
+        <StatsSection />
         <Contact />
       </main>
       <Footer />

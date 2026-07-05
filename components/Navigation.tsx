@@ -85,8 +85,8 @@ const Navigation: React.FC = () => {
     return [
       'text-sm font-medium transition-colors uppercase tracking-wide',
       isActive
-        ? 'text-[#111111] border-b-2 border-[#111111] pb-0.5'
-        : 'text-[#555] hover:text-[#111111]',
+        ? 'text-white border-b-2 border-cyan-400 pb-0.5'
+        : 'text-[#8b93a7] hover:text-white',
     ].join(' ');
   };
 
@@ -94,12 +94,12 @@ const Navigation: React.FC = () => {
     const isActive = sectionId && activeSection === sectionId;
     return [
       'font-medium py-2 transition-colors',
-      isActive ? 'text-[#111111] font-semibold' : 'text-[#444] hover:text-[#111111]',
+      isActive ? 'text-white font-semibold' : 'text-[#8b93a7] hover:text-white',
     ].join(' ');
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#f8f5f1]/90 backdrop-blur-md border-b border-[#e2d9ce] py-4' : 'bg-transparent py-8'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#05060c]/80 backdrop-blur-xl border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
 
         {/* Logo */}
@@ -113,7 +113,7 @@ const Navigation: React.FC = () => {
             navigate('/');
           }
         }} className="flex items-center group transform transition-transform hover:scale-105 duration-300">
-          <Logo size={52} withWordmark />
+          <Logo size={52} withWordmark dark />
         </a>
 
         {/* Desktop Nav */}

@@ -10,14 +10,17 @@ const AboutPage: React.FC = () => {
   const [avatarSrc, setAvatarSrc] = useState('/avatar.png');
 
   return (
-    <div className="min-h-screen bg-[#f8f5f1] text-[#111111] overflow-x-hidden">
+    <div className="min-h-screen bg-[#05060c] text-[#e8ecf4] overflow-x-hidden">
       <Navigation />
       <main>
         {/* Profile Header */}
-        <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-[#f8f5f1] border-b border-[#e2d9ce]">
+        <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-[#05060c] border-b border-white/10 overflow-hidden">
+          <div className="aurora w-[440px] h-[440px] -top-10 left-1/2 -translate-x-1/2" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 60%)' }} />
+          <div className="absolute inset-0 grid-fade pointer-events-none" />
           {/* Avatar */}
-          <div className="relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8">
-            <div className="w-full h-full rounded-full overflow-hidden border-2 border-[#e2d9ce] hover:scale-105 transition-transform duration-500 ease-out bg-[#f0ebe3]">
+          <div className="relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8 z-10">
+            <div className="absolute -inset-1 rounded-full animate-spin-slow" style={{ background: 'conic-gradient(from 0deg, #6366f1, #22d3ee, #a855f7, #6366f1)', filter: 'blur(6px)', opacity: 0.7 }} />
+            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform duration-500 ease-out bg-[#0d1220]">
               <img
                 src={avatarSrc}
                 onError={() => {
@@ -34,22 +37,22 @@ const AboutPage: React.FC = () => {
           </div>
 
           {/* Name & Title */}
-          <div className="inline-block px-4 py-1.5 rounded-full border border-[#e2d9ce] bg-white text-[#6b6460] text-xs font-semibold tracking-wider uppercase mb-4">
+          <div className="relative z-10 inline-block px-4 py-1.5 rounded-full glass text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-4">
             Mohanad Barakat
           </div>
 
-          <h1 className="text-3xl md:text-5xl font-bold text-[#111111] mb-4">
-            Meet the CEO
+          <h1 className="relative z-10 text-3xl md:text-5xl font-bold mb-4">
+            Meet the <span className="text-gradient">Founder & CEO</span>
           </h1>
 
-          <p className="text-base md:text-lg text-[#6b6460] max-w-2xl leading-relaxed">
-            Former <span className="font-semibold text-[#111111]">xAI Human Data Lead</span> — translating world-scale AI research into practical solutions for the MENA region.
+          <p className="relative z-10 text-base md:text-lg text-[#8b93a7] max-w-2xl leading-relaxed">
+            Former <span className="font-semibold text-white">xAI Human Data Lead</span> — translating world-scale AI research into practical solutions for the MENA region.
           </p>
 
           <a
             href="/Mohanad_Barakat_CV.pdf"
             download="Mohanad_Barakat_CV.pdf"
-            className="mt-8 inline-flex items-center gap-2 px-7 py-3 bg-[#111111] hover:bg-[#2a2a2a] text-white font-semibold rounded-lg transition-colors duration-200"
+            className="btn-primary relative z-10 mt-8 inline-flex items-center gap-2 px-7 py-3 rounded-xl"
           >
             <FileText size={16} />
             Download CV

@@ -23,7 +23,7 @@ const ResumeFAB: React.FC = () => {
     <div className="fixed bottom-8 right-8 z-40">
       <button 
         onClick={handleDownload}
-        className="flex items-center gap-3 px-6 py-4 bg-[#111111] hover:bg-[#2a2a2a] text-white rounded-full  transition-all transform hover:scale-105 group relative cursor-pointer"
+        className="btn-primary flex items-center gap-3 px-6 py-4 rounded-full transition-all transform hover:scale-105 group relative cursor-pointer"
         aria-label="Download Resume"
       >
         <FileText size={24} />
