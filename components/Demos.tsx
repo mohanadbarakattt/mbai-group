@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useRef, useState } from 'react';
+import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import {
   X, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Sparkles, Loader2, PlayCircle,
@@ -74,7 +74,7 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: IbniDemo,
     pageUrl: '/ibni',
-    interpretation: 'The thesis: the next hundred million builders will speak Arabic and English — not Python. IBNI is the bridge.',
+    interpretation: 'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
   },
   {
     id: 'tut',
@@ -255,10 +255,33 @@ const Demos: React.FC = () => {
     return () => { obs.disconnect(); removeEventListener('scroll', check); };
   }, []);
 
+  // Keep the URL in sync with the open demo so any modal is shareable/deep-linkable.
+  const syncUrl = useCallback((id: string | null) => {
+    try {
+      const url = new URL(window.location.href);
+      if (id) url.searchParams.set('demo', id); else url.searchParams.delete('demo');
+      window.history.replaceState(null, '', url.pathname + url.search + url.hash);
+    } catch { /* no-op in non-browser contexts */ }
+  }, []);
+
+  const openDemo = useCallback((id: string) => { setActive(id); setShotIndex(0); syncUrl(id); }, [syncUrl]);
+  const closeDemo = useCallback(() => { setActive(null); syncUrl(null); }, [syncUrl]);
+
+  // Shareable deep-link: /?demo=<id> auto-opens that demo's modal on load.
+  useEffect(() => {
+    const id = new URLSearchParams(window.location.search).get('demo');
+    if (id && ENTRIES.some((e) => e.id === id && e.demo)) {
+      setActive(id); setShotIndex(0);
+      requestAnimationFrame(() => document.getElementById('demos')?.scrollIntoView({ behavior: 'smooth', block: 'start' }));
+    }
+  }, []);
+
   useEffect(() => {
     document.body.style.overflow = active ? 'hidden' : '';
-    return () => { document.body.style.overflow = ''; };
-  }, [active]);
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeDemo(); };
+    if (active) window.addEventListener('keydown', onKey);
+    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey); };
+  }, [active, closeDemo]);
 
   const entry = ENTRIES.find((e) => e.id === active) || null;
   const Demo = entry?.demo;
@@ -344,7 +367,7 @@ const Demos: React.FC = () => {
                   {e.externalUrl ? (
                     <a href={e.externalUrl} target="_blank" rel="noopener noreferrer" className="block h-full no-underline">{inner}</a>
                   ) : (
-                    <div onClick={() => { setActive(e.id); setShotIndex(0); }} className="h-full">{inner}</div>
+                    <div onClick={() => openDemo(e.id)} className="h-full">{inner}</div>
                   )}
                 </TiltCard>
               </div>
@@ -356,7 +379,7 @@ const Demos: React.FC = () => {
       {/* Modal */}
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={() => setActive(null)} />
+          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={closeDemo} />
           <div className="relative w-full max-w-5xl glass-strong rounded-2xl border border-white/10 shadow-2xl my-auto" style={{ background: '#0e1533' }}>
             {/* Header */}
             <div className="p-5 md:p-6 flex justify-between items-start border-b border-white/10 sticky top-0 z-10 rounded-t-2xl" style={{ background: '#0e1533' }}>
@@ -367,7 +390,7 @@ const Demos: React.FC = () => {
                   <p className="text-sm" style={{ color: entry.accent }}>{entry.subtitle}</p>
                 </div>
               </div>
-              <button onClick={() => setActive(null)} className="p-2 hover:bg-white/10 rounded-full text-[#8b93a7] hover:text-white transition-colors shrink-0"><X size={22} /></button>
+              <button onClick={closeDemo} className="p-2 hover:bg-white/10 rounded-full text-[#8b93a7] hover:text-white transition-colors shrink-0"><X size={22} /></button>
             </div>
 
             <div className="p-5 md:p-6 space-y-6">

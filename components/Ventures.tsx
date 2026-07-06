@@ -47,7 +47,7 @@ const ventures: Venture[] = [
     description:
       'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and previews it — bringing software creation to founders who don\'t code.',
     interpretation:
-      'The thesis: the next hundred million builders will speak Arabic and English — not Python. IBNI is the bridge.',
+      'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
     status: 'In Development',
     href: '/ibni',
     icon: <Hammer size={22} />,

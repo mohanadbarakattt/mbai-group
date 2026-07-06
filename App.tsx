@@ -15,6 +15,7 @@ import Ventures from './components/Ventures';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
+import NotFound from './components/NotFound';
 
 const AutoLeadsHome = lazy(() => import('./autoleads/pages/Home'));
 const ThreeArabyApp = lazy(() => import('./3araby/App'));
@@ -86,7 +87,7 @@ function App() {
               <Home />
             </Route>
             <Route>
-              <Home />
+              <NotFound />
             </Route>
           </Switch>
         </WouterRouter>
