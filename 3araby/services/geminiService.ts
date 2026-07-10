@@ -5,17 +5,24 @@ const SYSTEM_INSTRUCTION = `
 You are an expert linguist specializing in Franco-Arabic, specifically the Egyptian dialect.
 Your task is to translate user input from Franco into natural English and also provide the Egyptian Arabic script equivalent.
 
-RULES FOR TRANSLATION:
-- Franco uses Latin letters and numbers:
-  * 2 = Hamza (ء) or Alef (أ)
+RULES FOR TRANSLATION (Egyptian/Cairene Franco only — numbers are used ONLY for
+sounds with no Latin letter; everything else collapses onto plain Latin spelling):
+  * 2 = Hamza (ء), Alef (أ), AND a silent Qaf (ق) — silent-Qaf is the default for
+    ~90% of everyday Cairo words (e.g. "delwa2ty" for دلوقتي). A small minority of
+    formal/religious/loan words keep a pronounced Qaf, written "q" or "k" (e.g.
+    "2awmy" is the common form even then) — when unsure, default to silent/2.
   * 3 = 3een (ع)
-  * 3' = Gheen (غ)
   * 5 = Khah (خ)
   * 7 = 7ah (ح)
-  * 6 = Tah (ط)
-  * 9 = Saad (ص)
-  * 9' = Daad (ض)
-  * 8 = Qaf (ق) - though 2 is often used in Cairo
+  * gh = Gheen (غ) — e.g. "ghaly" (expensive). "3'" is a rarer alternate spelling;
+    prefer plain "gh" as the primary form.
+  * Tah (ط) and Teh (ت) both collapse to plain "T" (e.g. "tayeb").
+  * Theh (ث), Seen (س), and Saad (ص) all collapse to plain "S" (e.g. "sa7").
+  * Zaal (ذ), Zeen (ز), and Zah (ظ) all collapse to plain "Z".
+  * Geem (ج) is a hard "g" in Egyptian Franco (like English "go"), never "j".
+  * There is no "9", "6", "8", or "9'" in real Egyptian Franco — don't invent them.
+- Minimal spelling wins: use the fewest letters that still sound right, exactly how
+  a native Cairo speaker would type a WhatsApp message, not a phonetic transliteration.
 - Handle Egyptian colloquialisms (e.g., "ezayek", "basha", "enta fen", "ya rayek").
 - Translate into modern, conversational English.
 - Always return the response in a JSON format.
@@ -37,8 +44,35 @@ export class RateLimitError extends Error {
   }
 }
 
+/** Thrown when the Gemini API key is missing/invalid — a config problem, not a user error. */
+export class ConfigError extends Error {
+  constructor() {
+    super("The translator isn't configured correctly right now.");
+    this.name = "ConfigError";
+  }
+}
+
+const RAW_API_KEY = process.env.API_KEY || '';
+const PLACEHOLDER_KEYS = new Set(['', 'PLACEHOLDER_API_KEY', 'YOUR_API_KEY', 'undefined']);
+
+const looksLikeInvalidKeyError = (error: any): boolean => {
+  const message: string = String(error?.message ?? error?.response?.data?.error?.message ?? '');
+  const reason: string = String(error?.response?.data?.error?.status ?? error?.status ?? '');
+  return (
+    /api key not valid/i.test(message) ||
+    /api_key_invalid/i.test(message) ||
+    /api_key_invalid/i.test(reason)
+  );
+};
+
 export const translateFranco = async (input: string): Promise<TranslationResult> => {
-  const ai = new GoogleGenAI({ apiKey: process.env.API_KEY || '' });
+  // Fail fast and friendly if the key was never configured — no point round-tripping
+  // to Google just to surface a confusing error to the end user.
+  if (PLACEHOLDER_KEYS.has(RAW_API_KEY.trim())) {
+    throw new ConfigError();
+  }
+
+  const ai = new GoogleGenAI({ apiKey: RAW_API_KEY });
 
   const attempt = async (retryCount: number): Promise<TranslationResult> => {
     try {
@@ -74,6 +108,10 @@ export const translateFranco = async (input: string): Promise<TranslationResult>
           return attempt(retryCount - 1);
         }
         throw new RateLimitError();
+      }
+      if (looksLikeInvalidKeyError(error)) {
+        console.error("Translation error: invalid/misconfigured Gemini API key.", error);
+        throw new ConfigError();
       }
       console.error("Translation error:", error);
       throw new Error("Failed to connect to the translation engine.");

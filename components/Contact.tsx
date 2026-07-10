@@ -1,8 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 
-// TODO: Replace '#' placeholders with real social handles when confirmed
-const INSTAGRAM_URL = '#';
-const FACEBOOK_URL = '#';
+// Instagram/Facebook are intentionally omitted until real, confirmed handles exist —
+// a dead "#" link next to working WhatsApp/Email/LinkedIn buttons erodes trust more
+// than simply not showing the icon. Set these to real profile URLs to bring them back.
+const INSTAGRAM_URL = '';
+const FACEBOOK_URL = '';
 const LINKEDIN_URL = 'https://www.linkedin.com/company/mbai-solutions';
 
 const Contact: React.FC = () => {
@@ -95,38 +97,42 @@ const Contact: React.FC = () => {
                 <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
 
-              {/* Social row */}
+              {/* Social row — only confirmed, working profiles are shown */}
               <div
                 className={`flex items-center gap-3 pt-2 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: '300ms' }}
               >
-                {/* Instagram */}
-                <a
-                  href={INSTAGRAM_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
-                  aria-label="Instagram"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b6460" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
-                    <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#6b6460"/>
-                  </svg>
-                  <span className="text-xs font-medium text-[#8b93a7]">Instagram</span>
-                </a>
+                {/* Instagram — hidden until a real handle is confirmed, see INSTAGRAM_URL above */}
+                {INSTAGRAM_URL && (
+                  <a
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
+                    aria-label="Instagram"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#6b6460" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="#6b6460"/>
+                    </svg>
+                    <span className="text-xs font-medium text-[#8b93a7]">Instagram</span>
+                  </a>
+                )}
 
-                {/* Facebook */}
-                <a
-                  href={FACEBOOK_URL}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
-                  aria-label="Facebook"
-                >
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="#6b6460">
-                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                  </svg>
-                  <span className="text-xs font-medium text-[#8b93a7]">Facebook</span>
-                </a>
+                {/* Facebook — hidden until a real handle is confirmed, see FACEBOOK_URL above */}
+                {FACEBOOK_URL && (
+                  <a
+                    href={FACEBOOK_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 flex-1 glass-strong card-fx rounded-xl px-4 py-3 transition-all duration-200 group"
+                    aria-label="Facebook"
+                  >
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="#6b6460">
+                      <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                    </svg>
+                    <span className="text-xs font-medium text-[#8b93a7]">Facebook</span>
+                  </a>
+                )}
 
                 {/* LinkedIn */}
                 <a

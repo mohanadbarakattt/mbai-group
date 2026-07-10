@@ -1,15 +1,19 @@
 import React from 'react';
 
 export const GuideUI: React.FC = () => {
+  // Egyptian Franco convention (see FRANCO_EGYPTIAN_ARABIC_GUIDE): only 2, 3, 5, 7
+  // have no Latin equivalent and get a dedicated digit. Everything else — including
+  // ط/ت→T, ص/س/ث→S, ض/ذ/ز/ظ→Z — collapses onto plain Latin letters; there is no
+  // "6", "9", "8", or "9'" in real Cairo texting, so those rows were removed rather
+  // than taught as if they were standard.
   const rules = [
-    { num: '2', letter: 'أ / ء', example: '2alam (Pen), 2ahwa (Coffee)' },
+    { num: '2', letter: 'أ / ء / ق (silent)', example: '2alam (Pen), 2ahwa (Coffee)' },
     { num: '3', letter: 'ع', example: '3amel eh? (How are you doing?)' },
-    { num: "3'", letter: 'غ', example: "3'aly (Expensive)" },
+    { num: 'gh', letter: 'غ', example: 'ghaly (Expensive) — "3\'" is a rarer alternate spelling' },
     { num: '5', letter: 'خ', example: '5alas (Finished)' },
     { num: '7', letter: 'ح', example: '7abibi (My love)' },
-    { num: '6', letter: 'ط', example: '6ayeb (Okay/Fine)' },
-    { num: '9', letter: 'ص', example: '9a7 (Right)' },
-    { num: '8', letter: 'ق', example: '8ahwa (Classical pronunciation)' },
+    { num: 'T', letter: 'ت / ط', example: 'tayeb (Okay/Fine) — both letters collapse to plain T' },
+    { num: 'S', letter: 'ث / س / ص', example: 'sa7 (Right) — all three collapse to plain S' },
   ];
 
   return (

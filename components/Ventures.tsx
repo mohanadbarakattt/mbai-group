@@ -8,7 +8,7 @@ interface Venture {
   tagline: string;
   description: string;
   interpretation: string;
-  status: 'Live' | 'Coming soon';
+  status: 'Live' | 'Preview' | 'Coming soon';
   href: string;
   external?: boolean;
   icon: React.ReactNode;
@@ -23,9 +23,10 @@ const ventures: Venture[] = [
       'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and ships it — bringing software creation to founders who don\'t code.',
     interpretation:
       'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
-    status: 'Live',
-    href: 'https://ibni.app',
-    external: true,
+    // Kept in sync with the /ibni page and the Demos section: IBNI is an active,
+    // in-development concept preview today, not yet a publicly shipped product.
+    status: 'Preview',
+    href: '/ibni',
     icon: <Hammer size={22} />,
     accent: '#10b981',
   },

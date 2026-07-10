@@ -6,7 +6,7 @@ interface Msg { role: 'user' | 'tut'; text: string; }
 const SCRIPT: Record<string, string> = {
   photosynthesis: 'Think of a plant as a tiny solar-powered kitchen 🌱. It takes sunlight, water from the roots, and CO₂ from the air, and "cooks" them into glucose (its food) — releasing the oxygen you breathe as a bonus. Want me to explain it بالعربي, or quiz you on it?',
   quadratic: 'A quadratic equation is a curve\'s story: ax² + bx + c = 0. The formula x = (−b ± √(b²−4ac)) / 2a finds where it crosses zero. Try x² − 5x + 6 = 0 → x = 2 or 3. Want to solve one together, step by step?',
-  arabic: 'أكيد! أنا بشرح بالعربي الفصحى أو بالمصري، زي ما يريحك. قولي إيه الموضوع اللي واقف معاك — رياضة، فيزيا، إنجليزي؟ هنمشي فيه خطوة خطوة لحد ما يبقى سهل. 💡',
+  arabic: 'أكيد! أنا بشرح بالعربي الفصحى أو بالمصري، زي ما يريحك. قولي إيه الموضوع اللي واقف معاك — رياضة، فيزياء، إنجليزي؟ هنمشي فيه خطوة خطوة لحد ما يبقى سهل. 💡',
   default: 'Great question! I\'d break that into three small steps and check your understanding after each one — that\'s how TUT works: a conversation at your pace, in Arabic or English. (Full model launching soon — this is a preview.)',
 };
 

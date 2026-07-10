@@ -16,11 +16,11 @@ const slides = [
   },
   {
     badge: 'One Group · Four Ventures',
-    line1: 'AutoLeads. Virlo.',
+    line1: 'AutoLeadss. Virlo.',
     line2: 'IBNI. TUT.',
     sub: (
       <>
-        <strong className="text-white">AutoLeads</strong> generates revenue today. <strong className="text-white">Virlo</strong>, <strong className="text-white">IBNI</strong> and <strong className="text-white">TUT</strong> are next — virality intelligence, no-code AI building, and education for 100M+ students.
+        <strong className="text-white">AutoLeadss</strong> generates revenue today. <strong className="text-white">Virlo Studio</strong>, <strong className="text-white">IBNI</strong> and <strong className="text-white">TUT</strong> are next — virality intelligence, no-code AI building, and education for 100M+ students.
       </>
     ),
   },
@@ -39,6 +39,11 @@ const slides = [
 const Hero: React.FC = () => {
   const [current, setCurrent] = useState(0);
   const [fading, setFading] = useState(false);
+  // Auto-rotation is paused while the user hovers/focuses the slide, or when the
+  // system asks for reduced motion — an auto-playing carousel shouldn't fight
+  // someone trying to read it or trigger animation for motion-sensitive users.
+  const [paused, setPaused] = useState(false);
+  const [reducedMotion, setReducedMotion] = useState(false);
 
   const openCalendly = () => {
     if ((window as any).Calendly) {
@@ -47,12 +52,21 @@ const Hero: React.FC = () => {
   };
 
   useEffect(() => {
+    const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
+    setReducedMotion(mq.matches);
+    const onChange = () => setReducedMotion(mq.matches);
+    mq.addEventListener('change', onChange);
+    return () => mq.removeEventListener('change', onChange);
+  }, []);
+
+  useEffect(() => {
+    if (paused || reducedMotion) return;
     const interval = setInterval(() => {
       setFading(true);
       setTimeout(() => { setCurrent((p) => (p + 1) % slides.length); setFading(false); }, 700);
     }, 7000);
     return () => clearInterval(interval);
-  }, []);
+  }, [paused, reducedMotion]);
 
   const goTo = (idx: number) => {
     if (idx === current) return;
@@ -91,6 +105,10 @@ const Hero: React.FC = () => {
       <div
         className="relative z-10 text-center px-6 max-w-4xl mx-auto space-y-7"
         style={{ opacity: fading ? 0 : 1, transform: fading ? 'translateY(10px)' : 'translateY(0)', transition: 'opacity .6s ease, transform .6s ease' }}
+        onMouseEnter={() => setPaused(true)}
+        onMouseLeave={() => setPaused(false)}
+        onFocus={() => setPaused(true)}
+        onBlur={() => setPaused(false)}
       >
         <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-[#c7cede] text-xs font-semibold uppercase tracking-[0.18em]">
           <Sparkles size={12} className="text-cyan-300" />
@@ -136,7 +154,7 @@ const Hero: React.FC = () => {
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-4 text-[11px] uppercase tracking-[0.15em] text-[#9aa3bd] font-medium" style={{ textShadow: '0 2px 16px rgba(6,8,20,0.9)' }}>
           <span>Ex-xAI Human Data Lead</span>
           <span className="w-1 h-1 rounded-full bg-cyan-400/60" />
-          <span>9 shipped products</span>
+          <span>10 shipped products</span>
           <span className="w-1 h-1 rounded-full bg-cyan-400/60" />
           <span>Cairo · Dubai</span>
         </div>

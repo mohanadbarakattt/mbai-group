@@ -39,7 +39,7 @@ interface Entry {
 const ENTRIES: Entry[] = [
   {
     id: 'autoleads',
-    title: 'AutoLeads',
+    title: 'AutoLeadss',
     subtitle: 'AI Lead Generation Infrastructure',
     blurb: 'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate and MENA enterprises. Custom agents hunt leads 24/7; bilingual specialists close the loop.',
     tags: ['AI Agents', 'Lead Gen', 'Real Estate'],

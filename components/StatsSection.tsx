@@ -3,7 +3,7 @@ import { Quote } from 'lucide-react';
 import testimonials from './data/testimonials';
 
 const stats = [
-  { number: '6', label: 'AI products shipped' },
+  { number: '10', label: 'AI products shipped' },
   { number: '3', label: 'MENA markets served' },
   { number: '200+', label: 'leads delivered' },
 ];
