@@ -18,6 +18,7 @@ import AboutPage from './components/AboutPage';
 import NotFound from './components/NotFound';
 import Seo from './components/Seo';
 import FAQSection from './components/FAQSection';
+import { I18nProvider } from './i18n';
 
 const HOME_FAQ_JSONLD = {
   '@context': 'https://schema.org',
@@ -95,6 +96,7 @@ function Home() {
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
+      <I18nProvider>
       <TooltipProvider>
         <WouterRouter>
           <Switch>
@@ -153,6 +155,7 @@ function App() {
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
+      </I18nProvider>
     </QueryClientProvider>
   );
 }

@@ -6,8 +6,10 @@ import TechStack from './TechStack';
 import Footer from './Footer';
 import ResumeFAB from './ResumeFAB';
 import Seo from './Seo';
+import { useI18n } from '../i18n';
 
 const AboutPage: React.FC = () => {
+  const { dict } = useI18n();
   const [avatarSrc, setAvatarSrc] = useState('/avatar.png');
 
   return (
@@ -45,15 +47,15 @@ const AboutPage: React.FC = () => {
 
           {/* Name & Title */}
           <div className="relative z-10 inline-block px-4 py-1.5 rounded-full glass text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-4">
-            Mohanad Barakat
+            {dict.about.kicker}
           </div>
 
           <h1 className="relative z-10 text-3xl md:text-5xl font-bold mb-4">
-            Meet the <span className="text-gradient">Founder & CEO</span>
+            {dict.about.headingPre} <span className="text-gradient">{dict.about.headingGradient}</span>
           </h1>
 
           <p className="relative z-10 text-base md:text-lg text-[#8b93a7] max-w-2xl leading-relaxed">
-            Former <span className="font-semibold text-white">xAI Human Data Lead</span> — translating world-scale AI research into practical solutions for the MENA region.
+            {dict.about.blurb}
           </p>
 
           <a
@@ -62,7 +64,7 @@ const AboutPage: React.FC = () => {
             className="btn-primary relative z-10 mt-8 inline-flex items-center gap-2 px-7 py-3 rounded-xl"
           >
             <FileText size={16} />
-            Download CV
+            {dict.about.downloadCv}
           </a>
         </section>
 

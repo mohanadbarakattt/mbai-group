@@ -1,4 +1,5 @@
 import React from 'react';
+import { useI18n } from '../i18n';
 
 const techs = [
   'Python',
@@ -28,6 +29,7 @@ const Separator = () => (
 );
 
 const TechExpertise: React.FC = () => {
+  const { locale, dict } = useI18n();
   const doubled = [...techs, ...techs];
 
   return (
@@ -36,12 +38,16 @@ const TechExpertise: React.FC = () => {
       <div className="absolute right-0 top-0 h-full w-20 bg-gradient-to-l from-[#0e1533] to-transparent z-10 pointer-events-none" />
 
       <div className="max-w-4xl mx-auto px-6 mb-4 text-center">
-        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-cyan-300/80 mb-2">The Engine Behind the Group</p>
-        <p className="text-sm md:text-[15px] text-[#aab2c5] leading-relaxed">
-          The same disciplines that align frontier models — <span className="text-white font-medium">RLHF</span>,{' '}
-          <span className="text-white font-medium">signal extraction</span>, and{' '}
-          <span className="text-white font-medium">reasoning-grade data pipelines</span> — now power all four MB AI Group ventures.
-        </p>
+        <p className="text-[10px] font-semibold uppercase tracking-[0.3em] text-cyan-300/80 mb-2">{dict.techExpertise.eyebrow}</p>
+        {locale === 'en' ? (
+          <p className="text-sm md:text-[15px] text-[#aab2c5] leading-relaxed">
+            The same disciplines that align frontier models — <span className="text-white font-medium">RLHF</span>,{' '}
+            <span className="text-white font-medium">signal extraction</span>, and{' '}
+            <span className="text-white font-medium">reasoning-grade data pipelines</span> — now power all four MB AI Group ventures.
+          </p>
+        ) : (
+          <p className="text-sm md:text-[15px] text-[#aab2c5] leading-relaxed">{dict.techExpertise.body}</p>
+        )}
       </div>
 
       <div

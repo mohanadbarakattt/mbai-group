@@ -1,9 +1,42 @@
 import React, { useState, useEffect } from 'react';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { Link, useLocation } from 'wouter';
 import Logo from './Logo';
+import { useI18n, LOCALE_LABELS, LOCALE_NAMES } from '../i18n';
+import type { Locale } from '../i18n';
+
+const LOCALES: Locale[] = ['en', 'ar', 'franco'];
+
+const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
+  const { locale, setLocale, dict } = useI18n();
+  return (
+    <div
+      className={`inline-flex items-center gap-0.5 rounded-full border border-white/15 bg-white/5 p-1 ${compact ? 'w-full justify-center' : ''}`}
+      role="group"
+      aria-label={dict.nav.languageLabel}
+    >
+      <Globe size={13} className="text-[#8b93a7] ml-1.5 mr-0.5 shrink-0" aria-hidden />
+      {LOCALES.map((l) => (
+        <button
+          key={l}
+          type="button"
+          onClick={() => setLocale(l)}
+          aria-pressed={locale === l}
+          aria-label={LOCALE_NAMES[l]}
+          title={LOCALE_NAMES[l]}
+          className={`px-2.5 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wide transition-colors ${
+            locale === l ? 'bg-white text-[#0b1022]' : 'text-[#8b93a7] hover:text-white'
+          }`}
+        >
+          {LOCALE_LABELS[l]}
+        </button>
+      ))}
+    </div>
+  );
+};
 
 const Navigation: React.FC = () => {
+  const { dict } = useI18n();
   const [location, navigate] = useLocation();
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -73,11 +106,11 @@ const Navigation: React.FC = () => {
   };
 
   const navLinks = [
-    { name: 'Ventures', href: '/#ventures', sectionId: 'ventures' },
-    { name: 'Process', href: '/#how-we-work', sectionId: 'how-we-work' },
-    { name: 'Demos', href: '/#demos', sectionId: 'demos' },
-    { name: 'Contact', href: '/#contact', sectionId: 'contact' },
-    { name: 'Our Story', href: '/about', isExternal: true },
+    { id: 'ventures', name: dict.nav.ventures, href: '/#ventures', sectionId: 'ventures' },
+    { id: 'process', name: dict.nav.process, href: '/#how-we-work', sectionId: 'how-we-work' },
+    { id: 'demos', name: dict.nav.demos, href: '/#demos', sectionId: 'demos' },
+    { id: 'contact', name: dict.nav.contact, href: '/#contact', sectionId: 'contact' },
+    { id: 'our-story', name: dict.nav.ourStory, href: '/about', isExternal: true },
   ];
 
   const linkClass = (sectionId?: string) => {
@@ -117,26 +150,27 @@ const Navigation: React.FC = () => {
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-8">
+        <div className="hidden md:flex items-center gap-6">
           {navLinks.map((link) =>
             'isExternal' in link && link.isExternal ? (
-              <Link key={link.name} href={link.href}
+              <Link key={link.id} href={link.href}
                 className={linkClass(undefined)}>
                 {link.name}
               </Link>
             ) : (
-              <a key={link.name} href={link.href}
+              <a key={link.id} href={link.href}
                 className={linkClass(link.sectionId)}
                 onClick={(e) => handleAnchorClick(e, link.href)}>
                 {link.name}
               </a>
             )
           )}
+          <LanguageSwitcher />
           <button
             onClick={() => { if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
             className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg"
           >
-            Book a 30-min Strategy Call
+            {dict.nav.bookCall}
           </button>
         </div>
 
@@ -152,24 +186,25 @@ const Navigation: React.FC = () => {
           <div className="flex flex-col py-4 px-6 gap-4">
             {navLinks.map((link) =>
               'isExternal' in link && link.isExternal ? (
-                <Link key={link.name} href={link.href}
+                <Link key={link.id} href={link.href}
                   className={mobileLinkClass(undefined)}
                   onClick={() => setIsMobileMenuOpen(false)}>
                   {link.name}
                 </Link>
               ) : (
-                <a key={link.name} href={link.href}
+                <a key={link.id} href={link.href}
                   className={mobileLinkClass(link.sectionId)}
                   onClick={(e) => handleAnchorClick(e, link.href)}>
                   {link.name}
                 </a>
               )
             )}
+            <LanguageSwitcher compact />
             <button
               onClick={() => { setIsMobileMenuOpen(false); if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
               className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg w-full"
             >
-              Book a 30-min Strategy Call
+              {dict.nav.bookCall}
             </button>
           </div>
         </div>

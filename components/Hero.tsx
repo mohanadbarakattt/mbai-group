@@ -2,41 +2,30 @@ import React, { useState, useEffect } from 'react';
 import { ChevronDown, Calendar, ArrowRight, Sparkles } from 'lucide-react';
 import AuroraFlow from './effects/AuroraFlow';
 import NeuralBackground from './effects/NeuralBackground';
+import { useI18n } from '../i18n';
 
-const slides = [
-  {
-    badge: 'MB AI Group · Frontier AI for MENA',
-    line1: 'Frontier AI,',
-    line2: 'built for the real world.',
-    sub: (
-      <>
-        Founded by a former <strong className="text-white">xAI Human Data Lead</strong>. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.
-      </>
-    ),
-  },
-  {
-    badge: 'One Group · Four Ventures',
-    line1: 'AutoLeadss. Virlo.',
-    line2: 'IBNI. TUT.',
-    sub: (
-      <>
-        <strong className="text-white">AutoLeadss</strong> generates revenue today. <strong className="text-white">Virlo Studio</strong>, <strong className="text-white">IBNI</strong> and <strong className="text-white">TUT</strong> are next — virality intelligence, no-code AI building, and education for 100M+ students.
-      </>
-    ),
-  },
-  {
-    badge: 'LLM Alignment · RLHF · Reasoning',
-    line1: 'The rigour behind',
-    line2: 'frontier models.',
-    sub: (
-      <>
-        Our work covered <strong className="text-white">LLM alignment, RLHF, and Chain-of-Thought reasoning</strong> — the techniques behind the world's most capable AI, now applied to your product.
-      </>
-    ),
-  },
+// English keeps its original rich JSX (inline bold emphasis) exactly as
+// designed. AR/Franco render the equivalent plain-string copy from the i18n
+// dictionary instead — a deliberate scope tradeoff so translating the rest
+// of the site doesn't require re-authoring every component's JSX structure.
+const enSubs: React.ReactNode[] = [
+  <>
+    Founded by a former <strong className="text-white">xAI Human Data Lead</strong>. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.
+  </>,
+  <>
+    <strong className="text-white">AutoLeadss</strong> generates revenue today. <strong className="text-white">Virlo Studio</strong>, <strong className="text-white">IBNI</strong> and <strong className="text-white">TUT</strong> are next — virality intelligence, no-code AI building, and education for 100M+ students.
+  </>,
+  <>
+    Our work covered <strong className="text-white">LLM alignment, RLHF, and Chain-of-Thought reasoning</strong> — the techniques behind the world's most capable AI, now applied to your product.
+  </>,
 ];
 
 const Hero: React.FC = () => {
+  const { locale, dict } = useI18n();
+  const slides = dict.hero.slides.map((s, i) => ({
+    ...s,
+    sub: locale === 'en' ? enSubs[i] : s.sub,
+  }));
   const [current, setCurrent] = useState(0);
   const [fading, setFading] = useState(false);
   // Auto-rotation is paused while the user hovers/focuses the slide, or when the
@@ -133,10 +122,10 @@ const Hero: React.FC = () => {
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
           <button onClick={openCalendly} className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl">
-            <Calendar size={16} /> Book a 30-min Strategy Call
+            <Calendar size={16} /> {dict.hero.ctaBook}
           </button>
           <a href="#demos" className="btn-ghost inline-flex items-center gap-2 px-8 py-3.5 rounded-xl font-medium">
-            Explore Live Demos <ArrowRight size={16} />
+            {dict.hero.ctaDemos} <ArrowRight size={16} />
           </a>
         </div>
 
@@ -145,18 +134,18 @@ const Hero: React.FC = () => {
             <button
               key={i}
               onClick={() => goTo(i)}
-              aria-label={`Slide ${i + 1}`}
+              aria-label={dict.hero.slideAria.replace('{n}', String(i + 1))}
               className={`rounded-full transition-all duration-300 ${i === current ? 'w-6 h-2 bg-gradient-to-r from-indigo-400 to-cyan-400' : 'w-2 h-2 bg-white/20 hover:bg-white/40'}`}
             />
           ))}
         </div>
 
         <div className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2 pt-4 text-[11px] uppercase tracking-[0.15em] text-[#9aa3bd] font-medium" style={{ textShadow: '0 2px 16px rgba(6,8,20,0.9)' }}>
-          <span>Ex-xAI Human Data Lead</span>
+          <span>{dict.hero.statLead}</span>
           <span className="w-1 h-1 rounded-full bg-cyan-400/60" />
-          <span>10 shipped products</span>
+          <span>{dict.hero.statProducts}</span>
           <span className="w-1 h-1 rounded-full bg-cyan-400/60" />
-          <span>Cairo · Dubai</span>
+          <span>{dict.hero.statLocation}</span>
         </div>
       </div>
 

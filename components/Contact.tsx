@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useI18n } from '../i18n';
 
 // Instagram/Facebook are intentionally omitted until real, confirmed handles exist —
 // a dead "#" link next to working WhatsApp/Email/LinkedIn buttons erodes trust more
@@ -8,6 +9,7 @@ const FACEBOOK_URL = '';
 const LINKEDIN_URL = 'https://www.linkedin.com/company/mbai-solutions';
 
 const Contact: React.FC = () => {
+  const { dict } = useI18n();
   const calendlyRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
@@ -48,12 +50,12 @@ const Contact: React.FC = () => {
             <div
               className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             >
-              <p className="text-[#8b93a7] text-xs font-semibold uppercase tracking-[0.2em] mb-3">Get in Touch</p>
+              <p className="text-[#8b93a7] text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.contact.eyebrow}</p>
               <h2 className="text-3xl md:text-4xl font-bold text-white mb-4 leading-tight">
-                Let's talk about your project.
+                {dict.contact.heading}
               </h2>
               <p className="text-[#8b93a7] leading-relaxed mb-10">
-                Book a call directly using the calendar, or reach out through any of the channels below. We typically respond within a few hours.
+                {dict.contact.body}
               </p>
             </div>
 
@@ -73,7 +75,7 @@ const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#8b93a7] uppercase tracking-wide mb-0.5">WhatsApp</p>
+                  <p className="text-xs text-[#8b93a7] uppercase tracking-wide mb-0.5">{dict.contact.whatsapp}</p>
                   <p className="text-sm font-semibold text-white">+20 110 005 4278</p>
                 </div>
                 <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -91,7 +93,7 @@ const Contact: React.FC = () => {
                   </svg>
                 </div>
                 <div className="flex-1 min-w-0">
-                  <p className="text-xs text-[#8b93a7] uppercase tracking-wide mb-0.5">Email</p>
+                  <p className="text-xs text-[#8b93a7] uppercase tracking-wide mb-0.5">{dict.contact.email}</p>
                   <p className="text-sm font-semibold text-white">mohanad.barakat@mbai-group.com</p>
                 </div>
                 <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
@@ -158,8 +160,8 @@ const Contact: React.FC = () => {
             style={{ transitionDelay: '200ms' }}
           >
             <div className="px-6 pt-6 pb-2 border-b border-white/10">
-              <p className="text-sm font-semibold text-white">Book a 30-min Strategy Call</p>
-              <p className="text-xs text-[#8b93a7] mt-0.5">Pick a time that works for you — no commitment required.</p>
+              <p className="text-sm font-semibold text-white">{dict.contact.calendlyTitle}</p>
+              <p className="text-xs text-[#8b93a7] mt-0.5">{dict.contact.calendlySub}</p>
             </div>
             <div
               ref={calendlyRef}

@@ -2,67 +2,43 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles, Fingerprint } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
+import { useI18n } from '../i18n';
 
-interface Venture {
-  name: string;
-  tagline: string;
-  description: string;
-  interpretation: string;
-  status: 'Live' | 'Preview' | 'Coming soon';
-  href: string;
-  external?: boolean;
-  icon: React.ReactNode;
-  accent: string;
-}
-
-const ventures: Venture[] = [
+// Non-translatable metadata (brand names stay in Latin script in every
+// locale, per the site's own convention — see i18n/ar.ts and franco.ts).
+// Copy (tagline/description/interpretation) comes from dict.ventures.items.
+const VENTURE_META = [
   {
+    id: 'ibni' as const,
     name: 'IBNI',
-    tagline: 'The AI App Builder',
-    description:
-      'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and ships it — bringing software creation to founders who don\'t code.',
-    interpretation:
-      'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
     // Kept in sync with the /ibni page and the Demos section: IBNI is an active,
     // in-development concept preview today, not yet a publicly shipped product.
-    status: 'Preview',
+    status: 'Preview' as const,
     href: '/ibni',
     icon: <Hammer size={22} />,
     accent: '#10b981',
   },
   {
+    id: 'autoleadss' as const,
     name: 'AutoLeadss',
-    tagline: 'Agency + AI Funnel-Builder SaaS',
-    description:
-      'A hybrid AI + human system that sources, qualifies, and books appointments for MENA enterprises — plus a self-serve SaaS that lets any business spin up its own AI-powered lead funnel in minutes.',
-    interpretation:
-      'Proof that frontier-grade AI can drive revenue today — real leads for real clients, and the same engine packaged for anyone to run themselves.',
-    status: 'Live',
+    status: 'Live' as const,
     href: 'https://autoleadss.com',
     external: true,
     icon: <Sparkles size={22} />,
     accent: '#6366f1',
   },
   {
+    id: 'virlo' as const,
     name: 'Virlo Studio',
-    tagline: 'Egyptian-First AI Video & Image Studio',
-    description:
-      'A generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, characters, and b-roll, so brands and creators get on-brand video and image content without a production crew.',
-    interpretation:
-      'Applies frontier generative media, tuned for Egyptian culture and dialect, to the creators the global tools were never built for.',
-    status: 'Coming soon',
+    status: 'Coming soon' as const,
     href: '/virlo',
     icon: <Flame size={22} />,
     accent: '#f97316',
   },
   {
+    id: 'tut' as const,
     name: 'TUT',
-    tagline: 'Egyptian AI Companion',
-    description:
-      'Named after Egypt\'s boy king, TUT is a personal AI companion for MENA users — conversing naturally in Egyptian Franco-Arabic, remembering context, and adapting to each person\'s life and pace.',
-    interpretation:
-      'A companion that actually speaks like Egypt does — alignment-grade AI, tuned for the region\'s dialect and culture, not translated from someone else\'s.',
-    status: 'Coming soon',
+    status: 'Coming soon' as const,
     href: '/tut',
     icon: <GraduationCap size={22} />,
     accent: '#eab308',
@@ -70,6 +46,13 @@ const ventures: Venture[] = [
 ];
 
 const Ventures: React.FC = () => {
+  const { dict } = useI18n();
+  const ventures = VENTURE_META.map((meta) => ({ ...meta, ...dict.ventures.items[meta.id] }));
+  const statusLabel: Record<string, string> = {
+    Live: dict.ventures.statusLive,
+    Preview: dict.ventures.statusPreview,
+    'Coming soon': dict.ventures.statusComingSoon,
+  };
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -97,14 +80,11 @@ const Ventures: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">The MB AI Group Portfolio</p>
+          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.ventures.eyebrow}</p>
           <h2 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-            One group.<br className="sm:hidden" /> Four ventures. <span className="text-gradient">One mission.</span>
+            {dict.ventures.heading1}<br className="sm:hidden" /> {dict.ventures.heading2} <span className="text-gradient">{dict.ventures.heading3}</span>
           </h2>
-          <p className="text-[#8b93a7] max-w-2xl">
-            Every company in the group attacks the same problem from a different angle: bringing frontier-grade AI to the
-            markets the frontier forgot. No-code app building, AI-driven lead generation, generative media, and companionship.
-          </p>
+          <p className="text-[#8b93a7] max-w-2xl">{dict.ventures.intro}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ perspective: '1200px' }}>
@@ -136,7 +116,7 @@ const Ventures: React.FC = () => {
                         : { color: '#93a4c8', background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.12)' }}
                     >
                       <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: v.status === 'Live' ? '#34d399' : v.accent }} />
-                      {v.status}
+                      {statusLabel[v.status]}
                     </span>
                   </div>
 
@@ -144,12 +124,12 @@ const Ventures: React.FC = () => {
 
                   <div className="mt-auto">
                     <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 mb-6">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>Why it matters</p>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>{dict.ventures.whyItMatters}</p>
                       <p className="text-[#cdd4e2] text-sm leading-relaxed">{v.interpretation}</p>
                     </div>
                     <div className="w-full py-2.5 rounded-lg border font-medium flex items-center justify-center gap-2 text-sm transition-all"
                       style={{ borderColor: `${v.accent}44`, color: v.accent, background: `${v.accent}0f` }}>
-                      {v.status === 'Live' ? 'Visit the live product' : 'Preview the vision'} <ArrowUpRight size={15} />
+                      {v.status === 'Live' ? dict.ventures.ctaLive : dict.ventures.ctaPreview} <ArrowUpRight size={15} />
                     </div>
                   </div>
                 </div>
@@ -184,12 +164,8 @@ const Ventures: React.FC = () => {
               <Fingerprint size={26} />
             </div>
             <div>
-              <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-2">One account. One AI. All products.</p>
-              <p className="text-[#cdd4e2] text-base md:text-lg leading-relaxed max-w-3xl">
-                Every product in the MB AI Group runs on the same foundation: one login across the whole ecosystem, one shared
-                data platform, and the MBAI AI gateway — fine-tuned for Egyptian Franco-Arabic — powering every model call. Each
-                venture still lives on its own domain, built for its own audience, but none of them start from zero.
-              </p>
+              <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-2">{dict.ventures.ecosystemEyebrow}</p>
+              <p className="text-[#cdd4e2] text-base md:text-lg leading-relaxed max-w-3xl">{dict.ventures.ecosystemBody}</p>
             </div>
           </div>
         </div>
