@@ -1,0 +1,6 @@
+# mbai-group.com
+User-agent: *
+Allow: /
+Disallow: /admin
+
+Sitemap: https://mbai-group.com/sitemap.xml

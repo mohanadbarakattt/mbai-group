@@ -5,12 +5,19 @@ import Experience from './Experience';
 import TechStack from './TechStack';
 import Footer from './Footer';
 import ResumeFAB from './ResumeFAB';
+import Seo from './Seo';
 
 const AboutPage: React.FC = () => {
   const [avatarSrc, setAvatarSrc] = useState('/avatar.png');
 
   return (
     <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
+      <Seo
+        title="Meet the Founder & CEO — MB AI Group"
+        description="Mohanad Barakat, founder of MB AI Group — former xAI Human Data Lead, now building frontier AI products for the MENA region."
+        path="/about"
+        type="profile"
+      />
       <Navigation />
       <main>
         {/* Profile Header */}

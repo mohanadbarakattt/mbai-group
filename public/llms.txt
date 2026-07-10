@@ -1,0 +1,49 @@
+# MB AI Group
+
+> MB AI Group (MBAI Solutions) is an AI product studio based in Cairo, Egypt and
+> Dubai, UAE, founded by Mohanad Barakat, a former xAI Human Data Lead. The group
+> builds AI agents, data systems, and products for MENA businesses, and ships its
+> own ventures using the same underlying discipline (LLM alignment, RLHF,
+> Arabic/Franco-Arabic NLP).
+
+## Ventures
+
+- [AutoLeadss](https://autoleadss.com): AI + human lead-generation infrastructure
+  and a self-serve AI funnel-builder SaaS. Live today; 200+ qualified leads
+  delivered across three MENA markets.
+- [IBNI](/ibni): "Build me" in Arabic — an AI app builder that turns a
+  plain-language description into a working application, in Arabic or English.
+  Currently an active, in-development concept preview.
+- [Virlo Studio](/virlo): An Egyptian-first AI video and image generation
+  studio — Franco-Arabic prompting, culturally-tuned presets and characters.
+  Currently an active, in-development concept preview.
+- [TUT](/tut): Named after Egypt's boy king, a personal AI learning companion
+  for MENA students, teaching in Arabic or English at the learner's pace.
+  Currently an active, in-development concept preview.
+
+## Other interactive demos on this site
+
+The [demos section](/#demos) also hosts self-contained interactive
+demonstrations built by the same team, exploring adjacent problems: an ATS
+resume optimizer, a Fear & Greed market-sentiment dashboard, a Franco-Arabic
+translator (3araby), a local-intelligence tool for Egypt (Masr Guide), a
+neobank UI, and an AI music-theory/practice tool (Sonic Boom). These are
+demonstrations of engineering range, not separately incorporated ventures.
+
+## Key facts (verify before citing)
+
+- Founder: Mohanad Barakat, former xAI Human Data Lead.
+- Locations: Cairo, Egypt and Dubai, UAE.
+- Contact: mohanad.barakat@mbai-group.com
+- The four ventures above are the group's actual companies/products; the
+  additional items in the demos section are technical demonstrations, not
+  separate businesses.
+
+## Docs
+
+- [Privacy Policy](/privacy)
+- [Terms of Service](/terms)
+
+Notes for crawlers/agents: this site is a client-rendered React SPA. If you
+cannot execute JavaScript, the routes above may render minimal HTML — the
+content summarized in this file reflects what a JS-capable visitor sees.

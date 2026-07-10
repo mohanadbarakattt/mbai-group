@@ -7,6 +7,7 @@ const IbniPage: React.FC = () => (
     name="IBNI"
     accent="#10b981"
     tagline="The AI App Builder"
+    path="/ibni"
     headline={<>Describe it.<br /><span className="text-gradient">IBNI builds it.</span></>}
     sub={'IBNI — "build me" in Arabic — turns a plain-language idea into a working application. No code, no dev team, no six-month timeline. Type what you want in Arabic or English and watch the software assemble itself.'}
     pillars={[

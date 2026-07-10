@@ -7,6 +7,7 @@ const TutPage: React.FC = () => (
     name="TUT"
     accent="#eab308"
     tagline="AI Learning Companion"
+    path="/tut"
     headline={<>Every student deserves<br /><span className="text-gradient">a brilliant tutor.</span></>}
     sub="Named after Egypt's boy king, TUT is a personal AI tutor for MENA's 100M+ students — explaining any concept in Arabic or English, adapting to each learner's pace, and turning static curricula into living conversations."
     pillars={[
