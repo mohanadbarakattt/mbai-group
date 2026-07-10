@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles, Fingerprint } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
 
 interface Venture {
@@ -8,7 +8,7 @@ interface Venture {
   tagline: string;
   description: string;
   interpretation: string;
-  status: 'Live' | 'In Development';
+  status: 'Live' | 'Coming soon';
   href: string;
   external?: boolean;
   icon: React.ReactNode;
@@ -17,12 +17,25 @@ interface Venture {
 
 const ventures: Venture[] = [
   {
-    name: 'AutoLeads',
-    tagline: 'AI Lead Generation Infrastructure',
+    name: 'IBNI',
+    tagline: 'The AI App Builder',
     description:
-      'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate brokerages and MENA enterprises. Custom agents hunt leads around the clock; bilingual specialists close the loop.',
+      'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and ships it — bringing software creation to founders who don\'t code.',
     interpretation:
-      'Proof that frontier-grade AI can drive revenue today — 200+ qualified leads delivered to real clients across three markets.',
+      'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
+    status: 'Live',
+    href: 'https://ibni.app',
+    external: true,
+    icon: <Hammer size={22} />,
+    accent: '#10b981',
+  },
+  {
+    name: 'AutoLeadss',
+    tagline: 'Agency + AI Funnel-Builder SaaS',
+    description:
+      'A hybrid AI + human system that sources, qualifies, and books appointments for MENA enterprises — plus a self-serve SaaS that lets any business spin up its own AI-powered lead funnel in minutes.',
+    interpretation:
+      'Proof that frontier-grade AI can drive revenue today — real leads for real clients, and the same engine packaged for anyone to run themselves.',
     status: 'Live',
     href: 'https://autoleadss.com',
     external: true,
@@ -30,37 +43,25 @@ const ventures: Venture[] = [
     accent: '#6366f1',
   },
   {
-    name: 'Virlo',
-    tagline: 'Virality Intelligence Engine',
+    name: 'Virlo Studio',
+    tagline: 'Egyptian-First AI Video & Image Studio',
     description:
-      'A trend-intelligence platform that decodes why content goes viral. Virlo scans short-form platforms in real time, scores emerging trends before they peak, and tells creators and brands exactly what to post next.',
+      'A generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, characters, and b-roll, so brands and creators get on-brand video and image content without a production crew.',
     interpretation:
-      'Applies the same signal-extraction discipline used in frontier-model data pipelines to the chaos of social media.',
-    status: 'In Development',
+      'Applies frontier generative media, tuned for Egyptian culture and dialect, to the creators the global tools were never built for.',
+    status: 'Coming soon',
     href: '/virlo',
     icon: <Flame size={22} />,
     accent: '#f97316',
   },
   {
-    name: 'IBNI',
-    tagline: 'The AI App Builder',
-    description:
-      'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and previews it — bringing software creation to founders who don\'t code.',
-    interpretation:
-      'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
-    status: 'In Development',
-    href: '/ibni',
-    icon: <Hammer size={22} />,
-    accent: '#10b981',
-  },
-  {
     name: 'TUT',
-    tagline: 'AI Learning Companion',
+    tagline: 'Egyptian AI Companion',
     description:
-      'Named after Egypt\'s boy king, TUT is a personal AI tutor built for MENA students — explaining any concept in Arabic or English, adapting to each learner\'s pace, and turning curricula into conversations.',
+      'Named after Egypt\'s boy king, TUT is a personal AI companion for MENA users — conversing naturally in Egyptian Franco-Arabic, remembering context, and adapting to each person\'s life and pace.',
     interpretation:
-      'Education is MENA\'s biggest lever. TUT applies alignment-grade AI safety and pedagogy to the region\'s 100M+ students.',
-    status: 'In Development',
+      'A companion that actually speaks like Egypt does — alignment-grade AI, tuned for the region\'s dialect and culture, not translated from someone else\'s.',
+    status: 'Coming soon',
     href: '/tut',
     icon: <GraduationCap size={22} />,
     accent: '#eab308',
@@ -101,7 +102,7 @@ const Ventures: React.FC = () => {
           </h2>
           <p className="text-[#8b93a7] max-w-2xl">
             Every company in the group attacks the same problem from a different angle: bringing frontier-grade AI to the
-            markets the frontier forgot. Lead generation, virality intelligence, no-code creation, and education.
+            markets the frontier forgot. No-code app building, AI-driven lead generation, generative media, and companionship.
           </p>
         </div>
 
@@ -168,6 +169,28 @@ const Ventures: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        <div
+          className={`mt-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          style={{ transitionDelay: '480ms' }}
+        >
+          <div className="glass-strong glow-border rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+            <div
+              className="p-3 rounded-xl shrink-0"
+              style={{ color: '#22d3ee', background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.3)' }}
+            >
+              <Fingerprint size={26} />
+            </div>
+            <div>
+              <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-2">One account. One AI. All products.</p>
+              <p className="text-[#cdd4e2] text-base md:text-lg leading-relaxed max-w-3xl">
+                Every product in the MB AI Group runs on the same foundation: one login across the whole ecosystem, one shared
+                data platform, and the MBAI AI gateway — fine-tuned for Egyptian Franco-Arabic — powering every model call. Each
+                venture still lives on its own domain, built for its own audience, but none of them start from zero.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </section>
