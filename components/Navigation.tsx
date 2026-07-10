@@ -15,7 +15,7 @@ const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
       role="group"
       aria-label={dict.nav.languageLabel}
     >
-      <Globe size={13} className="text-[#8b93a7] ml-1.5 mr-0.5 shrink-0" aria-hidden />
+      <Globe size={13} className="hidden lg:block text-[#8b93a7] ml-1.5 mr-0.5 shrink-0" aria-hidden />
       {LOCALES.map((l) => (
         <button
           key={l}
@@ -24,7 +24,7 @@ const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
           aria-pressed={locale === l}
           aria-label={LOCALE_NAMES[l]}
           title={LOCALE_NAMES[l]}
-          className={`px-2.5 py-1 rounded-full text-[11px] font-semibold uppercase tracking-wide transition-colors ${
+          className={`px-1.5 lg:px-2.5 py-1 rounded-full text-[10px] lg:text-[11px] font-semibold uppercase tracking-wide transition-colors ${
             locale === l ? 'bg-white text-[#0b1022]' : 'text-[#8b93a7] hover:text-white'
           }`}
         >
@@ -116,7 +116,7 @@ const Navigation: React.FC = () => {
   const linkClass = (sectionId?: string) => {
     const isActive = sectionId && activeSection === sectionId;
     return [
-      'text-sm font-medium transition-colors uppercase tracking-wide',
+      'text-xs lg:text-sm font-medium transition-colors uppercase tracking-wide lg:tracking-wide',
       isActive
         ? 'text-white border-b-2 border-cyan-400 pb-0.5'
         : 'text-[#8b93a7] hover:text-white',
@@ -133,7 +133,7 @@ const Navigation: React.FC = () => {
 
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0b1022]/85 backdrop-blur-xl border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
-      <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
+      <div className="max-w-7xl mx-auto px-4 lg:px-6 flex justify-between items-center gap-2">
 
         {/* Logo */}
         <a href="/" onClick={(e) => {
@@ -145,21 +145,24 @@ const Navigation: React.FC = () => {
           } else {
             navigate('/');
           }
-        }} className="flex items-center group transform transition-transform hover:scale-105 duration-300">
-          <Logo size={52} withWordmark dark />
+        }} className="flex items-center shrink-0 group transform transition-transform hover:scale-105 duration-300">
+          {/* Icon-only chip from md up to lg (nav gets tight around 768px);
+              full wordmark once there's room, at lg+. */}
+          <span className="lg:hidden"><Logo size={44} dark /></span>
+          <span className="hidden lg:inline-flex"><Logo size={52} withWordmark dark /></span>
         </a>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-6">
+        <div className="hidden md:flex items-center gap-2 lg:gap-6 min-w-0">
           {navLinks.map((link) =>
             'isExternal' in link && link.isExternal ? (
               <Link key={link.id} href={link.href}
-                className={linkClass(undefined)}>
+                className={`whitespace-nowrap ${linkClass(undefined)}`}>
                 {link.name}
               </Link>
             ) : (
               <a key={link.id} href={link.href}
-                className={linkClass(link.sectionId)}
+                className={`whitespace-nowrap ${linkClass(link.sectionId)}`}
                 onClick={(e) => handleAnchorClick(e, link.href)}>
                 {link.name}
               </a>
@@ -168,7 +171,8 @@ const Navigation: React.FC = () => {
           <LanguageSwitcher />
           <button
             onClick={() => { if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-            className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg"
+            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-lg truncate max-w-[130px] lg:max-w-none"
+            title={dict.nav.bookCall}
           >
             {dict.nav.bookCall}
           </button>
