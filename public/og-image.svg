@@ -4,11 +4,6 @@
       <stop offset="0%" stop-color="#0b1022"/>
       <stop offset="100%" stop-color="#0e1533"/>
     </linearGradient>
-    <linearGradient id="mark-ring" x1="30" y1="253" x2="150" y2="373" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#f4cd7c"/>
-      <stop offset="45%" stop-color="#e3a83f"/>
-      <stop offset="100%" stop-color="#22d3ee"/>
-    </linearGradient>
     <linearGradient id="title-grad" x1="80" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
       <stop offset="0%" stop-color="#f4cd7c"/>
       <stop offset="38%" stop-color="#e3a83f"/>
@@ -35,12 +30,13 @@
     <path d="M200 0 V630 M500 0 V630 M800 0 V630 M1100 0 V630"/>
   </g>
 
-  <!-- unified brand mark (chip geometry) -->
-  <rect x="80" y="253" width="124" height="124" rx="33.8" fill="#0b1022" stroke="url(#mark-ring)" stroke-width="4"/>
-  <polygon points="103,331 122,331 113,304" fill="#e3a83f"/>
-  <polygon points="126,331 148,331 137,285" fill="#e3a83f"/>
-  <polygon points="151,331 173,331 162,278" fill="#e3a83f"/>
-  <circle cx="162" cy="271" r="6.5" fill="#22d3ee"/>
+  <!-- unified brand mark: "MB" monogram, one ink color, no ring/container
+       (same path data as components/Logo.tsx, scaled 1.24x into this box) -->
+  <g transform="translate(80 253) scale(1.24)">
+    <path d="M63.5,18 A15,15 0 0 1 63.5,48" fill="none" stroke="#F5F3EF" stroke-width="11"/>
+    <path d="M63.5,50 A16,16 0 0 1 63.5,82" fill="none" stroke="#F5F3EF" stroke-width="11"/>
+    <path d="M20,82 L20,18 L39,47 L58,18 L58,82" fill="none" stroke="#F5F3EF" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
+  </g>
 
   <text x="240" y="300" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="54" fill="#ffffff">MB AI GROUP</text>
   <text x="240" y="336" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="20" letter-spacing="4" fill="rgba(255,255,255,0.55)">FRONTIER AI · MENA</text>

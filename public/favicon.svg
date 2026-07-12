@@ -1,13 +1,15 @@
-<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- MB AI Group — bold solid favicon mark. Small favicon sizes (tab icons)
-       render at 16-32px, where a thin decorative ring anti-aliases into mush;
-       so this variant drops the ring and leans on solid fill + bold shapes,
-       while keeping the same rx=6/22 chip geometry and ascending-peaks +
-       signal-dot mark as the in-app Logo and the detailed brand mark used at
-       larger sizes (apple touch icon, 512 icon). -->
-  <rect width="32" height="32" rx="8.7" fill="#0b1022"/>
-  <polygon points="5.5,24.5 12,24.5 8.7,17.5" fill="#e3a83f"/>
-  <polygon points="12.5,24.5 19.5,24.5 16,13.6" fill="#e3a83f"/>
-  <polygon points="20,24.5 26.5,24.5 23.3,8.8" fill="#e3a83f"/>
-  <circle cx="23.3" cy="6.4" r="1.7" fill="#22d3ee"/>
+<svg width="32" height="32" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+  <!-- MB AI Group — favicon mark. Same "MB" monogram as components/Logo.tsx
+       (M's right leg doubles as the B's stem), one ink color, no ring, no
+       container. Ink adapts to the browser's color scheme via CSS so the
+       transparent mark stays legible on both light and dark tab chrome. -->
+  <style>
+    path { stroke: #0e0e0d; }
+    @media (prefers-color-scheme: dark) {
+      path { stroke: #F5F3EF; }
+    }
+  </style>
+  <path d="M63.5,18 A15,15 0 0 1 63.5,48" fill="none" stroke-width="11"/>
+  <path d="M63.5,50 A16,16 0 0 1 63.5,82" fill="none" stroke-width="11"/>
+  <path d="M20,82 L20,18 L39,47 L58,18 L58,82" fill="none" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
 </svg>
