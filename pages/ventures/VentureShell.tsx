@@ -15,10 +15,17 @@ interface Props {
   pillars: { title: string; text: string }[];
   /** Route path, e.g. "/virlo" — used for canonical/OG tags and JSON-LD. */
   path: string;
+  /**
+   * Real-world status label — must stay in sync with the same venture's
+   * entry in components/Ventures.tsx (VENTURE_META) and components/Demos.tsx
+   * (ENTRIES) so the badge here never contradicts what the rest of the site
+   * says about the product.
+   */
+  status: 'Preview' | 'Coming soon';
 }
 
 /** Shared dark layout for venture preview pages (Virlo / IBNI / TUT). */
-const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, children, pillars, path }) => {
+const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, children, pillars, path, status }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
   const productJsonLd = {
@@ -57,7 +64,7 @@ const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, c
 
           <div className="mb-4 inline-flex items-center gap-2 px-4 py-1.5 rounded-full glass text-xs font-semibold uppercase tracking-[0.15em]" style={{ color: accent }}>
             <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: accent }} />
-            {name} · {tagline} · In Development
+            {name} · {tagline} · {status}
           </div>
 
           <h1 className="text-4xl md:text-6xl font-black leading-[1.05] mb-6 max-w-3xl">{headline}</h1>

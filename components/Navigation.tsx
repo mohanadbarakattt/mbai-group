@@ -44,12 +44,12 @@ const Navigation: React.FC = () => {
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50);
-    window.addEventListener('scroll', handleScroll);
+    window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
-    const sectionIds = ['ventures', 'how-we-work', 'demos', 'contact'];
+    const sectionIds = ['ventures', 'demos', 'how-we-work', 'contact'];
     const observers: IntersectionObserver[] = [];
 
     const sectionVisibility: Record<string, number> = {};
@@ -105,10 +105,14 @@ const Navigation: React.FC = () => {
     }
   };
 
+  // Ordered to match the actual scroll flow of the homepage (Ventures then
+  // Demos then How We Work then Contact — see App.tsx's Home section order),
+  // so clicking left-to-right feels like moving down the page. "Our Story"
+  // is a separate route rather than an in-page anchor, so it sits last.
   const navLinks = [
     { id: 'ventures', name: dict.nav.ventures, href: '/#ventures', sectionId: 'ventures' },
-    { id: 'process', name: dict.nav.process, href: '/#how-we-work', sectionId: 'how-we-work' },
     { id: 'demos', name: dict.nav.demos, href: '/#demos', sectionId: 'demos' },
+    { id: 'process', name: dict.nav.process, href: '/#how-we-work', sectionId: 'how-we-work' },
     { id: 'contact', name: dict.nav.contact, href: '/#contact', sectionId: 'contact' },
     { id: 'our-story', name: dict.nav.ourStory, href: '/about', isExternal: true },
   ];

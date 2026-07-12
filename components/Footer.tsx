@@ -5,11 +5,15 @@ import { useI18n } from '../i18n';
 
 const Footer: React.FC = () => {
   const { dict } = useI18n();
+  // Mirrors the main nav's order (see components/Navigation.tsx) — matches
+  // the homepage's actual scroll flow, plus "How We Work" which the footer
+  // was previously missing entirely.
   const exploreLinks = [
     { id: 'ventures', label: dict.footer.venturesLink, href: '/#ventures' },
     { id: 'demos', label: dict.footer.demosLink, href: '/#demos' },
-    { id: 'our-story', label: dict.footer.ourStory, href: '/about' },
+    { id: 'how-we-work', label: dict.nav.process, href: '/#how-we-work' },
     { id: 'contact', label: dict.footer.contactLink, href: '/#contact' },
+    { id: 'our-story', label: dict.footer.ourStory, href: '/about' },
   ];
   const legalLinks = [
     { id: 'privacy', label: dict.footer.privacy, href: '/privacy' },
