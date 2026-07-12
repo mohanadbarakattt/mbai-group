@@ -21,10 +21,17 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
     type P = { x: number; y: number; vx: number; vy: number; r: number };
     let particles: P[] = [];
 
+    // Mobile browsers fire `resize` mid-scroll as the address bar collapses —
+    // height changes, width doesn't. Re-seeding particles from scratch on
+    // every such event is what causes the visible "jump" while scrolling, so
+    // we rescale existing positions instead of discarding them, and only
+    // reseed on a real (width) change or first mount.
     const resize = () => {
       const parent = canvas.parentElement;
       if (!parent) return;
       const dpr = Math.min(window.devicePixelRatio || 1, 2);
+      const prevW = w;
+      const prevH = h;
       w = parent.clientWidth;
       h = parent.clientHeight;
       canvas.width = w * dpr;
@@ -33,6 +40,28 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
       canvas.style.height = `${h}px`;
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
       const count = Math.min(density, Math.floor((w * h) / 16000));
+
+      const widthChanged = prevW > 0 && Math.abs(w - prevW) > 1;
+      if (particles.length > 0 && !widthChanged) {
+        // Same effective width (e.g. mobile toolbar show/hide) — keep every
+        // particle's position/velocity, just clamp into the new bounds.
+        particles.forEach((p) => {
+          p.x = Math.min(p.x, w);
+          p.y = Math.min(p.y, h);
+        });
+        while (particles.length < count) {
+          particles.push({
+            x: Math.random() * w,
+            y: Math.random() * h,
+            vx: (Math.random() - 0.5) * 0.35,
+            vy: (Math.random() - 0.5) * 0.35,
+            r: Math.random() * 1.6 + 0.8,
+          });
+        }
+        if (particles.length > count) particles.length = count;
+        return;
+      }
+
       particles = Array.from({ length: count }, () => ({
         x: Math.random() * w,
         y: Math.random() * h,
@@ -41,6 +70,34 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
         r: Math.random() * 1.6 + 0.8,
       }));
     };
+
+    // rAF-throttled resize so rapid-fire resize events (pinch-zoom, dragging
+    // a window edge) don't run the layout math more than once per frame.
+    let resizeScheduled = false;
+    const scheduleResize = () => {
+      if (resizeScheduled) return;
+      resizeScheduled = true;
+      requestAnimationFrame(() => {
+        resizeScheduled = false;
+        resize();
+      });
+    };
+
+    // Pause the heavy per-frame work (O(n^2) link search + redraw) while the
+    // page is actively scrolling, and while this canvas is off-screen — both
+    // just freeze the last drawn frame and keep the rAF loop cheap, resuming
+    // full-quality drawing once scroll goes idle / the section re-enters view.
+    let isScrolling = false;
+    let scrollIdleTimer = 0;
+    const onScroll = () => {
+      isScrolling = true;
+      window.clearTimeout(scrollIdleTimer);
+      scrollIdleTimer = window.setTimeout(() => { isScrolling = false; }, 150);
+    };
+
+    let isVisible = true;
+    const io = new IntersectionObserver(([entry]) => { isVisible = entry.isIntersecting; }, { threshold: 0 });
+    if (canvas.parentElement) io.observe(canvas.parentElement);
 
     const onMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
@@ -54,6 +111,14 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
     };
 
     const step = () => {
+      // Freeze the last drawn frame while scrolling or off-screen — this is
+      // the O(n^2) link-distance pass plus redraw, which is exactly the work
+      // that competes with the browser's scroll compositing and causes stutter.
+      if (isScrolling || !isVisible) {
+        raf = requestAnimationFrame(step);
+        return;
+      }
+
       ctx.clearRect(0, 0, w, h);
       const linkDist = 130;
 
@@ -109,12 +174,16 @@ const NeuralBackground: React.FC<{ density?: number }> = ({ density = 70 }) => {
 
     resize();
     step();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', scheduleResize);
     window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener('resize', resize);
+      window.clearTimeout(scrollIdleTimer);
+      io.disconnect();
+      window.removeEventListener('resize', scheduleResize);
       window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('scroll', onScroll);
     };
   }, [density]);
 

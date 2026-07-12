@@ -12,26 +12,36 @@ const TiltCard: React.FC<{ children: React.ReactNode; className?: string; max?: 
   const ref = useRef<HTMLDivElement>(null);
   const [style, setStyle] = useState<React.CSSProperties>({});
   const [sheen, setSheen] = useState<React.CSSProperties>({ opacity: 0 });
+  const rafRef = useRef(0);
 
+  // rAF-throttled: native mousemove can fire far faster than the display
+  // refreshes, so without this every pixel of movement forces a React
+  // re-render and a new transform, more work than the compositor needs.
   const onMove = (e: React.MouseEvent) => {
     const el = ref.current;
     if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const px = (e.clientX - rect.left) / rect.width;
-    const py = (e.clientY - rect.top) / rect.height;
-    const rx = (0.5 - py) * max;
-    const ry = (px - 0.5) * max;
-    setStyle({
-      transform: `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`,
-      transition: 'transform 0.08s ease-out',
-    });
-    setSheen({
-      opacity: 1,
-      background: `radial-gradient(420px circle at ${px * 100}% ${py * 100}%, rgba(99,102,241,0.10), transparent 55%)`,
+    const clientX = e.clientX;
+    const clientY = e.clientY;
+    cancelAnimationFrame(rafRef.current);
+    rafRef.current = requestAnimationFrame(() => {
+      const rect = el.getBoundingClientRect();
+      const px = (clientX - rect.left) / rect.width;
+      const py = (clientY - rect.top) / rect.height;
+      const rx = (0.5 - py) * max;
+      const ry = (px - 0.5) * max;
+      setStyle({
+        transform: `perspective(900px) rotateX(${rx}deg) rotateY(${ry}deg) translateZ(6px)`,
+        transition: 'transform 0.08s ease-out',
+      });
+      setSheen({
+        opacity: 1,
+        background: `radial-gradient(420px circle at ${px * 100}% ${py * 100}%, rgba(99,102,241,0.10), transparent 55%)`,
+      });
     });
   };
 
   const onLeave = () => {
+    cancelAnimationFrame(rafRef.current);
     setStyle({ transform: 'perspective(900px) rotateX(0deg) rotateY(0deg)', transition: 'transform 0.45s ease' });
     setSheen({ opacity: 0, transition: 'opacity 0.45s ease' });
   };

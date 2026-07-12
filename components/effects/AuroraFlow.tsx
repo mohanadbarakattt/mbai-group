@@ -56,6 +56,28 @@ const AuroraFlow: React.FC<{ className?: string }> = ({ className = '' }) => {
       scale = Math.min(W, H) * 0.62;
     };
 
+    // rAF-throttled so rapid native 'resize' events (mobile address-bar
+    // show/hide during scroll, pinch-zoom) only recompute layout once per frame.
+    let resizeScheduled = false;
+    const scheduleResize = () => {
+      if (resizeScheduled) return;
+      resizeScheduled = true;
+      requestAnimationFrame(() => { resizeScheduled = false; resize(); });
+    };
+
+    // Freeze the (expensive, ~1500-sprite) redraw while actively scrolling or
+    // off-screen, so it never competes with the browser's scroll compositing.
+    let isScrolling = false;
+    let scrollIdleTimer = 0;
+    const onScroll = () => {
+      isScrolling = true;
+      window.clearTimeout(scrollIdleTimer);
+      scrollIdleTimer = window.setTimeout(() => { isScrolling = false; }, 150);
+    };
+    let isVisible = true;
+    const io = new IntersectionObserver(([entry]) => { isVisible = entry.isIntersecting; }, { threshold: 0 });
+    if (canvas.parentElement) io.observe(canvas.parentElement);
+
     const onMove = (e: MouseEvent) => {
       const rect = canvas.getBoundingClientRect();
       pointer.tx = ((e.clientX - rect.left) / rect.width - 0.5);
@@ -64,6 +86,10 @@ const AuroraFlow: React.FC<{ className?: string }> = ({ className = '' }) => {
 
     let t = 0;
     const step = () => {
+      if (isScrolling || !isVisible) {
+        raf = requestAnimationFrame(step);
+        return;
+      }
       t += 0.006;
       pointer.x += (pointer.tx - pointer.x) * 0.04;
       pointer.y += (pointer.ty - pointer.y) * 0.04;
@@ -121,12 +147,16 @@ const AuroraFlow: React.FC<{ className?: string }> = ({ className = '' }) => {
 
     resize();
     step();
-    window.addEventListener('resize', resize);
+    window.addEventListener('resize', scheduleResize);
     window.addEventListener('mousemove', onMove, { passive: true });
+    window.addEventListener('scroll', onScroll, { passive: true });
     return () => {
       cancelAnimationFrame(raf);
-      window.removeEventListener('resize', resize);
+      window.clearTimeout(scrollIdleTimer);
+      io.disconnect();
+      window.removeEventListener('resize', scheduleResize);
       window.removeEventListener('mousemove', onMove);
+      window.removeEventListener('scroll', onScroll);
     };
   }, []);
 
