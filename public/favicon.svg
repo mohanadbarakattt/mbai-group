@@ -1,14 +1,9 @@
-<svg width="96" height="96" viewBox="0 0 96 96" fill="none" xmlns="http://www.w3.org/2000/svg">
-  <!-- Unified MB AI Group mark — solid rounded-square "chip", matching the
-       MbaiBadge geometry (rx ratio 6/22) used across sibling ecosystem
-       products, instead of the old circle-in-square hybrid. -->
-  <defs>
-    <linearGradient id="g" x1="10" y1="10" x2="86" y2="86" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#818cf8"/>
-      <stop offset="45%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#c084fc"/>
-    </linearGradient>
-  </defs>
-  <rect x="1.25" y="1.25" width="93.5" height="93.5" rx="26.2" fill="#0b1022" stroke="url(#g)" stroke-width="2.5"/>
-  <text x="48" y="61" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="40" letter-spacing="-2" fill="#ffffff">MB</text>
+<svg width="32" height="32" viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- MB AI Group — bold solid favicon mark. Small favicon sizes (tab icons)
+       render at 16-32px, where a thin decorative ring anti-aliases into mush;
+       so this variant drops the ring and leans on solid fill + bold type,
+       while keeping the same rx=6/22 chip geometry as the in-app Logo and the
+       detailed ring mark used at larger sizes (apple touch icon, 512 icon). -->
+  <rect width="32" height="32" rx="8.7" fill="#0b1022"/>
+  <text x="16" y="22.25" text-anchor="middle" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="14.5" letter-spacing="-0.73" fill="#ffffff">MB</text>
 </svg>
