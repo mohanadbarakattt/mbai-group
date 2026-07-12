@@ -113,6 +113,15 @@ const franco: Dict = {
     location: 'El 2ahera, Masr w Dubai, El Emarat',
   },
 
+  cookieConsent: {
+    body: 'Benesta5dem cookies asasya 3ashan el site ye4-8al, w cookies tanya ekhtiarya lel tahlilat. Te2dar tewafe2 aw terfod aw wa2t.',
+    analyticsLabel: 'Tahlilat (ekhtiary) — tesa3edna nefham este5dam el site',
+    acceptAll: 'Mwafa2a 3ala el kol',
+    rejectAll: 'Rafd 8eir el asasy',
+    manage: 'Edara',
+    saveChoices: 'Hefz el ekhtiar',
+  },
+
   contact: {
     eyebrow: 'Kalemna',
     heading: 'Yalla netkallem 3an el mashroo3 beta3ak.',

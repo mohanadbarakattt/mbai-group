@@ -85,6 +85,14 @@ export interface Dict {
     copyright: string;
     location: string;
   };
+  cookieConsent: {
+    body: string;
+    analyticsLabel: string;
+    acceptAll: string;
+    rejectAll: string;
+    manage: string;
+    saveChoices: string;
+  };
   contact: {
     eyebrow: string;
     heading: string;

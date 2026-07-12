@@ -115,6 +115,15 @@ const en: Dict = {
     location: 'Cairo, Egypt & Dubai, UAE',
   },
 
+  cookieConsent: {
+    body: 'We use essential cookies to run this site, and optional cookies for analytics. You can accept or reject anytime.',
+    analyticsLabel: 'Analytics (optional) — helps us understand site usage',
+    acceptAll: 'Accept all',
+    rejectAll: 'Reject non-essential',
+    manage: 'Manage',
+    saveChoices: 'Save choices',
+  },
+
   contact: {
     eyebrow: 'Get in Touch',
     heading: "Let's talk about your project.",

@@ -20,6 +20,7 @@ import AboutPage from './components/AboutPage';
 import NotFound from './components/NotFound';
 import Seo from './components/Seo';
 import FAQSection from './components/FAQSection';
+import CookieConsent from './components/CookieConsent';
 import { I18nProvider } from './i18n';
 
 const HOME_FAQ_JSONLD = {
@@ -159,6 +160,7 @@ function App() {
         </WouterRouter>
         <Toaster />
       </TooltipProvider>
+      <CookieConsent />
       </I18nProvider>
     </QueryClientProvider>
   );
