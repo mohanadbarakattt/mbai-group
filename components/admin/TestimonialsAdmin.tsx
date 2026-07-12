@@ -131,8 +131,8 @@ export default function TestimonialsAdmin() {
       <div className="min-h-screen bg-slate-50 flex items-center justify-center p-4">
         <div className="w-full max-w-sm bg-white rounded-2xl shadow-lg border border-slate-200 p-8">
           <div className="mb-6">
-            <div className="w-10 h-10 rounded-xl bg-indigo-100 flex items-center justify-center mb-4">
-              <Eye className="w-5 h-5 text-indigo-600" />
+            <div className="w-10 h-10 rounded-xl bg-cyan-100 flex items-center justify-center mb-4">
+              <Eye className="w-5 h-5 text-cyan-600" />
             </div>
             <h1 className="text-xl font-bold text-slate-900">Admin Access</h1>
             <p className="text-slate-500 text-sm mt-1">
@@ -151,7 +151,7 @@ export default function TestimonialsAdmin() {
                 required
                 autoFocus
                 autoComplete="current-password"
-                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-indigo-500/30 focus:border-indigo-400"
+                className="w-full border border-slate-200 rounded-xl px-4 py-2.5 text-sm text-slate-900 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-cyan-500/30 focus:border-cyan-400"
                 placeholder="Enter admin password"
               />
             </div>
@@ -161,7 +161,7 @@ export default function TestimonialsAdmin() {
             <button
               type="submit"
               disabled={loading}
-              className="w-full bg-indigo-600 hover:bg-indigo-700 disabled:opacity-60 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors"
+              className="w-full bg-cyan-600 hover:bg-cyan-700 disabled:opacity-60 text-white font-semibold py-2.5 rounded-xl text-sm transition-colors"
             >
               {loading ? "Checking..." : "Sign In"}
             </button>
@@ -209,14 +209,14 @@ export default function TestimonialsAdmin() {
               onClick={() => setFilter(s)}
               className={`rounded-xl border p-3 text-left transition-all ${
                 filter === s
-                  ? "bg-indigo-50 border-indigo-300 ring-1 ring-indigo-300"
+                  ? "bg-cyan-50 border-cyan-300 ring-1 ring-cyan-300"
                   : "bg-white border-slate-200 hover:border-slate-300"
               }`}
             >
               <div className="text-2xl font-bold text-slate-900">{counts[s]}</div>
               <div
                 className={`text-xs font-semibold capitalize mt-0.5 ${
-                  filter === s ? "text-indigo-600" : "text-slate-500"
+                  filter === s ? "text-cyan-600" : "text-slate-500"
                 }`}
               >
                 {s === "all" ? "Total" : s}
@@ -265,7 +265,7 @@ export default function TestimonialsAdmin() {
                     </div>
                     <button
                       onClick={() => setExpandedId(expandedId === sub.id ? null : sub.id)}
-                      className="shrink-0 text-xs text-indigo-600 hover:text-indigo-800 font-medium transition-colors"
+                      className="shrink-0 text-xs text-cyan-600 hover:text-cyan-800 font-medium transition-colors"
                     >
                       {expandedId === sub.id ? "Hide" : "Read"}
                     </button>

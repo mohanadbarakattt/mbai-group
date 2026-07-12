@@ -25,7 +25,7 @@ const FounderCredentials: React.FC = () => {
   return (
     <section ref={ref} className="py-20 px-6 bg-[#0e1533]/70 border-y border-white/10 overflow-hidden relative">
       <div className="aurora w-[420px] h-[420px] top-0 right-0" style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.18), transparent 60%)' }} />
-      <div className="max-w-6xl mx-auto">
+      <div className="max-w-7xl mx-auto">
 
         {/* Header */}
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
