@@ -17,6 +17,7 @@ const VENTURE_META = [
     href: '/ibni',
     icon: <Hammer size={22} />,
     accent: '#10b981',
+    domain: 'ibni.app',
   },
   {
     id: 'autoleadss' as const,
@@ -26,6 +27,9 @@ const VENTURE_META = [
     external: true,
     icon: <Sparkles size={22} />,
     accent: '#6366f1',
+    domain: 'autoleadss.com',
+    // Reuses the same hero asset shown in the Demos section's AutoLeadss card.
+    thumbnail: '/autoleads-images/mbai-hero-bg-opt.jpg',
   },
   {
     id: 'virlo' as const,
@@ -34,6 +38,7 @@ const VENTURE_META = [
     href: '/virlo',
     icon: <Flame size={22} />,
     accent: '#f97316',
+    domain: 'virlo.studio',
   },
   {
     id: 'tut' as const,
@@ -42,6 +47,7 @@ const VENTURE_META = [
     href: '/tut',
     icon: <GraduationCap size={22} />,
     accent: '#eab308',
+    domain: 'tut.app',
   },
 ];
 
@@ -118,6 +124,29 @@ const Ventures: React.FC = () => {
                       <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: v.status === 'Live' ? '#34d399' : v.accent }} />
                       {statusLabel[v.status]}
                     </span>
+                  </div>
+
+                  {/* Mock browser-chrome preview frame — same visual language as
+                      the Demos section's thumbnail treatment, so the two most
+                      text-heavy sections both carry a real visual composition. */}
+                  <div className="w-full aspect-video rounded-lg mb-5 relative overflow-hidden border border-white/10">
+                    <div className="absolute inset-x-0 top-0 h-6 flex items-center gap-1.5 px-2.5 z-10" style={{ background: 'rgba(10,14,23,0.85)' }}>
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                      <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
+                      <span className="ml-2 text-[9px] font-mono text-white/30 truncate">{v.domain}</span>
+                    </div>
+                    {v.thumbnail ? (
+                      <img src={v.thumbnail} alt={v.name} className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
+                    ) : (
+                      <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 50% 45%, ${v.accent}22, #0a0e17 70%)` }}>
+                        <div className="absolute inset-0 grid-fade opacity-60" />
+                        <div className="absolute inset-0 flex items-center justify-center pt-3" style={{ color: v.accent }}>
+                          <div className="scale-[2.2] opacity-30 group-hover:opacity-45 group-hover:scale-[2.4] transition-all duration-500">{v.icon}</div>
+                        </div>
+                      </div>
+                    )}
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1022]/70 to-transparent" />
                   </div>
 
                   <p className="text-[#8b93a7] text-sm leading-relaxed mb-5">{v.description}</p>
