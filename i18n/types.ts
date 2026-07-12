@@ -42,6 +42,7 @@ export interface Dict {
     slides: HeroSlide[];
     ctaBook: string;
     ctaDemos: string;
+    ctaStory: string;
     statLead: string;
     statProducts: string;
     statLocation: string;
@@ -74,6 +75,8 @@ export interface Dict {
     legal: string;
     venturesLink: string;
     demosLink: string;
+    githubLink: string;
+    claudeLink: string;
     ourStory: string;
     contactLink: string;
     privacy: string;

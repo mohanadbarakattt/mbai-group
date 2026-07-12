@@ -21,7 +21,7 @@ const AuroraFlow: React.FC<{ className?: string }> = ({ className = '' }) => {
     const pointer = { x: 0, y: 0, tx: 0, ty: 0 };
 
     // Soft glowing sprites, one per palette colour
-    const palette = ['#8b93ff', '#38bdf8', '#22d3ee', '#c084fc', '#f472b6'];
+    const palette = ['#e3a83f', '#38bdf8', '#22d3ee', '#f4cd7c', '#d9784f'];
     const sprites: HTMLCanvasElement[] = palette.map((col) => {
       const s = document.createElement('canvas');
       s.width = s.height = 64;

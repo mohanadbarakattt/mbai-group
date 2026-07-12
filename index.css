@@ -50,10 +50,10 @@ html { scroll-behavior: smooth; }
   --dim: #6b7699;
   --line: rgba(255,255,255,0.1);
   --line-2: rgba(255,255,255,0.2);
-  --indigo: #6366f1;
+  --gold: #e3a83f;
   --cyan: #22d3ee;
-  --violet: #a855f7;
-  --pink: #ec4899;
+  --copper: #d9784f;
+  --rust: #c2703d;
 
   --background: 230 40% 4%;
   --foreground: 220 30% 94%;
@@ -91,10 +91,10 @@ body::before {
   z-index: -1;
   pointer-events: none;
   background:
-    radial-gradient(38% 46% at 12% 8%,  rgba(99,102,241,0.30), transparent 60%),
+    radial-gradient(38% 46% at 12% 8%,  rgba(227,168,63,0.30), transparent 60%),
     radial-gradient(42% 52% at 88% 12%, rgba(34,211,238,0.22), transparent 60%),
-    radial-gradient(48% 58% at 78% 88%, rgba(168,85,247,0.26), transparent 60%),
-    radial-gradient(40% 50% at 8% 92%,  rgba(236,72,153,0.20), transparent 60%),
+    radial-gradient(48% 58% at 78% 88%, rgba(217,120,79,0.26), transparent 60%),
+    radial-gradient(40% 50% at 8% 92%,  rgba(194,112,61,0.20), transparent 60%),
     radial-gradient(60% 70% at 50% 50%, rgba(56,189,248,0.08), transparent 70%);
   background-size: 200% 200%;
   background-repeat: no-repeat;
@@ -111,25 +111,20 @@ h1, h2, h3, h4, h5, h6 {
 ::-webkit-scrollbar { width: 9px; height: 9px; }
 ::-webkit-scrollbar-track { background: #070a12; }
 ::-webkit-scrollbar-thumb { background: #232a3d; border-radius: 5px; }
-::-webkit-scrollbar-thumb:hover { background: var(--indigo); }
-::selection { background: rgba(99,102,241,0.35); color: #fff; }
+::-webkit-scrollbar-thumb:hover { background: var(--gold); }
+::selection { background: rgba(227,168,63,0.35); color: #fff; }
 
 /* ---------- Text treatments ---------- */
 .text-gradient {
-  background: linear-gradient(100deg, #a5b4fc 0%, #22d3ee 40%, #c084fc 72%, #f472b6 100%);
+  background: linear-gradient(100deg, #f4cd7c 0%, #e3a83f 38%, #22d3ee 68%, #d9784f 100%);
   background-size: 200% auto;
   -webkit-background-clip: text; background-clip: text;
   -webkit-text-fill-color: transparent; color: transparent;
   animation: hue-pan 8s ease-in-out infinite;
 }
 @keyframes hue-pan { 0%,100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-.text-gradient-violet {
-  background: linear-gradient(100deg, #c4b5fd 0%, #a855f7 50%, #6366f1 100%);
-  -webkit-background-clip: text; background-clip: text;
-  -webkit-text-fill-color: transparent; color: transparent;
-}
 .mono { font-family: 'JetBrains Mono', monospace; }
-.neon { text-shadow: 0 0 18px rgba(99,102,241,0.55); }
+.neon { text-shadow: 0 0 18px rgba(227,168,63,0.55); }
 
 /* ---------- Glass surfaces ---------- */
 .glass {
@@ -147,19 +142,19 @@ h1, h2, h3, h4, h5, h6 {
 .card-fx { transition: transform .35s cubic-bezier(.22,1,.36,1), border-color .35s, box-shadow .35s; }
 .card-fx:hover {
   border-color: var(--line-2);
-  box-shadow: 0 20px 60px -24px rgba(99,102,241,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
+  box-shadow: 0 20px 60px -24px rgba(227,168,63,0.45), inset 0 1px 0 rgba(255,255,255,0.05);
 }
 
 /* Legacy aliases so any leftover markup still renders on dark */
 .glass-panel { background: rgba(255,255,255,0.03); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border: 1px solid var(--line); }
 .glass-card { background: rgba(255,255,255,0.06); border: 1px solid var(--line); transition: all .3s cubic-bezier(.4,0,.2,1); }
-.glass-card:hover { border-color: var(--line-2); box-shadow: 0 20px 50px -24px rgba(99,102,241,0.4); transform: translateY(-3px); }
+.glass-card:hover { border-color: var(--line-2); box-shadow: 0 20px 50px -24px rgba(227,168,63,0.4); transform: translateY(-3px); }
 
 /* ---------- Gradient hairline border wrapper ---------- */
 .glow-border { position: relative; }
 .glow-border::before {
   content: ""; position: absolute; inset: 0; border-radius: inherit; padding: 1px;
-  background: linear-gradient(130deg, rgba(99,102,241,0.7), rgba(34,211,238,0.35) 45%, transparent 70%);
+  background: linear-gradient(130deg, rgba(227,168,63,0.7), rgba(34,211,238,0.35) 45%, transparent 70%);
   -webkit-mask: linear-gradient(#000 0 0) content-box, linear-gradient(#000 0 0);
   -webkit-mask-composite: xor; mask-composite: exclude;
   opacity: .55; transition: opacity .35s; pointer-events: none;
@@ -169,16 +164,16 @@ h1, h2, h3, h4, h5, h6 {
 /* ---------- Buttons ---------- */
 .btn-primary {
   position: relative; color: #fff; font-weight: 600;
-  background: linear-gradient(120deg, #4f46e5, #6366f1 40%, #0ea5b7);
-  box-shadow: 0 10px 30px -10px rgba(99,102,241,0.65), inset 0 1px 0 rgba(255,255,255,0.25);
+  background: linear-gradient(120deg, #b8791f, #e3a83f 40%, #0ea5b7);
+  box-shadow: 0 10px 30px -10px rgba(227,168,63,0.65), inset 0 1px 0 rgba(255,255,255,0.25);
   transition: transform .2s, box-shadow .3s, filter .3s;
 }
-.btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 16px 40px -12px rgba(99,102,241,0.8); }
+.btn-primary:hover { transform: translateY(-1px); filter: brightness(1.08); box-shadow: 0 16px 40px -12px rgba(227,168,63,0.8); }
 .btn-ghost {
   border: 1px solid var(--line-2); color: var(--ink);
   transition: border-color .25s, background .25s, color .25s;
 }
-.btn-ghost:hover { border-color: rgba(99,102,241,0.7); background: rgba(99,102,241,0.08); }
+.btn-ghost:hover { border-color: rgba(227,168,63,0.7); background: rgba(227,168,63,0.08); }
 
 /* ---------- Backgrounds / decor ---------- */
 .grid-fade {
@@ -193,8 +188,8 @@ h1, h2, h3, h4, h5, h6 {
 .aurora-drift { animation: aurora-drift 18s ease-in-out infinite; }
 @keyframes aurora-drift { 0%,100% { transform: translate(0,0) scale(1);} 33% { transform: translate(30px,-20px) scale(1.1);} 66% { transform: translate(-20px,25px) scale(0.95);} }
 .perspective-grid {
-  background-image: linear-gradient(rgba(99,102,241,0.18) 1px, transparent 1px),
-                    linear-gradient(90deg, rgba(99,102,241,0.14) 1px, transparent 1px);
+  background-image: linear-gradient(rgba(227,168,63,0.18) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(227,168,63,0.14) 1px, transparent 1px);
   background-size: 44px 44px;
   transform: perspective(420px) rotateX(62deg);
   transform-origin: center bottom;
@@ -259,4 +254,4 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: 0 25px 50px -12px rgba(0,0,0,0.05);
 }
 .autoleads-page .glass-card { background:#fff; border:1px solid hsl(var(--border)); }
-.autoleads-page .text-gradient, .autoleads-page .text-gradient-violet { -webkit-text-fill-color: initial; color: inherit; }
+.autoleads-page .text-gradient { -webkit-text-fill-color: initial; color: inherit; }

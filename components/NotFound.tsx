@@ -10,7 +10,7 @@ const NotFound: React.FC = () => (
     <Navigation />
     <main className="relative flex-1 flex flex-col items-center justify-center text-center px-6 py-40">
       <div className="aurora aurora-drift w-[420px] h-[420px] -top-10 left-1/2 -translate-x-1/2"
-        style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.35), transparent 60%)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.35), transparent 60%)' }} />
       <div className="absolute inset-0 grid-fade pointer-events-none" />
 
       <div className="relative">

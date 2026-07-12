@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, Calendar, ArrowRight, Sparkles } from 'lucide-react';
+import { ChevronDown, Calendar, ArrowRight, Sparkles, BookOpen } from 'lucide-react';
+import { Link } from 'wouter';
 import AuroraFlow from './effects/AuroraFlow';
 import NeuralBackground from './effects/NeuralBackground';
 import { useI18n } from '../i18n';
@@ -68,10 +69,10 @@ const Hero: React.FC = () => {
   return (
     <section id="hero" className="relative min-h-screen flex flex-col items-center justify-center overflow-hidden bg-transparent">
       {/* Aurora blobs */}
-      <div className="aurora aurora-drift w-[520px] h-[520px] -top-40 -left-24" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.6), transparent 60%)' }} />
+      <div className="aurora aurora-drift w-[520px] h-[520px] -top-40 -left-24" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.6), transparent 60%)' }} />
       <div className="aurora aurora-drift w-[560px] h-[560px] top-1/4 -right-40" style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.45), transparent 60%)', animationDelay: '3s' }} />
-      <div className="aurora aurora-drift w-[440px] h-[440px] -bottom-32 left-1/4" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.42), transparent 60%)', animationDelay: '6s' }} />
-      <div className="aurora aurora-drift w-[380px] h-[380px] top-1/3 left-1/3" style={{ background: 'radial-gradient(circle, rgba(236,72,153,0.3), transparent 60%)', animationDelay: '9s' }} />
+      <div className="aurora aurora-drift w-[440px] h-[440px] -bottom-32 left-1/4" style={{ background: 'radial-gradient(circle, rgba(217,120,79,0.42), transparent 60%)', animationDelay: '6s' }} />
+      <div className="aurora aurora-drift w-[380px] h-[380px] top-1/3 left-1/3" style={{ background: 'radial-gradient(circle, rgba(194,112,61,0.3), transparent 60%)', animationDelay: '9s' }} />
 
       {/* Faded grid + neural links */}
       <div className="absolute inset-0 grid-fade" />
@@ -111,9 +112,9 @@ const Hero: React.FC = () => {
         </h1>
 
         <div className="flex items-center justify-center gap-3">
-          <div className="h-px w-12 bg-gradient-to-r from-transparent to-indigo-500/60" />
+          <div className="h-px w-12 bg-gradient-to-r from-transparent to-amber-500/60" />
           <div className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse-glow" />
-          <div className="h-px w-12 bg-gradient-to-l from-transparent to-indigo-500/60" />
+          <div className="h-px w-12 bg-gradient-to-l from-transparent to-amber-500/60" />
         </div>
 
         <p className="text-base md:text-lg text-[#cdd4e6] max-w-2xl mx-auto leading-relaxed" style={{ textShadow: '0 2px 20px rgba(6,8,20,0.9)' }}>
@@ -129,13 +130,17 @@ const Hero: React.FC = () => {
           </a>
         </div>
 
+        <Link href="/about" className="inline-flex items-center gap-1.5 text-sm text-[#cdd4e6] hover:text-white transition-colors no-underline">
+          <BookOpen size={14} /> {dict.hero.ctaStory}
+        </Link>
+
         <div className="flex items-center justify-center gap-2 pt-2">
           {slides.map((_, i) => (
             <button
               key={i}
               onClick={() => goTo(i)}
               aria-label={dict.hero.slideAria.replace('{n}', String(i + 1))}
-              className={`rounded-full transition-all duration-300 ${i === current ? 'w-6 h-2 bg-gradient-to-r from-indigo-400 to-cyan-400' : 'w-2 h-2 bg-white/20 hover:bg-white/40'}`}
+              className={`rounded-full transition-all duration-300 ${i === current ? 'w-6 h-2 bg-gradient-to-r from-amber-400 to-cyan-400' : 'w-2 h-2 bg-white/20 hover:bg-white/40'}`}
             />
           ))}
         </div>

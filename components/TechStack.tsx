@@ -65,7 +65,7 @@ const TechStack: React.FC = () => {
 
           {/* Main Tech: Python */}
           <div
-            className={`glass-card p-6 rounded-2xl md:col-span-2 md:row-span-2 flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl md:col-span-2 md:row-span-2 flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden ${cardClass()}`}
             style={cardStyle(0)}
           >
             <div className="absolute right-0 top-0 w-32 h-32 bg-gradient-to-br from-blue-500/10 to-transparent rounded-bl-full pointer-events-none"></div>
@@ -96,7 +96,7 @@ const TechStack: React.FC = () => {
                   <div className="w-2 h-2 rounded-full bg-yellow-500/60"></div>
                   <div className="w-2 h-2 rounded-full bg-green-500/60"></div>
                 </div>
-                <p><span className="text-purple-400">def</span> <span className="text-blue-400">sovereign_ai</span>(data):</p>
+                <p><span className="text-cyan-400">def</span> <span className="text-blue-400">sovereign_ai</span>(data):</p>
                 <p className="pl-4"><span className="text-[#8b93a7]"># Processing logic</span></p>
                 <p className="pl-4"><span className="text-green-400">return</span> data.optimize()</p>
               </div>
@@ -105,7 +105,7 @@ const TechStack: React.FC = () => {
 
           {/* SQL */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
             style={cardStyle(1)}
           >
             <div className="absolute -right-4 -bottom-4 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-500">
@@ -127,16 +127,16 @@ const TechStack: React.FC = () => {
 
           {/* NLP */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
             style={cardStyle(2)}
           >
             <div className="absolute top-3 right-3 flex gap-1">
-              <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse"></div>
-              <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse delay-75"></div>
-              <div className="w-1.5 h-1.5 bg-purple-400 rounded-full animate-pulse delay-150"></div>
+              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse"></div>
+              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse delay-75"></div>
+              <div className="w-1.5 h-1.5 bg-cyan-400 rounded-full animate-pulse delay-150"></div>
             </div>
             <div className="flex justify-between items-start">
-              <div className="p-3 bg-purple-500/20 rounded-lg text-purple-400 border border-purple-500/30 w-fit">
+              <div className="p-3 bg-cyan-500/20 rounded-lg text-cyan-400 border border-cyan-500/30 w-fit">
                 <Binary size={24} />
               </div>
               <span className="text-sm font-bold text-[#8b93a7]">95%</span>
@@ -144,14 +144,14 @@ const TechStack: React.FC = () => {
             <div className="mt-4">
               <h3 className="text-xl font-bold text-white">NLP</h3>
               <div className="w-full bg-white/10 h-1.5 mt-2 rounded-full overflow-hidden">
-                <div className="bg-purple-500 h-full w-[95%] shadow-[0_0_10px_rgba(168,85,247,0.5)]"></div>
+                <div className="bg-cyan-500 h-full w-[95%] shadow-[0_0_10px_rgba(34,211,238,0.5)]"></div>
               </div>
             </div>
           </div>
 
           {/* R */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
             style={cardStyle(3)}
           >
             <div className="absolute inset-0 bg-gradient-to-t from-blue-50/60 to-transparent pointer-events-none"></div>
@@ -171,11 +171,11 @@ const TechStack: React.FC = () => {
 
           {/* SAS */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative hover:-translate-y-1 overflow-hidden ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative hover:-translate-y-1 overflow-hidden ${cardClass()}`}
             style={cardStyle(4)}
           >
             <div className="flex justify-between items-start">
-              <div className="p-3 bg-indigo-500/20 rounded-lg text-indigo-400 border border-indigo-500/30 w-fit">
+              <div className="p-3 bg-amber-500/20 rounded-lg text-amber-400 border border-amber-500/30 w-fit">
                 <PieChart size={24} />
               </div>
               <span className="text-sm font-bold text-[#8b93a7]">80%</span>
@@ -183,14 +183,14 @@ const TechStack: React.FC = () => {
             <div className="mt-4">
               <h3 className="text-xl font-bold text-white">SAS</h3>
               <div className="w-full bg-white/10 h-1.5 mt-2 rounded-full overflow-hidden">
-                <div className="bg-indigo-500 h-full w-[80%] shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+                <div className="bg-amber-500 h-full w-[80%] shadow-[0_0_10px_rgba(245,158,11,0.5)]"></div>
               </div>
             </div>
           </div>
 
           {/* Prompt Engineering */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
             style={cardStyle(5)}
           >
             <div className="absolute -right-4 -bottom-4 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-500">
@@ -212,7 +212,7 @@ const TechStack: React.FC = () => {
 
           {/* Data Analysis */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
             style={cardStyle(6)}
           >
             <div className="absolute -right-4 -bottom-4 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-500">
@@ -234,7 +234,7 @@ const TechStack: React.FC = () => {
 
           {/* Project Management */}
           <div
-            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-indigo-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl flex flex-col justify-between group hover:border-amber-500/50 relative overflow-hidden hover:-translate-y-1 ${cardClass()}`}
             style={cardStyle(7)}
           >
             <div className="absolute -right-4 -bottom-4 opacity-10 rotate-12 group-hover:rotate-45 transition-transform duration-500">
@@ -256,7 +256,7 @@ const TechStack: React.FC = () => {
 
           {/* Education */}
           <div
-            className={`glass-card p-6 rounded-2xl md:col-span-2 bg-gradient-to-br from-emerald-50 to-[#0d1220] group hover:border-indigo-500/50 flex items-center relative overflow-hidden ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl md:col-span-2 bg-gradient-to-br from-emerald-50 to-[#0d1220] group hover:border-amber-500/50 flex items-center relative overflow-hidden ${cardClass()}`}
             style={cardStyle(8)}
           >
             <div className="absolute right-0 top-0 w-64 h-full bg-[linear-gradient(45deg,transparent_25%,rgba(0,0,0,0.01)_50%,transparent_75%,transparent_100%)] bg-[length:10px_10px] pointer-events-none"></div>
@@ -281,7 +281,7 @@ const TechStack: React.FC = () => {
 
           {/* Languages */}
           <div
-            className={`glass-card p-6 rounded-2xl md:col-span-2 flex flex-col justify-center relative group hover:border-indigo-500/50 overflow-hidden ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl md:col-span-2 flex flex-col justify-center relative group hover:border-amber-500/50 overflow-hidden ${cardClass()}`}
             style={cardStyle(9)}
           >
             <div className="absolute right-[-20px] bottom-[-20px] text-white/20 opacity-40 transform -rotate-12 group-hover:rotate-0 transition-transform duration-700">
@@ -289,7 +289,7 @@ const TechStack: React.FC = () => {
             </div>
 
             <div className="flex items-center gap-4 mb-4 z-10">
-              <div className="p-3 bg-pink-500/20 rounded-lg text-pink-400 border border-pink-500/30">
+              <div className="p-3 bg-sky-500/20 rounded-lg text-sky-400 border border-sky-500/30">
                 <Languages size={24} />
               </div>
               <h3 className="text-xl font-bold text-white">Trilingual + French</h3>
@@ -317,7 +317,7 @@ const TechStack: React.FC = () => {
 
           {/* Certifications */}
           <div
-            className={`glass-card p-6 rounded-2xl md:col-span-4 flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-indigo-500/50 relative overflow-hidden bg-gradient-to-r from-[#0d1220] to-[#0b1022] ${cardClass()}`}
+            className={`glass-card p-6 rounded-2xl md:col-span-4 flex flex-col md:flex-row items-center justify-between gap-6 group hover:border-amber-500/50 relative overflow-hidden bg-gradient-to-r from-[#0d1220] to-[#0b1022] ${cardClass()}`}
             style={cardStyle(10)}
           >
             <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-transparent via-amber-400/50 to-transparent"></div>

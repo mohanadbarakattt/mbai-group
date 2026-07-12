@@ -5,6 +5,7 @@ import {
   Mic, FileText, LineChart, Languages, MapPin, CreditCard, Flame, Hammer, GraduationCap,
 } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
+import MediaSlot from './MediaSlot';
 
 const SonicBoomDemo = lazy(() => import('./demos/SonicBoomDemo'));
 const AtsDemo = lazy(() => import('./demos/AtsDemo'));
@@ -43,7 +44,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'AI Lead Generation Infrastructure',
     blurb: 'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate and MENA enterprises. Custom agents hunt leads 24/7; bilingual specialists close the loop.',
     tags: ['AI Agents', 'Lead Gen', 'Real Estate'],
-    accent: '#6366f1',
+    accent: '#e3a83f',
     icon: <Sparkles size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
@@ -120,7 +121,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Beat the Robots. Land the Interview.',
     blurb: 'Analyzes your resume against a job description, injects missing keywords naturally, restructures bullets to score 90%+ on automated screeners, and drafts a tailored cover letter — while staying truthful.',
     tags: ['NLP', 'Keyword Opt.', 'Cover Letters'],
-    accent: '#6366f1',
+    accent: '#e3a83f',
     icon: <FileText size={22} />,
     status: 'Preview',
     demo: AtsDemo,
@@ -165,7 +166,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Egyptian Franco-Arabic Translator',
     blurb: 'An ML translator converting Franco-Arabic (Arabizi) into English and formal Arabic script, trained on Reddit-sourced Egyptian dialect data to understand slang, idioms, and cultural context.',
     tags: ['Machine Learning', 'Arabic NLP', 'Reddit Data'],
-    accent: '#a855f7',
+    accent: '#d9784f',
     icon: <Languages size={22} />,
     status: 'Preview',
     demo: ThreeArabyDemo,
@@ -288,7 +289,7 @@ const Demos: React.FC = () => {
 
   return (
     <section id="demos" className="py-24 px-6 relative overflow-hidden bg-transparent">
-      <div className="aurora w-[500px] h-[500px] top-10 -right-40" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 60%)' }} />
+      <div className="aurora w-[500px] h-[500px] top-10 -right-40" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.28), transparent 60%)' }} />
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-14">
           <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
@@ -328,19 +329,7 @@ const Demos: React.FC = () => {
                   </div>
                 </div>
 
-                <div className="w-full aspect-video rounded-lg mb-5 relative overflow-hidden border border-white/10">
-                  {e.thumbnail ? (
-                    <img src={e.thumbnail} alt={e.title} className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                  ) : (
-                    <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 50% 40%, ${e.accent}22, #0a0e17 70%)` }}>
-                      <div className="absolute inset-0 grid-fade opacity-60" />
-                      <div className="absolute inset-0 flex items-center justify-center" style={{ color: e.accent }}>
-                        <div className="scale-[2.2] opacity-30">{e.icon}</div>
-                      </div>
-                    </div>
-                  )}
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#0b1022]/70 to-transparent" />
-                </div>
+                <MediaSlot className="mb-5" accent={e.accent} icon={e.icon} label={e.title} thumbnail={e.thumbnail} />
 
                 <p className="text-[#8b93a7] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
 

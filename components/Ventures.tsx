@@ -2,6 +2,7 @@ import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles, Fingerprint } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
+import MediaSlot from './MediaSlot';
 import { useI18n } from '../i18n';
 
 // Non-translatable metadata (brand names stay in Latin script in every
@@ -26,7 +27,7 @@ const VENTURE_META = [
     href: 'https://autoleadss.com',
     external: true,
     icon: <Sparkles size={22} />,
-    accent: '#6366f1',
+    accent: '#e3a83f',
     domain: 'autoleadss.com',
     // Reuses the same hero asset shown in the Demos section's AutoLeadss card.
     thumbnail: '/autoleads-images/mbai-hero-bg-opt.jpg',
@@ -82,7 +83,7 @@ const Ventures: React.FC = () => {
 
   return (
     <section id="ventures" ref={ref} className="py-24 px-6 bg-transparent border-y border-white/10 relative overflow-hidden">
-      <div className="aurora w-[520px] h-[520px] -top-24 -left-24" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.3), transparent 60%)' }} />
+      <div className="aurora w-[520px] h-[520px] -top-24 -left-24" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.3), transparent 60%)' }} />
 
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
@@ -126,28 +127,14 @@ const Ventures: React.FC = () => {
                     </span>
                   </div>
 
-                  {/* Mock browser-chrome preview frame — same visual language as
-                      the Demos section's thumbnail treatment, so the two most
-                      text-heavy sections both carry a real visual composition. */}
-                  <div className="w-full aspect-video rounded-lg mb-5 relative overflow-hidden border border-white/10">
-                    <div className="absolute inset-x-0 top-0 h-6 flex items-center gap-1.5 px-2.5 z-10" style={{ background: 'rgba(10,14,23,0.85)' }}>
-                      <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                      <span className="w-1.5 h-1.5 rounded-full bg-white/20" />
-                      <span className="ml-2 text-[9px] font-mono text-white/30 truncate">{v.domain}</span>
-                    </div>
-                    {v.thumbnail ? (
-                      <img src={v.thumbnail} alt={v.name} className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500" />
-                    ) : (
-                      <div className="absolute inset-0" style={{ background: `radial-gradient(circle at 50% 45%, ${v.accent}22, #0a0e17 70%)` }}>
-                        <div className="absolute inset-0 grid-fade opacity-60" />
-                        <div className="absolute inset-0 flex items-center justify-center pt-3" style={{ color: v.accent }}>
-                          <div className="scale-[2.2] opacity-30 group-hover:opacity-45 group-hover:scale-[2.4] transition-all duration-500">{v.icon}</div>
-                        </div>
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-[#0b1022]/70 to-transparent" />
-                  </div>
+                  <MediaSlot
+                    className="mb-5"
+                    accent={v.accent}
+                    icon={v.icon}
+                    label={v.name}
+                    thumbnail={v.thumbnail}
+                    domain={v.domain}
+                  />
 
                   <p className="text-[#8b93a7] text-sm leading-relaxed mb-5">{v.description}</p>
 

@@ -21,7 +21,7 @@ const StatsSection: React.FC = () => {
 
   return (
     <section ref={ref} className="py-20 px-6 bg-transparent border-y border-white/10 relative overflow-hidden">
-      <div className="aurora w-[420px] h-[420px] bottom-0 left-1/4" style={{ background: 'radial-gradient(circle, rgba(168,85,247,0.16), transparent 60%)' }} />
+      <div className="aurora w-[420px] h-[420px] bottom-0 left-1/4" style={{ background: 'radial-gradient(circle, rgba(217,120,79,0.16), transparent 60%)' }} />
       <div className="max-w-6xl mx-auto relative">
 
         {/* Asymmetric header — left-aligned with large decorative number right */}

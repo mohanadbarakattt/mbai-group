@@ -29,7 +29,7 @@ const Experience: React.FC = () => {
         <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#8b93a7]">
           Professional Evolution
         </span>
-        <div className="w-24 h-1 bg-indigo-500 mx-auto mt-4 rounded-full "></div>
+        <div className="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded-full "></div>
       </h2>
 
       {/* Timeline Container */}
@@ -49,7 +49,7 @@ const Experience: React.FC = () => {
           {/* Card */}
           <div className="ml-16 md:ml-0 md:max-w-4xl md:mx-auto">
              <div className="relative group">
-                <div className="absolute -inset-1 bg-indigo-500/20 rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-1000"></div>
+                <div className="absolute -inset-1 bg-amber-500/20 rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-1000"></div>
                 <div className="relative glass-card xai-glow rounded-2xl p-6 md:p-10 border border-white/10">
                   <div className="absolute top-0 right-0 p-4 md:p-6 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
                     <Building2 className="w-20 h-20 md:w-36 md:h-36" />
@@ -59,7 +59,7 @@ const Experience: React.FC = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
                          <h3 className="text-2xl md:text-4xl font-bold text-white">MB AI Solutions</h3>
-                         <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-indigo-500/40 text-[#aab2c5] text-[10px] md:text-xs font-mono tracking-wider uppercase">Current Mission</span>
+                         <span className="px-3 py-1 rounded-full bg-white/[0.05] border border-amber-500/40 text-[#aab2c5] text-[10px] md:text-xs font-mono tracking-wider uppercase">Current Mission</span>
                       </div>
                       <p className="text-lg md:text-xl text-white font-medium flex items-center gap-2">
                         Founder & Lead Architect
@@ -90,7 +90,7 @@ const Experience: React.FC = () => {
            {/* Left Side (Content on Desktop) */}
            <div className="w-[calc(100%-4rem)] ml-16 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
               <div className="relative group">
-                 <div className="absolute -inset-0.5 bg-indigo-500/20 rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+                 <div className="absolute -inset-0.5 bg-amber-500/20 rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
                  <div className="relative glass-card p-6 md:p-8 rounded-2xl hover:bg-white/[0.05] transition-all border border-white/10 hover:border-white/25">
                     <div className="absolute top-4 right-4 md:right-auto md:left-4 text-white/20 group-hover:text-blue-500/20 transition-colors">
                        <Rocket className="w-12 h-12 md:w-[60px] md:h-[60px]" />
@@ -126,7 +126,7 @@ const Experience: React.FC = () => {
                            <div className="text-[10px] text-[#8b93a7] uppercase">Annotation Velocity</div>
                        </div>
                        <div className="bg-white/[0.05] p-3 rounded border border-white/10 flex flex-col items-center md:items-end">
-                           <div className="text-lg md:text-xl font-bold text-white flex items-center gap-1"><BrainCircuit size={14} className="text-purple-500"/> 135%</div>
+                           <div className="text-lg md:text-xl font-bold text-white flex items-center gap-1"><BrainCircuit size={14} className="text-amber-500"/> 135%</div>
                            <div className="text-[10px] text-[#8b93a7] uppercase">Model Perf.</div>
                        </div>
                        <div className="bg-white/[0.05] p-3 rounded border border-white/10 flex flex-col items-center md:items-end">
@@ -222,7 +222,7 @@ const Experience: React.FC = () => {
            {/* Marker */}
            <div className="absolute left-8 md:left-1/2 transform -translate-x-1/2 top-8 z-10">
               <div className="w-6 h-6 rounded-full bg-[#0d1220] border-2 border-white/15 flex items-center justify-center">
-                 <div className="w-1.5 h-1.5 rounded-full bg-indigo-500"></div>
+                 <div className="w-1.5 h-1.5 rounded-full bg-amber-500"></div>
               </div>
            </div>
 
@@ -232,7 +232,7 @@ const Experience: React.FC = () => {
            {/* Right Side (Content) */}
            <div className="w-[calc(100%-4rem)] ml-16 md:ml-0 md:w-1/2 md:pl-12">
               <div className="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/[0.05] transition-all border border-white/10 hover:border-white/25 group relative">
-                 <div className="absolute top-4 right-4 text-white/20 group-hover:text-indigo-500/20 transition-colors">
+                 <div className="absolute top-4 right-4 text-white/20 group-hover:text-amber-500/20 transition-colors">
                     <BrainCircuit className="w-12 h-12 md:w-[60px] md:h-[60px]" />
                  </div>
                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Outlier AI</h3>
@@ -290,7 +290,7 @@ const Experience: React.FC = () => {
            {/* Left Side (Content) */}
            <div className="w-[calc(100%-4rem)] ml-16 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
               <div className="glass-card p-6 md:p-8 rounded-2xl hover:bg-white/[0.05] transition-all border border-white/10 hover:border-white/25 group relative">
-                 <div className="absolute top-4 right-4 md:right-auto md:left-4 text-white/20 group-hover:text-purple-500/20 transition-colors">
+                 <div className="absolute top-4 right-4 md:right-auto md:left-4 text-white/20 group-hover:text-amber-500/20 transition-colors">
                     <Code2 className="w-12 h-12 md:w-[60px] md:h-[60px]" />
                  </div>
                  <h3 className="text-xl md:text-2xl font-bold text-white mb-1">Freelance</h3>

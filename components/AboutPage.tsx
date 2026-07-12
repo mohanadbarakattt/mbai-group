@@ -24,11 +24,11 @@ const AboutPage: React.FC = () => {
       <main>
         {/* Profile Header */}
         <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-transparent border-b border-white/10 overflow-hidden">
-          <div className="aurora w-[440px] h-[440px] -top-10 left-1/2 -translate-x-1/2" style={{ background: 'radial-gradient(circle, rgba(99,102,241,0.28), transparent 60%)' }} />
+          <div className="aurora w-[440px] h-[440px] -top-10 left-1/2 -translate-x-1/2" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.28), transparent 60%)' }} />
           <div className="absolute inset-0 grid-fade pointer-events-none" />
           {/* Avatar */}
           <div className="relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8 z-10">
-            <div className="absolute -inset-1 rounded-full animate-spin-slow" style={{ background: 'conic-gradient(from 0deg, #6366f1, #22d3ee, #a855f7, #6366f1)', filter: 'blur(6px)', opacity: 0.7 }} />
+            <div className="absolute -inset-1 rounded-full animate-spin-slow" style={{ background: 'conic-gradient(from 0deg, #e3a83f, #22d3ee, #d9784f, #e3a83f)', filter: 'blur(6px)', opacity: 0.7 }} />
             <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform duration-500 ease-out bg-[#0d1220]">
               <img
                 src={avatarSrc}

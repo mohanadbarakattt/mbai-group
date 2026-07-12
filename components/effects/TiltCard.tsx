@@ -35,7 +35,7 @@ const TiltCard: React.FC<{ children: React.ReactNode; className?: string; max?: 
       });
       setSheen({
         opacity: 1,
-        background: `radial-gradient(420px circle at ${px * 100}% ${py * 100}%, rgba(99,102,241,0.10), transparent 55%)`,
+        background: `radial-gradient(420px circle at ${px * 100}% ${py * 100}%, rgba(227,168,63,0.10), transparent 55%)`,
       });
     });
   };

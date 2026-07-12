@@ -21,9 +21,28 @@ interface LogoProps {
 /** Ratio shared with MbaiBadge (rx=6 on a 22-unit square) so every product renders the same silhouette. */
 const CHIP_RX_RATIO = 6 / 22;
 
+/**
+ * The mark: three ascending peaks (frontier — and a nod to Cairo's skyline)
+ * tipped by a small signal dot (the "AI"), on a 22-unit grid. Shared by the
+ * chip and hero variants below at different scales.
+ */
+const Peaks: React.FC<{ ink: string; dot: string }> = ({ ink, dot }) => (
+  <>
+    <polygon points="3.8,16.8 8.2,16.8 6.0,12.2" fill={ink} />
+    <polygon points="8.6,16.8 13.4,16.8 11.0,9.4" fill={ink} />
+    <polygon points="13.8,16.8 18.2,16.8 16.0,6.0" fill={ink} />
+    <circle cx="16" cy="4.4" r="1.15" fill={dot} />
+  </>
+);
+
 const ChipMark: React.FC<{ size: number; dark: boolean }> = ({ size, dark }) => {
-  const fill = dark ? '#ffffff' : '#111111';
-  const ink = dark ? '#111111' : '#ffffff';
+  // dark=true → chip sits on the site's dark navy pages, so the chip itself
+  // needs a light, warm ivory fill to read against it (navy-on-navy would
+  // vanish). dark=false → chip sits on a light page, so it flips to a solid
+  // navy fill instead. Same peaks-and-signal silhouette either way.
+  const fill = dark ? '#f2ede1' : '#0b1022';
+  const ink = dark ? '#12182c' : '#f2ede1';
+  const dot = dark ? '#c9852f' : '#22d3ee';
   const rx = 22 * CHIP_RX_RATIO;
   return (
     <svg
@@ -36,26 +55,16 @@ const ChipMark: React.FC<{ size: number; dark: boolean }> = ({ size, dark }) => 
       style={{ display: 'block' }}
     >
       <rect x="0" y="0" width="22" height="22" rx={rx} fill={fill} />
-      <text
-        x="11"
-        y="15.3"
-        textAnchor="middle"
-        fontFamily="'Space Grotesk', Helvetica, Arial, sans-serif"
-        fontWeight="700"
-        fontSize="10"
-        letterSpacing="-0.5"
-        fill={ink}
-      >
-        MB
-      </text>
+      <Peaks ink={ink} dot={dot} />
     </svg>
   );
 };
 
 const HeroMark: React.FC<{ size: number; dark: boolean }> = ({ size, dark }) => {
   const faint = dark ? 'rgba(255,255,255,0.35)' : 'rgba(17,17,17,0.3)';
-  const fill = dark ? '#ffffff' : '#111111';
-  const ink = dark ? '#111111' : '#ffffff';
+  const fill = dark ? '#f2ede1' : '#0b1022';
+  const ink = dark ? '#12182c' : '#f2ede1';
+  const dot = dark ? '#c9852f' : '#22d3ee';
   // Same rx ratio as the chip, scaled to the 66-unit core square used here.
   const coreRx = 66 * CHIP_RX_RATIO;
 
@@ -71,9 +80,9 @@ const HeroMark: React.FC<{ size: number; dark: boolean }> = ({ size, dark }) => 
     >
       <defs>
         <linearGradient id="mbGrad" x1="10" y1="10" x2="86" y2="86" gradientUnits="userSpaceOnUse">
-          <stop offset="0%" stopColor="#818cf8" />
-          <stop offset="45%" stopColor="#22d3ee" />
-          <stop offset="100%" stopColor="#c084fc" />
+          <stop offset="0%" stopColor="#f4cd7c" />
+          <stop offset="55%" stopColor="#e3a83f" />
+          <stop offset="100%" stopColor="#22d3ee" />
         </linearGradient>
         <filter id="mbGlow" x="-40%" y="-40%" width="180%" height="180%">
           <feGaussianBlur stdDeviation="1.4" result="b" />
@@ -94,7 +103,7 @@ const HeroMark: React.FC<{ size: number; dark: boolean }> = ({ size, dark }) => 
         <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="360 48 48" dur="14s" repeatCount="indefinite" />
       </g>
       <g>
-        <circle cx="48" cy="93" r="1.8" fill="#c084fc">
+        <circle cx="48" cy="93" r="1.8" fill="#f4cd7c">
           <animate attributeName="opacity" values="0.4;1;0.4" dur="3s" repeatCount="indefinite" />
         </circle>
         <animateTransform attributeName="transform" type="rotate" from="0 48 48" to="-360 48 48" dur="20s" repeatCount="indefinite" />
@@ -103,20 +112,9 @@ const HeroMark: React.FC<{ size: number; dark: boolean }> = ({ size, dark }) => 
       {/* Core — the same solid rounded-square "chip" as ChipMark, just bigger,
           with the gradient ring + glow as the hero-only flourish. */}
       <rect x="15" y="15" width="66" height="66" rx={coreRx} fill={fill} stroke="url(#mbGrad)" strokeWidth="2.25" filter="url(#mbGlow)" />
-      <text
-        x="48"
-        y="60"
-        textAnchor="middle"
-        fontFamily="'Space Grotesk', sans-serif"
-        fontWeight="700"
-        fontSize="28"
-        letterSpacing="-1.5"
-        fill={ink}
-      >
-        MB
-      </text>
-      {/* thin accent underline inside the chip, echoing the old arc detail */}
-      <rect x="38" y="65" width="20" height="2" rx="1" fill="#22d3ee" opacity="0.65" />
+      <g transform="translate(15 15) scale(3)">
+        <Peaks ink={ink} dot={dot} />
+      </g>
     </svg>
   );
 };

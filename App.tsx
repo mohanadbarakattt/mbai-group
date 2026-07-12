@@ -12,6 +12,8 @@ import TechExpertise from './components/TechExpertise';
 import HowWeWork from './components/HowWeWork';
 import Demos from './components/Demos';
 import Ventures from './components/Ventures';
+import GitHubSection from './components/GitHubSection';
+import ClaudeSection from './components/ClaudeSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
@@ -82,7 +84,9 @@ function Home() {
         <FounderCredentials />
         <Ventures />
         <Demos />
+        <GitHubSection />
         <TechExpertise />
+        <ClaudeSection />
         <HowWeWork />
         <StatsSection />
         <FAQSection />
