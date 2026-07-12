@@ -1,5 +1,5 @@
-import type React from "react";
 import { useState, useEffect, useCallback } from "react";
+import type { ReactNode, FormEvent } from "react";
 import { CheckCircle, XCircle, Clock, RefreshCw, LogOut, Eye } from "lucide-react";
 
 interface Submission {
@@ -22,7 +22,7 @@ const STATUS_COLORS: Record<string, string> = {
   rejected: "bg-red-100 text-red-800 border-red-200",
 };
 
-const STATUS_ICONS: Record<string, React.ReactNode> = {
+const STATUS_ICONS: Record<string, ReactNode> = {
   pending: <Clock size={12} />,
   approved: <CheckCircle size={12} />,
   rejected: <XCircle size={12} />,
@@ -58,7 +58,7 @@ export default function TestimonialsAdmin() {
     }
   }, []);
 
-  const handleLogin = async (e: React.FormEvent) => {
+  const handleLogin = async (e: FormEvent) => {
     e.preventDefault();
     setAuthError("");
     setLoading(true);
