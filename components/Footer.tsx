@@ -1,9 +1,44 @@
 import React from 'react';
+import { Link } from 'wouter';
 import Logo from './Logo';
+import { useI18n } from '../i18n';
 
 const Footer: React.FC = () => {
+  const { dict } = useI18n();
+  const exploreLinks = [
+    { id: 'ventures', label: dict.footer.venturesLink, href: '/#ventures' },
+    { id: 'demos', label: dict.footer.demosLink, href: '/#demos' },
+    { id: 'our-story', label: dict.footer.ourStory, href: '/about' },
+    { id: 'contact', label: dict.footer.contactLink, href: '/#contact' },
+  ];
+  const legalLinks = [
+    { id: 'privacy', label: dict.footer.privacy, href: '/privacy' },
+    { id: 'terms', label: dict.footer.terms, href: '/terms' },
+  ];
+
   return (
     <footer className="bg-[#111111] border-t border-[#222]">
+      {/* Explore / legal links */}
+      <div className="border-b border-white/10 py-8 px-6">
+        <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-x-10 gap-y-5 text-center sm:text-left">
+          <nav aria-label={dict.footer.explore} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {exploreLinks.map((l) => (
+              <a key={l.id} href={l.href} className="text-xs font-medium uppercase tracking-wide text-[#8b93a7] hover:text-white transition-colors">
+                {l.label}
+              </a>
+            ))}
+          </nav>
+          <span className="hidden sm:block w-px h-4 bg-white/10" />
+          <nav aria-label={dict.footer.legal} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
+            {legalLinks.map((l) => (
+              <Link key={l.id} href={l.href} className="text-xs font-medium uppercase tracking-wide text-[#8b93a7] hover:text-white transition-colors no-underline">
+                {l.label}
+              </Link>
+            ))}
+          </nav>
+        </div>
+      </div>
+
       {/* Quick links bar */}
       <div className="border-b border-white/10 py-5 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
@@ -37,8 +72,8 @@ const Footer: React.FC = () => {
           <div className="flex flex-col items-center md:items-start">
             <Logo size={44} dark withWordmark />
           </div>
-          <p className="text-[#aaa] text-sm">&copy; 2026 MB AI Group. All rights reserved.</p>
-          <p className="text-[#888] text-xs">Cairo, Egypt &amp; Dubai, UAE</p>
+          <p className="text-[#aaa] text-sm">{dict.footer.copyright.replace('{year}', String(new Date().getFullYear()))}</p>
+          <p className="text-[#888] text-xs">{dict.footer.location}</p>
         </div>
       </div>
     </footer>

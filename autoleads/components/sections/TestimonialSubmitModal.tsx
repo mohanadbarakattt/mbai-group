@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { X, Send, CheckCircle, Star, Quote } from "lucide-react";
+import { X, Send, CheckCircle, Star, Quote, AlertCircle } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 
 interface Props {
@@ -15,10 +15,13 @@ const initialForm = {
   company: "",
 };
 
+const FALLBACK_ERROR = "Something went wrong. Please email mohanad.barakat@mbai-group.com directly.";
+
 export function TestimonialSubmitModal({ open, onClose }: Props) {
   const [form, setForm] = useState(initialForm);
   const [sending, setSending] = useState(false);
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setForm({ ...form, [e.target.name]: e.target.value });
@@ -27,6 +30,7 @@ export function TestimonialSubmitModal({ open, onClose }: Props) {
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setSending(true);
+    setError(null);
     try {
       const response = await fetch("/api/testimonials", {
         method: "POST",
@@ -37,10 +41,13 @@ export function TestimonialSubmitModal({ open, onClose }: Props) {
         setSubmitted(true);
         setForm(initialForm);
       } else {
-        throw new Error("Non-OK response");
+        // Surface the API's real message (e.g. "storage isn't configured yet")
+        // instead of always claiming a generic failure.
+        const data = await response.json().catch(() => null);
+        setError(data?.error || FALLBACK_ERROR);
       }
     } catch {
-      alert("Something went wrong. Please email mohanad.barakat@mbai-group.com directly.");
+      setError(FALLBACK_ERROR);
     } finally {
       setSending(false);
     }
@@ -48,6 +55,7 @@ export function TestimonialSubmitModal({ open, onClose }: Props) {
 
   const handleClose = () => {
     setSubmitted(false);
+    setError(null);
     onClose();
   };
 
@@ -202,6 +210,13 @@ export function TestimonialSubmitModal({ open, onClose }: Props) {
                       placeholder="Your company name"
                     />
                   </div>
+
+                  {error && (
+                    <div className="flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-4 py-3 text-xs text-destructive">
+                      <AlertCircle size={15} className="shrink-0 mt-0.5" />
+                      <span>{error}</span>
+                    </div>
+                  )}
 
                   <div className="pt-2">
                     <button

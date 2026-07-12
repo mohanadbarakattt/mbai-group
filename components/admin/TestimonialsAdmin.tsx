@@ -1,3 +1,4 @@
+import type React from "react";
 import { useState, useEffect, useCallback } from "react";
 import { CheckCircle, XCircle, Clock, RefreshCw, LogOut, Eye } from "lucide-react";
 
@@ -69,8 +70,13 @@ export default function TestimonialsAdmin() {
         setAuthed(true);
         const data = await res.json();
         setAllSubmissions(data.testimonials || []);
-      } else {
+      } else if (res.status === 401) {
         setAuthError("Wrong password. Please try again.");
+      } else {
+        // e.g. 503 when ADMIN_PASSWORD isn't configured in this environment yet —
+        // surface the real reason instead of implying the password was wrong.
+        const data = await res.json().catch(() => null);
+        setAuthError(data?.error || "Could not connect to the admin API.");
       }
     } catch {
       setAuthError("Could not connect to server.");

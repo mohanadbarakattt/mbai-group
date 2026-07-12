@@ -7,6 +7,7 @@ const VirloPage: React.FC = () => (
     name="Virlo"
     accent="#f97316"
     tagline="Virality Intelligence"
+    path="/virlo"
     headline={<>Know what goes viral.<br /><span className="text-gradient">Before it does.</span></>}
     sub="Virlo scans millions of short-form posts in real time, detects trends while they're still climbing, and tells creators and brands exactly what to post, when, and why — with a virality score for every emerging format."
     pillars={[

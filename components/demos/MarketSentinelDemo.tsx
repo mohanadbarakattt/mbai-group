@@ -238,6 +238,9 @@ function Gauge({ score }: { score: number }): ReactElement {
 }
 
 interface AssetCardProps {
+  // Declared explicitly because this project has no @types/react JSX attribute
+  // augmentation to auto-strip `key` from custom-component prop checks.
+  key?: string | number;
   cfg: AssetConfig;
   state: AssetState;
   selected: boolean;

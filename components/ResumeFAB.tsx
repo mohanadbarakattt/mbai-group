@@ -1,7 +1,18 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { FileText } from 'lucide-react';
 
 const ResumeFAB: React.FC = () => {
+  // The hero already has an identical inline "Download CV" button — only surface
+  // this floating duplicate once the user has scrolled that button out of view.
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const onScroll = () => setVisible(window.scrollY > 480);
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
+    return () => window.removeEventListener('scroll', onScroll);
+  }, []);
+
   const handleDownload = async () => {
     try {
       const response = await fetch('/Mohanad_Barakat_CV.pdf');
@@ -20,9 +31,15 @@ const ResumeFAB: React.FC = () => {
   };
 
   return (
-    <div className="fixed bottom-8 right-8 z-40">
-      <button 
+    <div
+      className={`fixed bottom-8 right-8 z-40 transition-all duration-300 ${
+        visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4 pointer-events-none'
+      }`}
+      aria-hidden={!visible}
+    >
+      <button
         onClick={handleDownload}
+        tabIndex={visible ? 0 : -1}
         className="btn-primary flex items-center gap-3 px-6 py-4 rounded-full transition-all transform hover:scale-105 group relative cursor-pointer"
         aria-label="Download Resume"
       >

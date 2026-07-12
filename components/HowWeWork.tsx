@@ -1,38 +1,13 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Search, Cpu, Rocket, HeartHandshake } from 'lucide-react';
+import { useI18n } from '../i18n';
 
-const steps = [
-  {
-    number: '01',
-    icon: <Search size={20} />,
-    title: 'Discover',
-    punch: 'We scope it in one call.',
-    description: 'Goals, market, workflow — all mapped before a line is written.',
-  },
-  {
-    number: '02',
-    icon: <Cpu size={20} />,
-    title: 'Build',
-    punch: 'Engineers ship, not slides.',
-    description: 'Your AI agent, pipeline, or product — built iteratively with you.',
-  },
-  {
-    number: '03',
-    icon: <Rocket size={20} />,
-    title: 'Launch',
-    punch: 'Live. Tested. Yours.',
-    description: 'Deployed, documented, and walked through — ready from day one.',
-  },
-  {
-    number: '04',
-    icon: <HeartHandshake size={20} />,
-    title: 'Support',
-    punch: 'We stay in the game.',
-    description: 'Optimise, scale, and refine — we treat every client as a long-term partner.',
-  },
-];
+const STEP_ICONS = [<Search size={20} />, <Cpu size={20} />, <Rocket size={20} />, <HeartHandshake size={20} />];
+const STEP_NUMBERS = ['01', '02', '03', '04'];
 
 const HowWeWork: React.FC = () => {
+  const { dict } = useI18n();
+  const steps = dict.howWeWork.steps.map((s, i) => ({ ...s, number: STEP_NUMBERS[i], icon: STEP_ICONS[i] }));
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -50,10 +25,10 @@ const HowWeWork: React.FC = () => {
 
         {/* Header */}
         <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-400 mb-3">Our Process</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-cyan-400 mb-3">{dict.howWeWork.eyebrow}</p>
           <h2 className="text-3xl md:text-5xl font-black leading-tight">
-            From idea to shipped —<br className="hidden sm:block" />
-            <span className="text-gradient"> in weeks, not months.</span>
+            {dict.howWeWork.heading1}<br className="hidden sm:block" />
+            <span className="text-gradient"> {dict.howWeWork.heading2}</span>
           </h2>
         </div>
 
@@ -89,7 +64,7 @@ const HowWeWork: React.FC = () => {
         {/* Bottom strip */}
         <div className={`mt-6 flex items-center justify-center gap-2 text-[#8b93a7] text-xs transition-all duration-700 delay-700 ${visible ? 'opacity-100' : 'opacity-0'}`}>
           <span className="w-4 h-px bg-white/15" />
-          Average time to first delivery: <span className="font-semibold text-white">2–4 weeks</span>
+          {dict.howWeWork.avgTimeLabel} <span className="font-semibold text-white">{dict.howWeWork.avgTimeValue}</span>
           <span className="w-4 h-px bg-white/15" />
         </div>
 

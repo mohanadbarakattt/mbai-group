@@ -3,6 +3,7 @@ import { Link } from 'wouter';
 import { ArrowLeft, Calendar } from 'lucide-react';
 import Navigation from '../../components/Navigation';
 import Footer from '../../components/Footer';
+import Seo from '../../components/Seo';
 
 interface Props {
   name: string;
@@ -12,11 +13,22 @@ interface Props {
   sub: string;
   children: React.ReactNode;
   pillars: { title: string; text: string }[];
+  /** Route path, e.g. "/virlo" — used for canonical/OG tags and JSON-LD. */
+  path: string;
 }
 
 /** Shared dark layout for venture preview pages (Virlo / IBNI / TUT). */
-const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, children, pillars }) => {
+const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, children, pillars, path }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
+
+  const productJsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Product',
+    name: `${name} — ${tagline}`,
+    description: sub,
+    brand: { '@type': 'Organization', name: 'MB AI Group' },
+    url: `https://mbai-group.com${path}`,
+  };
 
   const openCalendly = () => {
     if ((window as any).Calendly) {
@@ -26,6 +38,12 @@ const VentureShell: React.FC<Props> = ({ name, accent, tagline, headline, sub, c
 
   return (
     <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
+      <Seo
+        title={`${name} — ${tagline} · MB AI Group`}
+        description={sub}
+        path={path}
+        jsonLd={productJsonLd}
+      />
       <Navigation />
       <main className="relative pt-36 pb-24 px-6">
         <div className="aurora w-[520px] h-[520px] -top-20 -right-32" style={{ background: `radial-gradient(circle, ${accent}44, transparent 60%)` }} />

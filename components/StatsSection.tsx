@@ -1,14 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Quote } from 'lucide-react';
 import testimonials from './data/testimonials';
-
-const stats = [
-  { number: '6', label: 'AI products shipped' },
-  { number: '3', label: 'MENA markets served' },
-  { number: '200+', label: 'leads delivered' },
-];
+import { useI18n } from '../i18n';
 
 const StatsSection: React.FC = () => {
+  const { dict } = useI18n();
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -33,13 +29,13 @@ const StatsSection: React.FC = () => {
           className={`mb-10 flex items-end justify-between gap-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
         >
           <div className="shrink-0 hidden sm:block select-none pointer-events-none">
-            <p className="text-7xl md:text-8xl font-black text-gradient leading-none">200+</p>
-            <p className="text-xs text-[#8b93a7] mt-1 tracking-wide font-medium">leads delivered</p>
+            <p className="text-7xl md:text-8xl font-black text-gradient leading-none">{dict.stats.leadsBig}</p>
+            <p className="text-xs text-[#8b93a7] mt-1 tracking-wide font-medium">{dict.stats.leadsLabel}</p>
           </div>
           <div className="sm:text-right">
-            <p className="text-xs uppercase tracking-[0.18em] text-cyan-400 mb-3">Client Results</p>
+            <p className="text-xs uppercase tracking-[0.18em] text-cyan-400 mb-3">{dict.stats.eyebrow}</p>
             <h2 className="text-3xl md:text-4xl font-black tracking-tight leading-snug">
-              Real outcomes,<br className="hidden sm:block" /> real teams.
+              {dict.stats.heading1}<br className="hidden sm:block" /> {dict.stats.heading2}
             </h2>
           </div>
         </div>
@@ -49,7 +45,7 @@ const StatsSection: React.FC = () => {
           className={`mb-10 grid grid-cols-3 divide-x divide-white/10 glass rounded-xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ transitionDelay: '100ms' }}
         >
-          {stats.map((s) => (
+          {dict.stats.items.map((s) => (
             <div key={s.label} className="px-4 py-5 text-center">
               <p className="text-2xl md:text-3xl font-black text-gradient">{s.number}</p>
               <p className="text-xs text-[#8b93a7] mt-1">{s.label}</p>

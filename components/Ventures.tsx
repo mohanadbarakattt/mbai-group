@@ -1,66 +1,44 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles } from 'lucide-react';
+import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles, Fingerprint } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
+import { useI18n } from '../i18n';
 
-interface Venture {
-  name: string;
-  tagline: string;
-  description: string;
-  interpretation: string;
-  status: 'Live' | 'In Development';
-  href: string;
-  external?: boolean;
-  icon: React.ReactNode;
-  accent: string;
-}
-
-const ventures: Venture[] = [
+// Non-translatable metadata (brand names stay in Latin script in every
+// locale, per the site's own convention — see i18n/ar.ts and franco.ts).
+// Copy (tagline/description/interpretation) comes from dict.ventures.items.
+const VENTURE_META = [
   {
-    name: 'AutoLeads',
-    tagline: 'AI Lead Generation Infrastructure',
-    description:
-      'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate brokerages and MENA enterprises. Custom agents hunt leads around the clock; bilingual specialists close the loop.',
-    interpretation:
-      'Proof that frontier-grade AI can drive revenue today — 200+ qualified leads delivered to real clients across three markets.',
-    status: 'Live',
+    id: 'ibni' as const,
+    name: 'IBNI',
+    // Kept in sync with the /ibni page and the Demos section: IBNI is an active,
+    // in-development concept preview today, not yet a publicly shipped product.
+    status: 'Preview' as const,
+    href: '/ibni',
+    icon: <Hammer size={22} />,
+    accent: '#10b981',
+  },
+  {
+    id: 'autoleadss' as const,
+    name: 'AutoLeadss',
+    status: 'Live' as const,
     href: 'https://autoleadss.com',
     external: true,
     icon: <Sparkles size={22} />,
     accent: '#6366f1',
   },
   {
-    name: 'Virlo',
-    tagline: 'Virality Intelligence Engine',
-    description:
-      'A trend-intelligence platform that decodes why content goes viral. Virlo scans short-form platforms in real time, scores emerging trends before they peak, and tells creators and brands exactly what to post next.',
-    interpretation:
-      'Applies the same signal-extraction discipline used in frontier-model data pipelines to the chaos of social media.',
-    status: 'In Development',
+    id: 'virlo' as const,
+    name: 'Virlo Studio',
+    status: 'Coming soon' as const,
     href: '/virlo',
     icon: <Flame size={22} />,
     accent: '#f97316',
   },
   {
-    name: 'IBNI',
-    tagline: 'The AI App Builder',
-    description:
-      'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and previews it — bringing software creation to founders who don\'t code.',
-    interpretation:
-      'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
-    status: 'In Development',
-    href: '/ibni',
-    icon: <Hammer size={22} />,
-    accent: '#10b981',
-  },
-  {
+    id: 'tut' as const,
     name: 'TUT',
-    tagline: 'AI Learning Companion',
-    description:
-      'Named after Egypt\'s boy king, TUT is a personal AI tutor built for MENA students — explaining any concept in Arabic or English, adapting to each learner\'s pace, and turning curricula into conversations.',
-    interpretation:
-      'Education is MENA\'s biggest lever. TUT applies alignment-grade AI safety and pedagogy to the region\'s 100M+ students.',
-    status: 'In Development',
+    status: 'Coming soon' as const,
     href: '/tut',
     icon: <GraduationCap size={22} />,
     accent: '#eab308',
@@ -68,6 +46,13 @@ const ventures: Venture[] = [
 ];
 
 const Ventures: React.FC = () => {
+  const { dict } = useI18n();
+  const ventures = VENTURE_META.map((meta) => ({ ...meta, ...dict.ventures.items[meta.id] }));
+  const statusLabel: Record<string, string> = {
+    Live: dict.ventures.statusLive,
+    Preview: dict.ventures.statusPreview,
+    'Coming soon': dict.ventures.statusComingSoon,
+  };
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -95,14 +80,11 @@ const Ventures: React.FC = () => {
 
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">The MB AI Group Portfolio</p>
+          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.ventures.eyebrow}</p>
           <h2 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-            One group.<br className="sm:hidden" /> Four ventures. <span className="text-gradient">One mission.</span>
+            {dict.ventures.heading1}<br className="sm:hidden" /> {dict.ventures.heading2} <span className="text-gradient">{dict.ventures.heading3}</span>
           </h2>
-          <p className="text-[#8b93a7] max-w-2xl">
-            Every company in the group attacks the same problem from a different angle: bringing frontier-grade AI to the
-            markets the frontier forgot. Lead generation, virality intelligence, no-code creation, and education.
-          </p>
+          <p className="text-[#8b93a7] max-w-2xl">{dict.ventures.intro}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8" style={{ perspective: '1200px' }}>
@@ -134,7 +116,7 @@ const Ventures: React.FC = () => {
                         : { color: '#93a4c8', background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.12)' }}
                     >
                       <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: v.status === 'Live' ? '#34d399' : v.accent }} />
-                      {v.status}
+                      {statusLabel[v.status]}
                     </span>
                   </div>
 
@@ -142,12 +124,12 @@ const Ventures: React.FC = () => {
 
                   <div className="mt-auto">
                     <div className="p-4 rounded-xl bg-white/[0.03] border border-white/10 mb-6">
-                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>Why it matters</p>
+                      <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>{dict.ventures.whyItMatters}</p>
                       <p className="text-[#cdd4e2] text-sm leading-relaxed">{v.interpretation}</p>
                     </div>
                     <div className="w-full py-2.5 rounded-lg border font-medium flex items-center justify-center gap-2 text-sm transition-all"
                       style={{ borderColor: `${v.accent}44`, color: v.accent, background: `${v.accent}0f` }}>
-                      {v.status === 'Live' ? 'Visit the live product' : 'Preview the vision'} <ArrowUpRight size={15} />
+                      {v.status === 'Live' ? dict.ventures.ctaLive : dict.ventures.ctaPreview} <ArrowUpRight size={15} />
                     </div>
                   </div>
                 </div>
@@ -168,6 +150,24 @@ const Ventures: React.FC = () => {
               </div>
             );
           })}
+        </div>
+
+        <div
+          className={`mt-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          style={{ transitionDelay: '480ms' }}
+        >
+          <div className="glass-strong glow-border rounded-2xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-8">
+            <div
+              className="p-3 rounded-xl shrink-0"
+              style={{ color: '#22d3ee', background: 'rgba(34,211,238,0.1)', border: '1px solid rgba(34,211,238,0.3)' }}
+            >
+              <Fingerprint size={26} />
+            </div>
+            <div>
+              <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-2">{dict.ventures.ecosystemEyebrow}</p>
+              <p className="text-[#cdd4e2] text-base md:text-lg leading-relaxed max-w-3xl">{dict.ventures.ecosystemBody}</p>
+            </div>
+          </div>
         </div>
       </div>
     </section>

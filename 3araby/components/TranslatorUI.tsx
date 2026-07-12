@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { translateFranco, RateLimitError } from '../services/geminiService';
+import { translateFranco, RateLimitError, ConfigError } from '../services/geminiService';
 import { TranslationResult, HistoryItem } from '../types';
 
 interface TranslatorUIProps {
@@ -28,6 +28,8 @@ export const TranslatorUI: React.FC<TranslatorUIProps> = ({ onNewHistory }) => {
     } catch (err) {
       if (err instanceof RateLimitError) {
         setError('The AI is busy right now. Please wait a moment and try again.');
+      } else if (err instanceof ConfigError) {
+        setError("This demo's translation engine isn't configured correctly right now — we've noted it. Try again later, or explore the Franco guide tab in the meantime.");
       } else {
         setError('Translation failed. Please try again.');
       }
