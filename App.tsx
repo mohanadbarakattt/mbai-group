@@ -6,6 +6,7 @@ import { Toaster } from './autoleads/components/ui/toaster';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import MarqueeBanner from './components/MarqueeBanner';
+import Features from './components/Features';
 import StatsSection from './components/StatsSection';
 import FounderCredentials from './components/FounderCredentials';
 import TechExpertise from './components/TechExpertise';
@@ -14,6 +15,8 @@ import Demos from './components/Demos';
 import Ventures from './components/Ventures';
 import GitHubSection from './components/GitHubSection';
 import ClaudeSection from './components/ClaudeSection';
+import Comparison from './components/Comparison';
+import Benefits from './components/Benefits';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
@@ -82,14 +85,17 @@ function Home() {
       <main>
         <Hero />
         <MarqueeBanner />
-        <FounderCredentials />
+        <Features />
         <Ventures />
         <Demos />
         <GitHubSection />
         <TechExpertise />
         <ClaudeSection />
         <HowWeWork />
+        <FounderCredentials />
         <StatsSection />
+        <Comparison />
+        <Benefits />
         <FAQSection />
         <Contact />
       </main>

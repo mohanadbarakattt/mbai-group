@@ -1,6 +1,7 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { Search, Cpu, Rocket, HeartHandshake, ArrowRight } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
+import VideoSlot from './VideoSlot';
 import { useI18n } from '../i18n';
 
 const STEP_ICONS = [<Search size={20} />, <Cpu size={20} />, <Rocket size={20} />, <HeartHandshake size={20} />];
@@ -81,6 +82,18 @@ const HowWeWork: React.FC = () => {
           <span className="w-4 h-px bg-white/15" />
           {dict.howWeWork.avgTimeLabel} <span className="font-semibold text-white">{dict.howWeWork.avgTimeValue}</span>
           <span className="w-4 h-px bg-white/15" />
+        </div>
+
+        {/* Explainer video — process walkthrough, still to be shot (see public/media/MANIFEST.md) */}
+        <div
+          className={`mt-14 grid grid-cols-1 md:grid-cols-2 gap-8 items-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+          style={{ transitionDelay: '750ms' }}
+        >
+          <div>
+            <h3 className="text-xl md:text-2xl font-black text-white leading-tight mb-2">{dict.howWeWork.explainerTitle}</h3>
+            <p className="text-[#8b93a7] text-sm leading-relaxed max-w-md">{dict.howWeWork.explainerBody}</p>
+          </div>
+          <VideoSlot label={dict.howWeWork.explainerVideoLabel} accent="#22d3ee" />
         </div>
 
       </div>

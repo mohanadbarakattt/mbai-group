@@ -23,33 +23,15 @@ const en: Dict = {
   },
 
   hero: {
-    slides: [
-      {
-        badge: 'MB AI Group · Frontier AI for MENA',
-        line1: 'Frontier AI,',
-        line2: 'built for the real world.',
-        sub: 'Founded by a former xAI Human Data Lead. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.',
-      },
-      {
-        badge: 'One Group · Four Ventures',
-        line1: 'AutoLeadss. Virlo.',
-        line2: 'IBNI. TUT.',
-        sub: 'AutoLeadss generates revenue today. Virlo Studio, IBNI and TUT are next — virality intelligence, no-code AI building, and education for 100M+ students.',
-      },
-      {
-        badge: 'LLM Alignment · RLHF · Reasoning',
-        line1: 'The rigour behind',
-        line2: 'frontier models.',
-        sub: "Our work covered LLM alignment, RLHF, and Chain-of-Thought reasoning — the techniques behind the world's most capable AI, now applied to your product.",
-      },
-    ],
+    badge: 'MB AI Group · Frontier AI for MENA',
+    line1: 'Frontier AI,',
+    line2: 'built for the real world.',
+    sub: 'Founded by a former xAI Human Data Lead. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.',
     ctaBook: 'Book a 30-min Strategy Call',
     ctaDemos: 'Explore Live Demos',
-    ctaStory: 'Read the founder’s story',
     statLead: 'Ex-xAI Human Data Lead',
     statProducts: '10 shipped products',
     statLocation: 'Cairo · Dubai',
-    slideAria: 'Slide {n}',
   },
 
   ventures: {
@@ -155,6 +137,9 @@ const en: Dict = {
     ],
     avgTimeLabel: 'Average time to first delivery:',
     avgTimeValue: '2–4 weeks',
+    explainerTitle: 'Watch the process, start to finish',
+    explainerBody: 'A real project moving through Discover, Build, Launch, and Support — in under two minutes.',
+    explainerVideoLabel: 'How We Work — a 2-minute walkthrough',
   },
 
   stats: {
@@ -173,6 +158,70 @@ const en: Dict = {
   techExpertise: {
     eyebrow: 'The Engine Behind the Group',
     body: 'The same disciplines that align frontier models — RLHF, signal extraction, and reasoning-grade data pipelines — now power all four MB AI Group ventures.',
+  },
+
+  features: {
+    eyebrow: 'What We Bring',
+    heading1: "Everything you'd expect from a frontier AI lab —",
+    heading2: 'tuned for how MENA actually works.',
+    items: [
+      {
+        title: 'Multi-Agent Orchestration',
+        description: 'One model plans and reviews, a crew of cheaper agents build — the same delegation practice powering every product we ship.',
+      },
+      {
+        title: 'Arabic-First, Not Arabic-Translated',
+        description: 'Dialect-tuned NLP for Egyptian Franco-Arabic and MSA — built from real regional data, not machine-translated prompts.',
+      },
+      {
+        title: 'Idea to Shipped, in Weeks',
+        description: 'Tested, documented, and deployed — not a slide deck. Most engagements go live in 2–4 weeks.',
+      },
+    ],
+  },
+
+  benefits: {
+    eyebrow: 'What You Actually Get',
+    heading1: 'Real outcomes,',
+    heading2: 'not just a build.',
+    items: [
+      {
+        eyebrow: 'Speed',
+        title: 'From idea to shipped product in weeks, not months',
+        body: 'Most engagements go live in 2–4 weeks — discovery, build, and launch as one continuous sprint, not a quarter-long contract.',
+        videoLabel: 'Idea to shipped, visualised',
+      },
+      {
+        eyebrow: 'Reach',
+        title: 'Speak to your Arabic-speaking customers the way they actually talk',
+        body: 'Egyptian Franco-Arabic, MSA, and English — dialect-tuned NLP built from real regional data, not a translated prompt.',
+        videoLabel: 'Arabic-first, by design',
+      },
+      {
+        eyebrow: 'Scale',
+        title: 'One AI gateway powers every product you own',
+        body: 'Every MB AI Group venture runs on the same shared foundation — one login, one data platform, one gateway — so nothing you build starts from zero.',
+        videoLabel: 'One gateway, every product',
+      },
+    ],
+  },
+
+  comparison: {
+    eyebrow: 'Why MB AI Group',
+    heading1: 'One partner for build and market —',
+    heading2: 'not another vendor in the queue.',
+    sub: 'A straightforward look at how we compare to the alternatives MENA businesses usually weigh.',
+    columnUs: 'MB AI Group',
+    columnOffshore: 'Offshore Dev Shop',
+    columnAgency: 'Generic Agency',
+    rows: [
+      { label: 'Ships its own AI products, not just client work', us: 'Yes — 4 live ventures', offshore: 'Usually client work only', agency: 'Usually client work only' },
+      { label: 'Team on the ground in Cairo & Dubai', us: 'Yes', offshore: '—', agency: '—' },
+      { label: 'Arabic dialect-tuned AI (Egyptian Franco-Arabic + MSA)', us: 'Yes', offshore: '—', agency: '—' },
+      { label: 'One partner for build and ongoing growth', us: 'Yes', offshore: 'Varies by contract', agency: 'Varies by contract' },
+      { label: 'Open, inspectable code on public repos', us: 'Yes — GitHub', offshore: '—', agency: '—' },
+    ],
+    footnote: "— means it depends on the specific shop; we're not going to guess at claims we can't verify.",
   },
 };
 

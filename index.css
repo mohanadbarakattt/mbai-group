@@ -216,6 +216,15 @@ h1, h2, h3, h4, h5, h6 {
 .animate-pulse-glow { animation: pulse-glow 3s ease-in-out infinite; }
 .reveal { animation: rise .8s cubic-bezier(.22,1,.36,1) both; }
 
+/* ---------- Feature-card mini visuals ---------- */
+@keyframes chip-cycle { 0%, 100% { opacity: 0.28; transform: translateY(2px); } 15%, 30% { opacity: 1; transform: translateY(0); } 45% { opacity: 0.28; transform: translateY(2px); } }
+@keyframes bar-grow { 0% { width: 6%; } 45%, 55% { width: 100%; } 100% { width: 6%; } }
+.animate-chip-cycle { animation: chip-cycle 3.6s ease-in-out infinite; }
+.animate-bar-grow { animation: bar-grow 3.2s ease-in-out infinite; }
+@media (prefers-reduced-motion: reduce) {
+  .animate-chip-cycle, .animate-bar-grow, .animate-pulse-glow { animation: none; opacity: 1; }
+}
+
 /* ===================== AutoLeads sub-app stays LIGHT ===================== */
 .autoleads-page {
   --background: 220 20% 97%;

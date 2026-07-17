@@ -4,13 +4,6 @@
  * *keys* are enforced to match across en/ar/franco, so a missing or renamed
  * key in any locale is a real tsc error instead of a silent runtime gap.
  */
-export interface HeroSlide {
-  badge: string;
-  line1: string;
-  line2: string;
-  sub: string;
-}
-
 export interface HowWeWorkStep {
   title: string;
   punch: string;
@@ -28,6 +21,25 @@ export interface VentureCopy {
   interpretation: string;
 }
 
+export interface FeatureItem {
+  title: string;
+  description: string;
+}
+
+export interface BenefitItem {
+  eyebrow: string;
+  title: string;
+  body: string;
+  videoLabel: string;
+}
+
+export interface ComparisonRow {
+  label: string;
+  us: string;
+  offshore: string;
+  agency: string;
+}
+
 export interface Dict {
   nav: {
     ventures: string;
@@ -39,15 +51,15 @@ export interface Dict {
     languageLabel: string;
   };
   hero: {
-    slides: HeroSlide[];
+    badge: string;
+    line1: string;
+    line2: string;
+    sub: string;
     ctaBook: string;
     ctaDemos: string;
-    ctaStory: string;
     statLead: string;
     statProducts: string;
     statLocation: string;
-    /** Template with a literal `{n}` placeholder, e.g. "Slide {n}". */
-    slideAria: string;
   };
   ventures: {
     eyebrow: string;
@@ -116,6 +128,9 @@ export interface Dict {
     steps: HowWeWorkStep[];
     avgTimeLabel: string;
     avgTimeValue: string;
+    explainerTitle: string;
+    explainerBody: string;
+    explainerVideoLabel: string;
   };
   stats: {
     eyebrow: string;
@@ -128,6 +143,30 @@ export interface Dict {
   techExpertise: {
     eyebrow: string;
     body: string;
+  };
+  features: {
+    eyebrow: string;
+    heading1: string;
+    heading2: string;
+    items: FeatureItem[];
+  };
+  benefits: {
+    eyebrow: string;
+    heading1: string;
+    heading2: string;
+    items: BenefitItem[];
+  };
+  comparison: {
+    eyebrow: string;
+    heading1: string;
+    heading2: string;
+    sub: string;
+    columnUs: string;
+    columnOffshore: string;
+    columnAgency: string;
+    rows: ComparisonRow[];
+    /** Explains the "—" cells — an honesty footnote, not a sales line. */
+    footnote: string;
   };
 }
 

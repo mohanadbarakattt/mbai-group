@@ -21,33 +21,15 @@ const franco: Dict = {
   },
 
   hero: {
-    slides: [
-      {
-        badge: 'MB AI Group · AI 2awy lel MENA',
-        line1: 'AI 2awy,',
-        line2: 'mabniya lel 3alam el 7a2i2i.',
-        sub: "Assasha wa7ed kan Human Data Lead fi xAI 2abl keda. E7na benebni AI agents w data systems w products bteghayar shoghl sharikat el MENA — w betla2 mashari3na el shakhsiya bnefs el fikr.",
-      },
-      {
-        badge: 'Group wa7ed · Arba3 Mashari3',
-        line1: 'AutoLeadss. Virlo.',
-        line2: 'IBNI. TUT.',
-        sub: 'AutoLeadss gayeb felous fe3lan delwa2ty. Virlo Studio w IBNI w TUT gayin ba3d keda — virality intelligence, bina2 apps min gheer code, w ta3leem le aktar men 100 melyoon student.',
-      },
-      {
-        badge: 'LLM Alignment · RLHF · Reasoning',
-        line1: 'El dabt elly wara',
-        line2: 'el frontier models.',
-        sub: 'Shoghlna kan shamel LLM alignment w RLHF w Chain-of-Thought reasoning — nafs el techniques elly wara a2wa AI models fel 3alam, dilwa2ty bnetteb2 3ala el product beta3ak.',
-      },
-    ],
+    badge: 'MB AI Group · AI 2awy lel MENA',
+    line1: 'AI 2awy,',
+    line2: 'mabniya lel 3alam el 7a2i2i.',
+    sub: "Assasha wa7ed kan Human Data Lead fi xAI 2abl keda. E7na benebni AI agents w data systems w products bteghayar shoghl sharikat el MENA — w betla2 mashari3na el shakhsiya bnefs el fikr.",
     ctaBook: 'Ehgez Strategy Call, 30 di2i2a',
     ctaDemos: 'Shoof el Demos Live',
-    ctaStory: '2ra2 2essat el founder',
     statLead: 'Kan Human Data Lead fi xAI',
     statProducts: '10 products shipped',
     statLocation: 'Cairo · Dubai',
-    slideAria: 'Slide ra2am {n}',
   },
 
   ventures: {
@@ -153,6 +135,9 @@ const franco: Dict = {
     ],
     avgTimeLabel: 'Motawaset el wa2t le awel tasleem:',
     avgTimeValue: '2–4 asabee3',
+    explainerTitle: 'Shoof el process men el awel lel akher',
+    explainerBody: 'Mashroo3 7a2ee2y beyemshy fi Discover w Build w Launch w Support — fi a2al min 2 di2i2a.',
+    explainerVideoLabel: 'Ezay Benashtaghal — jolla 2 di2i2a',
   },
 
   stats: {
@@ -171,6 +156,70 @@ const franco: Dict = {
   techExpertise: {
     eyebrow: 'El Mo7arrek Wara el Group',
     body: 'Nafs el disciplines elly bt-align el frontier models — RLHF, w signal extraction, w data pipelines be mostawa reasoning — delwa2ty beteshaghal arba3 mashari3 MB AI Group kolohom.',
+  },
+
+  features: {
+    eyebrow: 'El7aga Elly Benmeeza Beeha',
+    heading1: 'Kol 7aga te2dar tetwa2a3ha men frontier AI lab —',
+    heading2: 'bas madbota 3ala tare2et shoghl el MENA fe3lan.',
+    items: [
+      {
+        title: 'Multi-Agent Orchestration',
+        description: 'Model wa7ed beyekhattat w yeraga3, w faree2 min agents ar5as beyebno — nafs tare2et el delegation elly beteshaghal kol product benshaheno.',
+      },
+      {
+        title: '3araby Awwalan, Mesh 3araby Mutargam',
+        description: 'NLP madbota 3ala el lahga el masreya (Franco-3araby) w el fus7a — mabneya men data 7a2ee2ya mn el mante2a, mesh prompts etargemet automatically.',
+      },
+      {
+        title: 'Men el Fikra lel Etla2, fi Asabee3',
+        description: 'Metjarrab, mwassaf, w manshoor — mesh 3ard slides khales. Aghlab el mashari3 beteetle2 fi 2–4 asabee3.',
+      },
+    ],
+  },
+
+  benefits: {
+    eyebrow: 'El7aga Elly Hatakodha Fe3lan',
+    heading1: 'Nata2eg 7a2ee2ya,',
+    heading2: 'mesh mogarad tanfeez.',
+    items: [
+      {
+        eyebrow: 'Sor3a',
+        title: 'Men el fikra le product etshahan fi asabee3, mesh shohoor',
+        body: 'Aghlab el mashari3 beteetle2 fi 2–4 asabee3 — discovery w build w launch f sprint wa7ed metasel, mesh 3a2d le rob3 sana.',
+        videoLabel: 'Men el fikra lel etla2, bel soora',
+      },
+      {
+        eyebrow: 'El Wosool',
+        title: 'Kallem el 3omala2 elly beyetkallemo 3araby bel tare2a elly hom fe3lan beyetkallemo beeha',
+        body: 'Franco-3araby masry, fus7a, w ingilizy — NLP madbota 3ala el lahga men data 7a2ee2ya mn el mante2a, mesh prompt etargem.',
+        videoLabel: '3araby awwalan, min el design',
+      },
+      {
+        eyebrow: 'El Tawasso3',
+        title: 'AI gateway wa7ed beyeshaghal kol product 3andak',
+        body: 'Kol venture fi MB AI Group beyeshtaghal 3ala nafs el asas: login wa7ed, data platform wa7eda, gateway wa7ed — fa wala 7aga benebneeha betebtidy men sefr.',
+        videoLabel: 'Gateway wa7ed, kol el products',
+      },
+    ],
+  },
+
+  comparison: {
+    eyebrow: 'Leh MB AI Group',
+    heading1: 'Shareek wa7ed lel build w el market —',
+    heading2: 'mesh vendor tany fel do0r.',
+    sub: 'Nazra sari7a 3ala ezay bnet2aren m3a el alternatives elly sharikat el MENA 3adatan bytewazno beenhom.',
+    columnUs: 'MB AI Group',
+    columnOffshore: 'Offshore Dev Shop',
+    columnAgency: 'Wekala 3adeya',
+    rows: [
+      { label: 'Betetle2 products beta3etha bel AI, mesh mogarad shoghl 3omala2', us: 'Aywa — 4 mashari3 live', offshore: '3adatan shoghl 3omala2 bas', agency: '3adatan shoghl 3omala2 bas' },
+      { label: 'Faree2 3ala ard el wa2e3 fi Cairo w Dubai', us: 'Aywa', offshore: '—', agency: '—' },
+      { label: 'AI madbot 3ala el lahga el 3arabeya (Franco-3araby masry + fus7a)', us: 'Aywa', offshore: '—', agency: '—' },
+      { label: 'Shareek wa7ed lel build w el nemo el mostamer', us: 'Aywa', offshore: 'Bytfawet 7asab el 3a2d', agency: 'Bytfawet 7asab el 3a2d' },
+      { label: 'Code maftoo7 wa2abel lel moraga3a 3ala public repos', us: 'Aywa — GitHub', offshore: '—', agency: '—' },
+    ],
+    footnote: '— ya3ny bytfawet 7asab el sharika nafsaha; msh hanekhamen 7agat ma na2darsh net2akked menha.',
   },
 };
 
