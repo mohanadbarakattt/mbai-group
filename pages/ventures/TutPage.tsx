@@ -6,15 +6,15 @@ const TutPage: React.FC = () => (
   <VentureShell
     name="TUT"
     accent="#eab308"
-    tagline="AI Learning Companion"
+    tagline="Egyptian AI Companion & Guide"
     path="/tut"
     status="Coming soon"
-    headline={<>Every student deserves<br /><span className="text-gradient">a brilliant tutor.</span></>}
-    sub="Named after Egypt's boy king, TUT is a personal AI tutor for MENA's 100M+ students — explaining any concept in Arabic or English, adapting to each learner's pace, and turning static curricula into living conversations."
+    headline={<>An AI friend<br /><span className="text-gradient">that actually speaks Egyptian.</span></>}
+    sub="Named after Egypt's boy king, TUT is a personal AI companion that chats natively in Egyptian Arabic, Franco, and English — and knows Egypt cold: places and fair prices, museums and monuments, hieroglyphics, and the slang people actually use."
     pillars={[
-      { title: 'Truly bilingual', text: "Fus'ha, Egyptian, Gulf dialects, or English — TUT teaches in the language the student actually thinks in." },
-      { title: 'Socratic, not lecturing', text: 'TUT asks before it answers, checks understanding at every step, and adapts difficulty in real time.' },
-      { title: 'Alignment-grade safety', text: 'Built by a former xAI Human Data Lead — with the same safety and accuracy discipline used on frontier models.' },
+      { title: 'Speaks Masri, not translated', text: 'Egyptian Arabic, Franco-Arabic, or English — TUT talks the way people actually talk, instead of reading like a translated chatbot.' },
+      { title: 'Knows Egypt cold', text: 'Places worth going and what they should fairly cost, museums and monuments, hieroglyphics, and the slang and trends of right now.' },
+      { title: 'Alignment-grade safety', text: 'Built by a former xAI Human Data Lead — same safety and accuracy discipline used on frontier models, and strictly politically neutral.' },
     ]}
   >
     <TutDemo />

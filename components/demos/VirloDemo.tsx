@@ -1,80 +1,185 @@
-import React, { useEffect, useState } from 'react';
-import { TrendingUp, Flame, Eye, Zap } from 'lucide-react';
+import React, { useEffect, useRef, useState } from 'react';
+import { Clapperboard, Image as ImageIcon, Loader2, Play, Sparkles } from 'lucide-react';
 
-interface Trend { topic: string; platform: string; score: number; velocity: string; window: string; insight: string; }
+type Mode = 'image' | 'video';
+type Phase = 'idle' | 'generating' | 'done';
 
-const TRENDS: Trend[] = [
-  { topic: '"Get ready with my AI" transformations', platform: 'TikTok', score: 94, velocity: '+412%/24h', window: '2–4 days left', insight: 'Creators pairing morning routines with AI-generated future selves. Peak expected Thursday — post before then.' },
-  { topic: 'Franco-Arabic voiceover memes', platform: 'Reels', score: 88, velocity: '+268%/24h', window: '5–7 days left', insight: 'Egyptian Arabizi voiceovers over luxury b-roll. Untapped in GCC — first movers in Saudi will capture the wave.' },
-  { topic: 'Founder "day 1 vs day 365" cuts', platform: 'TikTok', score: 81, velocity: '+190%/24h', window: '~1 week left', insight: 'Raw split-screen founder journeys. High saves-to-likes ratio (0.31) signals durable, not flash, virality.' },
-  { topic: 'Desert-office aesthetic', platform: 'Shorts', score: 73, velocity: '+95%/24h', window: 'Early — rising', insight: 'Remote setups in UAE/Saudi landscapes. Low competition, high CPM niche. Enter now, own the format.' },
+interface Preset {
+  id: string;
+  label: string;
+  /** Two hues used to tint the generated frame placeholders. */
+  hues: [number, number];
+}
+
+const PRESETS: Preset[] = [
+  { id: 'street', label: 'Cairo street food', hues: [26, 44] },
+  { id: 'ramadan', label: 'Ramadan brand spot', hues: [286, 320] },
+  { id: 'sahel', label: 'North Coast summer', hues: [188, 206] },
 ];
 
-const ScoreRing: React.FC<{ score: number; animate: boolean }> = ({ score, animate }) => {
-  const r = 18;
-  const c = 2 * Math.PI * r;
-  const color = score >= 85 ? '#f97316' : score >= 75 ? '#eab308' : '#22c55e';
-  return (
-    <svg width="52" height="52" viewBox="0 0 56 56">
-      <circle cx="28" cy="28" r={r} fill="none" stroke="rgba(255,255,255,0.08)" strokeWidth="5" />
-      <circle cx="28" cy="28" r={r} fill="none" stroke={color} strokeWidth="5" strokeLinecap="round"
-        strokeDasharray={c} strokeDashoffset={animate ? c * (1 - score / 100) : c}
-        transform="rotate(-90 28 28)" style={{ transition: 'stroke-dashoffset 1.3s cubic-bezier(.22,1,.36,1)', filter: `drop-shadow(0 0 4px ${color}88)` }} />
-      <text x="28" y="32" textAnchor="middle" fontSize="13" fontWeight="700" fill="#e8ecf4">{score}</text>
-    </svg>
-  );
-};
+/** Prompt examples in the three ways Virlo's users actually write. */
+const EXAMPLES = [
+  'wa7ed by3mel koshari fe wost el balad, cinematic, golden hour',
+  'إعلان عصير مانجو، إضاءة دافية، لقطة قريبة',
+  'rooftop café at sunset, Cairo skyline, slow pan',
+];
+
+const STEPS = ['Reading the prompt…', 'Matching Egyptian presets…', 'Rendering frames…'];
 
 const VirloDemo: React.FC = () => {
-  const [animate, setAnimate] = useState(false);
-  const [selected, setSelected] = useState(0);
-  const [tick, setTick] = useState(0);
+  const [mode, setMode] = useState<Mode>('image');
+  const [preset, setPreset] = useState<Preset>(PRESETS[0]);
+  const [prompt, setPrompt] = useState('');
+  const [phase, setPhase] = useState<Phase>('idle');
+  const [step, setStep] = useState(0);
+  const timers = useRef<ReturnType<typeof setTimeout>[]>([]);
 
-  useEffect(() => {
-    const t = setTimeout(() => setAnimate(true), 250);
-    const i = setInterval(() => setTick((n) => n + 1), 2500);
-    return () => { clearTimeout(t); clearInterval(i); };
-  }, []);
+  const clearTimers = () => { timers.current.forEach(clearTimeout); timers.current = []; };
+  useEffect(() => clearTimers, []);
 
-  const livePosts = 1_284_930 + tick * 1739;
+  const generate = (text?: string) => {
+    const p = (text ?? prompt).trim();
+    if (!p || phase === 'generating') return;
+    clearTimers();
+    setPrompt(p);
+    setPhase('generating');
+    setStep(0);
+    STEPS.forEach((_, i) => {
+      timers.current.push(setTimeout(() => setStep(i), i * 700));
+    });
+    timers.current.push(setTimeout(() => setPhase('done'), STEPS.length * 700));
+  };
+
+  const reset = () => { clearTimers(); setPhase('idle'); setStep(0); };
+
+  // Four frames, tinted across the preset's hue range so each render looks distinct.
+  const frames = Array.from({ length: 4 }, (_, i) => {
+    const [h1, h2] = preset.hues;
+    const h = h1 + ((h2 - h1) * i) / 3;
+    return `linear-gradient(${140 + i * 12}deg, hsl(${h} 70% 46%), hsl(${h + 14} 55% 16%) 70%, #0a0e17)`;
+  });
 
   return (
-    <div className="w-full h-full text-[#e8ecf4]" style={{ background: '#0a0e17' }}>
-      <div className="flex items-center justify-between px-5 py-3.5 border-b" style={{ borderColor: 'rgba(255,255,255,0.08)', background: '#0d1220' }}>
-        <div className="flex items-center gap-2 text-sm font-bold"><Flame size={16} className="text-[#f97316]" /> Trend Radar — MENA</div>
-        <div className="flex items-center gap-2 text-xs text-[#8b93a7]">
-          <Eye size={13} /><span className="tabular-nums">{livePosts.toLocaleString()} analyzed</span>
-          <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+    <div className="w-full h-full grid md:grid-cols-2 text-[#e8ecf4]" style={{ background: '#0a0e17' }}>
+      {/* Controls */}
+      <div className="p-5 border-b md:border-b-0 md:border-r" style={{ borderColor: 'rgba(255,255,255,0.08)', background: '#0d1220' }}>
+        <div className="flex items-center gap-2 text-sm font-bold mb-4">
+          <Clapperboard size={16} className="text-[#f97316]" /> Virlo Studio
+          <span className="ml-auto flex rounded-lg overflow-hidden" style={{ border: '1px solid rgba(255,255,255,0.08)' }}>
+            {(['image', 'video'] as Mode[]).map((m) => (
+              <button
+                key={m}
+                onClick={() => { setMode(m); reset(); }}
+                className="px-2.5 py-1 text-[11px] font-semibold capitalize transition-colors flex items-center gap-1"
+                style={mode === m
+                  ? { background: 'rgba(249,115,22,0.16)', color: '#f97316' }
+                  : { background: 'transparent', color: '#8b93a7' }}
+              >
+                {m === 'image' ? <ImageIcon size={11} /> : <Play size={11} />} {m}
+              </button>
+            ))}
+          </span>
         </div>
-      </div>
-      <div className="grid md:grid-cols-[1.2fr_1fr]">
-        <div className="divide-y" style={{ borderColor: 'rgba(255,255,255,0.06)' }}>
-          {TRENDS.map((t, i) => (
-            <button key={t.topic} onClick={() => setSelected(i)}
-              className="w-full text-left px-5 py-3.5 flex items-center gap-3.5 transition-colors"
-              style={{ background: selected === i ? 'rgba(249,115,22,0.08)' : 'transparent' }}>
-              <ScoreRing score={t.score} animate={animate} />
-              <div className="min-w-0">
-                <p className="font-semibold text-sm truncate">{t.topic}</p>
-                <p className="text-xs text-[#8b93a7] mt-0.5">{t.platform} · <span className="text-emerald-400 font-semibold">{t.velocity}</span> · {t.window}</p>
-              </div>
-              <TrendingUp size={15} className={`ml-auto shrink-0 ${selected === i ? 'text-[#f97316]' : 'text-[#5b6478]'}`} />
+
+        <label className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478]">Prompt — Franco, عربي, or English</label>
+        <textarea
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          placeholder="e.g. wa7ed by3mel koshari fe wost el balad, cinematic…"
+          rows={2}
+          dir="auto"
+          className="mt-2 w-full rounded-xl p-3 text-sm resize-none focus:outline-none"
+          style={{ background: '#111726', border: '1px solid rgba(255,255,255,0.08)', color: '#e8ecf4' }}
+        />
+
+        <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478] mt-3 mb-1.5">Egyptian preset</p>
+        <div className="flex flex-wrap gap-2">
+          {PRESETS.map((p) => (
+            <button
+              key={p.id}
+              onClick={() => { setPreset(p); reset(); }}
+              className="text-[11px] px-2.5 py-1.5 rounded-full transition-colors"
+              style={preset.id === p.id
+                ? { background: 'rgba(249,115,22,0.16)', border: '1px solid rgba(249,115,22,0.5)', color: '#f97316' }
+                : { background: '#111726', border: '1px solid rgba(255,255,255,0.08)', color: '#8b93a7' }}
+            >
+              {p.label}
             </button>
           ))}
         </div>
-        <div className="p-5 flex flex-col border-t md:border-t-0 md:border-l" style={{ background: '#111726', borderColor: 'rgba(255,255,255,0.08)' }}>
-          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478] mb-2.5 flex items-center gap-2"><Zap size={12} className="text-[#f97316]" /> Virlo brief</p>
-          <p className="font-bold mb-2 leading-snug text-sm">{TRENDS[selected].topic}</p>
-          <p className="text-[#8b93a7] text-sm leading-relaxed flex-1">{TRENDS[selected].insight}</p>
-          <div className="mt-5 grid grid-cols-3 gap-2 text-center">
-            {[['Score', TRENDS[selected].score, '#e8ecf4'], ['24h', TRENDS[selected].velocity.split('/')[0], '#34d399'], ['Window', TRENDS[selected].window.split(' ')[0], '#f97316']].map(([l, v, c]) => (
-              <div key={l as string} className="rounded-lg py-2 border" style={{ background: 'rgba(255,255,255,0.03)', borderColor: 'rgba(255,255,255,0.08)' }}>
-                <p className="font-black text-base" style={{ color: c as string }}>{v as React.ReactNode}</p>
-                <p className="text-[#5b6478] text-[10px] uppercase tracking-wide">{l as string}</p>
+
+        <button
+          onClick={() => generate()}
+          disabled={phase === 'generating' || !prompt.trim()}
+          className="btn-primary mt-3.5 w-full py-2.5 rounded-lg font-semibold text-sm disabled:opacity-40 flex items-center justify-center gap-2"
+        >
+          {phase === 'generating'
+            ? <><Loader2 size={15} className="animate-spin" /> Generating…</>
+            : <><Sparkles size={15} /> Generate {mode}</>}
+        </button>
+
+        <div className="mt-3 flex flex-wrap gap-2">
+          {EXAMPLES.map((ex) => (
+            <button
+              key={ex}
+              onClick={() => generate(ex)}
+              dir="auto"
+              className="text-[11px] px-2.5 py-1.5 rounded-full text-[#8b93a7] hover:text-white transition-colors text-left max-w-full truncate"
+              style={{ background: '#111726', border: '1px solid rgba(255,255,255,0.08)' }}
+            >
+              {ex}
+            </button>
+          ))}
+        </div>
+
+        {phase !== 'idle' && (
+          <p className="mt-3 text-[11px] font-mono flex items-center gap-2" style={{ color: phase === 'done' ? '#34d399' : '#8b93a7' }}>
+            {phase === 'done'
+              ? <>✓ 4 {mode === 'image' ? 'images' : 'shots'} ready · {preset.label}</>
+              : <><Loader2 size={11} className="animate-spin" /> {STEPS[step]}</>}
+          </p>
+        )}
+      </div>
+
+      {/* Output */}
+      <div className="p-5 flex items-center justify-center min-h-[300px]" style={{ background: '#080b12' }}>
+        {phase === 'idle' ? (
+          <div className="text-center text-[#5b6478]">
+            <Clapperboard size={38} className="mx-auto mb-3 opacity-50" />
+            <p className="text-sm">Your generated {mode === 'image' ? 'images' : 'shots'} appear here.</p>
+            <p className="text-xs mt-1 opacity-70">Write a prompt, or tap an example.</p>
+          </div>
+        ) : (
+          <div className="grid grid-cols-2 gap-2.5 w-full">
+            {frames.map((bg, i) => (
+              <div
+                key={i}
+                className="relative rounded-lg overflow-hidden"
+                style={{
+                  aspectRatio: mode === 'image' ? '1 / 1' : '16 / 9',
+                  background: bg,
+                  border: '1px solid rgba(255,255,255,0.1)',
+                  opacity: phase === 'done' ? 1 : 0.28,
+                  filter: phase === 'done' ? 'none' : 'blur(6px)',
+                  transition: 'opacity .5s ease, filter .6s ease',
+                  transitionDelay: `${i * 90}ms`,
+                }}
+              >
+                {phase === 'done' && mode === 'video' && (
+                  <span className="absolute inset-0 flex items-center justify-center">
+                    <span className="w-8 h-8 rounded-full flex items-center justify-center backdrop-blur-sm"
+                      style={{ background: 'rgba(0,0,0,0.45)', border: '1px solid rgba(255,255,255,0.35)' }}>
+                      <Play size={13} className="text-white ml-0.5" />
+                    </span>
+                  </span>
+                )}
+                {phase === 'generating' && (
+                  <span className="absolute inset-0 animate-pulse" style={{ background: 'rgba(255,255,255,0.06)' }} />
+                )}
               </div>
             ))}
           </div>
-        </div>
+        )}
       </div>
     </div>
   );

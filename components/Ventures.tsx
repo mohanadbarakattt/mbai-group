@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, Flame, Hammer, GraduationCap, Sparkles, Fingerprint } from 'lucide-react';
+import { ArrowUpRight, Clapperboard, Hammer, MessageCircle, Sparkles, Fingerprint } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
 import MediaSlot from './MediaSlot';
 import { useI18n } from '../i18n';
@@ -38,7 +38,7 @@ const VENTURE_META = [
     name: 'Virlo Studio',
     status: 'Coming soon' as const,
     href: '/virlo',
-    icon: <Flame size={22} />,
+    icon: <Clapperboard size={22} />,
     accent: '#f97316',
     domain: 'virlo.studio',
     thumbnail: '/thumbnails/virlo.jpg',
@@ -48,7 +48,7 @@ const VENTURE_META = [
     name: 'TUT',
     status: 'Coming soon' as const,
     href: '/tut',
-    icon: <GraduationCap size={22} />,
+    icon: <MessageCircle size={22} />,
     accent: '#eab308',
     domain: 'tut.app',
     thumbnail: '/thumbnails/tut.jpg',

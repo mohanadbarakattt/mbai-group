@@ -2,7 +2,7 @@ import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 
 import { Link } from 'wouter';
 import {
   X, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Sparkles, Loader2, PlayCircle,
-  Mic, FileText, LineChart, Languages, MapPin, CreditCard, Flame, Hammer, GraduationCap,
+  Mic, FileText, LineChart, Languages, MapPin, CreditCard, Clapperboard, Hammer, MessageCircle,
 } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
 import MediaSlot from './MediaSlot';
@@ -53,17 +53,17 @@ const ENTRIES: Entry[] = [
   },
   {
     id: 'virlo',
-    title: 'Virlo',
-    subtitle: 'Virality Intelligence Engine',
-    blurb: 'Scans millions of short-form posts in real time, detects trends 48–72h before they peak, and hands creators and brands a concrete post brief with a virality score for every emerging format.',
-    tags: ['Trend AI', 'Short-Form', 'MENA'],
+    title: 'Virlo Studio',
+    subtitle: 'Egyptian-First AI Video & Image Studio',
+    blurb: 'A generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, characters, and b-roll, so brands and creators get on-brand video and image content without a production crew.',
+    tags: ['Generative Media', 'Franco-Arabic', 'Creators'],
     accent: '#f97316',
-    icon: <Flame size={22} />,
+    icon: <Clapperboard size={22} />,
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
     thumbnail: '/thumbnails/virlo.jpg',
-    interpretation: 'Applies the same signal-extraction discipline used in frontier-model data pipelines to the chaos of social media.',
+    interpretation: 'Applies frontier generative media, tuned for Egyptian culture and dialect, to the creators the global tools were never built for.',
   },
   {
     id: 'ibni',
@@ -82,16 +82,16 @@ const ENTRIES: Entry[] = [
   {
     id: 'tut',
     title: 'TUT',
-    subtitle: 'AI Learning Companion',
-    blurb: 'Named after Egypt\'s boy king, TUT is a personal AI tutor for MENA\'s 100M+ students — explaining any concept in Arabic or English, adapting to each learner\'s pace, turning curricula into conversations.',
-    tags: ['EdTech', 'Arabic', 'Tutoring'],
+    subtitle: 'Egyptian AI Companion & Guide',
+    blurb: 'Named after Egypt\'s boy king, TUT is a personal AI companion that chats natively in Egyptian Arabic, Franco, and English — and knows Egypt cold: places and fair prices, museums and monuments, hieroglyphics, and the slang people actually use.',
+    tags: ['Franco-Arabic', 'Egypt Expert', 'Companion'],
     accent: '#eab308',
-    icon: <GraduationCap size={22} />,
+    icon: <MessageCircle size={22} />,
     status: 'Preview',
     demo: TutDemo,
     pageUrl: '/tut',
     thumbnail: '/thumbnails/tut.jpg',
-    interpretation: 'Education is MENA\'s biggest lever. TUT applies alignment-grade AI safety and pedagogy to the region\'s students.',
+    interpretation: 'A companion that actually speaks like Egypt does — alignment-grade AI, tuned for the region\'s dialect and culture, not translated from someone else\'s.',
   },
   {
     id: 'sonicboom',

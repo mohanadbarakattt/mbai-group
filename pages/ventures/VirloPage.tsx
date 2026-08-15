@@ -4,17 +4,17 @@ import VirloDemo from '../../components/demos/VirloDemo';
 
 const VirloPage: React.FC = () => (
   <VentureShell
-    name="Virlo"
+    name="Virlo Studio"
     accent="#f97316"
-    tagline="Virality Intelligence"
+    tagline="Egyptian-First AI Video & Image Studio"
     path="/virlo"
     status="Coming soon"
-    headline={<>Know what goes viral.<br /><span className="text-gradient">Before it does.</span></>}
-    sub="Virlo scans millions of short-form posts in real time, detects trends while they're still climbing, and tells creators and brands exactly what to post, when, and why — with a virality score for every emerging format."
+    headline={<>Prompt it in Franco.<br /><span className="text-gradient">Get content that looks Egyptian.</span></>}
+    sub="Virlo Studio is a generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, reusable characters, and b-roll, so brands and creators get on-brand video and image content without a production crew."
     pillars={[
-      { title: 'Trend radar', text: 'Real-time ingestion across TikTok, Reels, and Shorts detects format-level trends 48–72 hours before they peak.' },
-      { title: 'Virality scoring', text: 'Every trend gets a 0–100 score built from velocity, saturation, saves-to-likes ratio, and audience overlap.' },
-      { title: 'Action briefs', text: 'Not just data — Virlo generates a concrete post brief: hook, format, sound, and the exact posting window.' },
+      { title: 'Franco-Arabic prompting', text: 'Describe the shot the way you actually talk — Masri, Franco, or English — instead of translating your idea into someone else\'s English first.' },
+      { title: 'Culturally-tuned presets', text: 'Presets, characters, and b-roll tuned for Egyptian and MENA context, so the output looks like the region instead of a generic stock render.' },
+      { title: 'Video and image, one studio', text: 'Generate stills and cinematic video side by side, with reusable characters that stay consistent across a whole campaign.' },
     ]}
   >
     <VirloDemo />
