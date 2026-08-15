@@ -20,7 +20,7 @@ import { useEffect } from 'react';
  */
 
 const SITE_URL = 'https://mbai-group.com';
-const DEFAULT_IMAGE = `${SITE_URL}/og-image.svg`;
+const DEFAULT_IMAGE = `${SITE_URL}/og-image.png`;
 
 interface SeoProps {
   title: string;

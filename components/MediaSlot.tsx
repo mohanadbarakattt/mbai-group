@@ -5,8 +5,11 @@ interface MediaSlotProps {
   accent: string;
   /** Fallback glyph shown when there's no video or image yet. */
   icon: React.ReactNode;
-  /** Alt text / video aria-label. */
+  /** Short name — used as the video aria-label and as the alt fallback. */
   label: string;
+  /** Descriptive image alt text. Falls back to `label`; prefer passing something
+   *  that says what the image actually shows, not just the product name. */
+  alt?: string;
   /** Static image — used as the poster behind `video`, or shown alone if no video. */
   thumbnail?: string;
   /** Optional video source. When present, video plays muted/looped and takes over from the thumbnail. */
@@ -22,7 +25,7 @@ interface MediaSlotProps {
  * Ventures and Demos cards so a future video asset only needs a `video` prop
  * — no layout changes required.
  */
-const MediaSlot: React.FC<MediaSlotProps> = ({ accent, icon, label, thumbnail, video, domain, className = '' }) => (
+const MediaSlot: React.FC<MediaSlotProps> = ({ accent, icon, label, alt, thumbnail, video, domain, className = '' }) => (
   <div className={`w-full aspect-video rounded-lg relative overflow-hidden border border-white/10 ${className}`}>
     {domain && (
       <div className="absolute inset-x-0 top-0 h-6 flex items-center gap-1.5 px-2.5 z-10" style={{ background: 'rgba(10,14,23,0.85)' }}>
@@ -47,7 +50,9 @@ const MediaSlot: React.FC<MediaSlotProps> = ({ accent, icon, label, thumbnail, v
     ) : thumbnail ? (
       <img
         src={thumbnail}
-        alt={label}
+        alt={alt ?? label}
+        loading="lazy"
+        decoding="async"
         className="w-full h-full object-cover object-top opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-500"
       />
     ) : (

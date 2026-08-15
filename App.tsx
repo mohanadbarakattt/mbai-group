@@ -1,5 +1,5 @@
-import React, { lazy, Suspense } from 'react';
-import { Switch, Route, Router as WouterRouter } from 'wouter';
+import React, { lazy, Suspense, useEffect } from 'react';
+import { Switch, Route, Router as WouterRouter, useLocation } from 'wouter';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { TooltipProvider } from './autoleads/components/ui/tooltip';
 import { Toaster } from './autoleads/components/ui/toaster';
@@ -104,12 +104,39 @@ function Home() {
   );
 }
 
+/**
+ * Scrolls to the #hash target after a fresh load or a cross-route navigation.
+ * Browsers only auto-scroll to a hash on a real document load, and history
+ * pushState (what wouter's <Link href="/#ventures"> does) never fires it — so
+ * without this, /#demos and every "back to the portfolio" link lands at the top
+ * of the page. Same-page anchor clicks are already handled in Navigation.
+ */
+function HashScroll() {
+  const [location] = useLocation();
+  useEffect(() => {
+    const id = window.location.hash.slice(1);
+    if (!id) return;
+    // Target may not be mounted yet on first paint; retry briefly, then give up.
+    let tries = 0;
+    let timer: ReturnType<typeof setTimeout>;
+    const tick = () => {
+      const el = document.getElementById(id);
+      if (el) return el.scrollIntoView();
+      if (tries++ < 20) timer = setTimeout(tick, 50);
+    };
+    tick();
+    return () => clearTimeout(timer);
+  }, [location]);
+  return null;
+}
+
 function App() {
   return (
     <QueryClientProvider client={queryClient}>
       <I18nProvider>
       <TooltipProvider>
         <WouterRouter>
+          <HashScroll />
           <Switch>
             <Route path="/autoleads">
               <Suspense fallback={<div className="autoleads-page min-h-screen flex items-center justify-center bg-background text-foreground">Loading...</div>}>

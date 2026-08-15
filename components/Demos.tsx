@@ -62,6 +62,7 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
+    thumbnail: '/thumbnails/virlo.jpg',
     interpretation: 'Applies the same signal-extraction discipline used in frontier-model data pipelines to the chaos of social media.',
   },
   {
@@ -75,6 +76,7 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: IbniDemo,
     pageUrl: '/ibni',
+    thumbnail: '/thumbnails/ibni.jpg',
     interpretation: 'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
   },
   {
@@ -88,6 +90,7 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: TutDemo,
     pageUrl: '/tut',
+    thumbnail: '/thumbnails/tut.jpg',
     interpretation: 'Education is MENA\'s biggest lever. TUT applies alignment-grade AI safety and pedagogy to the region\'s students.',
   },
   {
@@ -329,7 +332,7 @@ const Demos: React.FC = () => {
                   </div>
                 </div>
 
-                <MediaSlot className="mb-5" accent={e.accent} icon={e.icon} label={e.title} thumbnail={e.thumbnail} />
+                <MediaSlot className="mb-5" accent={e.accent} icon={e.icon} label={e.title} alt={`${e.title} — ${e.subtitle}`} thumbnail={e.thumbnail} />
 
                 <p className="text-[#8b93a7] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
 

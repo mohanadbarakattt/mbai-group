@@ -19,6 +19,7 @@ const VENTURE_META = [
     icon: <Hammer size={22} />,
     accent: '#10b981',
     domain: 'ibni.app',
+    thumbnail: '/thumbnails/ibni.jpg',
   },
   {
     id: 'autoleadss' as const,
@@ -40,6 +41,7 @@ const VENTURE_META = [
     icon: <Flame size={22} />,
     accent: '#f97316',
     domain: 'virlo.studio',
+    thumbnail: '/thumbnails/virlo.jpg',
   },
   {
     id: 'tut' as const,
@@ -49,6 +51,7 @@ const VENTURE_META = [
     icon: <GraduationCap size={22} />,
     accent: '#eab308',
     domain: 'tut.app',
+    thumbnail: '/thumbnails/tut.jpg',
   },
 ];
 
@@ -132,6 +135,7 @@ const Ventures: React.FC = () => {
                     accent={v.accent}
                     icon={v.icon}
                     label={v.name}
+                    alt={`${v.name} — ${v.tagline}`}
                     thumbnail={v.thumbnail}
                     domain={v.domain}
                   />
