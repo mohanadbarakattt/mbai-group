@@ -59,7 +59,6 @@ const Features: React.FC = () => {
 
   return (
     <section ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2] relative overflow-hidden">
-      <div className="aurora w-[440px] h-[440px] top-0 left-1/3" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.16), transparent 60%)' }} />
       <div className="max-w-7xl mx-auto relative">
 
         <div className={`mb-14 max-w-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>

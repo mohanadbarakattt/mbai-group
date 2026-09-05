@@ -24,7 +24,6 @@ const AboutPage: React.FC = () => {
       <main>
         {/* Profile Header */}
         <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-transparent border-b border-[#e6dfd2] overflow-hidden">
-          <div className="aurora w-[440px] h-[440px] -top-10 left-1/2 -translate-x-1/2" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.28), transparent 60%)' }} />
           <div className="hidden" />
           {/* Avatar */}
           <div className="relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8 z-10">
