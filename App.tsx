@@ -68,14 +68,14 @@ const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
 
 const PageLoader = () => (
-  <div className="min-h-screen flex items-center justify-center bg-transparent text-[#8b93a7]">Loading…</div>
+  <div className="min-h-screen flex items-center justify-center bg-transparent text-[#6b645c]">Loading…</div>
 );
 
 const queryClient = new QueryClient();
 
 function Home() {
   return (
-    <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-[#14110f] overflow-x-hidden">
       <Seo
         title="MB AI Group — Frontier AI for MENA · Cairo & Dubai"
         description="MB AI Group — founded by former xAI Human Data Lead Mohanad Barakat. AutoLeadss, TUT, IBNI, Virlo, and Be3ly: AI products and Egyptian digital commerce ventures for the MENA region."

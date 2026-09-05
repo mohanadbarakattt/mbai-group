@@ -42,13 +42,13 @@ export default function CookieConsent() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-white/10 bg-[#111111]"
+      className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e6dfd2] bg-[#f7f3ec]"
     >
       <div className="mx-auto max-w-3xl px-4 py-4 sm:px-6">
-        <p className="text-sm text-[#eef1fa]">{c.body}</p>
+        <p className="text-sm text-[#14110f]">{c.body}</p>
 
         {manage && (
-          <label className="mt-3 flex items-center gap-2 text-sm text-[#9aa3bd]">
+          <label className="mt-3 flex items-center gap-2 text-sm text-[#6b645c]">
             <input
               type="checkbox"
               checked={analytics}
@@ -86,7 +86,7 @@ export default function CookieConsent() {
             <button
               type="button"
               onClick={() => setManage(true)}
-              className="rounded-xl px-4 py-2 text-sm text-[#9aa3bd] hover:text-white transition-colors"
+              className="rounded-xl px-4 py-2 text-sm text-[#6b645c] hover:text-[#14110f] transition-colors"
             >
               {c.manage}
             </button>

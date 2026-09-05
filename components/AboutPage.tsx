@@ -13,7 +13,7 @@ const AboutPage: React.FC = () => {
   const [avatarSrc, setAvatarSrc] = useState('/avatar.png');
 
   return (
-    <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
+    <div className="min-h-screen bg-transparent text-[#14110f] overflow-x-hidden">
       <Seo
         title="Meet the Founder & CEO — MB AI Group"
         description="Mohanad Barakat, founder of MB AI Group — former xAI Human Data Lead, now building frontier AI products for the MENA region."
@@ -23,13 +23,12 @@ const AboutPage: React.FC = () => {
       <Navigation />
       <main>
         {/* Profile Header */}
-        <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-transparent border-b border-white/10 overflow-hidden">
+        <section className="relative pt-40 pb-16 px-6 flex flex-col items-center text-center bg-transparent border-b border-[#e6dfd2] overflow-hidden">
           <div className="aurora w-[440px] h-[440px] -top-10 left-1/2 -translate-x-1/2" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.28), transparent 60%)' }} />
-          <div className="absolute inset-0 grid-fade pointer-events-none" />
+          <div className="hidden" />
           {/* Avatar */}
           <div className="relative w-40 h-40 md:w-52 md:h-52 mx-auto mb-8 z-10">
-            <div className="absolute -inset-1 rounded-full animate-spin-slow" style={{ background: 'conic-gradient(from 0deg, #e3a83f, #22d3ee, #d9784f, #e3a83f)', filter: 'blur(6px)', opacity: 0.7 }} />
-            <div className="relative w-full h-full rounded-full overflow-hidden border-2 border-white/20 hover:scale-105 transition-transform duration-500 ease-out bg-[#0d1220]">
+<div className="relative w-full h-full rounded-full overflow-hidden border-2 border-[#e6dfd2] hover:scale-105 transition-transform duration-500 ease-out bg-[#f0ebe1]">
               <img
                 src={avatarSrc}
                 onError={() => {
@@ -46,7 +45,7 @@ const AboutPage: React.FC = () => {
           </div>
 
           {/* Name & Title */}
-          <div className="relative z-10 inline-block px-4 py-1.5 rounded-full glass text-cyan-300 text-xs font-semibold tracking-wider uppercase mb-4">
+          <div className="relative z-10 inline-block px-4 py-1.5 rounded-full border border-[#e6dfd2] bg-[#fffdf8] text-[#b85c38] text-xs font-semibold tracking-wider uppercase mb-4">
             {dict.about.kicker}
           </div>
 
@@ -54,7 +53,7 @@ const AboutPage: React.FC = () => {
             {dict.about.headingPre} <span className="text-gradient">{dict.about.headingGradient}</span>
           </h1>
 
-          <p className="relative z-10 text-base md:text-lg text-[#8b93a7] max-w-2xl leading-relaxed">
+          <p className="relative z-10 text-base md:text-lg text-[#6b645c] max-w-2xl leading-relaxed">
             {dict.about.blurb}
           </p>
 

@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import {
-  X, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Sparkles, Loader2, PlayCircle,
+  X, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Zap, Loader2, PlayCircle,
   Mic, FileText, LineChart, Languages, MapPin, CreditCard, Clapperboard, Hammer, MessageCircle,
 } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
@@ -44,7 +44,7 @@ const ENTRIES: Entry[] = [
     blurb: 'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate and MENA enterprises. Custom agents hunt leads 24/7; bilingual specialists close the loop.',
     tags: ['AI Agents', 'Lead Gen', 'Real Estate'],
     accent: '#e3a83f',
-    icon: <Sparkles size={22} />,
+    icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
     thumbnail: '/autoleads-images/mbai-hero-bg-opt.jpg',
@@ -99,7 +99,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'AI Music Deconstruction & Practice',
     blurb: 'SonicScribe uses AI to deconstruct any track into theory, chords, and tabs, then streams notes down a virtual fretboard or piano with microphone-powered pitch detection scoring your accuracy live.',
     tags: ['Gemini AI', 'Audio', 'Real-Time'],
-    accent: '#22d3ee',
+    accent: '#b85c38',
     icon: <Mic size={22} />,
     status: 'Preview',
     demo: SonicBoomDemo,
@@ -217,7 +217,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Next-Generation Digital Banking',
     blurb: 'A full-stack digital banking platform for MENA — dashboard, AI financial assistant, real-time analytics, virtual card management, and instant P2P transfers, wrapped in a sleek dark UI.',
     tags: ['React', 'Fintech', 'Full-Stack'],
-    accent: '#38bdf8',
+    accent: '#6b645c',
     icon: <CreditCard size={22} />,
     status: 'Preview',
     demo: NeobankDemo,
@@ -238,7 +238,7 @@ const ENTRIES: Entry[] = [
 ];
 
 const DemoFallback: React.FC = () => (
-  <div className="w-full h-[420px] flex items-center justify-center text-[#8b93a7]" style={{ background: '#0a0e17' }}>
+  <div className="w-full h-[420px] flex items-center justify-center text-[#6b645c]" style={{ background: '#f0ebe1' }}>
     <Loader2 className="animate-spin mr-2" size={18} /> Loading live demo…
   </div>
 );
@@ -292,25 +292,24 @@ const Demos: React.FC = () => {
 
   return (
     <section id="demos" className="py-24 px-6 relative overflow-hidden bg-transparent">
-      <div className="aurora w-[500px] h-[500px] top-10 -right-40" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.28), transparent 60%)' }} />
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-14">
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" /> Live Work
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#b85c38] animate-pulse" /> Live Work
           </p>
-          <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4">
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
             Ten products. <span className="text-gradient">Try them right here.</span>
           </h2>
-          <p className="text-[#8b93a7] max-w-2xl">
+          <p className="text-[#6b645c] max-w-2xl">
             Every card below opens a real, interactive demo — click any one and use it live. From lead generation and virality
             intelligence to Arabic NLP, fintech, and AI music. No screenshots-only tours; the actual thing, running in your browser.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ perspective: '1400px' }}>
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {ENTRIES.map((e, i) => {
             const inner = (
-              <div className="glass-strong card-fx glow-border rounded-2xl p-6 flex flex-col h-full group relative overflow-hidden cursor-pointer">
+              <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6 flex flex-col h-full group relative overflow-hidden cursor-pointer">
                 <span
                   className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5"
                   style={e.status === 'Live'
@@ -334,12 +333,12 @@ const Demos: React.FC = () => {
 
                 <MediaSlot className="mb-5" accent={e.accent} icon={e.icon} label={e.title} alt={`${e.title} — ${e.subtitle}`} thumbnail={e.thumbnail} />
 
-                <p className="text-[#8b93a7] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
+                <p className="text-[#6b645c] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
 
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {e.tags.map((t) => (
-                      <span key={t} className="text-[10px] px-2 py-1 rounded bg-white/[0.04] text-[#8b93a7] border border-white/10">{t}</span>
+                      <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#f7f3ec] text-[#6b645c] border border-[#e6dfd2]">{t}</span>
                     ))}
                   </div>
                   <div className="w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 text-sm transition-all border"
@@ -372,9 +371,9 @@ const Demos: React.FC = () => {
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
           <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={closeDemo} />
-          <div className="relative w-full max-w-5xl glass-strong rounded-2xl border border-white/10 shadow-2xl my-auto" style={{ background: '#0e1533' }}>
+          <div className="relative w-full max-w-5xl bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl border border-[#e6dfd2] shadow-2xl my-auto" style={{ background: '#fffdf8' }}>
             {/* Header */}
-            <div className="p-5 md:p-6 flex justify-between items-start border-b border-white/10 sticky top-0 z-10 rounded-t-2xl" style={{ background: '#0e1533' }}>
+            <div className="p-5 md:p-6 flex justify-between items-start border-b border-[#e6dfd2] sticky top-0 z-10 rounded-t-2xl" style={{ background: '#fffdf8' }}>
               <div className="flex items-center gap-4">
                 <div className="p-2.5 rounded-xl shrink-0" style={{ color: entry.accent, background: `${entry.accent}16`, border: `1px solid ${entry.accent}33` }}>{entry.icon}</div>
                 <div>
@@ -382,17 +381,17 @@ const Demos: React.FC = () => {
                   <p className="text-sm" style={{ color: entry.accent }}>{entry.subtitle}</p>
                 </div>
               </div>
-              <button onClick={closeDemo} className="p-2 hover:bg-white/10 rounded-full text-[#8b93a7] hover:text-white transition-colors shrink-0"><X size={22} /></button>
+              <button onClick={closeDemo} className="p-2 hover:bg-[#f0ebe1] rounded-full text-[#6b645c] hover:text-[#14110f] transition-colors shrink-0"><X size={22} /></button>
             </div>
 
             <div className="p-5 md:p-6 space-y-6">
               {/* Interactive demo */}
               {Demo && (
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478] mb-2 flex items-center gap-2">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: entry.accent }} /> Interactive — try it live
                   </p>
-                  <div className="rounded-2xl overflow-hidden border border-white/10" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
+                  <div className="rounded-2xl overflow-hidden border border-[#e6dfd2]" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
                     <Suspense fallback={<DemoFallback />}><Demo /></Suspense>
                   </div>
                   {entry.pageUrl && (
@@ -403,19 +402,19 @@ const Demos: React.FC = () => {
                 </div>
               )}
 
-              <p className="text-[#aab2c5] leading-relaxed text-sm md:text-base">{entry.blurb}</p>
+              <p className="text-[#6b645c] leading-relaxed text-sm md:text-base">{entry.blurb}</p>
 
               <div className="p-4 rounded-xl border" style={{ background: `${entry.accent}0d`, borderColor: `${entry.accent}2e` }}>
                 <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: entry.accent }}>Interpretation</p>
-                <p className="text-[#cdd4e2] text-sm leading-relaxed">{entry.interpretation}</p>
+                <p className="text-[#3a342e] text-sm leading-relaxed">{entry.interpretation}</p>
               </div>
 
               {entry.highlights && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {entry.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/10">
-                      <Sparkles size={14} className="mt-0.5 shrink-0" style={{ color: entry.accent }} />
-                      <span className="text-[#aab2c5] text-sm">{h}</span>
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-[#f7f3ec] border border-[#e6dfd2]">
+                      <Zap size={14} className="mt-0.5 shrink-0" style={{ color: entry.accent }} />
+                      <span className="text-[#6b645c] text-sm">{h}</span>
                     </div>
                   ))}
                 </div>
@@ -424,19 +423,19 @@ const Demos: React.FC = () => {
               {/* Screenshots */}
               {entry.shots && entry.shots.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478] mb-2">From the live product</p>
-                  <div className="relative rounded-xl overflow-hidden border border-white/10">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2">From the live product</p>
+                  <div className="relative rounded-xl overflow-hidden border border-[#e6dfd2]">
                     <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-black/60" />
                     {entry.shots.length > 1 && (
                       <>
-                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white backdrop-blur-sm"><ChevronLeft size={18} /></button>
-                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white backdrop-blur-sm"><ChevronRight size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white"><ChevronLeft size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white"><ChevronRight size={18} /></button>
                       </>
                     )}
                   </div>
-                  <div className="p-3.5 mt-3 rounded-xl bg-white/[0.03] border border-white/10">
+                  <div className="p-3.5 mt-3 rounded-xl bg-[#f7f3ec] border border-[#e6dfd2]">
                     <h4 className="font-bold text-sm mb-1">{entry.shots[shotIndex].title}</h4>
-                    <p className="text-[#8b93a7] text-sm leading-relaxed">{entry.shots[shotIndex].description}</p>
+                    <p className="text-[#6b645c] text-sm leading-relaxed">{entry.shots[shotIndex].description}</p>
                   </div>
                   {entry.shots.length > 1 && (
                     <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
@@ -452,7 +451,7 @@ const Demos: React.FC = () => {
 
               <div className="flex flex-wrap gap-2 pt-1">
                 {entry.tags.map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-full bg-white/[0.04] text-xs text-[#aab2c5] border border-white/10">{t}</span>
+                  <span key={t} className="px-3 py-1 rounded-full bg-[#f7f3ec] text-xs text-[#6b645c] border border-[#e6dfd2]">{t}</span>
                 ))}
               </div>
             </div>

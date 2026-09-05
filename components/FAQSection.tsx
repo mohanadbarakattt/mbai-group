@@ -50,13 +50,13 @@ const FAQSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="faq" ref={ref} className="py-24 px-6 bg-transparent border-t border-white/10">
+    <section id="faq" ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2]">
       <div className="max-w-3xl mx-auto">
-        <div className={`mb-12 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center justify-center gap-2">
+        <div className={`mb-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
             <HelpCircle size={14} /> Frequently Asked
           </p>
-          <h2 className="text-3xl md:text-4xl font-black leading-tight">
+          <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
             Quick answers, <span className="text-gradient">no scrolling required.</span>
           </h2>
         </div>
@@ -66,15 +66,15 @@ const FAQSection: React.FC = () => {
             <Accordion.Item
               key={item.q}
               value={`item-${i}`}
-              className="glass-strong card-fx rounded-2xl overflow-hidden"
+              className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl overflow-hidden"
             >
               <Accordion.Header>
-                <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-sm md:text-base font-semibold text-white focus:outline-none focus-visible:ring-2 focus-visible:ring-cyan-400/60 rounded-2xl">
+                <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-sm md:text-base font-semibold text-[#14110f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b85c38]/60 rounded-2xl">
                   {item.q}
-                  <ChevronDown size={18} className="shrink-0 text-cyan-400 transition-transform duration-300 group-data-[state=open]:rotate-180" />
+                  <ChevronDown size={18} className="shrink-0 text-[#b85c38] transition-transform duration-300 group-data-[state=open]:rotate-180" />
                 </Accordion.Trigger>
               </Accordion.Header>
-              <Accordion.Content className="overflow-hidden text-sm text-[#aab2c5] leading-relaxed data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
+              <Accordion.Content className="overflow-hidden text-sm text-[#6b645c] leading-relaxed data-[state=open]:animate-accordion-down data-[state=closed]:animate-accordion-up">
                 <p className="px-6 pb-5">{item.a}</p>
               </Accordion.Content>
             </Accordion.Item>
