@@ -12,7 +12,7 @@ const NotFound: React.FC = () => (
 <div className="hidden" />
 
       <div className="relative">
-        <p className="text-8xl md:text-9xl font-semibold leading-none text-gradient">404</p>
+        <p className="text-8xl md:text-9xl font-semibold leading-none text-[#b85c38]">404</p>
         <h1 className="mt-4 text-2xl md:text-3xl font-bold text-[#14110f]">This page is not here.</h1>
         <p className="mt-3 text-[#6b645c] max-w-md mx-auto">
           The link you followed doesn't exist — but the rest of MB AI Group is very much live.

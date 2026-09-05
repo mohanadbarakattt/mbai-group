@@ -104,8 +104,8 @@ const franco: Dict = {
   },
 
   cookieConsent: {
-    body: 'Benesta5dem cookies asasya 3ashan el site ye4-8al, w cookies tanya ekhtiarya lel tahlilat. Te2dar tewafe2 aw terfod aw wa2t.',
-    analyticsLabel: 'Tahlilat (ekhtiary) — tesa3edna nefham este5dam el site',
+    body: 'Benesta5dem essential cookies 3ashan el site yeshtaghal. Ma beneshaghalsh analytics delwa2ti; law 2ablet analytics ta7t, han7faz el preference law zedna tool ba3dein.',
+    analyticsLabel: "Tahlilat (ekhtiary, mesh sha3ala delwa2ti) — preference lel future analytics",
     acceptAll: 'Mwafa2a 3ala el kol',
     rejectAll: 'Rafd 8eir el asasy',
     manage: 'Edara',

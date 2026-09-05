@@ -28,7 +28,7 @@ const StatsSection: React.FC = () => {
           className={`mb-10 flex items-end justify-between gap-8 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
         >
           <div className="shrink-0 hidden sm:block select-none pointer-events-none">
-            <p className="text-7xl md:text-8xl font-semibold text-gradient leading-none">{dict.stats.leadsBig}</p>
+            <p className="text-7xl md:text-8xl font-semibold text-[#b85c38] leading-none">{dict.stats.leadsBig}</p>
             <p className="text-xs text-[#6b645c] mt-1 tracking-wide font-medium">{dict.stats.leadsLabel}</p>
           </div>
           <div className="sm:text-right">
@@ -46,7 +46,7 @@ const StatsSection: React.FC = () => {
         >
           {dict.stats.items.map((s) => (
             <div key={s.label} className="px-4 py-5 text-center">
-              <p className="text-2xl md:text-3xl font-semibold text-gradient">{s.number}</p>
+              <p className="text-2xl md:text-3xl font-semibold text-[#b85c38]">{s.number}</p>
               <p className="text-xs text-[#6b645c] mt-1">{s.label}</p>
             </div>
           ))}
@@ -84,7 +84,7 @@ const StatsSection: React.FC = () => {
                 style={{ transitionDelay: `${200 + i * 100}ms` }}
               >
                 <div className="flex items-start justify-between gap-4">
-                  <span className="text-lg font-semibold text-gradient leading-tight tracking-tight">
+                  <span className="text-lg font-semibold text-[#b85c38] leading-tight tracking-tight">
                     {t.outcome}
                   </span>
                   <Quote size={18} className="text-[#b85c38]/70 shrink-0 mt-0.5" />

@@ -11,7 +11,7 @@ const IbniPage: React.FC = () => (
     status="Preview"
     externalUrl="https://ibni.app"
     externalLabel="Open ibni.app (demo)"
-    headline={<>Build an Egyptian storefront.<br /><span className="text-gradient">Describe it — IBNI scaffolds it.</span></>}
+    headline={<>Build an Egyptian storefront.<br /><span className="text-[#b85c38]">Describe it — IBNI scaffolds it.</span></>}
     sub={'IBNI ("build me" in Arabic) is an Egyptian storefront builder — turn a plain-language idea into a working shop experience. The live demo runs at ibni.app in DEMO_MODE.'}
     pillars={[
       { title: 'Storefront, not generic apps', text: 'Oriented around Egyptian merchants: product pages, checkout flows, and local selling context — not an abstract app-builder pitch.' },

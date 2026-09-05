@@ -49,7 +49,7 @@ const AboutPage: React.FC = () => {
           </div>
 
           <h1 className="relative z-10 text-3xl md:text-5xl font-bold mb-4">
-            {dict.about.headingPre} <span className="text-gradient">{dict.about.headingGradient}</span>
+            {dict.about.headingPre} <span className="text-[#b85c38]">{dict.about.headingGradient}</span>
           </h1>
 
           <p className="relative z-10 text-base md:text-lg text-[#6b645c] max-w-2xl leading-relaxed">

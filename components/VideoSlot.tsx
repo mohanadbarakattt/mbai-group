@@ -18,7 +18,7 @@ interface VideoSlotProps {
  * real clip — so dropping a finished asset into public/media/ is the only
  * change needed to go live, no layout work.
  */
-const VideoSlot: React.FC<VideoSlotProps> = ({ src, poster, label, accent = '#22d3ee', className = '' }) => {
+const VideoSlot: React.FC<VideoSlotProps> = ({ src, poster, label, accent = '#b85c38', className = '' }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {

@@ -25,17 +25,15 @@ const Experience: React.FC = () => {
 
   return (
     <section id="experience" className="py-24 px-4 md:px-6 max-w-7xl mx-auto relative overflow-hidden md:overflow-visible">
-      <h2 className="text-3xl md:text-4xl font-bold mb-20 text-center">
-        <span className="bg-clip-text text-transparent bg-gradient-to-r from-white to-[#8b93a7]">
-          Professional Evolution
-        </span>
-        <div className="w-24 h-1 bg-amber-500 mx-auto mt-4 rounded-full "></div>
+      <h2 className="text-3xl md:text-4xl font-semibold mb-20 text-center text-[#14110f]">
+        Professional Evolution
+        <div className="w-24 h-1 bg-[#b85c38] mx-auto mt-4 rounded-full"></div>
       </h2>
 
       {/* Timeline Container */}
       <div ref={ref} className="relative">
         {/* Central Vertical Line (Desktop) / Left Line (Mobile) */}
-        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-white/15 via-white/10 to-transparent md:-translate-x-1/2 z-0"></div>
+        <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-0.5 bg-gradient-to-b from-[#e6dfd2] via-[#e6dfd2] to-transparent md:-translate-x-1/2 z-0"></div>
 
         {/* 1. The Summit: MB AI Solutions (Current Mission) */}
         <div className={`relative mb-24 md:mb-32 ${cardClass}`} style={cardStyle(0)}>
@@ -49,8 +47,8 @@ const Experience: React.FC = () => {
           {/* Card */}
           <div className="ml-16 md:ml-0 md:max-w-4xl md:mx-auto">
              <div className="relative group">
-                <div className="absolute -inset-1 bg-amber-500/20 rounded-2xl blur opacity-60 group-hover:opacity-80 transition duration-1000"></div>
-                <div className="relative glass-card xai-glow rounded-2xl p-6 md:p-10 border border-[#e6dfd2]">
+                <div className="absolute -inset-1 bg-[#b85c38]/10 rounded-2xl blur opacity-40 group-hover:opacity-55 transition duration-1000"></div>
+                <div className="relative glass-card rounded-2xl p-6 md:p-10 border border-[#e6dfd2]">
                   <div className="absolute top-0 right-0 p-4 md:p-6 opacity-10 group-hover:opacity-20 transition-opacity pointer-events-none">
                     <Building2 className="w-20 h-20 md:w-36 md:h-36" />
                   </div>
@@ -59,7 +57,7 @@ const Experience: React.FC = () => {
                     <div>
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
                          <h3 className="text-2xl md:text-4xl font-bold text-[#14110f]">MB AI Solutions</h3>
-                         <span className="px-3 py-1 rounded-full bg-[#f7f3ec] border border-amber-500/40 text-[#6b645c] text-[10px] md:text-xs font-mono tracking-wider uppercase">Current Mission</span>
+                         <span className="px-3 py-1 rounded-full bg-[#f7f3ec] border border-[#b85c38]/35 text-[#6b645c] text-[10px] md:text-xs font-mono tracking-wider uppercase">Current Mission</span>
                       </div>
                       <p className="text-lg md:text-xl text-[#14110f] font-medium flex items-center gap-2">
                         Founder & Lead Architect
@@ -90,9 +88,9 @@ const Experience: React.FC = () => {
            {/* Left Side (Content on Desktop) */}
            <div className="w-[calc(100%-4rem)] ml-16 md:ml-0 md:w-1/2 md:pr-12 md:text-right">
               <div className="relative group">
-                 <div className="absolute -inset-0.5 bg-amber-500/20 rounded-2xl blur opacity-40 group-hover:opacity-60 transition duration-1000"></div>
+                 <div className="absolute -inset-0.5 bg-[#b85c38]/08 rounded-2xl blur opacity-30 group-hover:opacity-45 transition duration-1000"></div>
                  <div className="relative glass-card p-6 md:p-8 rounded-2xl hover:bg-[#f7f3ec] transition-all border border-[#e6dfd2] hover:border-[#d9d0c0]">
-                    <div className="absolute top-4 right-4 md:right-auto md:left-4 text-[#14110f]/20 group-hover:text-blue-500/20 transition-colors">
+                    <div className="absolute top-4 right-4 md:right-auto md:left-4 text-[#14110f]/20 group-hover:text-[#b85c38]/20 transition-colors">
                        <Rocket className="w-12 h-12 md:w-[60px] md:h-[60px]" />
                     </div>
 

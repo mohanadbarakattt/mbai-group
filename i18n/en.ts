@@ -106,8 +106,8 @@ const en: Dict = {
   },
 
   cookieConsent: {
-    body: 'We use essential cookies to run this site, and optional cookies for analytics. You can accept or reject anytime.',
-    analyticsLabel: 'Analytics (optional) — helps us understand site usage',
+    body: 'We use essential cookies to run this site. We do not currently load third-party analytics; if you accept analytics below, we will store that preference for if we add them later.',
+    analyticsLabel: 'Analytics (optional, not currently active) — preference stored for a future analytics tool',
     acceptAll: 'Accept all',
     rejectAll: 'Reject non-essential',
     manage: 'Manage',

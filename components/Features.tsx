@@ -64,7 +64,7 @@ const Features: React.FC = () => {
         <div className={`mb-14 max-w-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
           <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.features.eyebrow}</p>
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-            {dict.features.heading1} <span className="text-gradient">{dict.features.heading2}</span>
+            {dict.features.heading1} <span className="text-[#b85c38]">{dict.features.heading2}</span>
           </h2>
         </div>
 

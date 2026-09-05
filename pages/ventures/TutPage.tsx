@@ -10,7 +10,7 @@ const TutPage: React.FC = () => (
     status="Live"
     externalUrl="https://tutapp.co"
     externalLabel="Open tutapp.co"
-    headline={<>Your boarding pass,<br /><span className="text-gradient">on your phone.</span></>}
+    headline={<>Your boarding pass,<br /><span className="text-[#b85c38]">on your phone.</span></>}
     sub="TUT is a live boarding-pass progressive web app at tutapp.co — not a coming-soon AI companion. Keep your pass handy, offline-friendly, and ready at the gate."
     pillars={[
       { title: 'Live at tutapp.co', text: 'The product is shipped as a PWA — open tutapp.co on your phone and use it like an installed app.' },

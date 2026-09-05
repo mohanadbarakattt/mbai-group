@@ -8,7 +8,7 @@ import { useI18n } from '../i18n';
 // of the site doesn't require re-authoring every component's JSX structure.
 const enSub: React.ReactNode = (
   <>
-    Founded by a former <strong className="text-[#f7f3ec]">xAI Human Data Lead</strong>. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.
+    Founded by a former <strong className="text-[#b85c38]">xAI Human Data Lead</strong>. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.
   </>
 );
 
@@ -49,7 +49,7 @@ const Hero: React.FC = () => {
         loop
         playsInline
         preload="metadata"
-        poster="/media/hero-poster.jpg"
+        poster="/media/hero-poster-editorial.png"
         aria-hidden="true"
       >
         <source src="/media/hero-web.mp4" type="video/mp4" />

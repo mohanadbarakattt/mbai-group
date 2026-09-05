@@ -31,7 +31,7 @@ interface Props {
   previewNote?: string;
 }
 
-/** Shared dark layout for venture pages (Virlo / IBNI / TUT / Be3ly). */
+/** Shared cream editorial layout for venture pages (Virlo / IBNI / TUT / Be3ly). */
 const VentureShell: React.FC<Props> = ({
   name, accent, tagline, headline, sub, children, pillars, path, status,
   externalUrl, externalLabel, previewLabel, previewNote,

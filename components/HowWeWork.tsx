@@ -32,7 +32,7 @@ const HowWeWork: React.FC = () => {
           <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#b85c38] mb-3">{dict.howWeWork.eyebrow}</p>
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
             {dict.howWeWork.heading1}<br className="hidden sm:block" />
-            <span className="text-gradient"> {dict.howWeWork.heading2}</span>
+            <span className="text-[#b85c38]"> {dict.howWeWork.heading2}</span>
           </h2>
         </div>
 

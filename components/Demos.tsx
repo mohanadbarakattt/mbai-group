@@ -47,7 +47,7 @@ const ENTRIES: Entry[] = [
     icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
-    thumbnail: '/autoleads-images/mbai-hero-bg-opt.jpg',
+    thumbnail: '/thumbnails/autoleads.png',
     interpretation: 'Proof that frontier-grade AI drives revenue today — 200+ qualified leads delivered to real clients across three markets.',
   },
   {
@@ -61,7 +61,7 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
-    thumbnail: '/thumbnails/virlo.jpg',
+    thumbnail: '/thumbnails/virlo.png',
     interpretation: 'Product truth: marketplace pivot in progress; studio concept remains a parked preview only.',
   },
   {
@@ -76,7 +76,7 @@ const ENTRIES: Entry[] = [
     demo: IbniDemo,
     pageUrl: '/ibni',
     externalUrl: 'https://ibni.app',
-    thumbnail: '/thumbnails/ibni.jpg',
+    thumbnail: '/thumbnails/ibni.png',
     interpretation: 'Storefront scaffolding for Egyptian merchants — live DEMO_MODE at ibni.app.',
   },
   {
@@ -90,7 +90,7 @@ const ENTRIES: Entry[] = [
     status: 'Live',
     pageUrl: '/tut',
     externalUrl: 'https://tutapp.co',
-    thumbnail: '/thumbnails/tut.jpg',
+    thumbnail: '/thumbnails/tut.png',
     interpretation: 'A shipped Egyptian travel utility — open tutapp.co today.',
   },
   {
@@ -298,7 +298,7 @@ const Demos: React.FC = () => {
             <span className="w-1.5 h-1.5 rounded-full bg-[#b85c38] animate-pulse" /> Live Work
           </p>
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
-            Ten products. <span className="text-gradient">Try them right here.</span>
+            Ten products. <span className="text-[#b85c38]">Try them right here.</span>
           </h2>
           <p className="text-[#6b645c] max-w-2xl">
             Every card below opens a real, interactive demo — click any one and use it live. From lead generation and virality
@@ -313,8 +313,8 @@ const Demos: React.FC = () => {
                 <span
                   className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5"
                   style={e.status === 'Live'
-                    ? { color: '#34d399', background: 'rgba(16,185,129,0.12)', borderColor: 'rgba(16,185,129,0.4)' }
-                    : { color: '#93a4c8', background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.12)' }}
+                    ? { color: '#2f6b4f', background: 'rgba(47,107,79,0.08)', borderColor: 'rgba(47,107,79,0.28)' }
+                    : { color: '#6b645c', background: 'rgba(20,17,15,0.03)', borderColor: '#e6dfd2' }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: e.status === 'Live' ? '#34d399' : e.accent }} />
                   {e.status === 'Live' ? 'Live Product' : 'Interactive Demo'}
@@ -370,8 +370,8 @@ const Demos: React.FC = () => {
       {/* Modal */}
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={closeDemo} />
-          <div className="relative w-full max-w-5xl bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl border border-[#e6dfd2] shadow-2xl my-auto" style={{ background: '#fffdf8' }}>
+          <div className="absolute inset-0 bg-[#14110f]/45 backdrop-blur-sm" onClick={closeDemo} />
+          <div className="relative w-full max-w-5xl bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#e6dfd2]/80 my-auto" style={{ background: '#fffdf8' }}>
             {/* Header */}
             <div className="p-5 md:p-6 flex justify-between items-start border-b border-[#e6dfd2] sticky top-0 z-10 rounded-t-2xl" style={{ background: '#fffdf8' }}>
               <div className="flex items-center gap-4">
@@ -425,11 +425,11 @@ const Demos: React.FC = () => {
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2">From the live product</p>
                   <div className="relative rounded-xl overflow-hidden border border-[#e6dfd2]">
-                    <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-black/60" />
+                    <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-[#f0ebe1]" />
                     {entry.shots.length > 1 && (
                       <>
-                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white"><ChevronLeft size={18} /></button>
-                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white"><ChevronRight size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#14110f]/70 hover:bg-[#14110f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronLeft size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#14110f]/70 hover:bg-[#14110f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronRight size={18} /></button>
                       </>
                     )}
                   </div>
@@ -440,7 +440,7 @@ const Demos: React.FC = () => {
                   {entry.shots.length > 1 && (
                     <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
                       {entry.shots.map((s, i) => (
-                        <button key={i} onClick={() => setShotIndex(i)} className="shrink-0 rounded-lg overflow-hidden border-2 transition-all" style={{ borderColor: i === shotIndex ? entry.accent : 'rgba(255,255,255,0.1)', opacity: i === shotIndex ? 1 : 0.5 }}>
+                        <button key={i} onClick={() => setShotIndex(i)} className="shrink-0 rounded-lg overflow-hidden border-2 transition-all" style={{ borderColor: i === shotIndex ? entry.accent : '#e6dfd2', opacity: i === shotIndex ? 1 : 0.5 }}>
                           <img src={s.image} alt={s.title} className="w-20 h-12 object-cover object-top" />
                         </button>
                       ))}

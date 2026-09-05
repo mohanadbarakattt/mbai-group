@@ -9,7 +9,7 @@ const VirloPage: React.FC = () => (
     tagline="Egyptian Digital-Product Marketplace"
     path="/virlo"
     status="Building"
-    headline={<>Selling digital products in Egypt.<br /><span className="text-gradient">Built around InstaPay.</span></>}
+    headline={<>Selling digital products in Egypt.<br /><span className="text-[#b85c38]">Built around InstaPay.</span></>}
     sub="Virlo is pivoting (Aug 2026) into an Egypt-first digital-product marketplace — creators and merchants list digital goods, buyers pay via InstaPay. The earlier AI video & image studio concept is parked; there is no public marketplace URL yet while we build."
     pillars={[
       { title: 'InstaPay-native checkout', text: 'Payments shaped for how Egyptians actually pay for digital goods — not a card-only funnel bolted onto a global template.' },

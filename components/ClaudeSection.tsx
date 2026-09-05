@@ -37,7 +37,7 @@ const ClaudeSection: React.FC = () => {
               <Bot size={13} /> Built with Claude
             </p>
             <h2 className="text-3xl md:text-4xl font-semibold text-[#14110f] leading-tight mb-4">
-              A Claude power-user,<br /><span className="text-gradient">not just a Claude customer.</span>
+              A Claude power-user,<br /><span className="text-[#b85c38]">not just a Claude customer.</span>
             </h2>
             <p className="text-[#6b645c] text-sm leading-relaxed mb-8 max-w-lg">
               Every product on this site — the ecosystem, the demos, this page — is built and shipped through Claude.

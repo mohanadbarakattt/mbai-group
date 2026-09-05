@@ -36,7 +36,7 @@ const Comparison: React.FC = () => {
             <Scale3D size={14} /> {dict.comparison.eyebrow}
           </p>
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
-            {dict.comparison.heading1} <span className="text-gradient">{dict.comparison.heading2}</span>
+            {dict.comparison.heading1} <span className="text-[#b85c38]">{dict.comparison.heading2}</span>
           </h2>
           <p className="text-[#6b645c] text-sm md:text-base">{dict.comparison.sub}</p>
         </div>

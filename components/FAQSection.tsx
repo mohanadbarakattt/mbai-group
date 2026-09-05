@@ -57,7 +57,7 @@ const FAQSection: React.FC = () => {
             <HelpCircle size={14} /> Frequently Asked
           </p>
           <h2 className="text-3xl md:text-4xl font-semibold leading-tight">
-            Quick answers, <span className="text-gradient">no scrolling required.</span>
+            Quick answers, <span className="text-[#b85c38]">no scrolling required.</span>
           </h2>
         </div>
 

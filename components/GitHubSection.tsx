@@ -85,7 +85,7 @@ const GitHubSection: React.FC = () => {
             <Github size={14} /> Open on GitHub
           </p>
           <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight">
-            The code behind <span className="text-gradient">every product.</span>
+            The code behind <span className="text-[#b85c38]">every product.</span>
           </h2>
           <p className="text-[#6b645c] max-w-2xl">
             Every venture and tool above is a real, version-controlled codebase — not a slide deck. A few of the active repos:
