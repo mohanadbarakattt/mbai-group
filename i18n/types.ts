@@ -70,6 +70,7 @@ export interface Dict {
     statusLive: string;
     statusPreview: string;
     statusComingSoon: string;
+    statusBuilding: string;
     ctaLive: string;
     ctaPreview: string;
     whyItMatters: string;
@@ -78,6 +79,7 @@ export interface Dict {
       autoleadss: VentureCopy;
       virlo: VentureCopy;
       tut: VentureCopy;
+      be3ly: VentureCopy;
     };
     ecosystemEyebrow: string;
     ecosystemBody: string;
@@ -113,6 +115,7 @@ export interface Dict {
     email: string;
     calendlyTitle: string;
     calendlySub: string;
+    bookingUnavailable: string;
   };
   about: {
     kicker: string;

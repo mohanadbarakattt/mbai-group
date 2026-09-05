@@ -18,7 +18,7 @@ interface VideoSlotProps {
  * real clip — so dropping a finished asset into public/media/ is the only
  * change needed to go live, no layout work.
  */
-const VideoSlot: React.FC<VideoSlotProps> = ({ src, poster, label, accent = '#22d3ee', className = '' }) => {
+const VideoSlot: React.FC<VideoSlotProps> = ({ src, poster, label, accent = '#b85c38', className = '' }) => {
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
@@ -33,7 +33,7 @@ const VideoSlot: React.FC<VideoSlotProps> = ({ src, poster, label, accent = '#22
   }, [src]);
 
   return (
-    <div className={`relative w-full aspect-video rounded-2xl overflow-hidden border border-white/10 ${className}`}>
+    <div className={`relative w-full aspect-video rounded-2xl overflow-hidden border border-[#e6dfd2] ${className}`}>
       {src ? (
         <video
           ref={videoRef}
@@ -48,13 +48,13 @@ const VideoSlot: React.FC<VideoSlotProps> = ({ src, poster, label, accent = '#22
           className="w-full h-full object-cover"
         />
       ) : (
-        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{ background: `radial-gradient(circle at 50% 42%, ${accent}22, #0a0e17 72%)` }}>
+        <div className="absolute inset-0 flex flex-col items-center justify-center gap-3" style={{ background: `radial-gradient(circle at 50% 42%, ${accent}22, #f0ebe1 72%)` }}>
           <div className="absolute inset-0 grid-fade opacity-50" />
           <PlayCircle size={38} style={{ color: accent }} className="relative opacity-40" aria-hidden="true" />
-          <p className="relative text-[11px] uppercase tracking-[0.15em] text-white/40 px-6 text-center">{label}</p>
+          <p className="relative text-[11px] uppercase tracking-[0.15em] text-[#8a8278] px-6 text-center">{label}</p>
         </div>
       )}
-      <div className="absolute inset-0 bg-gradient-to-t from-[#0b1022]/55 to-transparent pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-t from-[#f7f3ec]/55 to-transparent pointer-events-none" />
     </div>
   );
 };

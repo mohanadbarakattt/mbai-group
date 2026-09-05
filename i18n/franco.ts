@@ -16,7 +16,7 @@ const franco: Dict = {
     demos: 'Demos',
     contact: 'Kalemna',
     ourStory: "2essetna",
-    bookCall: 'Ehgez Strategy Call, 30 di2i2a',
+    bookCall: 'Kalemna',
     languageLabel: 'El Lugha',
   },
 
@@ -25,7 +25,7 @@ const franco: Dict = {
     line1: 'AI 2awy,',
     line2: 'mabniya lel 3alam el 7a2i2i.',
     sub: "Assasha wa7ed kan Human Data Lead fi xAI 2abl keda. E7na benebni AI agents w data systems w products bteghayar shoghl sharikat el MENA — w betla2 mashari3na el shakhsiya bnefs el fikr.",
-    ctaBook: 'Ehgez Strategy Call, 30 di2i2a',
+    ctaBook: 'Kalemna',
     ctaDemos: 'Shoof el Demos Live',
     statLead: 'Kan Human Data Lead fi xAI',
     statProducts: '10 products shipped',
@@ -35,23 +35,24 @@ const franco: Dict = {
   ventures: {
     eyebrow: 'Portfolio bta3 MB AI Group',
     heading1: 'Group wa7ed.',
-    heading2: 'Arba3 mashari3.',
+    heading2: '5 mashari3.',
     heading3: 'Hadaf wa7ed.',
     intro:
-      'Kol sharika fel group betwage2 nafs el moshkela men zawya mo5talfa: hat AI 2awy lel aswa2 el donya nesyaha. Bina2 apps min gheer code, gam3 3omala2 be AI, generative media, w rofo2a zakya.',
+      'Kol sharika fel group betwage2 moshkela MENA: lead gen bel AI, boarding-pass PWA, storefront builder, digital products be InstaPay, w affiliate social selling.',
     statusLive: 'Live',
     statusPreview: 'Preview',
     statusComingSoon: '2orayeb',
+    statusBuilding: 'Benebni',
     ctaLive: 'Zoor el product el live',
     ctaPreview: 'Shoof el ro2ya',
     whyItMatters: 'Leh da mohem',
     items: {
       ibni: {
-        tagline: 'Bane el Apps bel AI',
+        tagline: 'Bane Storefronts Masry',
         description:
-          'IBNI (ya3ni "ebni li" bel 3araby) betakhod fekra basita w te7awelha le app shaghal fe3lan. 2ololha el fikra, w IBNI te-design w te-generate w te-launch — 3ashan ay wa7ed msh 3aref yekteb code ye2dar yesawwe2 software.',
+          'IBNI (ya3ni "ebni li" bel 3araby) bane storefront masry — 7awel fekra basita le tagroba matgar. Demo live 3ala ibni.app fe DEMO_MODE.',
         interpretation:
-          'Generation be ma3ayeer RLHF, mowaggah lel software: IBNI btsammem el apps zay ma senior engineer haykon faker — 3ashan el melyoon builder el gay ye2dar yeshaghal be el 3araby wala el ingilizy, mesh Python.',
+          'Scaffolding lel toggar el masreyeen awwalan — garreb DEMO_MODE 3ala ibni.app.',
       },
       autoleadss: {
         tagline: 'Wekala + SaaS le Funnels bel AI',
@@ -61,18 +62,25 @@ const franco: Dict = {
           'Dalil en el AI el 2awy ye2dar yegeeb felous fe3lan delwa2ty — 3omala2 7a2ee2yeen le clients 7a2ee2yeen, w nafs el mo7arrek metah le ay wa7ed yeshaghalo lewa7do.',
       },
       virlo: {
-        tagline: 'Studio Masry le Video w Sowar bel AI',
+        tagline: 'Souq Masry lel Digital Products',
         description:
-          'Studio generation etsamem 3ashan el creators el masreyeen w fel MENA — prompting bel Franco-3araby, presets w characters metsamemeen 3ala el thaqafa, w b-roll, 3ashan el brands w el creators ya5edo content video w sowar 3ala zo2hom min gheer crew intag.',
+          'Beyet7awel (Aug 2026) le souq masry lel digital products be InstaPay. Studio el video/sowar bel AI parked. Lessa benebni — mafish URL 3am lel souq lessa.',
         interpretation:
-          'Btatba2 generative media motawwera, madbota 3ala el thaqafa w el lahga el masreya, 3ashan el creators elly el adawat el 3alameya ma etsamemetsh 3ashanhom.',
+          'Ha2ee2et el product: rails tegara lel digital goods el masreya, mesh safhet "2orayeb" wehmeya le studio.',
       },
       tut: {
-        tagline: 'Rafee2 Masry bel AI',
+        tagline: 'Boarding-Pass PWA',
         description:
-          'Etsama be esm malek Masr el soghayar, TUT rafee2 shakhsy bel AI le nas el MENA — beykallem Franco-3araby masry tabi3i, byefzkar el context, w byet2ayef ma3 7ayet w sor3et kol wa7ed.',
+          'TUT boarding-pass PWA live 3ala tutapp.co — 5alli el pass 3ala el mobile 3and el gate. Mesh AI companion 2ay "2orayeb".',
         interpretation:
-          "Rafee2 beykallem fe3lan zay Masr — AI be ma3ayeer alignment, madbot 3ala lahget el mante2a w thaqaftaha, mesh mutargem men 7aga tanya.",
+          'Adah safar masry etshahanet — ifta7 tutapp.co w esta5demo delwa2ty.',
+      },
+      be3ly: {
+        tagline: 'Affiliate & Social-Selling Connector',
+        description:
+          'Prototype connector masry lel affiliate / social selling. Model B: el tagger beyegma3 InstaPay. Lessa benebni — men gheer URL production wehmy.',
+        interpretation:
+          'Beyewassel el promoters bel toggar men gheer ma ye5tera3 domain matgar wehmy.',
       },
     },
     ecosystemEyebrow: 'Account wa7ed. AI wa7ed. Kol el products.',
@@ -96,8 +104,8 @@ const franco: Dict = {
   },
 
   cookieConsent: {
-    body: 'Benesta5dem cookies asasya 3ashan el site ye4-8al, w cookies tanya ekhtiarya lel tahlilat. Te2dar tewafe2 aw terfod aw wa2t.',
-    analyticsLabel: 'Tahlilat (ekhtiary) — tesa3edna nefham este5dam el site',
+    body: 'Benesta5dem essential cookies 3ashan el site yeshtaghal. Ma beneshaghalsh analytics delwa2ti; law 2ablet analytics ta7t, han7faz el preference law zedna tool ba3dein.',
+    analyticsLabel: "Tahlilat (ekhtiary, mesh sha3ala delwa2ti) — preference lel future analytics",
     acceptAll: 'Mwafa2a 3ala el kol',
     rejectAll: 'Rafd 8eir el asasy',
     manage: 'Edara',
@@ -107,11 +115,12 @@ const franco: Dict = {
   contact: {
     eyebrow: 'Kalemna',
     heading: 'Yalla netkallem 3an el mashroo3 beta3ak.',
-    body: "Ehgez call mobashera men el calendar, aw kalemna men ay wasila taht da. 3adatan bnerod khilal sa3at 2alila.",
+    body: "El booking online mesh shaghal delwa2ty. Kalemna 3ala WhatsApp aw email aw LinkedIn — 3adatan bnerod khilal sa3at 2alila.",
     whatsapp: 'WhatsApp',
     email: 'Email',
-    calendlyTitle: 'Ehgez Strategy Call, 30 di2i2a',
-    calendlySub: 'E5tar el ma3ad elly yerayya7ak — min gheer eltizam.',
+    calendlyTitle: 'Strategy call booking',
+    calendlySub: 'El calendar mesh available delwa2ty.',
+    bookingUnavailable: 'Esta5dem WhatsApp aw email aw LinkedIn taht. Calendly hayerga3 lamma el owner yede link shaghal.',
   },
 
   about: {
@@ -155,7 +164,7 @@ const franco: Dict = {
 
   techExpertise: {
     eyebrow: 'El Mo7arrek Wara el Group',
-    body: 'Nafs el disciplines elly bt-align el frontier models — RLHF, w signal extraction, w data pipelines be mostawa reasoning — delwa2ty beteshaghal arba3 mashari3 MB AI Group kolohom.',
+    body: 'Nafs el disciplines elly bt-align el frontier models — RLHF, w signal extraction, w data pipelines be mostawa reasoning — delwa2ty beteshaghal mashari3 MB AI Group.',
   },
 
   features: {
@@ -213,7 +222,7 @@ const franco: Dict = {
     columnOffshore: 'Offshore Dev Shop',
     columnAgency: 'Wekala 3adeya',
     rows: [
-      { label: 'Betetle2 products beta3etha bel AI, mesh mogarad shoghl 3omala2', us: 'Aywa — 4 mashari3 live', offshore: '3adatan shoghl 3omala2 bas', agency: '3adatan shoghl 3omala2 bas' },
+      { label: 'Betetle2 products beta3etha bel AI, mesh mogarad shoghl 3omala2', us: 'Aywa — 5 mashari3 active', offshore: '3adatan shoghl 3omala2 bas', agency: '3adatan shoghl 3omala2 bas' },
       { label: 'Faree2 3ala ard el wa2e3 fi Cairo w Dubai', us: 'Aywa', offshore: '—', agency: '—' },
       { label: 'AI madbot 3ala el lahga el 3arabeya (Franco-3araby masry + fus7a)', us: 'Aywa', offshore: '—', agency: '—' },
       { label: 'Shareek wa7ed lel build w el nemo el mostamer', us: 'Aywa', offshore: 'Bytfawet 7asab el 3a2d', agency: 'Bytfawet 7asab el 3a2d' },

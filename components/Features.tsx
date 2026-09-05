@@ -3,7 +3,7 @@ import { Workflow, Languages, Rocket } from 'lucide-react';
 import { useI18n } from '../i18n';
 
 const ICONS = [<Workflow size={20} />, <Languages size={20} />, <Rocket size={20} />];
-const ACCENTS = ['#22d3ee', '#e3a83f', '#d9784f'];
+const ACCENTS = ['#b85c38', '#9a4a2c', '#6b645c'];
 
 /** Three hub-and-spoke dots lighting up in sequence — one model directing a crew. */
 const OrchestrationVisual: React.FC<{ accent: string }> = ({ accent }) => (
@@ -35,7 +35,7 @@ const LanguageVisual: React.FC<{ accent: string }> = ({ accent }) => (
 const ShipVisual: React.FC<{ accent: string }> = ({ accent }) => (
   <div className="flex flex-col justify-center gap-1.5 h-10 px-1" aria-hidden="true">
     {[0, 0.3, 0.6].map((delay, i) => (
-      <div key={i} className="h-1 rounded-full bg-white/10 overflow-hidden">
+      <div key={i} className="h-1 rounded-full bg-[#f0ebe1] overflow-hidden">
         <div className="h-full rounded-full animate-bar-grow" style={{ background: accent, animationDelay: `${delay}s` }} />
       </div>
     ))}
@@ -58,14 +58,13 @@ const Features: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-transparent border-t border-white/10 relative overflow-hidden">
-      <div className="aurora w-[440px] h-[440px] top-0 left-1/3" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.16), transparent 60%)' }} />
+    <section ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
 
-        <div className={`mb-14 text-center max-w-2xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.features.eyebrow}</p>
-          <h2 className="text-3xl md:text-5xl font-black leading-tight">
-            {dict.features.heading1} <span className="text-gradient">{dict.features.heading2}</span>
+        <div className={`mb-14 max-w-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.features.eyebrow}</p>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+            {dict.features.heading1} <span className="text-[#b85c38]">{dict.features.heading2}</span>
           </h2>
         </div>
 
@@ -75,7 +74,7 @@ const Features: React.FC = () => {
             return (
               <div
                 key={item.title}
-                className={`glass-strong card-fx rounded-2xl p-7 flex flex-col gap-5 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                className={`bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-7 flex flex-col gap-5 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 style={{ transitionDelay: visible ? `${i * 110 + 150}ms` : '0ms' }}
               >
                 <div
@@ -85,10 +84,10 @@ const Features: React.FC = () => {
                   {ICONS[i]}
                 </div>
                 <div>
-                  <h3 className="text-lg font-black text-white leading-tight mb-2">{item.title}</h3>
-                  <p className="text-[#8b93a7] text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-[#14110f] leading-tight mb-2">{item.title}</h3>
+                  <p className="text-[#6b645c] text-sm leading-relaxed">{item.description}</p>
                 </div>
-                <div className="mt-auto pt-2 border-t border-white/10">
+                <div className="mt-auto pt-2 border-t border-[#e6dfd2]">
                   <Visual accent={ACCENTS[i]} />
                 </div>
               </div>

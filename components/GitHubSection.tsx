@@ -30,21 +30,21 @@ const REPOS = [
   },
   {
     name: 'virlo-studio',
-    description: 'Egyptian-first AI video & image generation studio — Franco-Arabic prompting and cultural presets.',
+    description: 'Virlo product work — Egypt digital-product marketplace direction (AI studio concept parked).',
     tags: ['AI Media', 'Franco-Arabic'],
     private: true,
     href: '/virlo',
   },
   {
     name: 'ibni',
-    description: 'AI app builder that turns a plain-language idea into a working application, in Arabic or English.',
+    description: 'Egyptian storefront builder — DEMO_MODE at ibni.app.',
     tags: ['Codegen', 'No-Code'],
     private: true,
     href: '/ibni',
   },
   {
     name: 'nilo',
-    description: 'Egyptian AI companion — conversational Franco-Arabic chat with phone-based interaction.',
+    description: 'Related Egypt product work (see TUT boarding-pass PWA at tutapp.co).',
     tags: ['Conversational AI', 'Arabic NLP'],
     private: true,
     href: '/#ventures',
@@ -78,21 +78,21 @@ const GitHubSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="github" ref={ref} className="py-24 px-6 bg-transparent border-t border-white/10 relative overflow-hidden">
+    <section id="github" ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2] relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
             <Github size={14} /> Open on GitHub
           </p>
-          <h2 className="text-3xl md:text-5xl font-black mb-4 leading-tight">
-            The code behind <span className="text-gradient">every product.</span>
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight">
+            The code behind <span className="text-[#b85c38]">every product.</span>
           </h2>
-          <p className="text-[#8b93a7] max-w-2xl">
+          <p className="text-[#6b645c] max-w-2xl">
             Every venture and tool above is a real, version-controlled codebase — not a slide deck. A few of the active repos:
           </p>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ perspective: '1200px' }}>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {REPOS.map((repo, i) => (
             <div
               key={repo.name}
@@ -101,16 +101,16 @@ const GitHubSection: React.FC = () => {
             >
               <TiltCard className="h-full" max={5}>
                 {(() => {
-                  const cardClass = "glass-strong card-fx glow-border rounded-2xl p-6 h-full flex flex-col gap-4 group no-underline";
+                  const cardClass = "bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6 h-full flex flex-col gap-4 group no-underline";
                   const cardBody = (
                     <>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2.5 min-w-0">
-                          <Github size={18} className="text-[#8b93a7] shrink-0" />
-                          <span className="font-mono text-sm text-white truncate">{repo.name}</span>
+                          <Github size={18} className="text-[#6b645c] shrink-0" />
+                          <span className="font-mono text-sm text-[#14110f] truncate">{repo.name}</span>
                         </div>
                         {repo.private ? (
-                          <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border text-[#93a4c8] bg-white/[0.04] border-white/10">
+                          <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border text-[#6b645c] bg-[#f7f3ec] border-[#e6dfd2]">
                             <Lock size={10} /> Private
                           </span>
                         ) : (
@@ -120,18 +120,18 @@ const GitHubSection: React.FC = () => {
                         )}
                       </div>
 
-                      <p className="text-[#8b93a7] text-sm leading-relaxed flex-grow">{repo.description}</p>
+                      <p className="text-[#6b645c] text-sm leading-relaxed flex-grow">{repo.description}</p>
 
                       <div className="flex items-center justify-between gap-3 pt-1">
                         <div className="flex flex-wrap gap-2 min-w-0">
                           {repo.tags.map((t) => (
-                            <span key={t} className="text-[10px] px-2 py-1 rounded bg-white/[0.04] text-[#8b93a7] border border-white/10">{t}</span>
+                            <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#f7f3ec] text-[#6b645c] border border-[#e6dfd2]">{t}</span>
                           ))}
                         </div>
                         {repo.private ? (
-                          <ArrowUpRight size={14} className="text-[#8b93a7] group-hover:text-white transition-colors shrink-0" />
+                          <ArrowUpRight size={14} className="text-[#6b645c] group-hover:text-[#14110f] transition-colors shrink-0" />
                         ) : (
-                          <ExternalLink size={14} className="text-[#8b93a7] group-hover:text-white transition-colors shrink-0" />
+                          <ExternalLink size={14} className="text-[#6b645c] group-hover:text-[#14110f] transition-colors shrink-0" />
                         )}
                       </div>
                     </>

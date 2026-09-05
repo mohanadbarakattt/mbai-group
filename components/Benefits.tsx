@@ -6,7 +6,7 @@ import { useI18n } from '../i18n';
 // for the brief on each one (benefit-ship.mp4, benefit-arabic.mp4,
 // benefit-ecosystem.mp4). VideoSlot renders its placeholder until a `src` is
 // passed in, so wiring a finished clip is a one-line change per row.
-const ACCENTS = ['#e3a83f', '#22d3ee', '#d9784f'];
+const ACCENTS = ['#b85c38', '#9a4a2c', '#6b645c'];
 
 const Benefits: React.FC = () => {
   const { dict } = useI18n();
@@ -22,13 +22,13 @@ const Benefits: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-transparent border-t border-white/10 relative overflow-hidden">
+    <section ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2] relative overflow-hidden">
       <div className="max-w-6xl mx-auto relative">
 
-        <div className={`mb-16 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.benefits.eyebrow}</p>
-          <h2 className="text-3xl md:text-5xl font-black leading-tight">
-            {dict.benefits.heading1} <span className="text-gradient">{dict.benefits.heading2}</span>
+        <div className={`mb-16 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.benefits.eyebrow}</p>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
+            {dict.benefits.heading1} <span className="text-[#b85c38]">{dict.benefits.heading2}</span>
           </h2>
         </div>
 
@@ -43,8 +43,8 @@ const Benefits: React.FC = () => {
               >
                 <div className={reversed ? 'md:order-2' : ''}>
                   <p className="text-xs font-bold uppercase tracking-[0.15em] mb-3" style={{ color: ACCENTS[i] }}>{item.eyebrow}</p>
-                  <h3 className="text-2xl md:text-3xl font-black text-white leading-tight mb-4">{item.title}</h3>
-                  <p className="text-[#8b93a7] text-sm md:text-base leading-relaxed max-w-lg">{item.body}</p>
+                  <h3 className="text-2xl md:text-3xl font-semibold text-[#14110f] leading-tight mb-4">{item.title}</h3>
+                  <p className="text-[#6b645c] text-sm md:text-base leading-relaxed max-w-lg">{item.body}</p>
                 </div>
                 <div className={reversed ? 'md:order-1' : ''}>
                   <VideoSlot label={item.videoLabel} accent={ACCENTS[i]} />

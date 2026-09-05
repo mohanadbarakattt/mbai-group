@@ -11,11 +11,11 @@ const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
   const { locale, setLocale, dict } = useI18n();
   return (
     <div
-      className={`inline-flex items-center gap-0.5 rounded-full border border-white/15 bg-white/5 p-1 ${compact ? 'w-full justify-center' : ''}`}
+      className={`inline-flex items-center gap-0.5 rounded-full border border-[#e6dfd2] bg-[#fffdf8] p-1 ${compact ? 'w-full justify-center' : ''}`}
       role="group"
       aria-label={dict.nav.languageLabel}
     >
-      <Globe size={13} className="hidden lg:block text-[#8b93a7] ml-1.5 mr-0.5 shrink-0" aria-hidden />
+      <Globe size={13} className="hidden lg:block text-[#6b645c] ml-1.5 mr-0.5 shrink-0" aria-hidden />
       {LOCALES.map((l) => (
         <button
           key={l}
@@ -25,7 +25,7 @@ const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
           aria-label={LOCALE_NAMES[l]}
           title={LOCALE_NAMES[l]}
           className={`px-1.5 lg:px-2.5 py-1 rounded-full text-[10px] lg:text-[11px] font-semibold uppercase tracking-wide transition-colors ${
-            locale === l ? 'bg-white text-[#0b1022]' : 'text-[#8b93a7] hover:text-white'
+            locale === l ? 'bg-[#14110f] text-[#f7f3ec]' : 'text-[#6b645c] hover:text-[#14110f]'
           }`}
         >
           {LOCALE_LABELS[l]}
@@ -51,7 +51,6 @@ const Navigation: React.FC = () => {
   useEffect(() => {
     const sectionIds = ['ventures', 'demos', 'how-we-work', 'contact'];
     const observers: IntersectionObserver[] = [];
-
     const sectionVisibility: Record<string, number> = {};
 
     const pickActive = () => {
@@ -106,9 +105,7 @@ const Navigation: React.FC = () => {
   };
 
   // Ordered to match the actual scroll flow of the homepage (Ventures then
-  // Demos then How We Work then Contact — see App.tsx's Home section order),
-  // so clicking left-to-right feels like moving down the page. "Our Story"
-  // is a separate route rather than an in-page anchor, so it sits last.
+  // Demos then How We Work then Contact — see App.tsx's Home section order).
   const navLinks = [
     { id: 'ventures', name: dict.nav.ventures, href: '/#ventures', sectionId: 'ventures' },
     { id: 'demos', name: dict.nav.demos, href: '/#demos', sectionId: 'demos' },
@@ -120,10 +117,10 @@ const Navigation: React.FC = () => {
   const linkClass = (sectionId?: string) => {
     const isActive = sectionId && activeSection === sectionId;
     return [
-      'text-xs lg:text-sm font-medium transition-colors uppercase tracking-wide lg:tracking-wide',
+      'text-xs lg:text-sm font-medium transition-colors uppercase tracking-wide',
       isActive
-        ? 'text-white border-b-2 border-cyan-400 pb-0.5'
-        : 'text-[#8b93a7] hover:text-white',
+        ? 'text-[#14110f] border-b-2 border-[#b85c38] pb-0.5'
+        : 'text-[#6b645c] hover:text-[#14110f]',
     ].join(' ');
   };
 
@@ -131,15 +128,14 @@ const Navigation: React.FC = () => {
     const isActive = sectionId && activeSection === sectionId;
     return [
       'font-medium py-2 transition-colors',
-      isActive ? 'text-white font-semibold' : 'text-[#8b93a7] hover:text-white',
+      isActive ? 'text-[#14110f] font-semibold' : 'text-[#6b645c] hover:text-[#14110f]',
     ].join(' ');
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled ? 'bg-[#0b1022]/85 backdrop-blur-xl border-b border-white/10 py-4' : 'bg-transparent py-6'}`}>
+    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'bg-[#f7f3ec]/95 border-b border-[#e6dfd2] py-3 shadow-[0_1px_0_rgba(20,17,15,0.04)]' : 'bg-[#f7f3ec]/80 border-b border-transparent py-5'}`}>
       <div className="max-w-7xl mx-auto px-4 lg:px-6 flex justify-between items-center gap-2">
 
-        {/* Logo */}
         <a href="/" onClick={(e) => {
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
           e.preventDefault();
@@ -149,14 +145,12 @@ const Navigation: React.FC = () => {
           } else {
             navigate('/');
           }
-        }} className="flex items-center shrink-0 group transform transition-transform hover:scale-105 duration-300">
-          {/* Icon-only chip from md up to lg (nav gets tight around 768px);
-              full wordmark once there's room, at lg+. */}
-          <span className="lg:hidden"><Logo size={44} dark /></span>
-          <span className="hidden lg:inline-flex"><Logo size={52} withWordmark dark /></span>
+        }} className="flex items-center shrink-0 group">
+          {/* Dark mark for cream nav */}
+          <span className="lg:hidden"><Logo size={44} /></span>
+          <span className="hidden lg:inline-flex"><Logo size={52} withWordmark /></span>
         </a>
 
-        {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-2 lg:gap-6 min-w-0">
           {navLinks.map((link) =>
             'isExternal' in link && link.isExternal ? (
@@ -173,24 +167,23 @@ const Navigation: React.FC = () => {
             )
           )}
           <LanguageSwitcher />
-          <button
-            onClick={() => { if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-lg truncate max-w-[130px] lg:max-w-none"
+          <a
+            href="/#contact"
+            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-md truncate max-w-[130px] lg:max-w-none no-underline inline-flex items-center justify-center"
             title={dict.nav.bookCall}
+            onClick={(e) => handleAnchorClick(e, '/#contact')}
           >
             {dict.nav.bookCall}
-          </button>
+          </a>
         </div>
 
-        {/* Mobile Toggle */}
-        <button className="md:hidden text-white" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}>
+        <button className="md:hidden text-[#14110f]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#0b1022]/95 backdrop-blur-xl border-b border-white/10">
+        <div className="md:hidden absolute top-full left-0 w-full bg-[#f7f3ec] border-b border-[#e6dfd2]">
           <div className="flex flex-col py-4 px-6 gap-4">
             {navLinks.map((link) =>
               'isExternal' in link && link.isExternal ? (
@@ -208,12 +201,13 @@ const Navigation: React.FC = () => {
               )
             )}
             <LanguageSwitcher compact />
-            <button
-              onClick={() => { setIsMobileMenuOpen(false); if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-              className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg w-full"
+            <a
+              href="/#contact"
+              className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-md w-full no-underline inline-flex items-center justify-center"
+              onClick={(e) => { setIsMobileMenuOpen(false); handleAnchorClick(e, '/#contact'); }}
             >
               {dict.nav.bookCall}
-            </button>
+            </a>
           </div>
         </div>
       )}

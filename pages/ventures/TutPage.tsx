@@ -1,24 +1,23 @@
 import React from 'react';
 import VentureShell from './VentureShell';
-import TutDemo from '../../components/demos/TutDemo';
 
 const TutPage: React.FC = () => (
   <VentureShell
     name="TUT"
     accent="#eab308"
-    tagline="Egyptian AI Companion & Guide"
+    tagline="Boarding-Pass PWA"
     path="/tut"
-    status="Coming soon"
-    headline={<>An AI friend<br /><span className="text-gradient">that actually speaks Egyptian.</span></>}
-    sub="Named after Egypt's boy king, TUT is a personal AI companion that chats natively in Egyptian Arabic, Franco, and English — and knows Egypt cold: places and fair prices, museums and monuments, hieroglyphics, and the slang people actually use."
+    status="Live"
+    externalUrl="https://tutapp.co"
+    externalLabel="Open tutapp.co"
+    headline={<>Your boarding pass,<br /><span className="text-[#b85c38]">on your phone.</span></>}
+    sub="TUT is a live boarding-pass progressive web app at tutapp.co — not a coming-soon AI companion. Keep your pass handy, offline-friendly, and ready at the gate."
     pillars={[
-      { title: 'Speaks Masri, not translated', text: 'Egyptian Arabic, Franco-Arabic, or English — TUT talks the way people actually talk, instead of reading like a translated chatbot.' },
-      { title: 'Knows Egypt cold', text: 'Places worth going and what they should fairly cost, museums and monuments, hieroglyphics, and the slang and trends of right now.' },
-      { title: 'Alignment-grade safety', text: 'Built by a former xAI Human Data Lead — same safety and accuracy discipline used on frontier models, and strictly politically neutral.' },
+      { title: 'Live at tutapp.co', text: 'The product is shipped as a PWA — open tutapp.co on your phone and use it like an installed app.' },
+      { title: 'Boarding-pass first', text: 'Built around the pass you actually need at the airport — scannable, fast, and usable without hunting through email threads.' },
+      { title: 'Earlier companion concept parked', text: 'Older site copy described an Egyptian AI companion. That direction is not what is live today; the live product is the boarding-pass PWA.' },
     ]}
-  >
-    <TutDemo />
-  </VentureShell>
+  />
 );
 
 export default TutPage;

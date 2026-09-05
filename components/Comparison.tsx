@@ -4,11 +4,11 @@ import { useI18n } from '../i18n';
 
 const Cell: React.FC<{ value: string; strong?: boolean }> = ({ value, strong }) => {
   if (value === '—') {
-    return <span className="text-[#5b6480]">—</span>;
+    return <span className="text-[#8a8278]">—</span>;
   }
   return (
-    <span className={`inline-flex items-center gap-1.5 ${strong ? 'text-white font-semibold' : 'text-[#aab2c5]'}`}>
-      {strong && <Check size={14} className="text-emerald-400 shrink-0" />}
+    <span className={`inline-flex items-center gap-1.5 ${strong ? 'text-[#14110f] font-semibold' : 'text-[#6b645c]'}`}>
+      {strong && <Check size={14} className="text-[#2f6b4f] shrink-0" />}
       {value}
     </span>
   );
@@ -28,34 +28,33 @@ const Comparison: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-[#0e1533]/70 border-y border-white/10 relative overflow-hidden">
-      <div className="aurora w-[460px] h-[460px] bottom-0 right-0" style={{ background: 'radial-gradient(circle, rgba(217,120,79,0.16), transparent 60%)' }} />
+    <section ref={ref} className="py-24 px-6 bg-transparent border-y border-[#e6dfd2] relative overflow-hidden">
       <div className="max-w-5xl mx-auto relative">
 
-        <div className={`mb-12 text-center max-w-2xl mx-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center justify-center gap-2">
+        <div className={`mb-12 max-w-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
             <Scale3D size={14} /> {dict.comparison.eyebrow}
           </p>
-          <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4">
-            {dict.comparison.heading1} <span className="text-gradient">{dict.comparison.heading2}</span>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
+            {dict.comparison.heading1} <span className="text-[#b85c38]">{dict.comparison.heading2}</span>
           </h2>
-          <p className="text-[#8b93a7] text-sm md:text-base">{dict.comparison.sub}</p>
+          <p className="text-[#6b645c] text-sm md:text-base">{dict.comparison.sub}</p>
         </div>
 
         <div className={`overflow-x-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '150ms' }}>
-          <table className="w-full min-w-[640px] border-collapse glass-strong rounded-2xl overflow-hidden">
+          <table className="w-full min-w-[640px] border-collapse bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl overflow-hidden">
             <thead>
-              <tr className="border-b border-white/10">
-                <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#8b93a7] px-5 py-4 w-[38%]"></th>
-                <th className="text-left text-xs font-bold uppercase tracking-wide text-white px-5 py-4" style={{ color: '#e3a83f' }}>{dict.comparison.columnUs}</th>
-                <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#8b93a7] px-5 py-4">{dict.comparison.columnOffshore}</th>
-                <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#8b93a7] px-5 py-4">{dict.comparison.columnAgency}</th>
+              <tr className="border-b border-[#e6dfd2]">
+                <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#6b645c] px-5 py-4 w-[38%]"></th>
+                <th className="text-left text-xs font-bold uppercase tracking-wide text-[#14110f] px-5 py-4" style={{ color: '#b85c38' }}>{dict.comparison.columnUs}</th>
+                <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#6b645c] px-5 py-4">{dict.comparison.columnOffshore}</th>
+                <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#6b645c] px-5 py-4">{dict.comparison.columnAgency}</th>
               </tr>
             </thead>
             <tbody>
               {dict.comparison.rows.map((row, i) => (
-                <tr key={row.label} className={i % 2 === 0 ? 'bg-white/[0.02]' : ''}>
-                  <td className="text-sm text-[#cdd4e2] px-5 py-4 align-top">{row.label}</td>
+                <tr key={row.label} className={i % 2 === 0 ? 'bg-[#fffdf8]' : ''}>
+                  <td className="text-sm text-[#3a342e] px-5 py-4 align-top">{row.label}</td>
                   <td className="text-sm px-5 py-4 align-top"><Cell value={row.us} strong /></td>
                   <td className="text-sm px-5 py-4 align-top"><Cell value={row.offshore} /></td>
                   <td className="text-sm px-5 py-4 align-top"><Cell value={row.agency} /></td>
@@ -65,7 +64,7 @@ const Comparison: React.FC = () => {
           </table>
         </div>
 
-        <p className={`mt-5 text-xs text-[#5b6480] transition-all duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
+        <p className={`mt-5 text-xs text-[#8a8278] transition-all duration-700 ${visible ? 'opacity-100' : 'opacity-0'}`} style={{ transitionDelay: '300ms' }}>
           {dict.comparison.footnote}
         </p>
 

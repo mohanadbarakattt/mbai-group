@@ -4,18 +4,20 @@ import VirloDemo from '../../components/demos/VirloDemo';
 
 const VirloPage: React.FC = () => (
   <VentureShell
-    name="Virlo Studio"
+    name="Virlo"
     accent="#f97316"
-    tagline="Egyptian-First AI Video & Image Studio"
+    tagline="Egyptian Digital-Product Marketplace"
     path="/virlo"
-    status="Coming soon"
-    headline={<>Prompt it in Franco.<br /><span className="text-gradient">Get content that looks Egyptian.</span></>}
-    sub="Virlo Studio is a generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, reusable characters, and b-roll, so brands and creators get on-brand video and image content without a production crew."
+    status="Building"
+    headline={<>Selling digital products in Egypt.<br /><span className="text-[#b85c38]">Built around InstaPay.</span></>}
+    sub="Virlo is pivoting (Aug 2026) into an Egypt-first digital-product marketplace — creators and merchants list digital goods, buyers pay via InstaPay. The earlier AI video & image studio concept is parked; there is no public marketplace URL yet while we build."
     pillars={[
-      { title: 'Franco-Arabic prompting', text: 'Describe the shot the way you actually talk — Masri, Franco, or English — instead of translating your idea into someone else\'s English first.' },
-      { title: 'Culturally-tuned presets', text: 'Presets, characters, and b-roll tuned for Egyptian and MENA context, so the output looks like the region instead of a generic stock render.' },
-      { title: 'Video and image, one studio', text: 'Generate stills and cinematic video side by side, with reusable characters that stay consistent across a whole campaign.' },
+      { title: 'InstaPay-native checkout', text: 'Payments shaped for how Egyptians actually pay for digital goods — not a card-only funnel bolted onto a global template.' },
+      { title: 'Digital goods, local rails', text: 'Listings, delivery, and settlement designed for Egyptian digital products — courses, assets, tools — not a generic Shopify clone.' },
+      { title: 'AI studio parked', text: 'The Franco-Arabic AI video/image studio remains a parked concept preview below. The live product direction is the marketplace.' },
     ]}
+    previewLabel="Parked concept — AI studio preview"
+    previewNote="The interactive preview below is the parked AI studio concept. The current Virlo product direction is the Egypt digital-product marketplace (InstaPay) — still building, no public storefront URL yet."
   >
     <VirloDemo />
   </VentureShell>

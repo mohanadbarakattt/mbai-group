@@ -23,56 +23,50 @@ const FounderCredentials: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-20 px-6 bg-[#0e1533]/70 border-y border-white/10 overflow-hidden relative">
-      <div className="aurora w-[420px] h-[420px] top-0 right-0" style={{ background: 'radial-gradient(circle, rgba(34,211,238,0.18), transparent 60%)' }} />
+    <section ref={ref} className="band-ink py-24 px-6 border-y border-[#2a241f] overflow-hidden relative">
       <div className="max-w-7xl mx-auto">
-
-        {/* Header */}
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#ffffff80] mb-4">Engineering Pedigree</p>
+          <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#cfc6b8] mb-4">Engineering Pedigree</p>
           <div className="flex flex-col md:flex-row md:items-end md:justify-between gap-6">
-            <h2 className="text-3xl md:text-5xl font-black text-white leading-tight max-w-xl">
+            <h2 className="text-3xl md:text-5xl font-semibold leading-tight max-w-xl text-[#f7f3ec]">
               Frontier AI.<br />
-              <span className="text-gradient">Applied to MENA.</span>
+              <span className="text-[#e8a07a]">Applied to MENA.</span>
             </h2>
-            <p className="text-[#ffffffcc] text-sm max-w-xs leading-relaxed md:text-right">
+            <p className="text-[#cfc6b8] text-sm max-w-xs leading-relaxed md:text-right">
               Former xAI Human Data Lead. The same rigour that trains frontier models — now building your product.
             </p>
           </div>
         </div>
 
-        {/* Credential grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 gap-3 mb-10">
           {credentials.map((c, i) => (
             <div
               key={c.title}
-              className={`group flex items-center gap-3 bg-white/10 hover:bg-white/15 border border-white/20 hover:border-white/40 rounded-xl px-4 py-3.5 transition-all duration-300 cursor-default ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+              className={`group flex items-center gap-3 bg-white/5 hover:bg-white/8 border border-white/10 hover:border-white/20 rounded-lg px-4 py-3.5 transition-all duration-300 cursor-default ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
               style={{ transitionDelay: visible ? `${i * 70 + 200}ms` : '0ms', transitionProperty: 'opacity, transform, background-color, border-color' }}
             >
-              <div className="text-[#ffffffaa] group-hover:text-white transition-colors shrink-0">{c.icon}</div>
+              <div className="text-[#e8a07a] shrink-0">{c.icon}</div>
               <div>
-                <p className="text-white text-xs font-semibold leading-none mb-1">{c.title}</p>
-                <p className="text-[#ffffff80] text-[10px] leading-none">{c.sub}</p>
+                <p className="text-[#f7f3ec] text-xs font-semibold leading-none mb-1">{c.title}</p>
+                <p className="text-[#cfc6b8] text-[10px] leading-none">{c.sub}</p>
               </div>
             </div>
           ))}
         </div>
 
-        {/* Quote */}
-        <div className={`border-t border-white/20 pt-10 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
-          <p className="text-xl md:text-2xl font-semibold text-white leading-snug max-w-3xl">
+        <div className={`border-t border-white/10 pt-10 transition-all duration-700 delay-500 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}>
+          <p className="text-xl md:text-2xl font-semibold text-[#f7f3ec] leading-snug max-w-3xl">
             "I worked on the alignment systems behind frontier models.{' '}
-            <span className="text-[#ffffffcc]">Now I use that same precision to build AI products for MENA businesses."</span>
+            <span className="text-[#cfc6b8]">Now I use that same precision to build AI products for MENA businesses."</span>
           </p>
           <div className="flex items-center gap-3 mt-6">
-            <div className="w-8 h-8 rounded-full bg-white/15 border border-white/30 flex items-center justify-center text-xs font-bold text-white">M</div>
+            <div className="w-8 h-8 rounded-full bg-white/10 border border-white/20 flex items-center justify-center text-xs font-bold text-[#f7f3ec]">M</div>
             <div>
-              <p className="text-white text-xs font-semibold">Mohanad Barakat</p>
-              <p className="text-[#ffffff80] text-[10px]">Founder · Former xAI Human Data Lead</p>
+              <p className="text-[#f7f3ec] text-xs font-semibold">Mohanad Barakat</p>
+              <p className="text-[#cfc6b8] text-[10px]">Founder · Former xAI Human Data Lead</p>
             </div>
           </div>
         </div>
-
       </div>
     </section>
   );

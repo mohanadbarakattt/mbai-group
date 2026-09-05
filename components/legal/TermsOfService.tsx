@@ -13,7 +13,7 @@ const TermsOfService: React.FC = () => (
       <p>
         These terms apply to <strong>mbai-group.com</strong>, operated by Mohanad Barakat / MB AI Group (MBAI
         Solutions), and to the ventures and interactive demos embedded on it. Each individual venture (AutoLeadss,
-        Virlo Studio, IBNI, TUT) may publish its own additional terms on its own domain when it launches publicly.
+        Virlo, IBNI, TUT, Be3ly) may publish its own additional terms on its own domain when it launches publicly.
       </p>
     </section>
 

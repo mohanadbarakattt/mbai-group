@@ -9,17 +9,15 @@
 ## Ventures
 
 - [AutoLeadss](https://autoleadss.com): AI + human lead-generation infrastructure
-  and a self-serve AI funnel-builder SaaS. Live today; 200+ qualified leads
-  delivered across three MENA markets.
-- [IBNI](/ibni): "Build me" in Arabic — an AI app builder that turns a
-  plain-language description into a working application, in Arabic or English.
-  Currently an active, in-development concept preview.
-- [Virlo Studio](/virlo): An Egyptian-first AI video and image generation
-  studio — Franco-Arabic prompting, culturally-tuned presets and characters.
-  Currently an active, in-development concept preview.
-- [TUT](/tut): Named after Egypt's boy king, a personal AI learning companion
-  for MENA students, teaching in Arabic or English at the learner's pace.
-  Currently an active, in-development concept preview.
+  and a self-serve AI funnel-builder SaaS. Live today at autoleadss.com.
+- [TUT](https://tutapp.co): Live boarding-pass progressive web app. Not a
+  coming-soon AI companion. Product page on this site: [/tut](/tut).
+- [IBNI](https://ibni.app): Egyptian storefront builder. DEMO_MODE preview live
+  at ibni.app. Companion page: [/ibni](/ibni).
+- [Virlo](/virlo): Building an Egypt-first digital-product marketplace (InstaPay).
+  Earlier AI video/image studio concept is parked. No public marketplace URL yet.
+- [Be3ly](/be3ly): Prototype Egyptian affiliate / social-selling connector.
+  Model B: merchant collects InstaPay. Still building — no public product URL.
 
 ## Other interactive demos on this site
 
@@ -35,9 +33,11 @@ demonstrations of engineering range, not separately incorporated ventures.
 - Founder: Mohanad Barakat, former xAI Human Data Lead.
 - Locations: Cairo, Egypt and Dubai, UAE.
 - Contact: mohanad.barakat@mbai-group.com
-- The four ventures above are the group's actual companies/products; the
+- Five ventures above are the group's actual companies/products; the
   additional items in the demos section are technical demonstrations, not
   separate businesses.
+- Online Calendly booking on this site is currently unavailable; use email,
+  WhatsApp, or LinkedIn.
 
 ## Docs
 

@@ -18,7 +18,7 @@ const en: Dict = {
     demos: 'Demos',
     contact: 'Contact',
     ourStory: 'Our Story',
-    bookCall: 'Book a 30-min Strategy Call',
+    bookCall: 'Get in touch',
     languageLabel: 'Language',
   },
 
@@ -27,7 +27,7 @@ const en: Dict = {
     line1: 'Frontier AI,',
     line2: 'built for the real world.',
     sub: 'Founded by a former xAI Human Data Lead. We build the AI agents, data systems, and products that move MENA businesses — and launch our own ventures doing the same.',
-    ctaBook: 'Book a 30-min Strategy Call',
+    ctaBook: 'Get in touch',
     ctaDemos: 'Explore Live Demos',
     statLead: 'Ex-xAI Human Data Lead',
     statProducts: '10 shipped products',
@@ -37,23 +37,24 @@ const en: Dict = {
   ventures: {
     eyebrow: 'The MB AI Group Portfolio',
     heading1: 'One group.',
-    heading2: 'Four ventures.',
+    heading2: 'Five ventures.',
     heading3: 'One mission.',
     intro:
-      'Every company in the group attacks the same problem from a different angle: bringing frontier-grade AI to the markets the frontier forgot. No-code app building, AI-driven lead generation, generative media, and companionship.',
+      'Every company in the group attacks a MENA-shaped problem: AI lead gen, Egyptian boarding-pass UX, storefront building, digital-product commerce (InstaPay), and affiliate social selling.',
     statusLive: 'Live',
     statusPreview: 'Preview',
     statusComingSoon: 'Coming soon',
+    statusBuilding: 'Building',
     ctaLive: 'Visit the live product',
     ctaPreview: 'Preview the vision',
     whyItMatters: 'Why it matters',
     items: {
       ibni: {
-        tagline: 'The AI App Builder',
+        tagline: 'Egyptian Storefront Builder',
         description:
-          'IBNI ("build me" in Arabic) turns a plain-language idea into a working application. Describe the product; IBNI architects, generates, and ships it — bringing software creation to founders who don\'t code.',
+          'IBNI ("build me" in Arabic) is an Egyptian storefront builder — turn a plain-language idea into a working shop experience. Demo live at ibni.app in DEMO_MODE.',
         interpretation:
-          'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
+          'Storefront scaffolding for Egyptian merchants first — try the DEMO_MODE preview at ibni.app.',
       },
       autoleadss: {
         tagline: 'Agency + AI Funnel-Builder SaaS',
@@ -63,18 +64,25 @@ const en: Dict = {
           'Proof that frontier-grade AI can drive revenue today — real leads for real clients, and the same engine packaged for anyone to run themselves.',
       },
       virlo: {
-        tagline: 'Egyptian-First AI Video & Image Studio',
+        tagline: 'Egyptian Digital-Product Marketplace',
         description:
-          'A generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, characters, and b-roll, so brands and creators get on-brand video and image content without a production crew.',
+          'Pivoting (Aug 2026) into an Egypt-first digital-product marketplace with InstaPay. The earlier AI video & image studio is parked. Still building — no public marketplace URL yet.',
         interpretation:
-          'Applies frontier generative media, tuned for Egyptian culture and dialect, to the creators the global tools were never built for.',
+          'Honest product truth: commerce rails for Egyptian digital goods, not a fake "coming soon" studio launch page.',
       },
       tut: {
-        tagline: 'Egyptian AI Companion',
+        tagline: 'Boarding-Pass PWA',
         description:
-          "Named after Egypt's boy king, TUT is a personal AI companion for MENA users — conversing naturally in Egyptian Franco-Arabic, remembering context, and adapting to each person's life and pace.",
+          'TUT is a live boarding-pass progressive web app at tutapp.co — keep your pass on your phone, ready at the gate. Not a coming-soon AI companion.',
         interpretation:
-          "A companion that actually speaks like Egypt does — alignment-grade AI, tuned for the region's dialect and culture, not translated from someone else's.",
+          'A shipped Egyptian travel utility — open tutapp.co and use it today.',
+      },
+      be3ly: {
+        tagline: 'Affiliate & Social-Selling Connector',
+        description:
+          'Prototype Egyptian affiliate / social-selling connector. Model B: the merchant collects InstaPay. Still building — no invented production URL.',
+        interpretation:
+          'Connects promoters to merchants without inventing a fake storefront domain.',
       },
     },
     ecosystemEyebrow: 'One account. One AI. All products.',
@@ -98,8 +106,8 @@ const en: Dict = {
   },
 
   cookieConsent: {
-    body: 'We use essential cookies to run this site, and optional cookies for analytics. You can accept or reject anytime.',
-    analyticsLabel: 'Analytics (optional) — helps us understand site usage',
+    body: 'We use essential cookies to run this site. We do not currently load third-party analytics; if you accept analytics below, we will store that preference for if we add them later.',
+    analyticsLabel: 'Analytics (optional, not currently active) — preference stored for a future analytics tool',
     acceptAll: 'Accept all',
     rejectAll: 'Reject non-essential',
     manage: 'Manage',
@@ -109,11 +117,12 @@ const en: Dict = {
   contact: {
     eyebrow: 'Get in Touch',
     heading: "Let's talk about your project.",
-    body: 'Book a call directly using the calendar, or reach out through any of the channels below. We typically respond within a few hours.',
+    body: 'Online booking is temporarily unavailable. Reach out by WhatsApp, email, or LinkedIn — we typically respond within a few hours.',
     whatsapp: 'WhatsApp',
     email: 'Email',
-    calendlyTitle: 'Book a 30-min Strategy Call',
-    calendlySub: 'Pick a time that works for you — no commitment required.',
+    calendlyTitle: 'Strategy call booking',
+    calendlySub: 'Calendar embed currently unavailable.',
+    bookingUnavailable: 'Please use WhatsApp, email, or LinkedIn below. A working Calendly link will be restored once the owner provides one.',
   },
 
   about: {
@@ -157,7 +166,7 @@ const en: Dict = {
 
   techExpertise: {
     eyebrow: 'The Engine Behind the Group',
-    body: 'The same disciplines that align frontier models — RLHF, signal extraction, and reasoning-grade data pipelines — now power all four MB AI Group ventures.',
+    body: 'The same disciplines that align frontier models — RLHF, signal extraction, and reasoning-grade data pipelines — now power MB AI Group ventures.',
   },
 
   features: {
@@ -215,7 +224,7 @@ const en: Dict = {
     columnOffshore: 'Offshore Dev Shop',
     columnAgency: 'Generic Agency',
     rows: [
-      { label: 'Ships its own AI products, not just client work', us: 'Yes — 4 live ventures', offshore: 'Usually client work only', agency: 'Usually client work only' },
+      { label: 'Ships its own AI products, not just client work', us: 'Yes — 5 active ventures', offshore: 'Usually client work only', agency: 'Usually client work only' },
       { label: 'Team on the ground in Cairo & Dubai', us: 'Yes', offshore: '—', agency: '—' },
       { label: 'Arabic dialect-tuned AI (Egyptian Franco-Arabic + MSA)', us: 'Yes', offshore: '—', agency: '—' },
       { label: 'One partner for build and ongoing growth', us: 'Yes', offshore: 'Varies by contract', agency: 'Varies by contract' },

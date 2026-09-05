@@ -1,7 +1,7 @@
 import React, { lazy, Suspense, useCallback, useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
 import {
-  X, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Sparkles, Loader2, PlayCircle,
+  X, ExternalLink, ArrowUpRight, ChevronLeft, ChevronRight, Zap, Loader2, PlayCircle,
   Mic, FileText, LineChart, Languages, MapPin, CreditCard, Clapperboard, Hammer, MessageCircle,
 } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
@@ -15,7 +15,6 @@ const MasrGuideDemo = lazy(() => import('./demos/MasrGuideDemo'));
 const NeobankDemo = lazy(() => import('./demos/NeobankDemo'));
 const VirloDemo = lazy(() => import('./demos/VirloDemo'));
 const IbniDemo = lazy(() => import('./demos/IbniDemo'));
-const TutDemo = lazy(() => import('./demos/TutDemo'));
 
 type Shot = { image: string; title: string; description: string };
 
@@ -45,53 +44,54 @@ const ENTRIES: Entry[] = [
     blurb: 'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate and MENA enterprises. Custom agents hunt leads 24/7; bilingual specialists close the loop.',
     tags: ['AI Agents', 'Lead Gen', 'Real Estate'],
     accent: '#e3a83f',
-    icon: <Sparkles size={22} />,
+    icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
-    thumbnail: '/autoleads-images/mbai-hero-bg-opt.jpg',
+    thumbnail: '/thumbnails/autoleads.png',
     interpretation: 'Proof that frontier-grade AI drives revenue today — 200+ qualified leads delivered to real clients across three markets.',
   },
   {
     id: 'virlo',
-    title: 'Virlo Studio',
-    subtitle: 'Egyptian-First AI Video & Image Studio',
-    blurb: 'A generation studio built for Egyptian and MENA creators — Franco-Arabic prompting, culturally-tuned presets, characters, and b-roll, so brands and creators get on-brand video and image content without a production crew.',
-    tags: ['Generative Media', 'Franco-Arabic', 'Creators'],
+    title: 'Virlo',
+    subtitle: 'Egyptian Digital-Product Marketplace',
+    blurb: 'Building an Egypt-first digital-product marketplace with InstaPay. The earlier AI video & image studio concept is parked (preview still available). No public marketplace URL yet.',
+    tags: ['Marketplace', 'InstaPay', 'Egypt'],
     accent: '#f97316',
     icon: <Clapperboard size={22} />,
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
-    thumbnail: '/thumbnails/virlo.jpg',
-    interpretation: 'Applies frontier generative media, tuned for Egyptian culture and dialect, to the creators the global tools were never built for.',
+    thumbnail: '/thumbnails/virlo.png',
+    interpretation: 'Product truth: marketplace pivot in progress; studio concept remains a parked preview only.',
   },
   {
     id: 'ibni',
     title: 'IBNI',
-    subtitle: 'The AI App Builder',
-    blurb: 'IBNI ("build me" in Arabic) turns a plain-language idea into a working application — architecting, generating, and previewing it live, in Arabic or English. Software creation for founders who don\'t code.',
-    tags: ['No-Code', 'Codegen', 'Bilingual'],
+    subtitle: 'Egyptian Storefront Builder',
+    blurb: 'IBNI ("build me" in Arabic) is an Egyptian storefront builder. Try the DEMO_MODE preview at ibni.app, or the on-site concept preview.',
+    tags: ['Storefront', 'Egypt', 'Demo'],
     accent: '#10b981',
     icon: <Hammer size={22} />,
     status: 'Preview',
     demo: IbniDemo,
     pageUrl: '/ibni',
-    thumbnail: '/thumbnails/ibni.jpg',
-    interpretation: 'RLHF-aligned generation, pointed at software: IBNI architects apps the way a senior engineer would — so the next hundred million builders can ship in Arabic or English, not Python.',
+    externalUrl: 'https://ibni.app',
+    thumbnail: '/thumbnails/ibni.png',
+    interpretation: 'Storefront scaffolding for Egyptian merchants — live DEMO_MODE at ibni.app.',
   },
   {
     id: 'tut',
     title: 'TUT',
-    subtitle: 'Egyptian AI Companion & Guide',
-    blurb: 'Named after Egypt\'s boy king, TUT is a personal AI companion that chats natively in Egyptian Arabic, Franco, and English — and knows Egypt cold: places and fair prices, museums and monuments, hieroglyphics, and the slang people actually use.',
-    tags: ['Franco-Arabic', 'Egypt Expert', 'Companion'],
+    subtitle: 'Boarding-Pass PWA',
+    blurb: 'Live boarding-pass progressive web app at tutapp.co — keep your pass on your phone, ready at the gate. Not a coming-soon AI companion.',
+    tags: ['PWA', 'Travel', 'Live'],
     accent: '#eab308',
     icon: <MessageCircle size={22} />,
-    status: 'Preview',
-    demo: TutDemo,
+    status: 'Live',
     pageUrl: '/tut',
-    thumbnail: '/thumbnails/tut.jpg',
-    interpretation: 'A companion that actually speaks like Egypt does — alignment-grade AI, tuned for the region\'s dialect and culture, not translated from someone else\'s.',
+    externalUrl: 'https://tutapp.co',
+    thumbnail: '/thumbnails/tut.png',
+    interpretation: 'A shipped Egyptian travel utility — open tutapp.co today.',
   },
   {
     id: 'sonicboom',
@@ -99,7 +99,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'AI Music Deconstruction & Practice',
     blurb: 'SonicScribe uses AI to deconstruct any track into theory, chords, and tabs, then streams notes down a virtual fretboard or piano with microphone-powered pitch detection scoring your accuracy live.',
     tags: ['Gemini AI', 'Audio', 'Real-Time'],
-    accent: '#22d3ee',
+    accent: '#b85c38',
     icon: <Mic size={22} />,
     status: 'Preview',
     demo: SonicBoomDemo,
@@ -217,7 +217,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Next-Generation Digital Banking',
     blurb: 'A full-stack digital banking platform for MENA — dashboard, AI financial assistant, real-time analytics, virtual card management, and instant P2P transfers, wrapped in a sleek dark UI.',
     tags: ['React', 'Fintech', 'Full-Stack'],
-    accent: '#38bdf8',
+    accent: '#6b645c',
     icon: <CreditCard size={22} />,
     status: 'Preview',
     demo: NeobankDemo,
@@ -238,7 +238,7 @@ const ENTRIES: Entry[] = [
 ];
 
 const DemoFallback: React.FC = () => (
-  <div className="w-full h-[420px] flex items-center justify-center text-[#8b93a7]" style={{ background: '#0a0e17' }}>
+  <div className="w-full h-[420px] flex items-center justify-center text-[#6b645c]" style={{ background: '#f0ebe1' }}>
     <Loader2 className="animate-spin mr-2" size={18} /> Loading live demo…
   </div>
 );
@@ -292,30 +292,29 @@ const Demos: React.FC = () => {
 
   return (
     <section id="demos" className="py-24 px-6 relative overflow-hidden bg-transparent">
-      <div className="aurora w-[500px] h-[500px] top-10 -right-40" style={{ background: 'radial-gradient(circle, rgba(227,168,63,0.28), transparent 60%)' }} />
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-14">
-          <p className="text-cyan-400 text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-pulse" /> Live Work
+          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#b85c38] animate-pulse" /> Live Work
           </p>
-          <h2 className="text-3xl md:text-5xl font-black leading-tight mb-4">
-            Ten products. <span className="text-gradient">Try them right here.</span>
+          <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
+            Ten products. <span className="text-[#b85c38]">Try them right here.</span>
           </h2>
-          <p className="text-[#8b93a7] max-w-2xl">
+          <p className="text-[#6b645c] max-w-2xl">
             Every card below opens a real, interactive demo — click any one and use it live. From lead generation and virality
             intelligence to Arabic NLP, fintech, and AI music. No screenshots-only tours; the actual thing, running in your browser.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" style={{ perspective: '1400px' }}>
+        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {ENTRIES.map((e, i) => {
             const inner = (
-              <div className="glass-strong card-fx glow-border rounded-2xl p-6 flex flex-col h-full group relative overflow-hidden cursor-pointer">
+              <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6 flex flex-col h-full group relative overflow-hidden cursor-pointer">
                 <span
                   className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5"
                   style={e.status === 'Live'
-                    ? { color: '#34d399', background: 'rgba(16,185,129,0.12)', borderColor: 'rgba(16,185,129,0.4)' }
-                    : { color: '#93a4c8', background: 'rgba(255,255,255,0.05)', borderColor: 'rgba(255,255,255,0.12)' }}
+                    ? { color: '#2f6b4f', background: 'rgba(47,107,79,0.08)', borderColor: 'rgba(47,107,79,0.28)' }
+                    : { color: '#6b645c', background: 'rgba(20,17,15,0.03)', borderColor: '#e6dfd2' }}
                 >
                   <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: e.status === 'Live' ? '#34d399' : e.accent }} />
                   {e.status === 'Live' ? 'Live Product' : 'Interactive Demo'}
@@ -334,12 +333,12 @@ const Demos: React.FC = () => {
 
                 <MediaSlot className="mb-5" accent={e.accent} icon={e.icon} label={e.title} alt={`${e.title} — ${e.subtitle}`} thumbnail={e.thumbnail} />
 
-                <p className="text-[#8b93a7] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
+                <p className="text-[#6b645c] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
 
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {e.tags.map((t) => (
-                      <span key={t} className="text-[10px] px-2 py-1 rounded bg-white/[0.04] text-[#8b93a7] border border-white/10">{t}</span>
+                      <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#f7f3ec] text-[#6b645c] border border-[#e6dfd2]">{t}</span>
                     ))}
                   </div>
                   <div className="w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 text-sm transition-all border"
@@ -371,10 +370,10 @@ const Demos: React.FC = () => {
       {/* Modal */}
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
-          <div className="absolute inset-0 bg-black/85 backdrop-blur-md" onClick={closeDemo} />
-          <div className="relative w-full max-w-5xl glass-strong rounded-2xl border border-white/10 shadow-2xl my-auto" style={{ background: '#0e1533' }}>
+          <div className="absolute inset-0 bg-[#14110f]/45 backdrop-blur-sm" onClick={closeDemo} />
+          <div className="relative w-full max-w-5xl bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#e6dfd2]/80 my-auto" style={{ background: '#fffdf8' }}>
             {/* Header */}
-            <div className="p-5 md:p-6 flex justify-between items-start border-b border-white/10 sticky top-0 z-10 rounded-t-2xl" style={{ background: '#0e1533' }}>
+            <div className="p-5 md:p-6 flex justify-between items-start border-b border-[#e6dfd2] sticky top-0 z-10 rounded-t-2xl" style={{ background: '#fffdf8' }}>
               <div className="flex items-center gap-4">
                 <div className="p-2.5 rounded-xl shrink-0" style={{ color: entry.accent, background: `${entry.accent}16`, border: `1px solid ${entry.accent}33` }}>{entry.icon}</div>
                 <div>
@@ -382,17 +381,17 @@ const Demos: React.FC = () => {
                   <p className="text-sm" style={{ color: entry.accent }}>{entry.subtitle}</p>
                 </div>
               </div>
-              <button onClick={closeDemo} className="p-2 hover:bg-white/10 rounded-full text-[#8b93a7] hover:text-white transition-colors shrink-0"><X size={22} /></button>
+              <button onClick={closeDemo} className="p-2 hover:bg-[#f0ebe1] rounded-full text-[#6b645c] hover:text-[#14110f] transition-colors shrink-0"><X size={22} /></button>
             </div>
 
             <div className="p-5 md:p-6 space-y-6">
               {/* Interactive demo */}
               {Demo && (
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478] mb-2 flex items-center gap-2">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: entry.accent }} /> Interactive — try it live
                   </p>
-                  <div className="rounded-2xl overflow-hidden border border-white/10" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
+                  <div className="rounded-2xl overflow-hidden border border-[#e6dfd2]" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
                     <Suspense fallback={<DemoFallback />}><Demo /></Suspense>
                   </div>
                   {entry.pageUrl && (
@@ -403,19 +402,19 @@ const Demos: React.FC = () => {
                 </div>
               )}
 
-              <p className="text-[#aab2c5] leading-relaxed text-sm md:text-base">{entry.blurb}</p>
+              <p className="text-[#6b645c] leading-relaxed text-sm md:text-base">{entry.blurb}</p>
 
               <div className="p-4 rounded-xl border" style={{ background: `${entry.accent}0d`, borderColor: `${entry.accent}2e` }}>
                 <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: entry.accent }}>Interpretation</p>
-                <p className="text-[#cdd4e2] text-sm leading-relaxed">{entry.interpretation}</p>
+                <p className="text-[#3a342e] text-sm leading-relaxed">{entry.interpretation}</p>
               </div>
 
               {entry.highlights && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {entry.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-white/[0.03] border border-white/10">
-                      <Sparkles size={14} className="mt-0.5 shrink-0" style={{ color: entry.accent }} />
-                      <span className="text-[#aab2c5] text-sm">{h}</span>
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-[#f7f3ec] border border-[#e6dfd2]">
+                      <Zap size={14} className="mt-0.5 shrink-0" style={{ color: entry.accent }} />
+                      <span className="text-[#6b645c] text-sm">{h}</span>
                     </div>
                   ))}
                 </div>
@@ -424,24 +423,24 @@ const Demos: React.FC = () => {
               {/* Screenshots */}
               {entry.shots && entry.shots.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#5b6478] mb-2">From the live product</p>
-                  <div className="relative rounded-xl overflow-hidden border border-white/10">
-                    <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-black/60" />
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2">From the live product</p>
+                  <div className="relative rounded-xl overflow-hidden border border-[#e6dfd2]">
+                    <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-[#f0ebe1]" />
                     {entry.shots.length > 1 && (
                       <>
-                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white backdrop-blur-sm"><ChevronLeft size={18} /></button>
-                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-black/70 hover:bg-black rounded-full flex items-center justify-center text-white backdrop-blur-sm"><ChevronRight size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#14110f]/70 hover:bg-[#14110f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronLeft size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#14110f]/70 hover:bg-[#14110f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronRight size={18} /></button>
                       </>
                     )}
                   </div>
-                  <div className="p-3.5 mt-3 rounded-xl bg-white/[0.03] border border-white/10">
+                  <div className="p-3.5 mt-3 rounded-xl bg-[#f7f3ec] border border-[#e6dfd2]">
                     <h4 className="font-bold text-sm mb-1">{entry.shots[shotIndex].title}</h4>
-                    <p className="text-[#8b93a7] text-sm leading-relaxed">{entry.shots[shotIndex].description}</p>
+                    <p className="text-[#6b645c] text-sm leading-relaxed">{entry.shots[shotIndex].description}</p>
                   </div>
                   {entry.shots.length > 1 && (
                     <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
                       {entry.shots.map((s, i) => (
-                        <button key={i} onClick={() => setShotIndex(i)} className="shrink-0 rounded-lg overflow-hidden border-2 transition-all" style={{ borderColor: i === shotIndex ? entry.accent : 'rgba(255,255,255,0.1)', opacity: i === shotIndex ? 1 : 0.5 }}>
+                        <button key={i} onClick={() => setShotIndex(i)} className="shrink-0 rounded-lg overflow-hidden border-2 transition-all" style={{ borderColor: i === shotIndex ? entry.accent : '#e6dfd2', opacity: i === shotIndex ? 1 : 0.5 }}>
                           <img src={s.image} alt={s.title} className="w-20 h-12 object-cover object-top" />
                         </button>
                       ))}
@@ -452,7 +451,7 @@ const Demos: React.FC = () => {
 
               <div className="flex flex-wrap gap-2 pt-1">
                 {entry.tags.map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-full bg-white/[0.04] text-xs text-[#aab2c5] border border-white/10">{t}</span>
+                  <span key={t} className="px-3 py-1 rounded-full bg-[#f7f3ec] text-xs text-[#6b645c] border border-[#e6dfd2]">{t}</span>
                 ))}
               </div>
             </div>
