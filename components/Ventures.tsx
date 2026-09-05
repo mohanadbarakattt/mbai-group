@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, Clapperboard, Hammer, MessageCircle, Sparkles, Fingerprint } from 'lucide-react';
+import { ArrowUpRight, Clapperboard, Hammer, MessageCircle, Sparkles, Fingerprint, Share2 } from 'lucide-react';
 import TiltCard from './effects/TiltCard';
 import MediaSlot from './MediaSlot';
 import { useI18n } from '../i18n';
@@ -10,18 +10,6 @@ import { useI18n } from '../i18n';
 // Copy (tagline/description/interpretation) comes from dict.ventures.items.
 const VENTURE_META = [
   {
-    id: 'ibni' as const,
-    name: 'IBNI',
-    // Kept in sync with the /ibni page and the Demos section: IBNI is an active,
-    // in-development concept preview today, not yet a publicly shipped product.
-    status: 'Preview' as const,
-    href: '/ibni',
-    icon: <Hammer size={22} />,
-    accent: '#10b981',
-    domain: 'ibni.app',
-    thumbnail: '/thumbnails/ibni.jpg',
-  },
-  {
     id: 'autoleadss' as const,
     name: 'AutoLeadss',
     status: 'Live' as const,
@@ -30,28 +18,51 @@ const VENTURE_META = [
     icon: <Sparkles size={22} />,
     accent: '#e3a83f',
     domain: 'autoleadss.com',
-    // Reuses the same hero asset shown in the Demos section's AutoLeadss card.
     thumbnail: '/autoleads-images/mbai-hero-bg-opt.jpg',
-  },
-  {
-    id: 'virlo' as const,
-    name: 'Virlo Studio',
-    status: 'Coming soon' as const,
-    href: '/virlo',
-    icon: <Clapperboard size={22} />,
-    accent: '#f97316',
-    domain: 'virlo.studio',
-    thumbnail: '/thumbnails/virlo.jpg',
   },
   {
     id: 'tut' as const,
     name: 'TUT',
-    status: 'Coming soon' as const,
-    href: '/tut',
+    status: 'Live' as const,
+    href: 'https://tutapp.co',
+    external: true,
     icon: <MessageCircle size={22} />,
     accent: '#eab308',
-    domain: 'tut.app',
+    domain: 'tutapp.co',
     thumbnail: '/thumbnails/tut.jpg',
+  },
+  {
+    id: 'ibni' as const,
+    name: 'IBNI',
+    // Egyptian storefront builder demo at ibni.app (DEMO_MODE).
+    status: 'Preview' as const,
+    href: 'https://ibni.app',
+    external: true,
+    icon: <Hammer size={22} />,
+    accent: '#10b981',
+    domain: 'ibni.app',
+    thumbnail: '/thumbnails/ibni.jpg',
+  },
+  {
+    id: 'virlo' as const,
+    name: 'Virlo',
+    status: 'Building' as const,
+    href: '/virlo',
+    icon: <Clapperboard size={22} />,
+    accent: '#f97316',
+    domain: 'building',
+    thumbnail: '/thumbnails/virlo.jpg',
+  },
+  {
+    id: 'be3ly' as const,
+    name: 'Be3ly',
+    status: 'Building' as const,
+    href: '/be3ly',
+    icon: <Share2 size={22} />,
+    accent: '#a855f7',
+    domain: 'building',
+    // Reuse a neutral project thumbnail until a Be3ly asset exists.
+    thumbnail: '/thumbnails/project-3.png',
   },
 ];
 
@@ -62,6 +73,7 @@ const Ventures: React.FC = () => {
     Live: dict.ventures.statusLive,
     Preview: dict.ventures.statusPreview,
     'Coming soon': dict.ventures.statusComingSoon,
+    Building: dict.ventures.statusBuilding,
   };
   const ref = useRef<HTMLDivElement>(null);
   const [visible, setVisible] = useState(false);
@@ -71,7 +83,6 @@ const Ventures: React.FC = () => {
     if (!el) return;
     const obs = new IntersectionObserver(([e]) => { if (e.isIntersecting) { setVisible(true); obs.disconnect(); } }, { threshold: 0.08 });
     obs.observe(el);
-    // Fallback: some browsers throttle IO — reveal whenever the section enters the viewport.
     const check = () => {
       const r = el.getBoundingClientRect();
       if (r.top < window.innerHeight && r.bottom > 0) {

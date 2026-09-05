@@ -10,7 +10,6 @@ const LINKEDIN_URL = 'https://www.linkedin.com/company/mbai-solutions';
 
 const Contact: React.FC = () => {
   const { dict } = useI18n();
-  const calendlyRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const [visible, setVisible] = useState(false);
 
@@ -28,16 +27,6 @@ const Contact: React.FC = () => {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const cal = (window as any).Calendly;
-    if (cal && calendlyRef.current) {
-      cal.initInlineWidget({
-        url: 'https://calendly.com/autoleadss-info/30min',
-        parentElement: calendlyRef.current,
-      });
-    }
-  }, []);
-
   return (
     <section ref={sectionRef} id="contact" className="py-24 px-6 bg-[#0e1533]/70 border-t border-white/10">
       <div className="max-w-6xl mx-auto">
@@ -46,7 +35,6 @@ const Contact: React.FC = () => {
 
           {/* Left — contact details */}
           <div>
-            {/* Heading block */}
             <div
               className={`transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             >
@@ -61,7 +49,6 @@ const Contact: React.FC = () => {
 
             <div className="space-y-4">
 
-              {/* WhatsApp */}
               <a
                 href="https://wa.me/201100054278"
                 target="_blank"
@@ -81,7 +68,6 @@ const Contact: React.FC = () => {
                 <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
 
-              {/* Email */}
               <a
                 href="mailto:mohanad.barakat@mbai-group.com"
                 className={`flex items-center gap-4 glass-strong card-fx rounded-xl px-5 py-4 transition-all duration-700 group ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
@@ -99,12 +85,10 @@ const Contact: React.FC = () => {
                 <svg className="text-white/40 group-hover:text-white transition-colors shrink-0" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2"><path d="M7 17L17 7M17 7H7M17 7v10"/></svg>
               </a>
 
-              {/* Social row — only confirmed, working profiles are shown */}
               <div
                 className={`flex items-center gap-3 pt-2 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: '300ms' }}
               >
-                {/* Instagram — hidden until a real handle is confirmed, see INSTAGRAM_URL above */}
                 {INSTAGRAM_URL && (
                   <a
                     href={INSTAGRAM_URL}
@@ -120,7 +104,6 @@ const Contact: React.FC = () => {
                   </a>
                 )}
 
-                {/* Facebook — hidden until a real handle is confirmed, see FACEBOOK_URL above */}
                 {FACEBOOK_URL && (
                   <a
                     href={FACEBOOK_URL}
@@ -136,7 +119,6 @@ const Contact: React.FC = () => {
                   </a>
                 )}
 
-                {/* LinkedIn */}
                 <a
                   href={LINKEDIN_URL}
                   target="_blank"
@@ -154,19 +136,36 @@ const Contact: React.FC = () => {
             </div>
           </div>
 
-          {/* Right — Calendly inline widget */}
+          {/* Right — booking unavailable fallback (do not invent a Calendly URL) */}
           <div
-            className={`bg-white glass-strong rounded-2xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+            className={`glass-strong rounded-2xl overflow-hidden border border-amber-400/20 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
             style={{ transitionDelay: '200ms' }}
           >
             <div className="px-6 pt-6 pb-2 border-b border-white/10">
               <p className="text-sm font-semibold text-white">{dict.contact.calendlyTitle}</p>
               <p className="text-xs text-[#8b93a7] mt-0.5">{dict.contact.calendlySub}</p>
             </div>
-            <div
-              ref={calendlyRef}
-              style={{ width: '100%', height: '700px' }}
-            />
+            <div className="px-6 py-10 space-y-4">
+              <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-amber-400/10 border border-amber-400/30 text-amber-200 text-[11px] font-semibold uppercase tracking-wider">
+                Booking calendar unavailable
+              </div>
+              <p className="text-sm text-[#aab2c5] leading-relaxed">
+                {dict.contact.bookingUnavailable}
+              </p>
+              <div className="flex flex-col sm:flex-row gap-3 pt-2">
+                <a href="mailto:mohanad.barakat@mbai-group.com" className="btn-primary inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm no-underline">
+                  {dict.contact.email}
+                </a>
+                <a
+                  href="https://wa.me/201100054278"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-center justify-center gap-2 px-5 py-2.5 rounded-xl text-sm border border-white/15 text-[#cdd4e2] hover:text-white transition-colors no-underline"
+                >
+                  {dict.contact.whatsapp}
+                </a>
+              </div>
+            </div>
           </div>
 
         </div>

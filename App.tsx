@@ -35,7 +35,7 @@ const HOME_FAQ_JSONLD = {
       name: 'What is MB AI Group?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "MB AI Group (MBAI Solutions) is an AI product studio based in Cairo, Egypt and Dubai, UAE, founded by Mohanad Barakat, a former xAI Human Data Lead. It builds AI agents, data systems, and products for MENA businesses, and ships its own ventures — AutoLeadss, Virlo Studio, IBNI, and TUT.",
+        text: "MB AI Group (MBAI Solutions) is an AI product studio based in Cairo, Egypt and Dubai, UAE, founded by Mohanad Barakat, a former xAI Human Data Lead. It builds AI agents, data systems, and products for MENA businesses, and ships its own ventures — AutoLeadss, TUT, IBNI, Virlo, and Be3ly.",
       },
     },
     {
@@ -51,7 +51,7 @@ const HOME_FAQ_JSONLD = {
       name: 'How many products has MB AI Group shipped or demoed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Four ventures (AutoLeadss, Virlo Studio, IBNI, TUT) plus six additional interactive engineering demos add up to ten working, try-it-live products shown on mbai-group.com.",
+        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo, Be3ly) plus additional interactive engineering demos are shown on mbai-group.com. Live products today include AutoLeadss (autoleadss.com) and TUT (tutapp.co); IBNI demos at ibni.app; Virlo and Be3ly are building.",
       },
     },
   ],
@@ -63,6 +63,7 @@ const TestimonialsAdmin = lazy(() => import('./components/admin/TestimonialsAdmi
 const VirloPage = lazy(() => import('./pages/ventures/VirloPage'));
 const IbniPage = lazy(() => import('./pages/ventures/IbniPage'));
 const TutPage = lazy(() => import('./pages/ventures/TutPage'));
+const Be3lyPage = lazy(() => import('./pages/ventures/Be3lyPage'));
 const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
 
@@ -77,7 +78,7 @@ function Home() {
     <div className="min-h-screen bg-transparent text-[#e8ecf4] overflow-x-hidden">
       <Seo
         title="MB AI Group — Frontier AI for MENA · Cairo & Dubai"
-        description="MB AI Group — founded by former xAI Human Data Lead Mohanad Barakat. AutoLeadss, Virlo Studio, IBNI, and TUT: frontier-grade AI products built for the MENA region."
+        description="MB AI Group — founded by former xAI Human Data Lead Mohanad Barakat. AutoLeadss, TUT, IBNI, Virlo, and Be3ly: AI products and Egyptian digital commerce ventures for the MENA region."
         path="/"
         jsonLd={HOME_FAQ_JSONLD}
       />
@@ -159,6 +160,9 @@ function App() {
             </Route>
             <Route path="/tut">
               <Suspense fallback={<PageLoader />}><TutPage /></Suspense>
+            </Route>
+            <Route path="/be3ly">
+              <Suspense fallback={<PageLoader />}><Be3lyPage /></Suspense>
             </Route>
             <Route path="/privacy">
               <Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>

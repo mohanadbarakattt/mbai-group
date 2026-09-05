@@ -17,10 +17,10 @@ const Hero: React.FC = () => {
   const sub = locale === 'en' ? enSub : dict.hero.sub;
   const videoRef = useRef<HTMLVideoElement>(null);
 
-  const openCalendly = () => {
-    if ((window as any).Calendly) {
-      (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' });
-    }
+  const goContact = () => {
+    const el = document.getElementById('contact');
+    if (el) el.scrollIntoView({ behavior: 'smooth' });
+    else window.location.hash = 'contact';
   };
 
   // The hero video is decorative brand film, not content — pause it for
@@ -95,7 +95,7 @@ const Hero: React.FC = () => {
         </p>
 
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-2">
-          <button onClick={openCalendly} className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl">
+          <button onClick={goContact} className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-xl">
             <Calendar size={16} /> {dict.hero.ctaBook}
           </button>
           <a href="#demos" className="inline-flex items-center gap-1.5 text-sm font-medium text-[#cdd4e6] hover:text-white transition-colors">

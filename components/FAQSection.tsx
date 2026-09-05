@@ -9,27 +9,31 @@ import { ChevronDown, HelpCircle } from 'lucide-react';
 const FAQS = [
   {
     q: 'What is MB AI Group?',
-    a: "MB AI Group (MBAI Solutions) is an AI product studio based in Cairo, Egypt and Dubai, UAE, founded by Mohanad Barakat, a former xAI Human Data Lead. It builds AI agents, data systems, and products for MENA businesses, and ships its own ventures — AutoLeadss, Virlo Studio, IBNI, and TUT — using the same alignment and Arabic-NLP discipline.",
+    a: "MB AI Group (MBAI Solutions) is an AI product studio based in Cairo, Egypt and Dubai, UAE, founded by Mohanad Barakat, a former xAI Human Data Lead. It builds AI agents, data systems, and products for MENA businesses, and ships its own ventures — AutoLeadss, TUT, IBNI, Virlo, and Be3ly.",
   },
   {
     q: 'What is AutoLeadss?',
-    a: 'AutoLeadss is a hybrid AI + human lead-generation system that sources, qualifies, and books appointments for MENA enterprises, plus a self-serve SaaS that lets any business spin up its own AI-powered lead funnel. It is live today at autoleadss.com, with 200+ qualified leads delivered across three markets.',
-  },
-  {
-    q: 'What is IBNI?',
-    a: 'IBNI ("build me" in Arabic) is an AI app builder that turns a plain-language idea into a working application — architected, generated, and previewed live, in Arabic or English. It is currently an active, in-development concept preview, not yet a publicly shipped product.',
-  },
-  {
-    q: 'What is Virlo Studio?',
-    a: 'Virlo Studio is an Egyptian-first AI video and image generation studio — Franco-Arabic prompting, culturally-tuned presets, characters, and b-roll for creators and brands. It is currently an active, in-development concept preview.',
+    a: 'AutoLeadss is a hybrid AI + human lead-generation system that sources, qualifies, and books appointments for MENA enterprises, plus a self-serve SaaS that lets any business spin up its own AI-powered lead funnel. It is live today at autoleadss.com.',
   },
   {
     q: 'What is TUT?',
-    a: "TUT, named after Egypt's boy king, is a personal AI learning companion for MENA students — explaining concepts in Arabic or English at each learner's pace. It is currently an active, in-development concept preview.",
+    a: 'TUT is a live boarding-pass progressive web app at tutapp.co — keep your pass on your phone, offline-friendly and ready at the gate. It is not a coming-soon AI companion.',
   },
   {
-    q: 'How many products has MB AI Group shipped or demoed?',
-    a: "The group's four ventures (AutoLeadss, Virlo Studio, IBNI, TUT) plus six additional interactive engineering demos (an ATS resume optimizer, a market-sentiment dashboard, a Franco-Arabic translator, a local-intelligence tool for Egypt, a neobank UI, and an AI music tool) add up to ten working, try-it-live products shown on this site.",
+    q: 'What is IBNI?',
+    a: 'IBNI ("build me" in Arabic) is an Egyptian storefront builder. A DEMO_MODE preview is live at ibni.app.',
+  },
+  {
+    q: 'What is Virlo?',
+    a: 'Virlo is building an Egypt-first digital-product marketplace with InstaPay. The earlier AI video & image studio concept is parked. There is no public marketplace URL yet.',
+  },
+  {
+    q: 'What is Be3ly?',
+    a: 'Be3ly is a prototype Egyptian affiliate / social-selling connector. Model B: the merchant collects payment via InstaPay. Still building — no public product URL yet.',
+  },
+  {
+    q: 'How many ventures does MB AI Group have?',
+    a: 'Five ventures: AutoLeadss (live), TUT (live at tutapp.co), IBNI (demo at ibni.app), Virlo (building), and Be3ly (building), plus additional interactive engineering demos on this site.',
   },
 ];
 

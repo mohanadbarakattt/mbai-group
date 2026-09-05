@@ -173,13 +173,14 @@ const Navigation: React.FC = () => {
             )
           )}
           <LanguageSwitcher />
-          <button
-            onClick={() => { if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-lg truncate max-w-[130px] lg:max-w-none"
+          <a
+            href="/#contact"
+            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-lg truncate max-w-[130px] lg:max-w-none no-underline inline-flex items-center justify-center"
             title={dict.nav.bookCall}
+            onClick={(e) => handleAnchorClick(e, '/#contact')}
           >
             {dict.nav.bookCall}
-          </button>
+          </a>
         </div>
 
         {/* Mobile Toggle */}
@@ -208,12 +209,13 @@ const Navigation: React.FC = () => {
               )
             )}
             <LanguageSwitcher compact />
-            <button
-              onClick={() => { setIsMobileMenuOpen(false); if ((window as any).Calendly) (window as any).Calendly.initPopupWidget({ url: 'https://calendly.com/autoleadss-info/30min' }); }}
-              className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg w-full"
+            <a
+              href="/#contact"
+              className="btn-primary text-sm font-semibold px-5 py-2.5 rounded-lg w-full no-underline inline-flex items-center justify-center"
+              onClick={(e) => { setIsMobileMenuOpen(false); handleAnchorClick(e, '/#contact'); }}
             >
               {dict.nav.bookCall}
-            </button>
+            </a>
           </div>
         </div>
       )}
