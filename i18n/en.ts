@@ -52,9 +52,9 @@ const en: Dict = {
       ibni: {
         tagline: 'Egyptian Storefront Builder',
         description:
-          'IBNI ("build me" in Arabic) is an Egyptian storefront builder — turn a plain-language idea into a working shop experience. Demo live at ibni.app in DEMO_MODE.',
+          'IBNI ("build me" in Arabic) is a live Egyptian storefront builder at ibni.app — pick a ready design, add products, set shipping for 27 governorates, and take COD orders on your own link.',
         interpretation:
-          'Storefront scaffolding for Egyptian merchants first — try the DEMO_MODE preview at ibni.app.',
+          'Shipped COD commerce for Egyptian merchants — templates, inventory, and orders without pretending it is an AI app builder.',
       },
       autoleadss: {
         tagline: 'Agency + AI Funnel-Builder SaaS',

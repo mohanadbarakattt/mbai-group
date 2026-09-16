@@ -32,7 +32,7 @@ const VENTURE_META = [
   {
     id: 'ibni' as const,
     name: 'IBNI',
-    status: 'Preview' as const,
+    status: 'Live' as const,
     href: 'https://ibni.app',
     external: true,
     icon: <Hammer size={20} />,

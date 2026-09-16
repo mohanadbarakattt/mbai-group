@@ -51,7 +51,7 @@ const HOME_FAQ_JSONLD = {
       name: 'How many products has MB AI Group shipped or demoed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo, Be3ly) plus additional interactive engineering demos are shown on mbai-group.com. Live products today include AutoLeadss (autoleadss.com) and TUT (tutapp.co); IBNI demos at ibni.app; Virlo and Be3ly are building.",
+        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo, Be3ly) plus additional interactive engineering demos are shown on mbai-group.com. Live products today include AutoLeadss (autoleadss.com), TUT (tutapp.co), and IBNI (ibni.app); Virlo and Be3ly are building.",
       },
     },
   ],
