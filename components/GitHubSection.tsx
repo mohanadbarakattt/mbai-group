@@ -37,8 +37,8 @@ const REPOS = [
   },
   {
     name: 'ibni',
-    description: 'Egyptian storefront builder — DEMO_MODE at ibni.app.',
-    tags: ['Codegen', 'No-Code'],
+    description: 'Egyptian COD storefront builder — live at ibni.app.',
+    tags: ['Commerce', 'Egypt'],
     private: true,
     href: '/ibni',
   },

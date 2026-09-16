@@ -50,9 +50,9 @@ const franco: Dict = {
       ibni: {
         tagline: 'Bane Storefronts Masry',
         description:
-          'IBNI (ya3ni "ebni li" bel 3araby) bane storefront masry — 7awel fekra basita le tagroba matgar. Demo live 3ala ibni.app fe DEMO_MODE.',
+          'IBNI (ya3ni "ebni li" bel 3araby) storefront masry live 3ala ibni.app — e5tar design gahez, zawwed products, 7ottet el sha7n le 27 mo7afza, w est2bel talabat COD 3ala linkak.',
         interpretation:
-          'Scaffolding lel toggar el masreyeen awwalan — garreb DEMO_MODE 3ala ibni.app.',
+          'COD commerce gahez lel toggar el masreyeen — templates w ma5zoon w talabat, men gheir ma nedda3y enno AI app builder.',
       },
       autoleadss: {
         tagline: 'Wekala + SaaS le Funnels bel AI',

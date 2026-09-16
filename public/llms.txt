@@ -12,8 +12,9 @@
   and a self-serve AI funnel-builder SaaS. Live today at autoleadss.com.
 - [TUT](https://tutapp.co): Live boarding-pass progressive web app. Not a
   coming-soon AI companion. Product page on this site: [/tut](/tut).
-- [IBNI](https://ibni.app): Egyptian storefront builder. DEMO_MODE preview live
-  at ibni.app. Companion page: [/ibni](/ibni).
+- [IBNI](https://ibni.app): Live Egyptian storefront builder — ready
+  templates (store / restaurant / services), products, 27-governorate
+  shipping, cash-on-delivery orders on ibni.app/s/…. Companion page: [/ibni](/ibni).
 - [Virlo](/virlo): Building an Egypt-first digital-product marketplace (InstaPay).
   Earlier AI video/image studio concept is parked. No public marketplace URL yet.
 - [Be3ly](/be3ly): Prototype Egyptian affiliate / social-selling connector.

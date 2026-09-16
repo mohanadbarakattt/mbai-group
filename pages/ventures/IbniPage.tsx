@@ -8,18 +8,18 @@ const IbniPage: React.FC = () => (
     accent="#10b981"
     tagline="Egyptian Storefront Builder"
     path="/ibni"
-    status="Preview"
+    status="Live"
     externalUrl="https://ibni.app"
-    externalLabel="Open ibni.app (demo)"
-    headline={<>Build an Egyptian storefront.<br /><span className="text-[#b85c38]">Describe it — IBNI scaffolds it.</span></>}
-    sub={'IBNI ("build me" in Arabic) is an Egyptian storefront builder — turn a plain-language idea into a working shop experience. The live demo runs at ibni.app in DEMO_MODE.'}
+    externalLabel="Open ibni.app"
+    headline={<>متجرك الإلكتروني، جاهز يستقبل طلبات.<br /><span className="text-[#b85c38]">Pick a template. Publish. COD.</span></>}
+    sub={'IBNI ("build me" in Arabic) is a live Egyptian storefront builder at ibni.app — choose one of three ready designs (store, restaurant, services), add products, set shipping for all 27 governorates, and take cash-on-delivery orders on your own ibni.app/s/… link. Not an AI app-scaffolder.'}
     pillars={[
-      { title: 'Storefront, not generic apps', text: 'Oriented around Egyptian merchants: product pages, checkout flows, and local selling context — not an abstract app-builder pitch.' },
-      { title: 'Demo live at ibni.app', text: 'Try the DEMO_MODE experience on ibni.app. It is a real preview of the product direction, not a finished production rollout.' },
-      { title: 'Arabic & English', text: 'Prompts and interfaces work in Arabic or English — built for MENA founders first.' },
+      { title: 'COD-first commerce', text: 'Buyers order and pay on delivery — no card or e-wallet required inside the shop. Built for how Egyptian retail actually closes.' },
+      { title: '27 governorates, your rates', text: 'Set per-governorate shipping fees, manage inventory and order status from one merchant dashboard, and publish banners without touching code.' },
+      { title: 'Three ready designs', text: 'Store, restaurant, or services — same platform, different layouts. Live product (not DEMO_MODE); honest limits are listed on ibni.app.' },
     ]}
-    previewLabel="On-site concept preview"
-    previewNote="Prefer the live demo at ibni.app (DEMO_MODE). The on-site preview below is a lightweight companion concept."
+    previewLabel="On-site storefront preview"
+    previewNote="Lightweight companion to the live product at ibni.app — pick a template, set a governorate shipping fee, and publish a concept shop."
   >
     <IbniDemo />
   </VentureShell>

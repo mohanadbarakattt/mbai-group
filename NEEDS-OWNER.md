@@ -24,7 +24,7 @@ Items that cannot be finished honestly without owner input. Do not invent URLs, 
 ## Venture URLs / assets
 - **Virlo marketplace**: no public URL yet — keep `/virlo` as internal "building" page until owner supplies a real storefront URL.
 - **Be3ly**: no production URL — keep `/be3ly` internal until owner supplies one. Thumbnail currently reuses `/thumbnails/project-3.png`; replace with a Be3ly asset when available.
-- **IBNI**: external demo is `https://ibni.app` (DEMO_MODE) — confirm if that should stay the primary CTA.
+- **IBNI**: live product at `https://ibni.app` (COD storefront SaaS) — primary CTA stays ibni.app; on-site `/ibni` is a companion preview.
 - **TUT**: live product is `https://tutapp.co` — confirm domain branding vs older `tut.app` mentions elsewhere.
 
 ## Product count / stats copy

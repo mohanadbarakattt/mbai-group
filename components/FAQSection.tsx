@@ -21,7 +21,7 @@ const FAQS = [
   },
   {
     q: 'What is IBNI?',
-    a: 'IBNI ("build me" in Arabic) is an Egyptian storefront builder. A DEMO_MODE preview is live at ibni.app.',
+    a: 'IBNI ("build me" in Arabic) is a live Egyptian storefront builder at ibni.app — ready templates, products, 27-governorate shipping, and cash-on-delivery orders. It is not an AI app-scaffolder.',
   },
   {
     q: 'What is Virlo?',
@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: 'How many ventures does MB AI Group have?',
-    a: 'Five ventures: AutoLeadss (live), TUT (live at tutapp.co), IBNI (demo at ibni.app), Virlo (building), and Be3ly (building), plus additional interactive engineering demos on this site.',
+    a: 'Five ventures: AutoLeadss (live), TUT (live at tutapp.co), IBNI (live at ibni.app), Virlo (building), and Be3ly (building), plus additional interactive engineering demos on this site.',
   },
 ];
 
