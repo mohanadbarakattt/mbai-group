@@ -13,15 +13,15 @@ const FAQS = [
   },
   {
     q: 'What is AutoLeadss?',
-    a: 'AutoLeadss is a hybrid AI + human lead-generation system that sources, qualifies, and books appointments for MENA enterprises, plus a self-serve SaaS that lets any business spin up its own AI-powered lead funnel. It is live today at autoleadss.com.',
+    a: 'AutoLeadss builds membership systems for repeat-service businesses in Egypt (barbers, salons, car washes, laundries, cafes, pet shops): a premium subscription storefront, upfront payment through the merchant\'s own account, customer QR passes, staff redemption and an owner dashboard. Fixed implementation fee, Arabic and English, handed over as a PWA. Live at autoleadss.com.',
   },
   {
     q: 'What is TUT?',
-    a: 'TUT is a live boarding-pass progressive web app at tutapp.co — keep your pass on your phone, offline-friendly and ready at the gate. It is not a coming-soon AI companion.',
+    a: 'TUT is an AI travel guide for Egypt, live at tutapp.co. Ask about prices, transport, sites or etiquette: every answer names the source page and the day it was checked, or says nobody publishes one. Free to use, in twelve languages including Egyptian Arabic and Franco.',
   },
   {
     q: 'What is IBNI?',
-    a: 'IBNI ("build me" in Arabic) is an Egyptian storefront builder. A DEMO_MODE preview is live at ibni.app.',
+    a: 'IBNI ("build me" in Arabic) is live at ibni.app: Egyptian merchants pick one of 3 ready designs, add products, set shipping per governorate across all 27, and publish a store on their own ibni.app link that takes cash-on-delivery orders, with a dashboard, stock tracking and sales reports.',
   },
   {
     q: 'What is Virlo?',
@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: 'How many ventures does MB AI Group have?',
-    a: 'Five ventures: AutoLeadss (live), TUT (live at tutapp.co), IBNI (demo at ibni.app), Virlo (building), and Be3ly (building), plus additional interactive engineering demos on this site.',
+    a: 'Five ventures: AutoLeadss (live), TUT (live at tutapp.co), IBNI (live at ibni.app), Virlo (building), and Be3ly (building), plus additional interactive engineering demos on this site.',
   },
 ];
 

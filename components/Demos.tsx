@@ -40,15 +40,15 @@ const ENTRIES: Entry[] = [
   {
     id: 'autoleads',
     title: 'AutoLeadss',
-    subtitle: 'AI Lead Generation Infrastructure',
-    blurb: 'A hybrid AI + human system that sources, qualifies, and books appointments for UAE real estate and MENA enterprises. Custom agents hunt leads 24/7; bilingual specialists close the loop.',
-    tags: ['AI Agents', 'Lead Gen', 'Real Estate'],
+    subtitle: 'Membership Systems for Local Businesses',
+    blurb: 'Subscription storefronts for repeat-service businesses in Egypt: plans paid upfront through the merchant account, customer QR passes, staff redemption in seconds, and an owner dashboard. Arabic and English, delivered as a PWA.',
+    tags: ['Memberships', 'QR Passes', 'Egypt'],
     accent: '#e3a83f',
     icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
-    thumbnail: '/thumbnails/autoleads.png',
-    interpretation: 'Proof that frontier-grade AI drives revenue today — 200+ qualified leads delivered to real clients across three markets.',
+    thumbnail: '/thumbnails/autoleadss.webp',
+    interpretation: 'Turns a repeat purchase into revenue collected upfront, with the merchant owning the build and the data.',
   },
   {
     id: 'virlo',
@@ -61,37 +61,37 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
-    thumbnail: '/thumbnails/virlo.png',
+    thumbnail: '/thumbnails/virlo.webp',
     interpretation: 'Product truth: marketplace pivot in progress; studio concept remains a parked preview only.',
   },
   {
     id: 'ibni',
     title: 'IBNI',
     subtitle: 'Egyptian Storefront Builder',
-    blurb: 'IBNI ("build me" in Arabic) is an Egyptian storefront builder. Try the DEMO_MODE preview at ibni.app, or the on-site concept preview.',
-    tags: ['Storefront', 'Egypt', 'Demo'],
+    blurb: 'IBNI ("build me" in Arabic) is live at ibni.app: pick one of 3 designs, add products, set shipping for all 27 governorates and take cash-on-delivery orders from your own store link. The on-site preview is an earlier concept.',
+    tags: ['Storefront', 'Egypt', 'COD'],
     accent: '#10b981',
     icon: <Hammer size={22} />,
     status: 'Preview',
     demo: IbniDemo,
     pageUrl: '/ibni',
     externalUrl: 'https://ibni.app',
-    thumbnail: '/thumbnails/ibni.png',
-    interpretation: 'Storefront scaffolding for Egyptian merchants — live DEMO_MODE at ibni.app.',
+    thumbnail: '/thumbnails/ibni.webp',
+    interpretation: 'A real Egyptian store in five steps, priced openly in EGP.',
   },
   {
     id: 'tut',
     title: 'TUT',
-    subtitle: 'Boarding-Pass PWA',
-    blurb: 'Live boarding-pass progressive web app at tutapp.co — keep your pass on your phone, ready at the gate. Not a coming-soon AI companion.',
-    tags: ['PWA', 'Travel', 'Live'],
+    subtitle: 'AI Travel Guide for Egypt',
+    blurb: 'Ask about Egypt and see where the answer came from. TUT answers from a sourced Egypt knowledge file and names the source page and the day it was checked. Free, twelve languages, installable PWA.',
+    tags: ['RAG', 'Travel', 'Live'],
     accent: '#eab308',
     icon: <MessageCircle size={22} />,
     status: 'Live',
     pageUrl: '/tut',
     externalUrl: 'https://tutapp.co',
-    thumbnail: '/thumbnails/tut.png',
-    interpretation: 'A shipped Egyptian travel utility — open tutapp.co today.',
+    thumbnail: '/thumbnails/tut.webp',
+    interpretation: 'Grounded AI for travellers: sources over guesses, live at tutapp.co.',
   },
   {
     id: 'sonicboom',
@@ -103,7 +103,7 @@ const ENTRIES: Entry[] = [
     icon: <Mic size={22} />,
     status: 'Preview',
     demo: SonicBoomDemo,
-    thumbnail: '/thumbnails/project-1.png',
+    thumbnail: '/thumbnails/sonicboom.webp',
     interpretation: 'Real-time signal processing married to LLM reasoning — the same class of problem as parsing unstructured enterprise data into decisions.',
     highlights: [
       'AI deconstructs any track into theory, chords & tabs',
@@ -128,7 +128,7 @@ const ENTRIES: Entry[] = [
     icon: <FileText size={22} />,
     status: 'Preview',
     demo: AtsDemo,
-    thumbnail: '/thumbnails/project-2.png',
+    thumbnail: '/thumbnails/ats.webp',
     interpretation: 'Adversarial thinking about automated systems — reverse-engineering how machines read humans, and putting that knowledge in the candidate\'s hands.',
     highlights: [
       'Solves the hidden-rejection problem before a human ever reads your resume',
@@ -151,7 +151,7 @@ const ENTRIES: Entry[] = [
     icon: <LineChart size={22} />,
     status: 'Preview',
     demo: MarketSentinelDemo,
-    thumbnail: '/thumbnails/project-3.png',
+    thumbnail: '/thumbnails/marketsentinel.webp',
     interpretation: 'Grounded AI for high-stakes domains — finance punishes hallucination, so every score is built on live, search-grounded data with verifiable sources.',
     highlights: [
       'Fear/Greed scores act as buy/sell signals',
@@ -173,7 +173,7 @@ const ENTRIES: Entry[] = [
     icon: <Languages size={22} />,
     status: 'Preview',
     demo: ThreeArabyDemo,
-    thumbnail: '/thumbnails/project-4.png',
+    thumbnail: '/thumbnails/3araby.webp',
     interpretation: 'Deep Arabic NLP that big tech ignores. Franco-Arabic is spoken by tens of millions and supported by almost no one — the group\'s core moat.',
     highlights: [
       'Trained on real Egyptian dialect data from Reddit',
@@ -197,7 +197,7 @@ const ENTRIES: Entry[] = [
     icon: <MapPin size={22} />,
     status: 'Preview',
     demo: MasrGuideDemo,
-    thumbnail: '/thumbnails/project-5.png',
+    thumbnail: '/thumbnails/masrguide.webp',
     interpretation: 'Turning messy crowd-sourced data into trustworthy intelligence — data engineering plus AI judgment at scale, with confidence ratings.',
     highlights: [
       'Scrapes Reddit, Quora & Facebook for real pricing',
@@ -221,7 +221,7 @@ const ENTRIES: Entry[] = [
     icon: <CreditCard size={22} />,
     status: 'Preview',
     demo: NeobankDemo,
-    thumbnail: '/thumbnails/project-6.png',
+    thumbnail: '/thumbnails/neobank.webp',
     interpretation: 'Full-stack product craft for regulated markets — a complete banking experience for the MENA digital-banking wave, where fintech adoption is growing fastest in the world.',
     highlights: [
       'Real-time dashboard with revenue-flow visualization',
@@ -301,7 +301,7 @@ const Demos: React.FC = () => {
             Ten products. <span className="text-[#b85c38]">Try them right here.</span>
           </h2>
           <p className="text-[#6b645c] max-w-2xl">
-            Every card below opens a real, interactive demo — click any one and use it live. From lead generation and virality
+            Every card below opens a real, interactive demo — click any one and use it live. From membership systems and virality
             intelligence to Arabic NLP, fintech, and AI music. No screenshots-only tours; the actual thing, running in your browser.
           </p>
         </div>

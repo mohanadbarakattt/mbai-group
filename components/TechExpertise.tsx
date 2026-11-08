@@ -43,7 +43,7 @@ const TechExpertise: React.FC = () => {
           <p className="text-sm md:text-[15px] text-[#6b645c] leading-relaxed">
             The same disciplines that align frontier models — <span className="text-[#14110f] font-semibold">RLHF</span>,{' '}
             <span className="text-[#14110f] font-semibold">signal extraction</span>, and{' '}
-            <span className="text-[#14110f] font-semibold">reasoning-grade data pipelines</span> — now power all four MB AI Group ventures.
+            <span className="text-[#14110f] font-semibold">reasoning-grade data pipelines</span> — now power the MB AI Group ventures.
           </p>
         ) : (
           <p className="text-sm md:text-[15px] text-[#6b645c] leading-relaxed">{dict.techExpertise.body}</p>

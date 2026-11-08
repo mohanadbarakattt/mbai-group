@@ -1,46 +1,5 @@
-<svg width="1200" height="630" viewBox="0 0 1200 630" xmlns="http://www.w3.org/2000/svg">
-  <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1200" y2="630" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#0b1022"/>
-      <stop offset="100%" stop-color="#0e1533"/>
-    </linearGradient>
-    <linearGradient id="title-grad" x1="80" y1="0" x2="1000" y2="0" gradientUnits="userSpaceOnUse">
-      <stop offset="0%" stop-color="#f4cd7c"/>
-      <stop offset="38%" stop-color="#e3a83f"/>
-      <stop offset="68%" stop-color="#22d3ee"/>
-      <stop offset="100%" stop-color="#d9784f"/>
-    </linearGradient>
-    <radialGradient id="glow1" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#e3a83f" stop-opacity="0.55"/>
-      <stop offset="100%" stop-color="#e3a83f" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glow2" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#22d3ee" stop-opacity="0.35"/>
-      <stop offset="100%" stop-color="#22d3ee" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-
-  <rect width="1200" height="630" fill="url(#bg)"/>
-  <circle cx="140" cy="80" r="260" fill="url(#glow1)"/>
-  <circle cx="1080" cy="560" r="300" fill="url(#glow2)"/>
-
-  <!-- faint grid -->
-  <g opacity="0.08" stroke="#ffffff">
-    <path d="M0 150 H1200 M0 300 H1200 M0 450 H1200"/>
-    <path d="M200 0 V630 M500 0 V630 M800 0 V630 M1100 0 V630"/>
-  </g>
-
-  <!-- unified brand mark: "MB" monogram, one ink color, no ring/container
-       (same path data as components/Logo.tsx, scaled 1.24x into this box) -->
-  <g transform="translate(80 253) scale(1.24)">
-    <path d="M63.5,18 A15,15 0 0 1 63.5,48" fill="none" stroke="#F5F3EF" stroke-width="11"/>
-    <path d="M63.5,50 A16,16 0 0 1 63.5,82" fill="none" stroke="#F5F3EF" stroke-width="11"/>
-    <path d="M20,82 L20,18 L39,47 L58,18 L58,82" fill="none" stroke="#F5F3EF" stroke-width="11" stroke-linecap="square" stroke-linejoin="miter"/>
-  </g>
-
-  <text x="240" y="300" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif" font-weight="700" font-size="54" fill="#ffffff">MB AI GROUP</text>
-  <text x="240" y="336" font-family="Helvetica, Arial, sans-serif" font-weight="600" font-size="20" letter-spacing="4" fill="rgba(255,255,255,0.55)">FRONTIER AI · MENA</text>
-
-  <text x="80" y="460" font-family="'Space Grotesk','Helvetica Neue',Arial,sans-serif" font-weight="800" font-size="50" fill="url(#title-grad)">Frontier AI, built for the real world.</text>
-  <text x="80" y="504" font-family="Helvetica, Arial, sans-serif" font-weight="500" font-size="24" fill="#aab2c5">AutoLeadss · Virlo Studio · IBNI · TUT — Cairo &amp; Dubai</text>
-</svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#14110f"/><rect x="0" y="622" width="1200" height="8" fill="#c8683f"/>
+ <g transform="translate(90 90) scale(1.3)"><rect width="100" height="100" rx="22" fill="#211c18"/><g fill="none" stroke-width="8.5"><path d="M24,74 V28 L41,53 L58,28 V74" stroke="#f7f3ec" stroke-linejoin="miter" stroke-linecap="square"/><path d="M58,28 H64 A11,11 0 0 1 64,50 H58 M58,51 H65.5 A11.5,11.5 0 0 1 65.5,74 H58" stroke="#c8683f" stroke-linecap="butt"/></g></g>
+ <text x="90" y="350" font-family="Fraunces" font-weight="600" font-size="84" fill="#f7f3ec">MB AI Group</text>
+ <text x="90" y="420" font-family="Inter" font-size="34" fill="#cfc6b8">AI product studio · Cairo &amp; Dubai</text>
+ <text x="90" y="540" font-family="IBM Plex Mono" font-size="24" fill="#c8683f">AUTOLEADSS · TUT · IBNI · VIRLO · BE3LY</text></svg>

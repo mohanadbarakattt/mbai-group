@@ -8,12 +8,16 @@
 
 ## Ventures
 
-- [AutoLeadss](https://autoleadss.com): AI + human lead-generation infrastructure
-  and a self-serve AI funnel-builder SaaS. Live today at autoleadss.com.
-- [TUT](https://tutapp.co): Live boarding-pass progressive web app. Not a
-  coming-soon AI companion. Product page on this site: [/tut](/tut).
-- [IBNI](https://ibni.app): Egyptian storefront builder. DEMO_MODE preview live
-  at ibni.app. Companion page: [/ibni](/ibni).
+- [AutoLeadss](https://autoleadss.com): Membership systems for repeat-service
+  businesses in Egypt: subscription storefront, upfront payment through the
+  merchant's account, customer QR passes, staff redemption, owner dashboard.
+- [TUT](https://tutapp.co): AI travel guide for Egypt ("Your boarding pass to
+  Egypt"). Answers come from a sourced Egypt knowledge file and name the source
+  page and the date checked. Free; twelve languages. Partner listings in pilot.
+  Product page on this site: [/tut](/tut).
+- [IBNI](https://ibni.app): Live Egyptian online-store builder: 3 designs,
+  shipping per governorate, cash-on-delivery orders, dashboard. 1,500 EGP/month.
+  Companion page: [/ibni](/ibni).
 - [Virlo](/virlo): Building an Egypt-first digital-product marketplace (InstaPay).
   Earlier AI video/image studio concept is parked. No public marketplace URL yet.
 - [Be3ly](/be3ly): Prototype Egyptian affiliate / social-selling connector.
@@ -27,6 +31,15 @@ resume optimizer, a Fear & Greed market-sentiment dashboard, a Franco-Arabic
 translator (3araby), a local-intelligence tool for Egypt (Masr Guide), a
 neobank UI, and an AI music-theory/practice tool (Sonic Boom). These are
 demonstrations of engineering range, not separately incorporated ventures.
+
+## Client work and open source
+
+- Lash Cartel: client e-commerce store (preview https://lash-cartel-ten.vercel.app,
+  repo https://github.com/mohanadbarakattt/lashcartel-store). Client-owned brand.
+- ApexOne Knowledge Assistant: CPU-only, evidence-grounded knowledge assistant
+  built for a hiring assessment (https://github.com/mohanadbarakattt/apexone-knowledge-assistant).
+- Claude HQ: open-source mission control for Claude Code (https://github.com/mohanadbarakattt/claude-hq).
+- Grok HQ: open-source mission control for Grok / xAI (https://github.com/mohanadbarakattt/grok-hq).
 
 ## Key facts (verify before citing)
 

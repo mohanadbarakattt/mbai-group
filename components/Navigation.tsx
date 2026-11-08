@@ -147,8 +147,8 @@ const Navigation: React.FC = () => {
           }
         }} className="flex items-center shrink-0 group">
           {/* Dark mark for cream nav */}
-          <span className="lg:hidden"><Logo size={44} /></span>
-          <span className="hidden lg:inline-flex"><Logo size={52} withWordmark /></span>
+          <span className="lg:hidden"><Logo size={36} /></span>
+          <span className="hidden lg:inline-flex"><Logo size={40} withWordmark /></span>
         </a>
 
         <div className="hidden md:flex items-center gap-2 lg:gap-6 min-w-0">

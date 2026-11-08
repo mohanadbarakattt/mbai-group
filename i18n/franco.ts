@@ -28,7 +28,7 @@ const franco: Dict = {
     ctaBook: 'Kalemna',
     ctaDemos: 'Shoof el Demos Live',
     statLead: 'Kan Human Data Lead fi xAI',
-    statProducts: '10 products shipped',
+    statProducts: '15 products, demos w projects',
     statLocation: 'Cairo · Dubai',
   },
 
@@ -38,7 +38,7 @@ const franco: Dict = {
     heading2: '5 mashari3.',
     heading3: 'Hadaf wa7ed.',
     intro:
-      'Kol sharika fel group betwage2 moshkela MENA: lead gen bel AI, boarding-pass PWA, storefront builder, digital products be InstaPay, w affiliate social selling.',
+      'Kol sharika fel group betwage2 moshkela MENA: membership systems lel businesses el ma7alleya, AI travel guide le Masr be masader, matager online lel toggar, digital products be InstaPay, w affiliate social selling.',
     statusLive: 'Live',
     statusPreview: 'Preview',
     statusComingSoon: '2orayeb',
@@ -50,16 +50,16 @@ const franco: Dict = {
       ibni: {
         tagline: 'Bane Storefronts Masry',
         description:
-          'IBNI (ya3ni "ebni li" bel 3araby) bane storefront masry — 7awel fekra basita le tagroba matgar. Demo live 3ala ibni.app fe DEMO_MODE.',
+          'IBNI live 3ala ibni.app: e5tar men 3 designs gahza, daf products, 7aded se3r el sha7n le kol mo7afza men el 27, w ensher matgarak 3ala link 5as beyestalem talabat cash on delivery, ma3 dashboard w stock w sales reports.',
         interpretation:
-          'Scaffolding lel toggar el masreyeen awwalan — garreb DEMO_MODE 3ala ibni.app.',
+          'Matgar 7a2ee2y fe 5 steps, be se3r wade7 bel geneh, w el limits maktouba bsara7a.',
       },
       autoleadss: {
-        tagline: 'Wekala + SaaS le Funnels bel AI',
+        tagline: 'Membership Systems lel Businesses el Ma7alleya',
         description:
-          'System hybrid, AI + nas, bydawwar 3ala 3omala2, ye2ayemhom, w yehgezlohom mawa3id le sharikat el MENA — kaman fi SaaS self-serve bete5aly ay business ye3mel funnel bel AI le wa7do fi da2ay2.',
+          'AutoLeadss beyebni membership systems lel businesses elly 3andaha 3omala2 metkarrareen fe Masr (7ala2een, salons, car wash, laundry, cafes, pet shops): storefront lel eshterakat, daf3 mo2addam 3ala account el tager, QR pass lel 3ameel, redemption men el staff, w dashboard lel owner.',
         interpretation:
-          'Dalil en el AI el 2awy ye2dar yegeeb felous fe3lan delwa2ty — 3omala2 7a2ee2yeen le clients 7a2ee2yeen, w nafs el mo7arrek metah le ay wa7ed yeshaghalo lewa7do.',
+          'Bey7awel el shera el metkarrar le revenue mo2addam, w el tager beyemlek el build wel data.',
       },
       virlo: {
         tagline: 'Souq Masry lel Digital Products',
@@ -69,11 +69,11 @@ const franco: Dict = {
           'Ha2ee2et el product: rails tegara lel digital goods el masreya, mesh safhet "2orayeb" wehmeya le studio.',
       },
       tut: {
-        tagline: 'Boarding-Pass PWA',
+        tagline: 'AI Travel Guide le Masr',
         description:
-          'TUT boarding-pass PWA live 3ala tutapp.co — 5alli el pass 3ala el mobile 3and el gate. Mesh AI companion 2ay "2orayeb".',
+          'TUT AI travel guide le Masr, live 3ala tutapp.co. Es2al 3an el as3ar wel mowasalat wel amaken: kol egaba betoul el source page w youm el check, aw te2oul en mafish 7ad nasharha. Free w be 12 logha menhom masry w Franco.',
         interpretation:
-          'Adah safar masry etshahanet — ifta7 tutapp.co w esta5demo delwa2ty.',
+          'AI beywarrik masadro badal ma ye5amman, w ma3 el signup bta5od boarding pass souvenir be esmak bel hieroglyphs.',
       },
       be3ly: {
         tagline: 'Affiliate & Social-Selling Connector',
@@ -156,7 +156,7 @@ const franco: Dict = {
     leadsBig: '200+',
     leadsLabel: '3omeel etwassal',
     items: [
-      { number: '10', label: 'products etshahno bel AI' },
+      { number: '15', label: 'products, demos w projects' },
       { number: '3', label: 'aswa2 fel MENA etkhadamet' },
       { number: '200+', label: '3omeel etwassal' },
     ],

@@ -23,9 +23,11 @@ Items that cannot be finished honestly without owner input. Do not invent URLs, 
 
 ## Venture URLs / assets
 - **Virlo marketplace**: no public URL yet — keep `/virlo` as internal "building" page until owner supplies a real storefront URL.
-- **Be3ly**: no production URL — keep `/be3ly` internal until owner supplies one. Thumbnail currently reuses `/thumbnails/project-3.png`; replace with a Be3ly asset when available.
-- **IBNI**: external demo is `https://ibni.app` (DEMO_MODE) — confirm if that should stay the primary CTA.
+- **Be3ly**: no production URL — keep `/be3ly` internal until owner supplies one. Has its own typographic thumbnail (`/thumbnails/be3ly.webp`) since the Nov 2026 refresh.
+- **IBNI**: ibni.app is now a live paid product (Nov 2026); site marks it Live. Confirm.
 - **TUT**: live product is `https://tutapp.co` — confirm domain branding vs older `tut.app` mentions elsewhere.
 
 ## Product count / stats copy
-- Hero still says "10 shipped products" via i18n; revisit with owner if that number should change after venture-truth updates.
+- Hero now says "15 products, demos & projects" (5 ventures + 6 demos + 4 projects listed). Confirm wording.
+- Stats "200+ leads delivered" / "3 MENA markets" come from the old AutoLeadss lead-gen agency; unverified.
+- `/autoleads` in-site page still shows the old lead-gen agency site; autoleadss.com now sells membership systems.

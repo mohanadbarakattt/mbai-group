@@ -30,7 +30,7 @@ const en: Dict = {
     ctaBook: 'Get in touch',
     ctaDemos: 'Explore Live Demos',
     statLead: 'Ex-xAI Human Data Lead',
-    statProducts: '10 shipped products',
+    statProducts: '15 products, demos & projects',
     statLocation: 'Cairo · Dubai',
   },
 
@@ -40,7 +40,7 @@ const en: Dict = {
     heading2: 'Five ventures.',
     heading3: 'One mission.',
     intro:
-      'Every company in the group attacks a MENA-shaped problem: AI lead gen, Egyptian boarding-pass UX, storefront building, digital-product commerce (InstaPay), and affiliate social selling.',
+      'Every company in the group attacks a MENA-shaped problem: membership systems for local businesses, a sourced AI travel guide for Egypt, online stores for Egyptian merchants, digital-product commerce (InstaPay), and affiliate social selling.',
     statusLive: 'Live',
     statusPreview: 'Preview',
     statusComingSoon: 'Coming soon',
@@ -52,16 +52,16 @@ const en: Dict = {
       ibni: {
         tagline: 'Egyptian Storefront Builder',
         description:
-          'IBNI ("build me" in Arabic) is an Egyptian storefront builder — turn a plain-language idea into a working shop experience. Demo live at ibni.app in DEMO_MODE.',
+          'IBNI ("build me" in Arabic) is live at ibni.app: Egyptian merchants pick one of 3 ready designs, add products, set shipping per governorate across all 27, and publish a store on their own ibni.app link that takes cash-on-delivery orders, with a dashboard, stock tracking and sales reports.',
         interpretation:
-          'Storefront scaffolding for Egyptian merchants first — try the DEMO_MODE preview at ibni.app.',
+          'A real store in five steps, priced in EGP, with its limits listed openly on the product page.',
       },
       autoleadss: {
-        tagline: 'Agency + AI Funnel-Builder SaaS',
+        tagline: 'Membership Systems for Local Businesses',
         description:
-          'A hybrid AI + human system that sources, qualifies, and books appointments for MENA enterprises — plus a self-serve SaaS that lets any business spin up its own AI-powered lead funnel in minutes.',
+          'AutoLeadss builds membership systems for repeat-service businesses in Egypt (barbers, salons, car washes, laundries, cafes, pet shops): a premium subscription storefront, upfront payment through the merchant\'s own account, customer QR passes, staff redemption and an owner dashboard. Fixed implementation fee, Arabic and English, handed over as a PWA.',
         interpretation:
-          'Proof that frontier-grade AI can drive revenue today — real leads for real clients, and the same engine packaged for anyone to run themselves.',
+          'Turns a repeat purchase into revenue collected upfront, and the merchant owns the build and the data.',
       },
       virlo: {
         tagline: 'Egyptian Digital-Product Marketplace',
@@ -71,11 +71,11 @@ const en: Dict = {
           'Honest product truth: commerce rails for Egyptian digital goods, not a fake "coming soon" studio launch page.',
       },
       tut: {
-        tagline: 'Boarding-Pass PWA',
+        tagline: 'AI Travel Guide for Egypt',
         description:
-          'TUT is a live boarding-pass progressive web app at tutapp.co — keep your pass on your phone, ready at the gate. Not a coming-soon AI companion.',
+          'TUT is an AI travel guide for Egypt, live at tutapp.co. Ask about prices, transport, sites or etiquette: every answer names the source page and the day it was checked, or says nobody publishes one. Free to use, in twelve languages including Egyptian Arabic and Franco.',
         interpretation:
-          'A shipped Egyptian travel utility — open tutapp.co and use it today.',
+          'Retrieval-grounded AI that shows its sources instead of guessing. Sign up and you get a shareable boarding-pass souvenir with your name in hieroglyphs.',
       },
       be3ly: {
         tagline: 'Affiliate & Social-Selling Connector',
@@ -158,7 +158,7 @@ const en: Dict = {
     leadsBig: '200+',
     leadsLabel: 'leads delivered',
     items: [
-      { number: '10', label: 'AI products shipped' },
+      { number: '15', label: 'products, demos & projects built' },
       { number: '3', label: 'MENA markets served' },
       { number: '200+', label: 'leads delivered' },
     ],

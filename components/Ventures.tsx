@@ -16,7 +16,7 @@ const VENTURE_META = [
     icon: <Zap size={20} />,
     accent: '#b85c38',
     domain: 'autoleadss.com',
-    thumbnail: '/thumbnails/autoleads.png',
+    thumbnail: '/thumbnails/autoleadss.webp',
   },
   {
     id: 'tut' as const,
@@ -27,18 +27,18 @@ const VENTURE_META = [
     icon: <MessageCircle size={20} />,
     accent: '#9a4a2c',
     domain: 'tutapp.co',
-    thumbnail: '/thumbnails/tut.png',
+    thumbnail: '/thumbnails/tut.webp',
   },
   {
     id: 'ibni' as const,
     name: 'IBNI',
-    status: 'Preview' as const,
+    status: 'Live' as const,
     href: 'https://ibni.app',
     external: true,
     icon: <Hammer size={20} />,
     accent: '#2f6b4f',
     domain: 'ibni.app',
-    thumbnail: '/thumbnails/ibni.png',
+    thumbnail: '/thumbnails/ibni.webp',
   },
   {
     id: 'virlo' as const,
@@ -48,7 +48,7 @@ const VENTURE_META = [
     icon: <Clapperboard size={20} />,
     accent: '#b85c38',
     domain: 'building',
-    thumbnail: '/thumbnails/virlo.png',
+    thumbnail: '/thumbnails/virlo.webp',
   },
   {
     id: 'be3ly' as const,
@@ -58,7 +58,7 @@ const VENTURE_META = [
     icon: <Share2 size={20} />,
     accent: '#6b645c',
     domain: 'building',
-    thumbnail: '/thumbnails/be3ly.png',
+    thumbnail: '/thumbnails/be3ly.webp',
   },
 ];
 

@@ -5,17 +5,17 @@ const TutPage: React.FC = () => (
   <VentureShell
     name="TUT"
     accent="#eab308"
-    tagline="Boarding-Pass PWA"
+    tagline="AI Travel Guide for Egypt"
     path="/tut"
     status="Live"
     externalUrl="https://tutapp.co"
     externalLabel="Open tutapp.co"
-    headline={<>Your boarding pass,<br /><span className="text-[#b85c38]">on your phone.</span></>}
-    sub="TUT is a live boarding-pass progressive web app at tutapp.co — not a coming-soon AI companion. Keep your pass handy, offline-friendly, and ready at the gate."
+    headline={<>Ask about Egypt.<br /><span className="text-[#b85c38]">See where the answer came from.</span></>}
+    sub="TUT is your boarding pass to Egypt: an AI travel guide live at tutapp.co. It answers from a sourced Egypt knowledge file covering prices, transport, sites and etiquette, and every answer names the source page and the day it was checked, or says nobody publishes one. Free to use."
     pillars={[
-      { title: 'Live at tutapp.co', text: 'The product is shipped as a PWA — open tutapp.co on your phone and use it like an installed app.' },
-      { title: 'Boarding-pass first', text: 'Built around the pass you actually need at the airport — scannable, fast, and usable without hunting through email threads.' },
-      { title: 'Earlier companion concept parked', text: 'Older site copy described an Egyptian AI companion. That direction is not what is live today; the live product is the boarding-pass PWA.' },
+      { title: 'Sourced answers, not guesses', text: 'A retrieval-grounded guide on a checked Egypt knowledge file, including verified local prices. If no one publishes an answer, TUT says so.' },
+      { title: 'Live today', text: 'AI chat guide, your name in hieroglyphs, Pharaoh Me portraits, a shareable boarding-pass souvenir at sign-up, trips & plans library, dark/light themes, PWA install, and twelve languages including Egyptian Arabic and Franco.' },
+      { title: 'Partners in pilot', text: 'Free for travellers; TUT earns a revenue share only when it brings a booking to a vetted partner. Partner listings (tour operators, guides, hotels, lodges, dive centres, transport) are in pilot. On the way: licensed guides, stays, group trips, museum maps, voice mode, and in-app GEM tickets (planned).' },
     ]}
   />
 );

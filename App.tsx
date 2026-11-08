@@ -14,6 +14,7 @@ import HowWeWork from './components/HowWeWork';
 import Demos from './components/Demos';
 import Ventures from './components/Ventures';
 import GitHubSection from './components/GitHubSection';
+import Projects from './components/Projects';
 import ClaudeSection from './components/ClaudeSection';
 import Comparison from './components/Comparison';
 import Benefits from './components/Benefits';
@@ -43,7 +44,7 @@ const HOME_FAQ_JSONLD = {
       name: 'What is AutoLeadss?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'AutoLeadss is a hybrid AI + human lead-generation system that sources, qualifies, and books appointments for MENA enterprises, plus a self-serve SaaS for building AI-powered lead funnels. It is live today at autoleadss.com.',
+        text: 'AutoLeadss builds membership systems for repeat-service businesses in Egypt (barbers, salons, car washes, laundries, cafes, pet shops): a premium subscription storefront, upfront payment through the merchant\'s own account, customer QR passes, staff redemption and an owner dashboard. Fixed implementation fee, Arabic and English, handed over as a PWA. Live at autoleadss.com.',
       },
     },
     {
@@ -51,7 +52,7 @@ const HOME_FAQ_JSONLD = {
       name: 'How many products has MB AI Group shipped or demoed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo, Be3ly) plus additional interactive engineering demos are shown on mbai-group.com. Live products today include AutoLeadss (autoleadss.com) and TUT (tutapp.co); IBNI demos at ibni.app; Virlo and Be3ly are building.",
+        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo, Be3ly) plus additional interactive engineering demos are shown on mbai-group.com. Live products today include AutoLeadss (autoleadss.com), TUT (tutapp.co) and IBNI (ibni.app); Virlo and Be3ly are building.",
       },
     },
   ],
@@ -89,6 +90,7 @@ function Home() {
         <Features />
         <Ventures />
         <Demos />
+        <Projects />
         <GitHubSection />
         <TechExpertise />
         <ClaudeSection />
@@ -142,8 +144,8 @@ function App() {
             <Route path="/autoleads">
               <Suspense fallback={<div className="autoleads-page min-h-screen flex items-center justify-center bg-background text-foreground">Loading...</div>}>
                 <Seo
-                  title="AutoLeadss — AI Lead Generation & Funnel-Builder SaaS · MB AI Group"
-                  description="AutoLeadss sources, qualifies, and books appointments for MENA enterprises with a hybrid AI + human system, plus a self-serve SaaS for building your own AI lead funnel."
+                  title="AutoLeadss: Membership Systems for Local Businesses in Egypt · MB AI Group"
+                  description="AutoLeadss builds subscription storefronts, customer QR passes, staff redemption and an owner dashboard for repeat-service businesses in Egypt."
                   path="/autoleads"
                 />
                 <AutoLeadsHome />
