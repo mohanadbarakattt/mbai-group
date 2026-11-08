@@ -42,7 +42,7 @@ const Comparison: React.FC = () => {
         </div>
 
         <div className={`overflow-x-auto transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`} style={{ transitionDelay: '150ms' }}>
-          <table className="w-full min-w-[640px] border-collapse bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl overflow-hidden">
+          <table className="w-full min-w-[640px] border-collapse glass-card rounded-2xl overflow-hidden">
             <thead>
               <tr className="border-b border-[#e6dfd2]">
                 <th className="text-left text-xs font-semibold uppercase tracking-wide text-[#6b645c] px-5 py-4 w-[38%]"></th>

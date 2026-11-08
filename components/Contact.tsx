@@ -4,7 +4,7 @@ import { useI18n } from '../i18n';
 // Instagram/Facebook are intentionally omitted until real, confirmed handles exist.
 const INSTAGRAM_URL = '';
 const FACEBOOK_URL = '';
-const LINKEDIN_URL = 'https://www.linkedin.com/company/mbai-solutions';
+const LINKEDIN_URL = 'https://www.linkedin.com/in/mohanad-barakat-4b8a9b109';
 
 const Contact: React.FC = () => {
   const { dict } = useI18n();
@@ -46,7 +46,7 @@ const Contact: React.FC = () => {
                 href="https://wa.me/201100054278"
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`flex items-center gap-4 bg-[#fffdf8] border border-[#e6dfd2] rounded-lg px-5 py-4 transition-all duration-700 group hover:border-[#d9d0c0] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                className={`flex items-center gap-4 glass-card rounded-xl px-5 py-4 transition-all duration-700 group hover:border-[#d9d0c0] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: '100ms' }}
               >
                 <div className="w-10 h-10 rounded-md bg-[#25D366]/10 flex items-center justify-center shrink-0">
@@ -63,7 +63,7 @@ const Contact: React.FC = () => {
 
               <a
                 href="mailto:mohanad.barakat@mbai-group.com"
-                className={`flex items-center gap-4 bg-[#fffdf8] border border-[#e6dfd2] rounded-lg px-5 py-4 transition-all duration-700 group hover:border-[#d9d0c0] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                className={`flex items-center gap-4 glass-card rounded-xl px-5 py-4 transition-all duration-700 group hover:border-[#d9d0c0] ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                 style={{ transitionDelay: '200ms' }}
               >
                 <div className="w-10 h-10 rounded-md bg-[#f7f3ec] border border-[#e6dfd2] flex items-center justify-center shrink-0">
@@ -84,13 +84,13 @@ const Contact: React.FC = () => {
               >
                 {INSTAGRAM_URL && (
                   <a href={INSTAGRAM_URL} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 flex-1 bg-[#fffdf8] border border-[#e6dfd2] rounded-lg px-4 py-3" aria-label="Instagram">
+                    className="flex items-center gap-2 flex-1 glass-card rounded-xl px-4 py-3" aria-label="Instagram">
                     <span className="text-xs font-medium text-[#6b645c]">Instagram</span>
                   </a>
                 )}
                 {FACEBOOK_URL && (
                   <a href={FACEBOOK_URL} target="_blank" rel="noopener noreferrer"
-                    className="flex items-center gap-2 flex-1 bg-[#fffdf8] border border-[#e6dfd2] rounded-lg px-4 py-3" aria-label="Facebook">
+                    className="flex items-center gap-2 flex-1 glass-card rounded-xl px-4 py-3" aria-label="Facebook">
                     <span className="text-xs font-medium text-[#6b645c]">Facebook</span>
                   </a>
                 )}
@@ -98,7 +98,7 @@ const Contact: React.FC = () => {
                   href={LINKEDIN_URL}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="flex items-center gap-2 flex-1 bg-[#fffdf8] border border-[#e6dfd2] rounded-lg px-4 py-3 hover:border-[#d9d0c0] transition-colors"
+                  className="flex items-center gap-2 flex-1 glass-card rounded-xl px-4 py-3 hover:border-[#d9d0c0] transition-colors"
                   aria-label="LinkedIn"
                 >
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="#6b645c">

@@ -63,7 +63,7 @@ const ClaudeSection: React.FC = () => {
           </div>
 
           {/* Right — the actual delegation pattern, as a simple flow */}
-          <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-8">
+          <div className="glass-card rounded-2xl p-8">
             <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#b85c38] mb-6">The delegation pattern, in practice</p>
             <div className="flex flex-col items-center gap-3">
               <div className="w-full rounded-xl border border-amber-500/30 bg-amber-500/10 px-5 py-3 text-center">

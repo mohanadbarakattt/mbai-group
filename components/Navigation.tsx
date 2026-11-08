@@ -133,8 +133,8 @@ const Navigation: React.FC = () => {
   };
 
   return (
-    <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'bg-[#f7f3ec]/95 border-b border-[#e6dfd2] py-3 shadow-[0_1px_0_rgba(20,17,15,0.04)]' : 'bg-[#f7f3ec]/80 border-b border-transparent py-5'}`}>
-      <div className="max-w-7xl mx-auto px-4 lg:px-6 flex justify-between items-center gap-2">
+    <nav className={`fixed inset-x-3 md:inset-x-6 z-50 transition-all duration-300 ${isScrolled ? 'top-3' : 'top-4 md:top-5'}`}>
+      <div className={`max-w-6xl mx-auto px-4 lg:px-5 py-2.5 rounded-2xl flex justify-between items-center gap-2 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'glass-strong' : 'glass'}`}>
 
         <a href="/" onClick={(e) => {
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -169,7 +169,7 @@ const Navigation: React.FC = () => {
           <LanguageSwitcher />
           <a
             href="/#contact"
-            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-md truncate max-w-[130px] lg:max-w-none no-underline inline-flex items-center justify-center"
+            className="btn-primary min-w-0 text-xs lg:text-sm font-semibold px-3 lg:px-5 py-2 lg:py-2.5 rounded-xl truncate max-w-[130px] lg:max-w-none no-underline inline-flex items-center justify-center"
             title={dict.nav.bookCall}
             onClick={(e) => handleAnchorClick(e, '/#contact')}
           >
@@ -183,7 +183,7 @@ const Navigation: React.FC = () => {
       </div>
 
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-[#f7f3ec] border-b border-[#e6dfd2]">
+        <div className="md:hidden absolute top-full mt-2 inset-x-0 glass-strong rounded-2xl">
           <div className="flex flex-col py-4 px-6 gap-4">
             {navLinks.map((link) =>
               'isExternal' in link && link.isExternal ? (

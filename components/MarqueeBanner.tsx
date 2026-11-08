@@ -2,6 +2,9 @@ import React from 'react';
 
 const items = [
   'AI Agent Development',
+  'Membership Systems',
+  'Website Design & Rebuilds',
+  'Ads Management',
   'Lead Generation Systems',
   'Arabic & English NLP',
   'MENA Market Expertise',
@@ -21,9 +24,9 @@ const MarqueeBanner: React.FC = () => {
   const doubled = [...items, ...items];
 
   return (
-    <div className="w-full overflow-hidden border-y border-[#e6dfd2] bg-[#fffdf8] py-4 relative">
-      <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#fffdf8] to-transparent z-10 pointer-events-none" />
-      <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#fffdf8] to-transparent z-10 pointer-events-none" />
+    <div className="w-full overflow-hidden border-y border-white/70 bg-white/40 backdrop-blur-md py-4 relative">
+      <div className="absolute left-0 top-0 h-full w-24 bg-gradient-to-r from-[#f7f3ec] to-transparent z-10 pointer-events-none" />
+      <div className="absolute right-0 top-0 h-full w-24 bg-gradient-to-l from-[#f7f3ec] to-transparent z-10 pointer-events-none" />
 
       <div className="flex whitespace-nowrap motion-safe-marquee" style={{ width: 'max-content' }}>
         {doubled.map((item, i) => (

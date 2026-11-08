@@ -61,8 +61,8 @@ const Hero: React.FC = () => {
       <div className="absolute inset-x-0 bottom-0 h-32 bg-gradient-to-t from-[#f7f3ec] to-transparent pointer-events-none" />
 
       {/* Asymmetric left-aligned copy on a cream panel */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-28 pb-20">
-        <div className="max-w-xl md:max-w-2xl bg-[#f7f3ec]/95 border border-[#e6dfd2] px-7 py-9 md:px-10 md:py-11 shadow-[0_20px_50px_-28px_rgba(20,17,15,0.45)]">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 pt-36 pb-20">
+        <div className="max-w-xl md:max-w-2xl glass-strong rounded-3xl px-7 py-9 md:px-10 md:py-11">
           <p className="inline-flex items-center px-3 py-1 rounded-full border border-[#e6dfd2] bg-[#fffdf8] text-[11px] font-semibold uppercase tracking-[0.16em] text-[#6b645c] mb-6">
             {dict.hero.badge}
           </p>
@@ -78,10 +78,10 @@ const Hero: React.FC = () => {
           </p>
 
           <div className="mt-8 flex flex-col sm:flex-row items-start sm:items-center gap-4">
-            <button onClick={goContact} className="btn-primary inline-flex items-center gap-2 px-7 py-3 rounded-md">
+            <button onClick={goContact} className="btn-primary inline-flex items-center gap-2 px-7 py-3 rounded-xl">
               <Calendar size={16} /> {dict.hero.ctaBook}
             </button>
-            <a href="#demos" className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#14110f] hover:text-[#b85c38] transition-colors">
+            <a href="#demos" className="glass-btn rounded-xl px-5 py-3 inline-flex items-center gap-1.5 text-sm font-semibold text-[#14110f] hover:text-[#b85c38] transition-colors">
               {dict.hero.ctaDemos} <ArrowRight size={14} />
             </a>
           </div>

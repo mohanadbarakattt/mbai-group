@@ -4,21 +4,22 @@ import VirloDemo from '../../components/demos/VirloDemo';
 
 const VirloPage: React.FC = () => (
   <VentureShell
-    name="Virlo"
+    name="Virlo Studio"
     accent="#f97316"
-    tagline="Egyptian Digital-Product Marketplace"
+    tagline="Egyptian-First AI Video & Image Studio"
     path="/virlo"
-    status="Building"
-    headline={<>Selling digital products in Egypt.<br /><span className="text-[#b85c38]">Built around InstaPay.</span></>}
-    sub="Virlo is pivoting (Aug 2026) into an Egypt-first digital-product marketplace — creators and merchants list digital goods, buyers pay via InstaPay. The earlier AI video & image studio concept is parked; there is no public marketplace URL yet while we build."
+    status="Preview"
+    externalUrl="https://virlo-studio.vercel.app"
+    externalLabel="Open Virlo Studio"
+    headline={<>Prompt it in Masri.<br /><span className="text-[#f97316]">Get content that looks Egyptian.</span></>}
+    sub="Virlo Studio is the AI studio that actually speaks Egyptian. Write in Masri or Franco and get reels, memes, posters and ads, built around Egyptian templates and trends, with clear EGP pricing."
     pillars={[
-      { title: 'InstaPay-native checkout', text: 'Payments shaped for how Egyptians actually pay for digital goods — not a card-only funnel bolted onto a global template.' },
-      { title: 'Digital goods, local rails', text: 'Listings, delivery, and settlement designed for Egyptian digital products — courses, assets, tools — not a generic Shopify clone.' },
-      { title: 'AI studio parked', text: 'The Franco-Arabic AI video/image studio remains a parked concept preview below. The live product direction is the marketplace.' },
+      { title: 'Masri and Franco from day one', text: 'Built around Egyptian dialect and Franco-Arabic, not a translation layer added later. Describe the shot the way you actually talk.' },
+      { title: 'A month of content in one sitting', text: 'Batch-generate a set of ideas at once, keep your brand kit and saved characters in every piece, and ride Egyptian trends while they are hot.' },
+      { title: 'Clear points, EGP pricing', text: 'Every action shows its point cost up front, failed jobs refund automatically, and there is a free daily allowance before paid plans.' },
     ]}
-    previewLabel="Parked concept — AI studio preview"
-    previewNote="The interactive preview below is the parked AI studio concept. The current Virlo product direction is the Egypt digital-product marketplace (InstaPay) — still building, no public storefront URL yet."
   >
+    <img src="/media/virlo-studio.webp" alt="Virlo Studio home page" loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/70 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)] mb-8" />
     <VirloDemo />
   </VentureShell>
 );

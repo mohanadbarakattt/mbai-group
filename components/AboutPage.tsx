@@ -15,8 +15,8 @@ const AboutPage: React.FC = () => {
   return (
     <div className="min-h-screen bg-transparent text-[#14110f] overflow-x-hidden">
       <Seo
-        title="Meet the Founder & CEO — MB AI Group"
-        description="Mohanad Barakat, founder of MB AI Group — former xAI Human Data Lead, now building frontier AI products for the MENA region."
+        title="Mohanad Barakat, Founder & AI Engineer · MB AI Group"
+        description="Mohanad Barakat: AI Engineer & Founder of MB AI Group, ex-xAI Human Data Lead (Grok). Career, education and CV."
         path="/about"
         type="profile"
       />

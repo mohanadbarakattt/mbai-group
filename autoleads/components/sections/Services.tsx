@@ -3,39 +3,19 @@ import { Bot, FileSpreadsheet, Phone, ArrowRight } from "lucide-react";
 
 const layers = [
   {
-    layer: "AI Layer",
+    layer: "Build",
     layerColor: "text-blue-600",
     services: [
-      {
-        icon: Bot,
-        step: "01",
-        title: "AI Agents Find Your Leads",
-        description:
-          "Custom-built AI agents continuously harvest high-quality, market-specific leads — buyers, sellers, investors, and landlords — tailored precisely to your criteria. Fresh, qualified prospects sourced every single day without any manual effort on your end.",
-        highlight: "Custom AI. Zero manual prospecting.",
-      },
-      {
-        icon: FileSpreadsheet,
-        step: "02",
-        title: "Automated Spreadsheets Track Everything",
-        description:
-          "AI agents document, transfer, and organize every lead into automated tracking spreadsheets — name, contact info, property interest, follow-up status — all updated in real time. Your pipeline is always clean, current, and ready to act on.",
-        highlight: "Real-time data. Zero data entry.",
-      },
+      { icon: Bot, step: "01", title: "Membership systems", description: "We turn a repeat service into an owned membership product: a premium subscription storefront, upfront payment through the merchant's own provider account, customer QR passes, staff redemption in seconds and a focused owner dashboard. Arabic and English, installable as a PWA.", highlight: "Sell the month upfront." },
+      { icon: FileSpreadsheet, step: "02", title: "Website design & rebuilds", description: "New sites and rebuilds of slow or dated ones: brand-led design, online stores with checkout, local SEO foundations, and a clean handover of the domain, accounts and code.", highlight: "Example: Lash Cartel store." },
     ],
   },
   {
-    layer: "Human Layer",
+    layer: "Grow",
     layerColor: "text-emerald-600",
     services: [
-      {
-        icon: Phone,
-        step: "03",
-        title: "Our Team Makes the Calls",
-        description:
-          "High-skill, low-cost professional cold callers based in Egypt handle all inbound and outbound telephony on your behalf — introducing your company, qualifying interest, handling objections, and booking meetings directly onto your calendar.",
-        highlight: "Real conversations. Real conversions.",
-      },
+      { icon: Phone, step: "03", title: "Ads management", description: "Campaign setup and ongoing management that sends traffic to the storefront or site we built, so the offer, the page and the ad tell the same story.", highlight: "One partner from ad to checkout." },
+      { icon: Bot, step: "04", title: "AI-assisted lead generation", description: "The original AutoLeadss capability: AI agents source and organise market-specific leads into a live tracking sheet, and a bilingual team qualifies them and books meetings.", highlight: "200+ leads delivered across 3 markets." },
     ],
   },
 ];
@@ -72,31 +52,15 @@ export function Services() {
             variants={itemVariants}
             className="text-3xl md:text-5xl font-display font-bold text-foreground mb-6"
           >
-            AI Efficiency.{" "}
-            <span className="accent-gradient-text">Human Reliability.</span>
+            One partner.{" "}
+            <span className="accent-gradient-text">Build and grow.</span>
           </motion.h3>
           <motion.p
             variants={itemVariants}
             className="text-muted-foreground text-lg leading-relaxed"
           >
-            The perfect spot where AI handles data processing and humans handle high-stakes rapport — a complete done-for-you operation built for real estate owners, investors, and wholesalers.
+            Build the product your customers buy every month, the site they buy it on, and the ads and leads that bring them in.
           </motion.p>
-        </motion.div>
-
-        <motion.div
-          initial={{ opacity: 0, y: 16 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.5 }}
-          className="max-w-3xl mx-auto mb-16 bg-primary/5 border border-primary/15 rounded-2xl px-8 py-5 text-center"
-        >
-          <p className="text-foreground font-semibold text-lg">
-            In real estate, a single deal can be worth{" "}
-            <span className="text-primary">$50,000 – $500,000+</span> in commission.
-          </p>
-          <p className="text-muted-foreground mt-1">
-            If our operation gets you just <strong className="text-foreground">one deal</strong>, it has already covered the entire investment — and every deal after that is profit.
-          </p>
         </motion.div>
 
         <div className="space-y-14">

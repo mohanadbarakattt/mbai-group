@@ -23,21 +23,21 @@ const REPOS = [
   },
   {
     name: 'autoleadss',
-    description: 'AutoLeadss site: membership systems for local businesses in Egypt, live at autoleadss.com.',
+    description: 'AutoLeadss: memberships, websites, ads and lead generation, live at autoleadss.com.',
     tags: ['React', 'PWA', 'Memberships'],
     url: 'https://github.com/mohanadbarakattt/autoleadss',
     private: false,
   },
   {
     name: 'virlo-studio',
-    description: 'Virlo product work — Egypt digital-product marketplace direction (AI studio concept parked).',
+    description: 'Virlo Studio: Egyptian-first AI video and image studio (preview at virlo-studio.vercel.app).',
     tags: ['AI Media', 'Franco-Arabic'],
     private: true,
     href: '/virlo',
   },
   {
     name: 'ibni',
-    description: 'Egyptian online-store builder, live at ibni.app.',
+    description: 'Ibni: AI app builder for Egypt (preview at ibni-v2.vercel.app).',
     tags: ['Codegen', 'No-Code'],
     private: true,
     href: '/ibni',
@@ -72,17 +72,10 @@ const REPOS = [
   },
   {
     name: 'lashcartel-store',
-    description: 'Client e-commerce store for Lash Cartel Cosmetics, with Stripe checkout.',
+    description: 'AutoLeadss client build: Lash Cartel Cosmetics store with Stripe checkout.',
     tags: ['E-commerce', 'Stripe', 'Client'],
     url: 'https://github.com/mohanadbarakattt/lashcartel-store',
     private: false,
-  },
-  {
-    name: 'mbai-ecosystem',
-    description: 'Unification layer for the whole group — shared auth, shared DB schema, and the MBAI AI gateway.',
-    tags: ['Shared Infra', 'Gateway'],
-    private: true,
-    href: '/#ventures',
   },
 ];
 
@@ -122,7 +115,7 @@ const GitHubSection: React.FC = () => {
             >
               <TiltCard className="h-full" max={5}>
                 {(() => {
-                  const cardClass = "bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6 h-full flex flex-col gap-4 group no-underline";
+                  const cardClass = "glass-card rounded-2xl p-6 h-full flex flex-col gap-4 group no-underline";
                   const cardBody = (
                     <>
                       <div className="flex items-center justify-between">

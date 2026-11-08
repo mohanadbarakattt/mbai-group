@@ -27,7 +27,7 @@ export function Hero() {
               <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-primary opacity-75"></span>
               <span className="relative inline-flex rounded-full h-2 w-2 bg-primary"></span>
             </span>
-            Your Complete Sales Operation — Built & Run For You
+            Done-for-you growth for local businesses
           </motion.div>
 
           <motion.h1
@@ -36,8 +36,8 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.1 }}
             className="text-5xl sm:text-6xl lg:text-7xl font-display font-extrabold text-foreground leading-[1.1] mb-8"
           >
-            More Deals. Less Effort. <br className="hidden sm:block" />
-            <span className="hero-gradient-text">Maximum Profit.</span>
+            Memberships, websites, <br className="hidden sm:block" />
+            <span className="hero-gradient-text">ads and leads.</span>
           </motion.h1>
 
           <motion.p
@@ -46,7 +46,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg sm:text-xl text-muted-foreground leading-relaxed max-w-2xl mb-6"
           >
-            A hybrid AI and outsourcing ecosystem for real estate owners, investors, and wholesalers. Custom AI agents find and track your leads — professional cold callers in Egypt convert them into appointments. You just close.
+            AutoLeadss turns repeat services into membership products with a storefront, QR passes and an owner dashboard, designs and rebuilds websites and online stores, runs your ads, and sets up AI-assisted lead generation. Arabic and English, and you own the build and the data.
           </motion.p>
 
           <motion.div
@@ -55,7 +55,7 @@ export function Hero() {
             transition={{ duration: 0.5, delay: 0.25 }}
             className="inline-block bg-primary/8 border border-primary/20 text-primary font-semibold px-5 py-3 rounded-xl text-base mb-10 backdrop-blur-sm"
           >
-            One closed deal covers the entire setup. The rest is pure profit.
+            Recent website build: the Lash Cartel Cosmetics store.
           </motion.div>
 
           <motion.div
@@ -68,14 +68,14 @@ export function Hero() {
               href="#contact"
               className="flex items-center justify-center gap-2 px-8 py-4 rounded-xl bg-primary text-primary-foreground font-semibold text-lg hover:bg-primary/90 transition-all duration-300 shadow-md hover:shadow-lg"
             >
-              Start Your Operation
+              Talk to us
               <ArrowRight className="w-5 h-5" />
             </a>
             <a
-              href="#how-it-works"
+              href="#case-study"
               className="flex items-center justify-center px-8 py-4 rounded-xl bg-foreground/5 text-foreground font-semibold text-lg border border-border hover:bg-foreground/10 hover:border-foreground/20 transition-all duration-300"
             >
-              See How It Works
+              See example work
             </a>
           </motion.div>
 
@@ -86,9 +86,9 @@ export function Hero() {
             className="grid grid-cols-1 sm:grid-cols-3 gap-4"
           >
             {[
-              { icon: TrendingUp, label: "Unlimited Lead Supply", sub: "We handle all the prospecting" },
-              { icon: Clock, label: "Save 40+ Hours a Week", sub: "No more chasing cold contacts" },
-              { icon: DollarSign, label: "Profit From Day One", sub: "One deal covers everything" },
+              { icon: TrendingUp, label: "Membership systems", sub: "Sell the month upfront" },
+              { icon: Clock, label: "Websites & rebuilds", sub: "Storefronts that convert" },
+              { icon: DollarSign, label: "Ads & lead gen", sub: "Traffic and qualified leads" },
             ].map(({ icon: Icon, label, sub }, i) => (
               <div key={i} className="flex items-center gap-3 bg-card border border-border rounded-xl px-4 py-3 hover:border-primary/30 transition-all duration-300 shadow-sm">
                 <div className="w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center text-primary flex-shrink-0">

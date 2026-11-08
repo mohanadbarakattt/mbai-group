@@ -30,7 +30,7 @@ const en: Dict = {
     ctaBook: 'Get in touch',
     ctaDemos: 'Explore Live Demos',
     statLead: 'Ex-xAI Human Data Lead',
-    statProducts: '15 products, demos & projects',
+    statProducts: '14 products, demos & projects',
     statLocation: 'Cairo · Dubai',
   },
 
@@ -40,7 +40,7 @@ const en: Dict = {
     heading2: 'Five ventures.',
     heading3: 'One mission.',
     intro:
-      'Every company in the group attacks a MENA-shaped problem: membership systems for local businesses, a sourced AI travel guide for Egypt, online stores for Egyptian merchants, digital-product commerce (InstaPay), and affiliate social selling.',
+      'Every company in the group attacks a MENA-shaped problem: done-for-you growth for local businesses, a sourced AI travel guide for Egypt, an AI app builder that speaks Masri, an Egyptian AI video and image studio, and affiliate social selling.',
     statusLive: 'Live',
     statusPreview: 'Preview',
     statusComingSoon: 'Coming soon',
@@ -50,25 +50,25 @@ const en: Dict = {
     whyItMatters: 'Why it matters',
     items: {
       ibni: {
-        tagline: 'Egyptian Storefront Builder',
+        tagline: 'The AI App Builder',
         description:
-          'IBNI ("build me" in Arabic) is live at ibni.app: Egyptian merchants pick one of 3 ready designs, add products, set shipping per governorate across all 27, and publish a store on their own ibni.app link that takes cash-on-delivery orders, with a dashboard, stock tracking and sales reports.',
+          'IBNI ("build me" in Arabic) turns one sentence into a real app with its own code and database. Write your idea in Masri, Franco or English; Ibni plans it, writes the code, tests it, fixes what breaks and publishes it on your own link. Free instant preview; paid plans add a real backend and database, priced in EGP.',
         interpretation:
-          'A real store in five steps, priced in EGP, with its limits listed openly on the product page.',
+          'Software creation for Egyptian founders who do not code: describe it the way you talk, and you own the code.',
       },
       autoleadss: {
-        tagline: 'Membership Systems for Local Businesses',
+        tagline: 'Memberships · Websites · Ads · Lead Gen',
         description:
-          'AutoLeadss builds membership systems for repeat-service businesses in Egypt (barbers, salons, car washes, laundries, cafes, pet shops): a premium subscription storefront, upfront payment through the merchant\'s own account, customer QR passes, staff redemption and an owner dashboard. Fixed implementation fee, Arabic and English, handed over as a PWA.',
+          'AutoLeadss is the done-for-you growth arm of MB AI Group. It builds membership systems for repeat-service businesses in Egypt (subscription storefront, upfront payment to the merchant account, customer QR passes, staff redemption, owner dashboard), designs and rebuilds websites and online stores, runs ads, and sets up AI-assisted lead generation.',
         interpretation:
-          'Turns a repeat purchase into revenue collected upfront, and the merchant owns the build and the data.',
+          'One partner for the storefront, the site, the ads and the leads, with the merchant owning the build and the data.',
       },
       virlo: {
-        tagline: 'Egyptian Digital-Product Marketplace',
+        tagline: 'Egyptian-First AI Video & Image Studio',
         description:
-          'Pivoting (Aug 2026) into an Egypt-first digital-product marketplace with InstaPay. The earlier AI video & image studio is parked. Still building — no public marketplace URL yet.',
+          'Virlo Studio is the AI studio that actually speaks Egyptian. Prompt in Masri or Franco and get reels, memes, posters and ads, with Egyptian templates and daily trends, a saved brand kit and characters, batch generation, and clear EGP pricing with a free daily allowance.',
         interpretation:
-          'Honest product truth: commerce rails for Egyptian digital goods, not a fake "coming soon" studio launch page.',
+          'Generative video and images tuned for Egyptian dialect and culture, for the creators global tools were not built for.',
       },
       tut: {
         tagline: 'AI Travel Guide for Egypt',
@@ -85,9 +85,6 @@ const en: Dict = {
           'Connects promoters to merchants without inventing a fake storefront domain.',
       },
     },
-    ecosystemEyebrow: 'One account. One AI. All products.',
-    ecosystemBody:
-      'Every product in the MB AI Group runs on the same foundation: one login across the whole ecosystem, one shared data platform, and the MBAI AI gateway — fine-tuned for Egyptian Franco-Arabic — powering every model call. Each venture still lives on its own domain, built for its own audience, but none of them start from zero.',
   },
 
   footer: {
@@ -128,9 +125,9 @@ const en: Dict = {
   about: {
     kicker: 'Mohanad Barakat',
     headingPre: 'Meet the',
-    headingGradient: 'Founder & CEO',
+    headingGradient: 'Founder & AI Engineer',
     blurb:
-      'Former xAI Human Data Lead — translating world-scale AI research into practical solutions for the MENA region.',
+      'AI Engineer & Founder | Ex-xAI Human Data Lead (Grok). Building Arabic-first AI products and agents for MENA from Cairo and Dubai.',
     downloadCv: 'Download CV',
   },
 
@@ -158,7 +155,7 @@ const en: Dict = {
     leadsBig: '200+',
     leadsLabel: 'leads delivered',
     items: [
-      { number: '15', label: 'products, demos & projects built' },
+      { number: '14', label: 'products, demos & projects built' },
       { number: '3', label: 'MENA markets served' },
       { number: '200+', label: 'leads delivered' },
     ],
@@ -207,10 +204,10 @@ const en: Dict = {
         videoLabel: 'Arabic-first, by design',
       },
       {
-        eyebrow: 'Scale',
-        title: 'One AI gateway powers every product you own',
-        body: 'Every MB AI Group venture runs on the same shared foundation — one login, one data platform, one gateway — so nothing you build starts from zero.',
-        videoLabel: 'One gateway, every product',
+        eyebrow: 'Ownership',
+        title: 'You own what we build',
+        body: 'Code, domain, accounts and data are handed over at the end of the project. No lock-in, and optional maintenance only if you want it.',
+        videoLabel: 'Handed over, not rented',
       },
     ],
   },

@@ -74,7 +74,7 @@ const Features: React.FC = () => {
             return (
               <div
                 key={item.title}
-                className={`bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-7 flex flex-col gap-5 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                className={`glass-card rounded-2xl p-7 flex flex-col gap-5 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 style={{ transitionDelay: visible ? `${i * 110 + 150}ms` : '0ms' }}
               >
                 <div

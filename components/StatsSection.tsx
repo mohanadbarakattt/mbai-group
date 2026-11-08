@@ -41,7 +41,7 @@ const StatsSection: React.FC = () => {
 
         {/* Stats strip */}
         <div
-          className={`mb-10 grid grid-cols-3 divide-x divide-[#e6dfd2] bg-[#fffdf8] border border-[#e6dfd2] rounded-xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+          className={`mb-10 grid grid-cols-3 divide-x divide-[#e6dfd2] glass-card rounded-2xl overflow-hidden transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
           style={{ transitionDelay: '100ms' }}
         >
           {dict.stats.items.map((s) => (
@@ -55,7 +55,7 @@ const StatsSection: React.FC = () => {
         {/* Testimonials — empty/error-safe; never invent quotes */}
         {testimonials.length === 0 ? (
           <div
-            className={`bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-8 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+            className={`glass-card rounded-2xl p-8 text-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
             style={{ transitionDelay: '200ms' }}
           >
             <Quote size={18} className="text-[#b85c38]/70 mx-auto mb-3" />
@@ -78,7 +78,7 @@ const StatsSection: React.FC = () => {
               .map((t, i) => (
               <div
                 key={i}
-                className={`bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-8 flex flex-col gap-5 transition-all duration-700 ${
+                className={`glass-card rounded-2xl p-8 flex flex-col gap-5 transition-all duration-700 ${
                   visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'
                 }`}
                 style={{ transitionDelay: `${200 + i * 100}ms` }}

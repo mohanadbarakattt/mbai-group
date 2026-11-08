@@ -38,7 +38,7 @@ const LegalPageShell: React.FC<Props> = ({ title, updated, seoDescription, path,
           <h1 className="text-3xl md:text-5xl font-black leading-tight mb-3">{title}</h1>
           <p className="text-xs text-[#5b6478] mb-10">Last updated {updated}</p>
 
-          <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6 md:p-10 space-y-8 text-sm md:text-[15px] leading-relaxed text-[#6b645c] [&_h2]:text-[#14110f] [&_h2]:text-lg [&_h2]:font-bold [&_h2]:mb-3 [&_h2]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_a]:text-[#b85c38] [&_a]:no-underline hover:[&_a]:underline [&_strong]:text-[#14110f]">
+          <div className="glass-card rounded-2xl p-6 md:p-10 space-y-8 text-sm md:text-[15px] leading-relaxed text-[#6b645c] [&_h2]:text-[#14110f] [&_h2]:text-lg [&_h2]:font-bold [&_h2]:mb-3 [&_h2]:mt-2 [&_ul]:list-disc [&_ul]:pl-5 [&_ul]:space-y-1.5 [&_a]:text-[#b85c38] [&_a]:no-underline hover:[&_a]:underline [&_strong]:text-[#14110f]">
             {children}
           </div>
 

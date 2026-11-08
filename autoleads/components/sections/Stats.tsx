@@ -1,10 +1,10 @@
 import { motion } from "framer-motion";
 
 const stats = [
-  { value: "40+", label: "Hours Saved Per Week", sub: "No more manual prospecting" },
-  { value: "300+", label: "Leads Generated Monthly", sub: "Per client, on average" },
-  { value: "1 Deal", label: "Pays Back the Setup", sub: "Pure profit from deal two onward" },
-  { value: "30", label: "Days to Launch", sub: "Fully set up and operational" },
+  { value: "200+", label: "Leads Delivered", sub: "Across client engagements" },
+  { value: "3", label: "MENA Markets Served", sub: "Egypt, UAE and beyond" },
+  { value: "2 wks", label: "Membership Build", sub: "After deposit and approved content" },
+  { value: "AR + EN", label: "Bilingual by Default", sub: "Storefronts, sites and dashboards" },
 ];
 
 export function Stats() {

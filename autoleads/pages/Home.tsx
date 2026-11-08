@@ -5,9 +5,8 @@ import { Services } from "../components/sections/Services";
 import { Process } from "../components/sections/Process";
 import { CTABanner } from "../components/sections/CTABanner";
 import { Stats } from "../components/sections/Stats";
-import { Pricing } from "../components/sections/Pricing";
 import { About } from "../components/sections/About";
-import { Testimonials } from "../components/sections/Testimonials";
+import { CaseStudy } from "../components/sections/CaseStudy";
 import { Contact } from "../components/sections/Contact";
 
 export default function Home() {
@@ -17,12 +16,11 @@ export default function Home() {
       <main className="flex-1 w-full">
         <Hero />
         <Services />
+        <CaseStudy />
         <CTABanner />
         <Process />
         <Stats />
-        <Pricing />
         <About />
-        <Testimonials />
         <Contact />
       </main>
       <Footer />

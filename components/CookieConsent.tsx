@@ -42,9 +42,9 @@ export default function CookieConsent() {
     <div
       role="region"
       aria-label="Cookie consent"
-      className="fixed inset-x-0 bottom-0 z-50 border-t border-[#e6dfd2] bg-[#f7f3ec]"
+      className="fixed bottom-4 left-4 right-4 sm:right-auto sm:max-w-sm z-50 glass-strong rounded-2xl"
     >
-      <div className="mx-auto max-w-3xl px-4 py-4 sm:px-6">
+      <div className="px-5 py-4">
         <p className="text-sm text-[#14110f]">{c.body}</p>
 
         {manage && (

@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { Link } from 'wouter';
-import { ArrowUpRight, Clapperboard, Hammer, MessageCircle, Zap, Fingerprint, Share2 } from 'lucide-react';
+import { ArrowUpRight, Clapperboard, Hammer, MessageCircle, Zap, Share2 } from 'lucide-react';
 import MediaSlot from './MediaSlot';
 import { useI18n } from '../i18n';
 
@@ -16,7 +16,7 @@ const VENTURE_META = [
     icon: <Zap size={20} />,
     accent: '#b85c38',
     domain: 'autoleadss.com',
-    thumbnail: '/thumbnails/autoleadss.webp',
+    thumbnail: '/thumbnails/autoleads.png',
   },
   {
     id: 'tut' as const,
@@ -27,28 +27,29 @@ const VENTURE_META = [
     icon: <MessageCircle size={20} />,
     accent: '#9a4a2c',
     domain: 'tutapp.co',
-    thumbnail: '/thumbnails/tut.webp',
+    thumbnail: '/tut/tut-desktop.webp',
   },
   {
     id: 'ibni' as const,
     name: 'IBNI',
-    status: 'Live' as const,
-    href: 'https://ibni.app',
+    status: 'Preview' as const,
+    href: 'https://ibni-v2.vercel.app',
     external: true,
     icon: <Hammer size={20} />,
-    accent: '#2f6b4f',
-    domain: 'ibni.app',
-    thumbnail: '/thumbnails/ibni.webp',
+    accent: '#10b981',
+    domain: 'ibni-v2.vercel.app',
+    thumbnail: '/thumbnails/ibni.jpg',
   },
   {
     id: 'virlo' as const,
-    name: 'Virlo',
-    status: 'Building' as const,
-    href: '/virlo',
+    name: 'Virlo Studio',
+    status: 'Preview' as const,
+    href: 'https://virlo-studio.vercel.app',
+    external: true,
     icon: <Clapperboard size={20} />,
     accent: '#b85c38',
-    domain: 'building',
-    thumbnail: '/thumbnails/virlo.webp',
+    domain: 'virlo-studio.vercel.app',
+    thumbnail: '/thumbnails/virlo.jpg',
   },
   {
     id: 'be3ly' as const,
@@ -58,7 +59,7 @@ const VENTURE_META = [
     icon: <Share2 size={20} />,
     accent: '#6b645c',
     domain: 'building',
-    thumbnail: '/thumbnails/be3ly.webp',
+    thumbnail: '/thumbnails/be3ly.png',
   },
 ];
 
@@ -106,7 +107,7 @@ const Ventures: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {ventures.map((v, i) => {
             const card = (
-              <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-xl p-7 h-full flex flex-col group relative overflow-hidden hover:border-[#d9d0c0] transition-colors">
+              <div className="glass-card rounded-2xl p-7 h-full flex flex-col group relative overflow-hidden hover:border-[#d9d0c0] transition-colors">
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
                     <div
@@ -144,7 +145,7 @@ const Ventures: React.FC = () => {
                 <p className="text-[#6b645c] text-sm leading-relaxed mb-5">{v.description}</p>
 
                 <div className="mt-auto">
-                  <div className="p-4 rounded-lg bg-[#f7f3ec] border border-[#e6dfd2] mb-5">
+                  <div className="p-4 rounded-xl bg-white/40 border border-white/70 mb-5">
                     <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>{dict.ventures.whyItMatters}</p>
                     <p className="text-[#3a342e] text-sm leading-relaxed">{v.interpretation}</p>
                   </div>
@@ -159,36 +160,29 @@ const Ventures: React.FC = () => {
             return (
               <div
                 key={v.name}
-                className={`transition-[opacity,transform] duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
+                className={`flex flex-col transition-[opacity,transform] duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
                 style={{ transitionDelay: `${i * 80}ms` }}
               >
                 {v.external ? (
-                  <a href={v.href} target="_blank" rel="noopener noreferrer" className="block h-full no-underline">{card}</a>
+                  <a href={v.href} target="_blank" rel="noopener noreferrer" className="block flex-1 no-underline">{card}</a>
                 ) : (
-                  <Link href={v.href} className="block h-full no-underline">{card}</Link>
+                  <Link href={v.href} className="block flex-1 no-underline">{card}</Link>
+                )}
+                {v.id === 'autoleadss' && (
+                  <a href="https://lash-cartel-ten.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-3 glass-card rounded-2xl p-4 flex items-center gap-4 no-underline group/ex">
+                    <img src="/autoleads-images/lashcartel.webp" alt="Lash Cartel Cosmetics store built by AutoLeadss" loading="lazy" decoding="async" className="w-28 aspect-video object-cover object-top rounded-lg border border-white/70 shrink-0" />
+                    <span className="min-w-0">
+                      <span className="block text-[10px] font-bold uppercase tracking-[0.15em] text-[#b85c38]">Example work · Website build</span>
+                      <span className="block text-sm font-semibold text-[#14110f]">Lash Cartel Cosmetics</span>
+                      <span className="block text-xs text-[#6b645c]">Client e-commerce store with Stripe checkout. View the preview <ArrowUpRight size={12} className="inline" /></span>
+                    </span>
+                  </a>
                 )}
               </div>
             );
           })}
         </div>
 
-        <div
-          className={`mt-12 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}
-          style={{ transitionDelay: '360ms' }}
-        >
-          <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-xl p-8 md:p-10 flex flex-col md:flex-row items-start md:items-center gap-6">
-            <div
-              className="p-3 rounded-lg shrink-0"
-              style={{ color: '#b85c38', background: 'rgba(184,92,56,0.08)', border: '1px solid rgba(184,92,56,0.22)' }}
-            >
-              <Fingerprint size={24} />
-            </div>
-            <div>
-              <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.18em] mb-2">{dict.ventures.ecosystemEyebrow}</p>
-              <p className="text-[#3a342e] text-base md:text-lg leading-relaxed max-w-3xl">{dict.ventures.ecosystemBody}</p>
-            </div>
-          </div>
-        </div>
       </div>
     </section>
   );

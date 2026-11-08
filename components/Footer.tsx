@@ -20,7 +20,7 @@ const Footer: React.FC = () => {
   ];
 
   return (
-    <footer className="bg-[#f7f3ec] border-t border-[#e6dfd2]">
+    <footer className="mx-3 md:mx-6 mb-4 mt-10 glass rounded-3xl overflow-hidden">
       <div className="border-b border-[#e6dfd2] py-8 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-x-10 gap-y-5 text-center sm:text-left">
           <nav aria-label={dict.footer.explore} className="flex flex-wrap items-center justify-center gap-x-6 gap-y-2">
@@ -41,7 +41,7 @@ const Footer: React.FC = () => {
         </div>
       </div>
 
-      <div className="border-b border-[#e6dfd2] py-5 px-6">
+      <div className="border-b border-white/70 py-5 px-6">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-8">
           <a
             href="https://wa.me/201100054278"
@@ -64,6 +64,15 @@ const Footer: React.FC = () => {
             </svg>
             mohanad.barakat@mbai-group.com
           </a>
+          <span className="hidden sm:block text-[#d9d0c0] text-xs">·</span>
+          {[
+            ['LinkedIn', 'https://www.linkedin.com/in/mohanad-barakat-4b8a9b109'],
+            ['GitHub', 'https://github.com/mohanadbarakattt'],
+            ['X', 'https://x.com/Mobar001'],
+            ['CV', '/Mohanad_Barakat_CV.pdf'],
+          ].map(([label, href]) => (
+            <a key={label} href={href} target="_blank" rel="noopener noreferrer" className="text-[#6b645c] hover:text-[#14110f] transition-colors text-xs font-medium">{label}</a>
+          ))}
         </div>
       </div>
 

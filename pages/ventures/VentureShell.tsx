@@ -108,7 +108,7 @@ const VentureShell: React.FC<Props> = ({
           {/* Pillars */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-16">
             {pillars.map((p) => (
-              <div key={p.title} className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6">
+              <div key={p.title} className="glass-card rounded-2xl p-6">
                 <div className="w-8 h-1 rounded-full mb-4" style={{ background: accent }} />
                 <h3 className="font-bold text-[#14110f] mb-2">{p.title}</h3>
                 <p className="text-sm text-[#6b645c] leading-relaxed">{p.text}</p>

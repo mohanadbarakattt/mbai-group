@@ -17,7 +17,7 @@ export function Footer() {
               </a>
             </div>
             <p className="text-muted-foreground leading-relaxed text-sm">
-              A complete lead generation operation — built and run for real estate companies. We find the prospects, organize them, and convert them into appointments.
+              Done-for-you growth: membership systems, website design and rebuilds, ads management and AI-assisted lead generation.
             </p>
           </div>
 
@@ -27,7 +27,7 @@ export function Footer() {
               <li><a href="#services" className="hover:text-primary transition-colors">Lead Sourcing</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Lead Tracking</a></li>
               <li><a href="#services" className="hover:text-primary transition-colors">Cold Calling Team</a></li>
-              <li><a href="#pricing" className="hover:text-primary transition-colors">Pricing</a></li>
+              <li><a href="#case-study" className="hover:text-primary transition-colors">Example Work</a></li>
             </ul>
           </div>
 
@@ -36,7 +36,7 @@ export function Footer() {
             <ul className="space-y-4 text-sm text-muted-foreground">
               <li><a href="#how-it-works" className="hover:text-primary transition-colors">Our Process</a></li>
               <li><a href="#about" className="hover:text-primary transition-colors">About Us</a></li>
-              <li><a href="#testimonials" className="hover:text-primary transition-colors">Success Stories</a></li>
+              
               <li><a href="#contact" className="hover:text-primary transition-colors">Contact</a></li>
             </ul>
           </div>

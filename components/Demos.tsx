@@ -40,44 +40,44 @@ const ENTRIES: Entry[] = [
   {
     id: 'autoleads',
     title: 'AutoLeadss',
-    subtitle: 'Membership Systems for Local Businesses',
-    blurb: 'Subscription storefronts for repeat-service businesses in Egypt: plans paid upfront through the merchant account, customer QR passes, staff redemption in seconds, and an owner dashboard. Arabic and English, delivered as a PWA.',
-    tags: ['Memberships', 'QR Passes', 'Egypt'],
+    subtitle: 'Memberships, Websites, Ads & Lead Gen',
+    blurb: 'Done-for-you growth for local businesses: membership systems with QR passes and an owner dashboard, website design and rebuilds, ads management, and AI-assisted lead generation. Example work: the Lash Cartel store.',
+    tags: ['Memberships', 'Websites', 'Ads'],
     accent: '#e3a83f',
     icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
-    thumbnail: '/thumbnails/autoleadss.webp',
-    interpretation: 'Turns a repeat purchase into revenue collected upfront, with the merchant owning the build and the data.',
+    thumbnail: '/thumbnails/autoleads.png',
+    interpretation: 'One partner for storefront, site, ads and leads, with 200+ leads delivered across three markets.',
   },
   {
     id: 'virlo',
-    title: 'Virlo',
-    subtitle: 'Egyptian Digital-Product Marketplace',
-    blurb: 'Building an Egypt-first digital-product marketplace with InstaPay. The earlier AI video & image studio concept is parked (preview still available). No public marketplace URL yet.',
-    tags: ['Marketplace', 'InstaPay', 'Egypt'],
+    title: 'Virlo Studio',
+    subtitle: 'Egyptian-First AI Video & Image Studio',
+    blurb: 'The AI studio that actually speaks Egyptian: prompt in Masri or Franco for reels, memes, posters and ads, with Egyptian templates, saved brand kits and characters, and EGP pricing.',
+    tags: ['Generative Video', 'Franco-Arabic', 'Studio'],
     accent: '#f97316',
     icon: <Clapperboard size={22} />,
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
-    thumbnail: '/thumbnails/virlo.webp',
-    interpretation: 'Product truth: marketplace pivot in progress; studio concept remains a parked preview only.',
+    thumbnail: '/thumbnails/virlo.jpg',
+    interpretation: 'Frontier generative media tuned for Egyptian dialect and culture.',
   },
   {
     id: 'ibni',
     title: 'IBNI',
-    subtitle: 'Egyptian Storefront Builder',
-    blurb: 'IBNI ("build me" in Arabic) is live at ibni.app: pick one of 3 designs, add products, set shipping for all 27 governorates and take cash-on-delivery orders from your own store link. The on-site preview is an earlier concept.',
-    tags: ['Storefront', 'Egypt', 'COD'],
+    subtitle: 'The AI App Builder',
+    blurb: 'Write your idea in Masri, Franco or English and Ibni plans it, writes the code, tests it and publishes a real app with its own database on your link. Try the live preview, or the on-site concept below.',
+    tags: ['Codegen', 'Arabic', 'No-Code'],
     accent: '#10b981',
     icon: <Hammer size={22} />,
     status: 'Preview',
     demo: IbniDemo,
     pageUrl: '/ibni',
-    externalUrl: 'https://ibni.app',
-    thumbnail: '/thumbnails/ibni.webp',
-    interpretation: 'A real Egyptian store in five steps, priced openly in EGP.',
+    externalUrl: 'https://ibni-v2.vercel.app',
+    thumbnail: '/thumbnails/ibni.jpg',
+    interpretation: 'Software creation in the language Egyptian founders actually type.',
   },
   {
     id: 'tut',
@@ -90,7 +90,7 @@ const ENTRIES: Entry[] = [
     status: 'Live',
     pageUrl: '/tut',
     externalUrl: 'https://tutapp.co',
-    thumbnail: '/thumbnails/tut.webp',
+    thumbnail: '/tut/tut-desktop.webp',
     interpretation: 'Grounded AI for travellers: sources over guesses, live at tutapp.co.',
   },
   {
@@ -103,7 +103,7 @@ const ENTRIES: Entry[] = [
     icon: <Mic size={22} />,
     status: 'Preview',
     demo: SonicBoomDemo,
-    thumbnail: '/thumbnails/sonicboom.webp',
+    thumbnail: '/thumbnails/project-1.png',
     interpretation: 'Real-time signal processing married to LLM reasoning — the same class of problem as parsing unstructured enterprise data into decisions.',
     highlights: [
       'AI deconstructs any track into theory, chords & tabs',
@@ -128,7 +128,7 @@ const ENTRIES: Entry[] = [
     icon: <FileText size={22} />,
     status: 'Preview',
     demo: AtsDemo,
-    thumbnail: '/thumbnails/ats.webp',
+    thumbnail: '/thumbnails/project-2.png',
     interpretation: 'Adversarial thinking about automated systems — reverse-engineering how machines read humans, and putting that knowledge in the candidate\'s hands.',
     highlights: [
       'Solves the hidden-rejection problem before a human ever reads your resume',
@@ -151,7 +151,7 @@ const ENTRIES: Entry[] = [
     icon: <LineChart size={22} />,
     status: 'Preview',
     demo: MarketSentinelDemo,
-    thumbnail: '/thumbnails/marketsentinel.webp',
+    thumbnail: '/thumbnails/project-3.png',
     interpretation: 'Grounded AI for high-stakes domains — finance punishes hallucination, so every score is built on live, search-grounded data with verifiable sources.',
     highlights: [
       'Fear/Greed scores act as buy/sell signals',
@@ -173,7 +173,7 @@ const ENTRIES: Entry[] = [
     icon: <Languages size={22} />,
     status: 'Preview',
     demo: ThreeArabyDemo,
-    thumbnail: '/thumbnails/3araby.webp',
+    thumbnail: '/thumbnails/project-4.png',
     interpretation: 'Deep Arabic NLP that big tech ignores. Franco-Arabic is spoken by tens of millions and supported by almost no one — the group\'s core moat.',
     highlights: [
       'Trained on real Egyptian dialect data from Reddit',
@@ -197,7 +197,7 @@ const ENTRIES: Entry[] = [
     icon: <MapPin size={22} />,
     status: 'Preview',
     demo: MasrGuideDemo,
-    thumbnail: '/thumbnails/masrguide.webp',
+    thumbnail: '/thumbnails/project-5.png',
     interpretation: 'Turning messy crowd-sourced data into trustworthy intelligence — data engineering plus AI judgment at scale, with confidence ratings.',
     highlights: [
       'Scrapes Reddit, Quora & Facebook for real pricing',
@@ -221,7 +221,7 @@ const ENTRIES: Entry[] = [
     icon: <CreditCard size={22} />,
     status: 'Preview',
     demo: NeobankDemo,
-    thumbnail: '/thumbnails/neobank.webp',
+    thumbnail: '/thumbnails/project-6.png',
     interpretation: 'Full-stack product craft for regulated markets — a complete banking experience for the MENA digital-banking wave, where fintech adoption is growing fastest in the world.',
     highlights: [
       'Real-time dashboard with revenue-flow visualization',
@@ -301,7 +301,7 @@ const Demos: React.FC = () => {
             Ten products. <span className="text-[#b85c38]">Try them right here.</span>
           </h2>
           <p className="text-[#6b645c] max-w-2xl">
-            Every card below opens a real, interactive demo — click any one and use it live. From membership systems and virality
+            Every card below opens a real, interactive demo — click any one and use it live. From growth systems and AI studios
             intelligence to Arabic NLP, fintech, and AI music. No screenshots-only tours; the actual thing, running in your browser.
           </p>
         </div>
@@ -309,7 +309,7 @@ const Demos: React.FC = () => {
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6" >
           {ENTRIES.map((e, i) => {
             const inner = (
-              <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-6 flex flex-col h-full group relative overflow-hidden cursor-pointer">
+              <div className="glass-card rounded-2xl p-6 flex flex-col h-full group relative overflow-hidden cursor-pointer">
                 <span
                   className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5"
                   style={e.status === 'Live'
@@ -371,7 +371,7 @@ const Demos: React.FC = () => {
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
           <div className="absolute inset-0 bg-[#14110f]/45 backdrop-blur-sm" onClick={closeDemo} />
-          <div className="relative w-full max-w-5xl bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#e6dfd2]/80 my-auto" style={{ background: '#fffdf8' }}>
+          <div className="relative w-full max-w-5xl glass-card rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#e6dfd2]/80 my-auto" style={{ background: '#fffdf8' }}>
             {/* Header */}
             <div className="p-5 md:p-6 flex justify-between items-start border-b border-[#e6dfd2] sticky top-0 z-10 rounded-t-2xl" style={{ background: '#fffdf8' }}>
               <div className="flex items-center gap-4">
@@ -412,7 +412,7 @@ const Demos: React.FC = () => {
               {entry.highlights && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {entry.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-lg bg-[#f7f3ec] border border-[#e6dfd2]">
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/40 border border-white/70">
                       <Zap size={14} className="mt-0.5 shrink-0" style={{ color: entry.accent }} />
                       <span className="text-[#6b645c] text-sm">{h}</span>
                     </div>

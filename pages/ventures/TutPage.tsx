@@ -1,10 +1,16 @@
 import React from 'react';
 import VentureShell from './VentureShell';
 
+const SHOTS = [
+  { src: '/tut/tut-mobile-1.webp', alt: 'TUT home: Ask about Egypt. See where the answer came from.' },
+  { src: '/tut/tut-mobile-2.webp', alt: 'TUT answers with the source page and the date it was checked' },
+  { src: '/tut/tut-mobile-3.webp', alt: 'TUT boarding-pass souvenir with a name in hieroglyphs' },
+];
+
 const TutPage: React.FC = () => (
   <VentureShell
     name="TUT"
-    accent="#eab308"
+    accent="#d4a017"
     tagline="AI Travel Guide for Egypt"
     path="/tut"
     status="Live"
@@ -17,7 +23,16 @@ const TutPage: React.FC = () => (
       { title: 'Live today', text: 'AI chat guide, your name in hieroglyphs, Pharaoh Me portraits, a shareable boarding-pass souvenir at sign-up, trips & plans library, dark/light themes, PWA install, and twelve languages including Egyptian Arabic and Franco.' },
       { title: 'Partners in pilot', text: 'Free for travellers; TUT earns a revenue share only when it brings a booking to a vetted partner. Partner listings (tour operators, guides, hotels, lodges, dive centres, transport) are in pilot. On the way: licensed guides, stays, group trips, museum maps, voice mode, and in-app GEM tickets (planned).' },
     ]}
-  />
+    previewLabel="The real product, from tutapp.co"
+    previewNote="Screenshots captured from tutapp.co on 8 Nov 2026."
+  >
+    <img src="/tut/tut-desktop.webp" alt="TUT on desktop" loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/70 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)] mb-6" />
+    <div className="grid grid-cols-3 gap-3 md:gap-6">
+      {SHOTS.map((s) => (
+        <img key={s.src} src={s.src} alt={s.alt} loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/70 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)]" />
+      ))}
+    </div>
+  </VentureShell>
 );
 
 export default TutPage;

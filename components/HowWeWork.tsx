@@ -50,7 +50,7 @@ const HowWeWork: React.FC = () => {
               )}
 
               <TiltCard className="h-full" max={5}>
-                <div className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl p-7 h-full flex flex-col gap-4 relative overflow-hidden">
+                <div className="glass-card rounded-2xl p-7 h-full flex flex-col gap-4 relative overflow-hidden">
                   {/* Large watermark number */}
                   <span className="absolute top-2 right-4 text-7xl font-semibold text-[#14110f]/[0.06] select-none leading-none pointer-events-none">
                     {step.number}

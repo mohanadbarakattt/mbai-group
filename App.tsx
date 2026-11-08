@@ -6,6 +6,7 @@ import { Toaster } from './autoleads/components/ui/toaster';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
 import MarqueeBanner from './components/MarqueeBanner';
+import HighlightsSlider from './components/HighlightsSlider';
 import Features from './components/Features';
 import StatsSection from './components/StatsSection';
 import FounderCredentials from './components/FounderCredentials';
@@ -44,7 +45,7 @@ const HOME_FAQ_JSONLD = {
       name: 'What is AutoLeadss?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: 'AutoLeadss builds membership systems for repeat-service businesses in Egypt (barbers, salons, car washes, laundries, cafes, pet shops): a premium subscription storefront, upfront payment through the merchant\'s own account, customer QR passes, staff redemption and an owner dashboard. Fixed implementation fee, Arabic and English, handed over as a PWA. Live at autoleadss.com.',
+        text: 'AutoLeadss is the done-for-you growth arm of MB AI Group: membership systems for repeat-service businesses in Egypt (subscription storefront, upfront payment to the merchant account, customer QR passes, staff redemption, owner dashboard), website design and rebuilds, ads management, and AI-assisted lead generation. Live at autoleadss.com.',
       },
     },
     {
@@ -52,7 +53,7 @@ const HOME_FAQ_JSONLD = {
       name: 'How many products has MB AI Group shipped or demoed?',
       acceptedAnswer: {
         '@type': 'Answer',
-        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo, Be3ly) plus additional interactive engineering demos are shown on mbai-group.com. Live products today include AutoLeadss (autoleadss.com), TUT (tutapp.co) and IBNI (ibni.app); Virlo and Be3ly are building.",
+        text: "Five ventures (AutoLeadss, TUT, IBNI, Virlo Studio, Be3ly) plus interactive engineering demos and open-source projects are shown on mbai-group.com. Live products: AutoLeadss (autoleadss.com) and TUT (tutapp.co). IBNI (ibni-v2.vercel.app) and Virlo Studio (virlo-studio.vercel.app) are previews; Be3ly is building.",
       },
     },
   ],
@@ -79,13 +80,14 @@ function Home() {
     <div className="min-h-screen bg-transparent text-[#14110f] overflow-x-hidden">
       <Seo
         title="MB AI Group — Frontier AI for MENA · Cairo & Dubai"
-        description="MB AI Group — founded by former xAI Human Data Lead Mohanad Barakat. AutoLeadss, TUT, IBNI, Virlo, and Be3ly: AI products and Egyptian digital commerce ventures for the MENA region."
+        description="MB AI Group — founded by former xAI Human Data Lead Mohanad Barakat. AutoLeadss, TUT, IBNI, Virlo Studio, and Be3ly: AI products and growth services for the MENA region."
         path="/"
         jsonLd={HOME_FAQ_JSONLD}
       />
       <Navigation />
       <main>
         <Hero />
+        <HighlightsSlider />
         <MarqueeBanner />
         <Features />
         <Ventures />
@@ -144,8 +146,8 @@ function App() {
             <Route path="/autoleads">
               <Suspense fallback={<div className="autoleads-page min-h-screen flex items-center justify-center bg-background text-foreground">Loading...</div>}>
                 <Seo
-                  title="AutoLeadss: Membership Systems for Local Businesses in Egypt · MB AI Group"
-                  description="AutoLeadss builds subscription storefronts, customer QR passes, staff redemption and an owner dashboard for repeat-service businesses in Egypt."
+                  title="AutoLeadss: Memberships, Websites, Ads & Lead Gen · MB AI Group"
+                  description="AutoLeadss builds membership systems with QR passes, designs and rebuilds websites, runs ads, and sets up AI-assisted lead generation for businesses in Egypt and MENA."
                   path="/autoleads"
                 />
                 <AutoLeadsHome />

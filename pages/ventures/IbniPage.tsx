@@ -6,21 +6,22 @@ const IbniPage: React.FC = () => (
   <VentureShell
     name="IBNI"
     accent="#10b981"
-    tagline="Egyptian Storefront Builder"
+    tagline="The AI App Builder"
     path="/ibni"
-    status="Live"
-    externalUrl="https://ibni.app"
-    externalLabel="Open ibni.app"
-    headline={<>Your online store,<br /><span className="text-[#b85c38]">ready to take orders.</span></>}
-    sub={'IBNI ("build me" in Arabic) is live at ibni.app: Egyptian merchants pick one of 3 ready designs, add products, set shipping per governorate across all 27, and publish a store on their own ibni.app link that takes cash-on-delivery orders, with a dashboard, stock tracking and sales reports.'}
+    status="Preview"
+    externalUrl="https://ibni-v2.vercel.app"
+    externalLabel="Try Ibni"
+    headline={<>Write your idea.<br /><span className="text-[#10b981]">Ibni builds it.</span></>}
+    sub={'IBNI ("build me" in Arabic) turns one sentence into a real app with its own code and database. Write it in Masri, Franco or English, the way you would tell a friend, and Ibni plans it, writes the code, tests it, fixes what breaks and publishes it on your own link.'}
     pillars={[
-      { title: 'Built for Egyptian selling', text: '3 ready designs (store, restaurant, services), categories, banners and offers, and a shipping price for each of the 27 governorates.' },
-      { title: 'Clear pricing', text: '1,500 EGP per month or 15,000 EGP per year, tax included, every feature from day one. No stored card and no auto-renewal.' },
-      { title: 'Honest about limits', text: 'Cash on delivery only for now, no shipping-company integration, no custom domain yet, and no AI store manager. ibni.app lists these openly.' },
+      { title: 'Talk the way you talk', text: 'Ibni understands "3ayez app lel mat3am bta3i" as easily as English. No translation step, no code required.' },
+      { title: 'A real product, not a mockup', text: 'Not a template or a picture of an app: a working backend, database, API, user accounts and Egyptian payment rails on paid plans.' },
+      { title: 'Your code, EGP pricing', text: 'You can see, edit and export the code. Free instant preview with monthly credits; paid plans priced in EGP with Fawry, Vodafone Cash and InstaPay.' },
     ]}
-    previewLabel="On-site concept preview"
-    previewNote="The live product is at ibni.app. The on-site preview below is an earlier lightweight concept."
+    previewLabel="Try the on-site concept preview"
+    previewNote="The full product runs at ibni-v2.vercel.app. The preview below is a lightweight on-site concept."
   >
+    <img src="/media/ibni-codegen.webp" alt="Ibni AI app builder home page" loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/70 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)] mb-8" />
     <IbniDemo />
   </VentureShell>
 );

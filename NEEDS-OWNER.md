@@ -22,12 +22,13 @@ Items that cannot be finished honestly without owner input. Do not invent URLs, 
 - Do not claim lawyer-approved until owner confirms legal review is complete.
 
 ## Venture URLs / assets
-- **Virlo marketplace**: no public URL yet — keep `/virlo` as internal "building" page until owner supplies a real storefront URL.
+- **Virlo**: site now presents Virlo Studio, linking https://virlo-studio.vercel.app (verified 200, 8 Nov 2026). No marketplace URL invented.
 - **Be3ly**: no production URL — keep `/be3ly` internal until owner supplies one. Has its own typographic thumbnail (`/thumbnails/be3ly.webp`) since the Nov 2026 refresh.
-- **IBNI**: ibni.app is now a live paid product (Nov 2026); site marks it Live. Confirm.
+- **IBNI**: site presents the codegen AI app builder at https://ibni-v2.vercel.app (Preview). ibni.app and ibni-umber.vercel.app now serve the COD storefront product and are not linked.
 - **TUT**: live product is `https://tutapp.co` — confirm domain branding vs older `tut.app` mentions elsewhere.
 
 ## Product count / stats copy
-- Hero now says "15 products, demos & projects" (5 ventures + 6 demos + 4 projects listed). Confirm wording.
+- Hero says "14 products, demos & projects" (5 ventures + 6 demos + 3 open-source/assessment builds).
 - Stats "200+ leads delivered" / "3 MENA markets" come from the old AutoLeadss lead-gen agency; unverified.
-- `/autoleads` in-site page still shows the old lead-gen agency site; autoleadss.com now sells membership systems.
+- `/autoleads` rewritten to the combined offer. Removed unattributed testimonials and the old $50k crypto pricing. Process section still describes the original real-estate lead-gen workflow.
+- Ads management / website pricing not published; owner to confirm offer and prices.

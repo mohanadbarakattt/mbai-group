@@ -56,11 +56,11 @@ const Experience: React.FC = () => {
                   <div className="flex flex-col md:flex-row gap-6 md:items-start justify-between mb-6 relative z-10">
                     <div>
                       <div className="flex items-center gap-3 mb-2 flex-wrap">
-                         <h3 className="text-2xl md:text-4xl font-bold text-[#14110f]">MB AI Solutions</h3>
+                         <h3 className="text-2xl md:text-4xl font-bold text-[#14110f]">MBAI Group</h3>
                          <span className="px-3 py-1 rounded-full bg-[#f7f3ec] border border-[#b85c38]/35 text-[#6b645c] text-[10px] md:text-xs font-mono tracking-wider uppercase">Current Mission</span>
                       </div>
                       <p className="text-lg md:text-xl text-[#14110f] font-medium flex items-center gap-2">
-                        Founder & Lead Architect
+                        Founder & AI Engineer · Cairo & Dubai
                       </p>
                     </div>
                     <div className="text-[#6b645c] text-xs md:text-sm font-mono bg-[#f7f3ec] border border-[#e6dfd2] rounded px-4 py-2 self-start">
@@ -98,8 +98,8 @@ const Experience: React.FC = () => {
                        <h3 className="text-2xl md:text-3xl font-bold text-[#14110f]">xAI</h3>
                        <span className="px-3 py-1 rounded-full bg-[#f7f3ec] border border-[#e6dfd2] text-[#6b645c] text-[10px] font-mono tracking-wider uppercase w-fit">Elon Musk's AI Lab</span>
                     </div>
-                    <div className="text-[#6b645c] text-xs font-mono mb-2">Apr 2025 – Oct 2025</div>
-                    <p className="text-[#6b645c] font-medium mb-4 text-lg">Human Data Lead</p>
+                    <div className="text-[#6b645c] text-xs font-mono mb-2">Apr 2025 – Jan 2026</div>
+                    <p className="text-[#6b645c] font-medium mb-4 text-lg">Human Data Lead (AI Pre- & Post-Training), Grok</p>
                     
                     <p className="text-[#6b645c] text-sm leading-relaxed mb-4">
                        Worked at <strong className="text-[#14110f]">xAI — the world's leading frontier AI company</strong> founded by Elon Musk, competing directly with OpenAI and Google DeepMind. Played a direct role in <strong className="text-[#6b645c]">developing and training Grok</strong>, xAI's flagship large language model powering hundreds of millions of users on X (Twitter).
@@ -234,7 +234,8 @@ const Experience: React.FC = () => {
                     <BrainCircuit className="w-12 h-12 md:w-[60px] md:h-[60px]" />
                  </div>
                  <h3 className="text-xl md:text-2xl font-bold text-[#14110f] mb-1">Outlier AI</h3>
-                 <p className="text-[#14110f] font-medium mb-4">Generative Model Refinement</p>
+                 <div className="text-[#6b645c] text-xs font-mono mb-2">Jul 2023 – Mar 2025</div>
+                 <p className="text-[#14110f] font-medium mb-4">AI Trainer (LLM Evaluation)</p>
                  
                  <p className="text-[#6b645c] text-sm leading-relaxed mb-4">
                    Operated at the bridge between raw machine learning and polished, safe AI interactions, teaching frontier models how to think and maintain context.
@@ -291,16 +292,52 @@ const Experience: React.FC = () => {
                  <div className="absolute top-4 right-4 md:right-auto md:left-4 text-[#14110f]/20 group-hover:text-amber-500/20 transition-colors">
                     <Code2 className="w-12 h-12 md:w-[60px] md:h-[60px]" />
                  </div>
-                 <h3 className="text-xl md:text-2xl font-bold text-[#14110f] mb-1">Freelance</h3>
-                 <p className="text-[#6b645c] font-medium mb-4">Web Developer & AI Agent Architect</p>
+                 <h3 className="text-xl md:text-2xl font-bold text-[#14110f] mb-1">Alignerr (Labelbox)</h3>
+                 <div className="text-[#6b645c] text-xs font-mono mb-2">Oct 2025 – Nov 2025 · Contract</div>
+                 <p className="text-[#6b645c] font-medium mb-4">AI Trainer (Evaluation)</p>
                  <p className="text-[#6b645c] text-sm leading-relaxed">
-                   Engineered custom autonomous AI agents and integrated NLP stacks into modern web architectures. Delivered scalable solutions bridging raw model capability and user application.
+                   Model evaluation projects on the Labelbox platform, including function-calling and video function-calling evaluation.
                  </p>
+                 <div className="mt-6 pt-5 border-t border-white/70">
+                   <h4 className="text-lg font-bold text-[#14110f]">Elements Real Estate</h4>
+                   <div className="text-[#6b645c] text-xs font-mono mb-2">Jan 2023 – Jun 2023</div>
+                   <p className="text-[#6b645c] text-sm leading-relaxed">Real Estate Sales Agent. Handled buyer, seller and renter inquiries on listings, pricing and neighbourhoods; that client-facing work shapes how AutoLeadss scopes tools for real-estate clients.
+                 </p>
+                 </div>
               </div>
            </div>
 
            {/* Right Side (Empty) */}
            <div className="hidden md:block w-1/2 pl-12"></div>
+        </div>
+
+        {/* Education, certifications, languages */}
+        <div className={`relative mt-20 grid md:grid-cols-3 gap-6 ${cardClass}`} style={cardStyle(5)}>
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="text-lg font-bold text-[#14110f] mb-3">Education</h3>
+            <ul className="space-y-3 text-sm text-[#6b645c]">
+              <li><strong className="text-[#14110f]">BSc Information Management</strong><br />NOVA IMS (Egypt campus) · Sep 2024 – Present</li>
+              <li><strong className="text-[#14110f]">Foundation, Mechatronics</strong><br />University of Debrecen · Sep 2019 – Jul 2020</li>
+              <li><strong className="text-[#14110f]">American High School Diploma</strong><br />Al Mawakeb School, Dubai · Sep 2013 – Jun 2018</li>
+            </ul>
+          </div>
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="text-lg font-bold text-[#14110f] mb-3">Certifications</h3>
+            <ul className="space-y-3 text-sm text-[#6b645c]">
+              <li><strong className="text-[#14110f]">AI for Finance</strong><br />AMIT Learning · Jan 2026</li>
+              <li><strong className="text-[#14110f]">CS50's Introduction to Programming with Python</strong><br />HarvardX · Dec 2023</li>
+              <li><strong className="text-[#14110f]">CS50's Web Programming with Python and JavaScript</strong><br />HarvardX · Nov 2023</li>
+            </ul>
+          </div>
+          <div className="glass-card rounded-2xl p-6">
+            <h3 className="text-lg font-bold text-[#14110f] mb-3">Languages</h3>
+            <ul className="space-y-2 text-sm text-[#6b645c]">
+              <li><strong className="text-[#14110f]">Arabic</strong> · Native</li>
+              <li><strong className="text-[#14110f]">English</strong> · C1</li>
+              <li><strong className="text-[#14110f]">French</strong> · B1–B2</li>
+              <li><strong className="text-[#14110f]">Hungarian</strong> · B1</li>
+            </ul>
+          </div>
         </div>
 
         {/* Bottom Fade */}

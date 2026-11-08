@@ -28,7 +28,7 @@ const franco: Dict = {
     ctaBook: 'Kalemna',
     ctaDemos: 'Shoof el Demos Live',
     statLead: 'Kan Human Data Lead fi xAI',
-    statProducts: '15 products, demos w projects',
+    statProducts: '14 products, demos w projects',
     statLocation: 'Cairo · Dubai',
   },
 
@@ -38,7 +38,7 @@ const franco: Dict = {
     heading2: '5 mashari3.',
     heading3: 'Hadaf wa7ed.',
     intro:
-      'Kol sharika fel group betwage2 moshkela MENA: membership systems lel businesses el ma7alleya, AI travel guide le Masr be masader, matager online lel toggar, digital products be InstaPay, w affiliate social selling.',
+      'Kol sharika fel group betwage2 moshkela MENA: growth done-for-you lel businesses el ma7alleya, AI travel guide le Masr be masader, AI app builder beyetkalem masry, AI studio masry lel video wel sowar, w affiliate social selling.',
     statusLive: 'Live',
     statusPreview: 'Preview',
     statusComingSoon: '2orayeb',
@@ -48,25 +48,25 @@ const franco: Dict = {
     whyItMatters: 'Leh da mohem',
     items: {
       ibni: {
-        tagline: 'Bane Storefronts Masry',
+        tagline: 'AI App Builder',
         description:
-          'IBNI live 3ala ibni.app: e5tar men 3 designs gahza, daf products, 7aded se3r el sha7n le kol mo7afza men el 27, w ensher matgarak 3ala link 5as beyestalem talabat cash on delivery, ma3 dashboard w stock w sales reports.',
+          'IBNI (ya3ni "ebni") bey7awel gomla wa7da le app 7a2i2i b kodo w database bta3o. Ekteb fekretak bel masry aw Franco aw English, w Ibni beye5atat w yekteb el code w yegarabo w yesala7 elly ye2a3 w yenshoro 3ala link bta3ak. Preview free, w el paid plans betzawed backend w database 7a2i2eya be as3ar bel geneh.',
         interpretation:
-          'Matgar 7a2ee2y fe 5 steps, be se3r wade7 bel geneh, w el limits maktouba bsara7a.',
+          'Software lel founders el masreyeen elly mesh beybarmego: e7kiha zay ma betetkalem, wel code bta3ak.',
       },
       autoleadss: {
-        tagline: 'Membership Systems lel Businesses el Ma7alleya',
+        tagline: 'Memberships · Websites · Ads · Leads',
         description:
-          'AutoLeadss beyebni membership systems lel businesses elly 3andaha 3omala2 metkarrareen fe Masr (7ala2een, salons, car wash, laundry, cafes, pet shops): storefront lel eshterakat, daf3 mo2addam 3ala account el tager, QR pass lel 3ameel, redemption men el staff, w dashboard lel owner.',
+          'AutoLeadss howa dera3 el growth done-for-you fe MB AI Group: membership systems lel businesses el metkarrara fe Masr (storefront, daf3 mo2addam 3ala account el tager, QR passes, redemption, dashboard), design w rebuild lel websites wel online stores, ads management, w lead generation bel AI.',
         interpretation:
-          'Bey7awel el shera el metkarrar le revenue mo2addam, w el tager beyemlek el build wel data.',
+          'Partner wa7ed lel storefront wel site wel ads wel leads, wel tager beyemlek el build wel data.',
       },
       virlo: {
-        tagline: 'Souq Masry lel Digital Products',
+        tagline: 'Studio Masry lel Video wel Sowar bel AI',
         description:
-          'Beyet7awel (Aug 2026) le souq masry lel digital products be InstaPay. Studio el video/sowar bel AI parked. Lessa benebni — mafish URL 3am lel souq lessa.',
+          'Virlo Studio awel AI studio beyetkalem masry begad. Ekteb bel 3ameya aw Franco w tala3 reels w memes w posters w e3lanat, be templates w trends masreya, brand kit w characters mat7foza, batch generation, w as3ar wad7a bel geneh ma3 points free kol youm.',
         interpretation:
-          'Ha2ee2et el product: rails tegara lel digital goods el masreya, mesh safhet "2orayeb" wehmeya le studio.',
+          'Video w sowar bel AI metzabata 3ala el lahga wel sa2afa el masreya.',
       },
       tut: {
         tagline: 'AI Travel Guide le Masr',
@@ -83,9 +83,6 @@ const franco: Dict = {
           'Beyewassel el promoters bel toggar men gheer ma ye5tera3 domain matgar wehmy.',
       },
     },
-    ecosystemEyebrow: 'Account wa7ed. AI wa7ed. Kol el products.',
-    ecosystemBody:
-      'Kol product fi MB AI Group beyeshtaghal 3ala nafs el asas: login wa7ed 3ala el ecosystem kolo, data platform moshtareka, w MBAI AI gateway — mazbota 3ala el Franco-3araby el masry — beteshaghal kol model call. Kol venture lessa 3aysh 3ala domain beta3o, mabni le audience beta3o, bas wala wa7ed minhom bebtidy men sefr.',
   },
 
   footer: {
@@ -126,9 +123,9 @@ const franco: Dict = {
   about: {
     kicker: 'Mohanad Barakat',
     headingPre: 'Et3araf 3ala',
-    headingGradient: 'El Founder w CEO',
+    headingGradient: 'El Founder w AI Engineer',
     blurb:
-      'Kan Human Data Lead fi xAI — bysawwar ab7as el AI el 3alameya le 7olol 3amaleya lel mante2et el MENA.',
+      'AI Engineer w Founder | Ex-xAI Human Data Lead (Grok). Beyebni AI products w agents 3arabi awalan lel MENA men el Cairo w Dubai.',
     downloadCv: 'Download el CV',
   },
 
@@ -156,7 +153,7 @@ const franco: Dict = {
     leadsBig: '200+',
     leadsLabel: '3omeel etwassal',
     items: [
-      { number: '15', label: 'products, demos w projects' },
+      { number: '14', label: 'products, demos w projects' },
       { number: '3', label: 'aswa2 fel MENA etkhadamet' },
       { number: '200+', label: '3omeel etwassal' },
     ],
@@ -205,10 +202,10 @@ const franco: Dict = {
         videoLabel: '3araby awwalan, min el design',
       },
       {
-        eyebrow: 'El Tawasso3',
-        title: 'AI gateway wa7ed beyeshaghal kol product 3andak',
-        body: 'Kol venture fi MB AI Group beyeshtaghal 3ala nafs el asas: login wa7ed, data platform wa7eda, gateway wa7ed — fa wala 7aga benebneeha betebtidy men sefr.',
-        videoLabel: 'Gateway wa7ed, kol el products',
+        eyebrow: 'Ownership',
+        title: 'Elly bnebneeh bta3ak',
+        body: 'El code wel domain wel accounts wel data betetsallem lak fe a5er el project. Mafish lock-in, wel maintenance optional.',
+        videoLabel: 'Tasleem kamel, mesh egar',
       },
     ],
   },

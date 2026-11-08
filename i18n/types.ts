@@ -81,8 +81,6 @@ export interface Dict {
       tut: VentureCopy;
       be3ly: VentureCopy;
     };
-    ecosystemEyebrow: string;
-    ecosystemBody: string;
   };
   footer: {
     explore: string;

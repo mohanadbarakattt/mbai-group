@@ -13,7 +13,7 @@ const FAQS = [
   },
   {
     q: 'What is AutoLeadss?',
-    a: 'AutoLeadss builds membership systems for repeat-service businesses in Egypt (barbers, salons, car washes, laundries, cafes, pet shops): a premium subscription storefront, upfront payment through the merchant\'s own account, customer QR passes, staff redemption and an owner dashboard. Fixed implementation fee, Arabic and English, handed over as a PWA. Live at autoleadss.com.',
+    a: 'AutoLeadss is the done-for-you growth arm of MB AI Group: membership systems for repeat-service businesses in Egypt (subscription storefront, upfront payment to the merchant account, customer QR passes, staff redemption, owner dashboard), website design and rebuilds, ads management, and AI-assisted lead generation. Live at autoleadss.com.',
   },
   {
     q: 'What is TUT?',
@@ -21,11 +21,11 @@ const FAQS = [
   },
   {
     q: 'What is IBNI?',
-    a: 'IBNI ("build me" in Arabic) is live at ibni.app: Egyptian merchants pick one of 3 ready designs, add products, set shipping per governorate across all 27, and publish a store on their own ibni.app link that takes cash-on-delivery orders, with a dashboard, stock tracking and sales reports.',
+    a: 'IBNI ("build me" in Arabic) is an AI app builder: write an idea in Masri, Franco or English and it plans, codes, tests and publishes a real app with its own database. Preview at ibni-v2.vercel.app.',
   },
   {
-    q: 'What is Virlo?',
-    a: 'Virlo is building an Egypt-first digital-product marketplace with InstaPay. The earlier AI video & image studio concept is parked. There is no public marketplace URL yet.',
+    q: 'What is Virlo Studio?',
+    a: 'Virlo Studio is an Egyptian-first AI video and image studio: prompt in Masri or Franco for reels, memes, posters and ads, with Egyptian templates and EGP pricing. Preview at virlo-studio.vercel.app.',
   },
   {
     q: 'What is Be3ly?',
@@ -33,7 +33,7 @@ const FAQS = [
   },
   {
     q: 'How many ventures does MB AI Group have?',
-    a: 'Five ventures: AutoLeadss (live), TUT (live at tutapp.co), IBNI (live at ibni.app), Virlo (building), and Be3ly (building), plus additional interactive engineering demos on this site.',
+    a: 'Five ventures: AutoLeadss (live at autoleadss.com), TUT (live at tutapp.co), IBNI (AI app builder, preview), Virlo Studio (AI video and image studio, preview) and Be3ly (building), plus interactive engineering demos and open-source projects on this site.',
   },
 ];
 
@@ -66,7 +66,7 @@ const FAQSection: React.FC = () => {
             <Accordion.Item
               key={item.q}
               value={`item-${i}`}
-              className="bg-[#fffdf8] border border-[#e6dfd2] rounded-2xl overflow-hidden"
+              className="glass-card rounded-2xl overflow-hidden"
             >
               <Accordion.Header>
                 <Accordion.Trigger className="group flex w-full items-center justify-between gap-4 px-6 py-5 text-left text-sm md:text-base font-semibold text-[#14110f] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#b85c38]/60 rounded-2xl">

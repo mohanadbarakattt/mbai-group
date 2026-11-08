@@ -1,5 +1,11 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><rect width="1200" height="630" fill="#14110f"/><rect x="0" y="622" width="1200" height="8" fill="#c8683f"/>
- <g transform="translate(90 90) scale(1.3)"><rect width="100" height="100" rx="22" fill="#211c18"/><g fill="none" stroke-width="8.5"><path d="M24,74 V28 L41,53 L58,28 V74" stroke="#f7f3ec" stroke-linejoin="miter" stroke-linecap="square"/><path d="M58,28 H64 A11,11 0 0 1 64,50 H58 M58,51 H65.5 A11.5,11.5 0 0 1 65.5,74 H58" stroke="#c8683f" stroke-linecap="butt"/></g></g>
- <text x="90" y="350" font-family="Fraunces" font-weight="600" font-size="84" fill="#f7f3ec">MB AI Group</text>
- <text x="90" y="420" font-family="Inter" font-size="34" fill="#cfc6b8">AI product studio · Cairo &amp; Dubai</text>
- <text x="90" y="540" font-family="IBM Plex Mono" font-size="24" fill="#c8683f">AUTOLEADSS · TUT · IBNI · VIRLO · BE3LY</text></svg>
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630"><defs><radialGradient id="r" cx="85%" cy="20%" r="80%"><stop offset="0" stop-color="#e8a07a" stop-opacity=".35"/><stop offset="1" stop-color="#f7f3ec" stop-opacity="0"/></radialGradient></defs><rect width="1200" height="630" fill="#f7f3ec"/><rect width="1200" height="630" fill="url(#r)"/>
+<rect x="60" y="60" width="1080" height="510" rx="36" fill="#ffffff" fill-opacity=".55" stroke="#ffffff" stroke-opacity=".9"/>
+<g transform="translate(110 130) scale(1.6)"><defs><linearGradient id="oa" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8a07a"/><stop offset="1" stop-color="#9a4a2c"/></linearGradient><linearGradient id="ob" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a342e"/><stop offset="1" stop-color="#14110f"/></linearGradient></defs>
+<path d="M14,80 L36,30 L58,80 Z" fill="url(#ob)"/>
+<path d="M42,80 L64,30 L86,80 Z" fill="url(#oa)"/>
+<path d="M42,80 L50,61.8 L58,80 Z" fill="#f7f3ec" fill-opacity=".55"/>
+<path d="M36,30 L36,80" stroke="#f7f3ec" stroke-opacity=".18" stroke-width="1.2"/><path d="M64,30 L64,80" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
+<path d="M50,12 L52.2,19.8 L60,22 L52.2,24.2 L50,32 L47.8,24.2 L40,22 L47.8,19.8 Z" fill="#c8683f"/></g>
+<text x="110" y="370" font-family="Fraunces" font-weight="600" font-size="88" fill="#14110f">MB AI Group</text>
+<text x="112" y="430" font-family="Inter" font-size="32" fill="#6b645c">AI product studio · Cairo &amp; Dubai</text>
+<text x="112" y="510" font-family="IBM Plex Mono" font-size="22" letter-spacing="3" fill="#9a4a2c">AUTOLEADSS · TUT · IBNI · VIRLO STUDIO · BE3LY</text></svg>
