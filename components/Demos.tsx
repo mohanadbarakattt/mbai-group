@@ -43,7 +43,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Memberships, Websites, Ads & Lead Gen',
     blurb: 'Done-for-you growth for local businesses: membership systems with QR passes and an owner dashboard, website design and rebuilds, ads management, and AI-assisted lead generation. Example work: the Lash Cartel store.',
     tags: ['Memberships', 'Websites', 'Ads'],
-    accent: '#e3a83f',
+    accent: '#2a9d8f',
     icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
@@ -56,7 +56,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Egyptian-First AI Video & Image Studio',
     blurb: 'The AI studio that actually speaks Egyptian: prompt in Masri or Franco for reels, memes, posters and ads, with Egyptian templates, saved brand kits and characters, and EGP pricing.',
     tags: ['Generative Video', 'Franco-Arabic', 'Studio'],
-    accent: '#f97316',
+    accent: '#2a9d8f',
     icon: <Clapperboard size={22} />,
     status: 'Preview',
     demo: VirloDemo,
@@ -70,7 +70,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'The AI App Builder',
     blurb: 'Write your idea in Masri, Franco or English and Ibni plans it, writes the code, tests it and publishes a real app with its own database on your link. Try the live preview, or the on-site concept below.',
     tags: ['Codegen', 'Arabic', 'No-Code'],
-    accent: '#10b981',
+    accent: '#2a9d8f',
     icon: <Hammer size={22} />,
     status: 'Preview',
     demo: IbniDemo,
@@ -85,7 +85,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'AI Travel Guide for Egypt',
     blurb: 'Ask about Egypt and see where the answer came from. TUT answers from a sourced Egypt knowledge file and names the source page and the day it was checked. Free, twelve languages, installable PWA.',
     tags: ['RAG', 'Travel', 'Live'],
-    accent: '#eab308',
+    accent: '#2a9d8f',
     icon: <MessageCircle size={22} />,
     status: 'Live',
     pageUrl: '/tut',
@@ -99,7 +99,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'AI Music Deconstruction & Practice',
     blurb: 'SonicScribe uses AI to deconstruct any track into theory, chords, and tabs, then streams notes down a virtual fretboard or piano with microphone-powered pitch detection scoring your accuracy live.',
     tags: ['Gemini AI', 'Audio', 'Real-Time'],
-    accent: '#b85c38',
+    accent: '#2a9d8f',
     icon: <Mic size={22} />,
     status: 'Preview',
     demo: SonicBoomDemo,
@@ -124,7 +124,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Beat the Robots. Land the Interview.',
     blurb: 'Analyzes your resume against a job description, injects missing keywords naturally, restructures bullets to score 90%+ on automated screeners, and drafts a tailored cover letter — while staying truthful.',
     tags: ['NLP', 'Keyword Opt.', 'Cover Letters'],
-    accent: '#e3a83f',
+    accent: '#2a9d8f',
     icon: <FileText size={22} />,
     status: 'Preview',
     demo: AtsDemo,
@@ -147,7 +147,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Real-time Fear & Greed Dashboard',
     blurb: 'A financial sentiment dashboard powered by grounded AI that calculates Fear & Greed for Gold, Silver, S&P 500, USD, and EUR — turning live market data and news into actionable buy/sell signals.',
     tags: ['Gemini 2.0', 'Grounding', 'Fintech'],
-    accent: '#10b981',
+    accent: '#2a9d8f',
     icon: <LineChart size={22} />,
     status: 'Preview',
     demo: MarketSentinelDemo,
@@ -169,7 +169,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Egyptian Franco-Arabic Translator',
     blurb: 'An ML translator converting Franco-Arabic (Arabizi) into English and formal Arabic script, trained on Reddit-sourced Egyptian dialect data to understand slang, idioms, and cultural context.',
     tags: ['Machine Learning', 'Arabic NLP', 'Reddit Data'],
-    accent: '#d9784f',
+    accent: '#2a9d8f',
     icon: <Languages size={22} />,
     status: 'Preview',
     demo: ThreeArabyDemo,
@@ -193,7 +193,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'AI-Powered Local Intel for Egypt',
     blurb: 'Scrapes and analyzes thousands of Reddit, Quora, and Facebook discussions to give tourists and expats accurate, crowd-sourced intelligence on market prices and neighborhood safety across Egypt.',
     tags: ['Web Scraping', 'Gemini 2.0', 'Safety AI'],
-    accent: '#f59e0b',
+    accent: '#2a9d8f',
     icon: <MapPin size={22} />,
     status: 'Preview',
     demo: MasrGuideDemo,
@@ -217,7 +217,7 @@ const ENTRIES: Entry[] = [
     subtitle: 'Next-Generation Digital Banking',
     blurb: 'A full-stack digital banking platform for MENA — dashboard, AI financial assistant, real-time analytics, virtual card management, and instant P2P transfers, wrapped in a sleek dark UI.',
     tags: ['React', 'Fintech', 'Full-Stack'],
-    accent: '#6b645c',
+    accent: '#2a9d8f',
     icon: <CreditCard size={22} />,
     status: 'Preview',
     demo: NeobankDemo,
@@ -238,7 +238,7 @@ const ENTRIES: Entry[] = [
 ];
 
 const DemoFallback: React.FC = () => (
-  <div className="w-full h-[420px] flex items-center justify-center text-[#6b645c]" style={{ background: '#f0ebe1' }}>
+  <div className="w-full h-[420px] flex items-center justify-center text-[#a7b7b4]" style={{ background: '#f0ebe1' }}>
     <Loader2 className="animate-spin mr-2" size={18} /> Loading live demo…
   </div>
 );
@@ -294,13 +294,13 @@ const Demos: React.FC = () => {
     <section id="demos" className="py-24 px-6 relative overflow-hidden bg-transparent">
       <div className="max-w-7xl mx-auto relative">
         <div className="mb-14">
-          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
-            <span className="w-1.5 h-1.5 rounded-full bg-[#b85c38] animate-pulse" /> Live Work
+          <p className="text-[#2a9d8f] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+            <span className="w-1.5 h-1.5 rounded-full bg-[#2a9d8f] animate-pulse" /> Live Work
           </p>
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight mb-4">
-            Ten products. <span className="text-[#b85c38]">Try them right here.</span>
+            Ten products. <span className="text-[#2a9d8f]">Try them right here.</span>
           </h2>
-          <p className="text-[#6b645c] max-w-2xl">
+          <p className="text-[#a7b7b4] max-w-2xl">
             Every card below opens a real, interactive demo — click any one and use it live. From growth systems and AI studios
             intelligence to Arabic NLP, fintech, and AI music. No screenshots-only tours; the actual thing, running in your browser.
           </p>
@@ -313,10 +313,10 @@ const Demos: React.FC = () => {
                 <span
                   className="absolute top-4 right-4 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5"
                   style={e.status === 'Live'
-                    ? { color: '#2f6b4f', background: 'rgba(47,107,79,0.08)', borderColor: 'rgba(47,107,79,0.28)' }
-                    : { color: '#6b645c', background: 'rgba(20,17,15,0.03)', borderColor: '#e6dfd2' }}
+                    ? { color: '#2a9d8f', background: 'rgba(42,157,143,0.12)', borderColor: 'rgba(42,157,143,0.28)' }
+                    : { color: '#a7b7b4', background: 'rgba(20,17,15,0.03)', borderColor: '#263437' }}
                 >
-                  <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: e.status === 'Live' ? '#34d399' : e.accent }} />
+                  <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: e.status === 'Live' ? '#2a9d8f' : e.accent }} />
                   {e.status === 'Live' ? 'Live Product' : 'Interactive Demo'}
                 </span>
 
@@ -333,12 +333,12 @@ const Demos: React.FC = () => {
 
                 <MediaSlot className="mb-5" accent={e.accent} icon={e.icon} label={e.title} alt={`${e.title} — ${e.subtitle}`} thumbnail={e.thumbnail} />
 
-                <p className="text-[#6b645c] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
+                <p className="text-[#a7b7b4] text-sm mb-5 flex-grow leading-relaxed line-clamp-3">{e.blurb}</p>
 
                 <div className="mt-auto">
                   <div className="flex flex-wrap gap-2 mb-4">
                     {e.tags.map((t) => (
-                      <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#f7f3ec] text-[#6b645c] border border-[#e6dfd2]">{t}</span>
+                      <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#080d0f] text-[#a7b7b4] border border-[#263437]">{t}</span>
                     ))}
                   </div>
                   <div className="w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 text-sm transition-all border"
@@ -370,10 +370,10 @@ const Demos: React.FC = () => {
       {/* Modal */}
       {entry && (
         <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
-          <div className="absolute inset-0 bg-[#14110f]/45 backdrop-blur-sm" onClick={closeDemo} />
-          <div className="relative w-full max-w-5xl glass-card rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#e6dfd2]/80 my-auto" style={{ background: '#fffdf8' }}>
+          <div className="absolute inset-0 bg-[#080d0f]/45 backdrop-blur-sm" onClick={closeDemo} />
+          <div className="relative w-full max-w-5xl glass-card rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#263437]/80 my-auto" style={{ background: '#10191c' }}>
             {/* Header */}
-            <div className="p-5 md:p-6 flex justify-between items-start border-b border-[#e6dfd2] sticky top-0 z-10 rounded-t-2xl" style={{ background: '#fffdf8' }}>
+            <div className="p-5 md:p-6 flex justify-between items-start border-b border-[#263437] sticky top-0 z-10 rounded-t-2xl" style={{ background: '#10191c' }}>
               <div className="flex items-center gap-4">
                 <div className="p-2.5 rounded-xl shrink-0" style={{ color: entry.accent, background: `${entry.accent}16`, border: `1px solid ${entry.accent}33` }}>{entry.icon}</div>
                 <div>
@@ -381,17 +381,17 @@ const Demos: React.FC = () => {
                   <p className="text-sm" style={{ color: entry.accent }}>{entry.subtitle}</p>
                 </div>
               </div>
-              <button onClick={closeDemo} className="p-2 hover:bg-[#f0ebe1] rounded-full text-[#6b645c] hover:text-[#14110f] transition-colors shrink-0"><X size={22} /></button>
+              <button onClick={closeDemo} className="p-2 hover:bg-[#10191c] rounded-full text-[#a7b7b4] hover:text-[#f1f5f4] transition-colors shrink-0"><X size={22} /></button>
             </div>
 
             <div className="p-5 md:p-6 space-y-6">
               {/* Interactive demo */}
               {Demo && (
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2 flex items-center gap-2">
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#92a5a1] mb-2 flex items-center gap-2">
                     <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: entry.accent }} /> Interactive — try it live
                   </p>
-                  <div className="rounded-2xl overflow-hidden border border-[#e6dfd2]" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
+                  <div className="rounded-2xl overflow-hidden border border-[#263437]" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
                     <Suspense fallback={<DemoFallback />}><Demo /></Suspense>
                   </div>
                   {entry.pageUrl && (
@@ -402,19 +402,19 @@ const Demos: React.FC = () => {
                 </div>
               )}
 
-              <p className="text-[#6b645c] leading-relaxed text-sm md:text-base">{entry.blurb}</p>
+              <p className="text-[#a7b7b4] leading-relaxed text-sm md:text-base">{entry.blurb}</p>
 
               <div className="p-4 rounded-xl border" style={{ background: `${entry.accent}0d`, borderColor: `${entry.accent}2e` }}>
                 <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: entry.accent }}>Interpretation</p>
-                <p className="text-[#3a342e] text-sm leading-relaxed">{entry.interpretation}</p>
+                <p className="text-[#c3cecc] text-sm leading-relaxed">{entry.interpretation}</p>
               </div>
 
               {entry.highlights && (
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                   {entry.highlights.map((h, i) => (
-                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/40 border border-white/70">
+                    <div key={i} className="flex items-start gap-3 p-3 rounded-xl bg-white/[0.035] border border-white/10">
                       <Zap size={14} className="mt-0.5 shrink-0" style={{ color: entry.accent }} />
-                      <span className="text-[#6b645c] text-sm">{h}</span>
+                      <span className="text-[#a7b7b4] text-sm">{h}</span>
                     </div>
                   ))}
                 </div>
@@ -423,19 +423,19 @@ const Demos: React.FC = () => {
               {/* Screenshots */}
               {entry.shots && entry.shots.length > 0 && (
                 <div>
-                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#8a8278] mb-2">From the live product</p>
-                  <div className="relative rounded-xl overflow-hidden border border-[#e6dfd2]">
-                    <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-[#f0ebe1]" />
+                  <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#92a5a1] mb-2">From the live product</p>
+                  <div className="relative rounded-xl overflow-hidden border border-[#263437]">
+                    <img src={entry.shots[shotIndex].image} alt={entry.shots[shotIndex].title} className="w-full object-contain bg-[#10191c]" />
                     {entry.shots.length > 1 && (
                       <>
-                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#14110f]/70 hover:bg-[#14110f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronLeft size={18} /></button>
-                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#14110f]/70 hover:bg-[#14110f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronRight size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === 0 ? entry.shots!.length - 1 : i - 1))} className="absolute left-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#080d0f]/70 hover:bg-[#080d0f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronLeft size={18} /></button>
+                        <button onClick={() => setShotIndex((i) => (i === entry.shots!.length - 1 ? 0 : i + 1))} className="absolute right-3 top-1/2 -translate-y-1/2 w-9 h-9 bg-[#080d0f]/70 hover:bg-[#080d0f] rounded-full flex items-center justify-center text-[#fffdf8]"><ChevronRight size={18} /></button>
                       </>
                     )}
                   </div>
-                  <div className="p-3.5 mt-3 rounded-xl bg-[#f7f3ec] border border-[#e6dfd2]">
+                  <div className="p-3.5 mt-3 rounded-xl bg-[#080d0f] border border-[#263437]">
                     <h4 className="font-bold text-sm mb-1">{entry.shots[shotIndex].title}</h4>
-                    <p className="text-[#6b645c] text-sm leading-relaxed">{entry.shots[shotIndex].description}</p>
+                    <p className="text-[#a7b7b4] text-sm leading-relaxed">{entry.shots[shotIndex].description}</p>
                   </div>
                   {entry.shots.length > 1 && (
                     <div className="flex gap-2 mt-3 overflow-x-auto pb-1">
@@ -451,7 +451,7 @@ const Demos: React.FC = () => {
 
               <div className="flex flex-wrap gap-2 pt-1">
                 {entry.tags.map((t) => (
-                  <span key={t} className="px-3 py-1 rounded-full bg-[#f7f3ec] text-xs text-[#6b645c] border border-[#e6dfd2]">{t}</span>
+                  <span key={t} className="px-3 py-1 rounded-full bg-[#080d0f] text-xs text-[#a7b7b4] border border-[#263437]">{t}</span>
                 ))}
               </div>
             </div>

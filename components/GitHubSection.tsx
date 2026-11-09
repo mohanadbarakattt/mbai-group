@@ -92,16 +92,16 @@ const GitHubSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="github" ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2] relative overflow-hidden">
+    <section id="github" ref={ref} className="py-24 px-6 bg-transparent border-t border-[#263437] relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-14 transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
+          <p className="text-[#2a9d8f] text-xs font-semibold uppercase tracking-[0.2em] mb-3 flex items-center gap-2">
             <Github size={14} /> Open on GitHub
           </p>
           <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight">
-            The code behind <span className="text-[#b85c38]">every product.</span>
+            The code behind <span className="text-[#2a9d8f]">every product.</span>
           </h2>
-          <p className="text-[#6b645c] max-w-2xl">
+          <p className="text-[#a7b7b4] max-w-2xl">
             Every venture and tool above is a real, version-controlled codebase — not a slide deck. A few of the active repos:
           </p>
         </div>
@@ -120,32 +120,32 @@ const GitHubSection: React.FC = () => {
                     <>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center gap-2.5 min-w-0">
-                          <Github size={18} className="text-[#6b645c] shrink-0" />
-                          <span className="font-mono text-sm text-[#14110f] truncate">{repo.name}</span>
+                          <Github size={18} className="text-[#a7b7b4] shrink-0" />
+                          <span className="font-mono text-sm text-[#f1f5f4] truncate">{repo.name}</span>
                         </div>
                         {repo.private ? (
-                          <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border text-[#6b645c] bg-[#f7f3ec] border-[#e6dfd2]">
+                          <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border text-[#a7b7b4] bg-[#080d0f] border-[#263437]">
                             <Lock size={10} /> Private
                           </span>
                         ) : (
-                          <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border text-[#34d399] bg-[rgba(16,185,129,0.12)] border-[rgba(16,185,129,0.4)]">
+                          <span className="shrink-0 inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase tracking-wider border text-[#2a9d8f] bg-[rgba(16,185,129,0.12)] border-[rgba(16,185,129,0.4)]">
                             Public
                           </span>
                         )}
                       </div>
 
-                      <p className="text-[#6b645c] text-sm leading-relaxed flex-grow">{repo.description}</p>
+                      <p className="text-[#a7b7b4] text-sm leading-relaxed flex-grow">{repo.description}</p>
 
                       <div className="flex items-center justify-between gap-3 pt-1">
                         <div className="flex flex-wrap gap-2 min-w-0">
                           {repo.tags.map((t) => (
-                            <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#f7f3ec] text-[#6b645c] border border-[#e6dfd2]">{t}</span>
+                            <span key={t} className="text-[10px] px-2 py-1 rounded bg-[#080d0f] text-[#a7b7b4] border border-[#263437]">{t}</span>
                           ))}
                         </div>
                         {repo.private ? (
-                          <ArrowUpRight size={14} className="text-[#6b645c] group-hover:text-[#14110f] transition-colors shrink-0" />
+                          <ArrowUpRight size={14} className="text-[#a7b7b4] group-hover:text-[#f1f5f4] transition-colors shrink-0" />
                         ) : (
-                          <ExternalLink size={14} className="text-[#6b645c] group-hover:text-[#14110f] transition-colors shrink-0" />
+                          <ExternalLink size={14} className="text-[#a7b7b4] group-hover:text-[#f1f5f4] transition-colors shrink-0" />
                         )}
                       </div>
                     </>

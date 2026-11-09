@@ -10,13 +10,13 @@ const SHOTS = [
 const TutPage: React.FC = () => (
   <VentureShell
     name="TUT"
-    accent="#d4a017"
+    accent="#2a9d8f"
     tagline="AI Travel Guide for Egypt"
     path="/tut"
     status="Live"
     externalUrl="https://tutapp.co"
     externalLabel="Open tutapp.co"
-    headline={<>Ask about Egypt.<br /><span className="text-[#b85c38]">See where the answer came from.</span></>}
+    headline={<>Ask about Egypt.<br /><span className="text-[#2a9d8f]">See where the answer came from.</span></>}
     sub="TUT is your boarding pass to Egypt: an AI travel guide live at tutapp.co. It answers from a sourced Egypt knowledge file covering prices, transport, sites and etiquette, and every answer names the source page and the day it was checked, or says nobody publishes one. Free to use."
     pillars={[
       { title: 'Sourced answers, not guesses', text: 'A retrieval-grounded guide on a checked Egypt knowledge file, including verified local prices. If no one publishes an answer, TUT says so.' },
@@ -26,10 +26,10 @@ const TutPage: React.FC = () => (
     previewLabel="The real product, from tutapp.co"
     previewNote="Screenshots captured from tutapp.co on 8 Nov 2026."
   >
-    <img src="/tut/tut-desktop.webp" alt="TUT on desktop" loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/70 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)] mb-6" />
+    <img src="/tut/tut-desktop.webp" alt="TUT on desktop" loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/10 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)] mb-6" />
     <div className="grid grid-cols-3 gap-3 md:gap-6">
       {SHOTS.map((s) => (
-        <img key={s.src} src={s.src} alt={s.alt} loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/70 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)]" />
+        <img key={s.src} src={s.src} alt={s.alt} loading="lazy" decoding="async" className="w-full rounded-2xl border border-white/10 shadow-[0_20px_40px_-24px_rgba(20,17,15,0.45)]" />
       ))}
     </div>
   </VentureShell>

@@ -14,7 +14,7 @@ const VENTURE_META = [
     href: 'https://autoleadss.com',
     external: true,
     icon: <Zap size={20} />,
-    accent: '#b85c38',
+    accent: '#2a9d8f',
     domain: 'autoleadss.com',
     thumbnail: '/thumbnails/autoleads.png',
   },
@@ -25,7 +25,7 @@ const VENTURE_META = [
     href: 'https://tutapp.co',
     external: true,
     icon: <MessageCircle size={20} />,
-    accent: '#9a4a2c',
+    accent: '#2a9d8f',
     domain: 'tutapp.co',
     thumbnail: '/tut/tut-desktop.webp',
   },
@@ -36,7 +36,7 @@ const VENTURE_META = [
     href: 'https://ibni-v2.vercel.app',
     external: true,
     icon: <Hammer size={20} />,
-    accent: '#10b981',
+    accent: '#2a9d8f',
     domain: 'ibni-v2.vercel.app',
     thumbnail: '/thumbnails/ibni.jpg',
   },
@@ -47,7 +47,7 @@ const VENTURE_META = [
     href: 'https://virlo-studio.vercel.app',
     external: true,
     icon: <Clapperboard size={20} />,
-    accent: '#b85c38',
+    accent: '#2a9d8f',
     domain: 'virlo-studio.vercel.app',
     thumbnail: '/thumbnails/virlo.jpg',
   },
@@ -57,7 +57,7 @@ const VENTURE_META = [
     status: 'Building' as const,
     href: '/be3ly',
     icon: <Share2 size={20} />,
-    accent: '#6b645c',
+    accent: '#2a9d8f',
     domain: 'building',
     thumbnail: '/thumbnails/be3ly.png',
   },
@@ -93,21 +93,21 @@ const Ventures: React.FC = () => {
   }, []);
 
   return (
-    <section id="ventures" ref={ref} className="py-28 px-6 bg-transparent border-y border-[#e6dfd2] relative">
+    <section id="ventures" ref={ref} className="py-28 px-6 bg-transparent border-y border-[#263437] relative">
       <div className="max-w-7xl mx-auto relative">
         <div className={`mb-16 max-w-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.18em] mb-3">{dict.ventures.eyebrow}</p>
-          <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight text-[#14110f]">
+          <p className="text-[#2a9d8f] text-xs font-semibold uppercase tracking-[0.18em] mb-3">{dict.ventures.eyebrow}</p>
+          <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight text-[#f1f5f4]">
             {dict.ventures.heading1} {dict.ventures.heading2}{' '}
-            <span className="text-[#b85c38]">{dict.ventures.heading3}</span>
+            <span className="text-[#2a9d8f]">{dict.ventures.heading3}</span>
           </h2>
-          <p className="text-[#6b645c] text-base md:text-lg leading-relaxed">{dict.ventures.intro}</p>
+          <p className="text-[#a7b7b4] text-base md:text-lg leading-relaxed">{dict.ventures.intro}</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
           {ventures.map((v, i) => {
             const card = (
-              <div className="glass-card rounded-2xl p-7 h-full flex flex-col group relative overflow-hidden hover:border-[#d9d0c0] transition-colors">
+              <div className="glass-card rounded-2xl p-7 h-full flex flex-col group relative overflow-hidden hover:border-[#33464a] transition-colors">
                 <div className="flex items-center justify-between mb-5">
                   <div className="flex items-center gap-3">
                     <div
@@ -117,17 +117,17 @@ const Ventures: React.FC = () => {
                       {v.icon}
                     </div>
                     <div>
-                      <h3 className="text-xl font-semibold leading-none text-[#14110f]">{v.name}</h3>
+                      <h3 className="text-xl font-semibold leading-none text-[#f1f5f4]">{v.name}</h3>
                       <p className="text-xs font-medium uppercase tracking-wide mt-1.5" style={{ color: v.accent }}>{v.tagline}</p>
                     </div>
                   </div>
                   <span
                     className="px-2.5 py-1 rounded-full text-[10px] font-bold uppercase tracking-wider border flex items-center gap-1.5 shrink-0"
                     style={v.status === 'Live'
-                      ? { color: '#2f6b4f', background: 'rgba(47,107,79,0.08)', borderColor: 'rgba(47,107,79,0.28)' }
-                      : { color: '#6b645c', background: 'rgba(20,17,15,0.03)', borderColor: '#e6dfd2' }}
+                      ? { color: '#2a9d8f', background: 'rgba(42,157,143,0.12)', borderColor: 'rgba(42,157,143,0.28)' }
+                      : { color: '#a7b7b4', background: 'rgba(20,17,15,0.03)', borderColor: '#263437' }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: v.status === 'Live' ? '#2f6b4f' : v.accent }} />
+                    <span className="w-1.5 h-1.5 rounded-full" style={{ background: v.status === 'Live' ? '#2a9d8f' : v.accent }} />
                     {statusLabel[v.status]}
                   </span>
                 </div>
@@ -142,12 +142,12 @@ const Ventures: React.FC = () => {
                   domain={v.domain}
                 />
 
-                <p className="text-[#6b645c] text-sm leading-relaxed mb-5">{v.description}</p>
+                <p className="text-[#a7b7b4] text-sm leading-relaxed mb-5">{v.description}</p>
 
                 <div className="mt-auto">
-                  <div className="p-4 rounded-xl bg-white/40 border border-white/70 mb-5">
+                  <div className="p-4 rounded-xl bg-white/[0.035] border border-white/10 mb-5">
                     <p className="text-[10px] font-bold uppercase tracking-[0.15em] mb-1.5" style={{ color: v.accent }}>{dict.ventures.whyItMatters}</p>
-                    <p className="text-[#3a342e] text-sm leading-relaxed">{v.interpretation}</p>
+                    <p className="text-[#c3cecc] text-sm leading-relaxed">{v.interpretation}</p>
                   </div>
                   <div className="w-full py-2.5 rounded-md border font-medium flex items-center justify-center gap-2 text-sm transition-colors"
                     style={{ borderColor: `${v.accent}44`, color: v.accent, background: `${v.accent}0a` }}>
@@ -170,11 +170,11 @@ const Ventures: React.FC = () => {
                 )}
                 {v.id === 'autoleadss' && (
                   <a href="https://lash-cartel-ten.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-3 glass-card rounded-2xl p-4 flex items-center gap-4 no-underline group/ex">
-                    <img src="/autoleads-images/lashcartel.webp" alt="Lash Cartel Cosmetics store built by AutoLeadss" loading="lazy" decoding="async" className="w-28 aspect-video object-cover object-top rounded-lg border border-white/70 shrink-0" />
+                    <img src="/autoleads-images/lashcartel.webp" alt="Lash Cartel Cosmetics store built by AutoLeadss" loading="lazy" decoding="async" className="w-28 aspect-video object-cover object-top rounded-lg border border-white/10 shrink-0" />
                     <span className="min-w-0">
-                      <span className="block text-[10px] font-bold uppercase tracking-[0.15em] text-[#b85c38]">Example work · Website build</span>
-                      <span className="block text-sm font-semibold text-[#14110f]">Lash Cartel Cosmetics</span>
-                      <span className="block text-xs text-[#6b645c]">Client e-commerce store with Stripe checkout. View the preview <ArrowUpRight size={12} className="inline" /></span>
+                      <span className="block text-[10px] font-bold uppercase tracking-[0.15em] text-[#2a9d8f]">Example work · Website build</span>
+                      <span className="block text-sm font-semibold text-[#f1f5f4]">Lash Cartel Cosmetics</span>
+                      <span className="block text-xs text-[#a7b7b4]">Client e-commerce store with Stripe checkout. View the preview <ArrowUpRight size={12} className="inline" /></span>
                     </span>
                   </a>
                 )}

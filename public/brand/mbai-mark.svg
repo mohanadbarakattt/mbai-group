@@ -1,6 +1,1 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><linearGradient id="ma" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#e8a07a"/><stop offset="1" stop-color="#9a4a2c"/></linearGradient><linearGradient id="mb" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#3a342e"/><stop offset="1" stop-color="#14110f"/></linearGradient></defs>
-<path d="M14,80 L36,30 L58,80 Z" fill="url(#mb)"/>
-<path d="M42,80 L64,30 L86,80 Z" fill="url(#ma)"/>
-<path d="M42,80 L50,61.8 L58,80 Z" fill="#f7f3ec" fill-opacity=".55"/>
-<path d="M36,30 L36,80" stroke="#f7f3ec" stroke-opacity=".18" stroke-width="1.2"/><path d="M64,30 L64,80" stroke="#fff" stroke-opacity=".35" stroke-width="1.2"/>
-<path d="M50,12 L52.2,19.8 L60,22 L52.2,24.2 L50,32 L47.8,24.2 L40,22 L47.8,19.8 Z" fill="#c8683f"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 164 134"><path d="M8 8 L56 56 L99 16 H120 C139 16 151 29 151 46 C151 56 147 63 139 69 C150 75 156 84 156 96 C156 114 142 126 123 126 H86 V62 H119 C128 62 135 55 135 46 C135 38 128 32 119 32 H105 L56 80 L24 48 V126 H8 Z M102 78 V110 H123 C132 110 139 104 139 95 C139 86 132 78 123 78 Z" fill="#f1f5f4" fill-rule="evenodd"/></svg>

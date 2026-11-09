@@ -27,19 +27,19 @@ const ClaudeSection: React.FC = () => {
   }, []);
 
   return (
-    <section id="claude" ref={ref} className="py-20 px-6 bg-transparent border-y border-[#e6dfd2] overflow-hidden relative">
+    <section id="claude" ref={ref} className="py-20 px-6 bg-transparent border-y border-[#263437] overflow-hidden relative">
       <div className="max-w-6xl mx-auto relative">
         <div className={`grid grid-cols-1 lg:grid-cols-2 gap-12 items-center transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
 
           {/* Left — positioning copy */}
           <div>
-            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#b85c38] mb-4 flex items-center gap-2">
+            <p className="text-[10px] font-semibold uppercase tracking-[0.25em] text-[#2a9d8f] mb-4 flex items-center gap-2">
               <Bot size={13} /> Built with Claude
             </p>
-            <h2 className="text-3xl md:text-4xl font-semibold text-[#14110f] leading-tight mb-4">
-              A Claude power-user,<br /><span className="text-[#b85c38]">not just a Claude customer.</span>
+            <h2 className="text-3xl md:text-4xl font-semibold text-[#f1f5f4] leading-tight mb-4">
+              A Claude power-user,<br /><span className="text-[#2a9d8f]">not just a Claude customer.</span>
             </h2>
-            <p className="text-[#6b645c] text-sm leading-relaxed mb-8 max-w-lg">
+            <p className="text-[#a7b7b4] text-sm leading-relaxed mb-8 max-w-lg">
               Every product on this site — the ecosystem, the demos, this page — is built and shipped through Claude.
               Not one prompt at a time: a real orchestration practice, where a planning model specs the work and a crew
               of delegated agents build, search, and review it.
@@ -49,13 +49,13 @@ const ClaudeSection: React.FC = () => {
               {CAPABILITIES.map((c, i) => (
                 <div
                   key={c.title}
-                  className={`flex items-center gap-3 bg-[#f7f3ec] hover:bg-[#f0ebe1] border border-[#e6dfd2] hover:border-[#e6dfd2] rounded-xl px-4 py-3.5 transition-all duration-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
+                  className={`flex items-center gap-3 bg-[#080d0f] hover:bg-[#10191c] border border-[#263437] hover:border-[#263437] rounded-xl px-4 py-3.5 transition-all duration-300 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'}`}
                   style={{ transitionDelay: visible ? `${i * 80 + 150}ms` : '0ms', transitionProperty: 'opacity, transform, background-color, border-color' }}
                 >
-                  <div className="text-[#b85c38] shrink-0">{c.icon}</div>
+                  <div className="text-[#2a9d8f] shrink-0">{c.icon}</div>
                   <div>
-                    <p className="text-[#14110f] text-xs font-semibold leading-none mb-1">{c.title}</p>
-                    <p className="text-[#6b645c] text-[10px] leading-none">{c.sub}</p>
+                    <p className="text-[#f1f5f4] text-xs font-semibold leading-none mb-1">{c.title}</p>
+                    <p className="text-[#a7b7b4] text-[10px] leading-none">{c.sub}</p>
                   </div>
                 </div>
               ))}
@@ -64,23 +64,23 @@ const ClaudeSection: React.FC = () => {
 
           {/* Right — the actual delegation pattern, as a simple flow */}
           <div className="glass-card rounded-2xl p-8">
-            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#b85c38] mb-6">The delegation pattern, in practice</p>
+            <p className="text-[10px] font-bold uppercase tracking-[0.15em] text-[#2a9d8f] mb-6">The delegation pattern, in practice</p>
             <div className="flex flex-col items-center gap-3">
-              <div className="w-full rounded-xl border border-amber-500/30 bg-amber-500/10 px-5 py-3 text-center">
-                <p className="text-[#14110f] font-bold text-sm">Orchestrator</p>
-                <p className="text-[#6b645c] text-xs">Specs the work, reviews the diff</p>
+              <div className="w-full rounded-xl border border-[#2a9d8f]/30 bg-[#2a9d8f]/10 px-5 py-3 text-center">
+                <p className="text-[#f1f5f4] font-bold text-sm">Orchestrator</p>
+                <p className="text-[#a7b7b4] text-xs">Specs the work, reviews the diff</p>
               </div>
-              <ArrowRight size={16} className="text-[#8a8278] rotate-90" />
+              <ArrowRight size={16} className="text-[#92a5a1] rotate-90" />
               <div className="w-full grid grid-cols-3 gap-2.5">
                 {AGENTS.map((a) => (
-                  <div key={a.label} className="rounded-xl border border-[#e6dfd2] bg-[#f7f3ec] px-2.5 py-3 text-center">
-                    <p className="text-[#14110f] font-semibold text-xs">{a.label}</p>
-                    <p className="text-[#6b645c] text-[9px] mt-1 leading-tight">{a.sub}</p>
+                  <div key={a.label} className="rounded-xl border border-[#263437] bg-[#080d0f] px-2.5 py-3 text-center">
+                    <p className="text-[#f1f5f4] font-semibold text-xs">{a.label}</p>
+                    <p className="text-[#a7b7b4] text-[9px] mt-1 leading-tight">{a.sub}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <p className="text-[#6b645c] text-xs leading-relaxed mt-6 pt-6 border-t border-[#e6dfd2]">
+            <p className="text-[#a7b7b4] text-xs leading-relaxed mt-6 pt-6 border-t border-[#263437]">
               The same policy runs across every venture in the group — keeping expensive reasoning for architecture
               and review, and routing the volume work to cheaper, faster agents.
             </p>

@@ -11,11 +11,11 @@ const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
   const { locale, setLocale, dict } = useI18n();
   return (
     <div
-      className={`inline-flex items-center gap-0.5 rounded-full border border-[#e6dfd2] bg-[#fffdf8] p-1 ${compact ? 'w-full justify-center' : ''}`}
+      className={`inline-flex items-center gap-0.5 rounded-full border border-[#263437] bg-[#11191c] p-1 ${compact ? 'w-full justify-center' : ''}`}
       role="group"
       aria-label={dict.nav.languageLabel}
     >
-      <Globe size={13} className="hidden lg:block text-[#6b645c] ml-1.5 mr-0.5 shrink-0" aria-hidden />
+      <Globe size={13} className="hidden lg:block text-[#a7b7b4] ml-1.5 mr-0.5 shrink-0" aria-hidden />
       {LOCALES.map((l) => (
         <button
           key={l}
@@ -25,7 +25,7 @@ const LanguageSwitcher: React.FC<{ compact?: boolean }> = ({ compact }) => {
           aria-label={LOCALE_NAMES[l]}
           title={LOCALE_NAMES[l]}
           className={`px-1.5 lg:px-2.5 py-1 rounded-full text-[10px] lg:text-[11px] font-semibold uppercase tracking-wide transition-colors ${
-            locale === l ? 'bg-[#14110f] text-[#f7f3ec]' : 'text-[#6b645c] hover:text-[#14110f]'
+            locale === l ? 'bg-white/10 text-[#f1f5f4]' : 'text-[#a7b7b4] hover:text-[#f1f5f4]'
           }`}
         >
           {LOCALE_LABELS[l]}
@@ -119,8 +119,8 @@ const Navigation: React.FC = () => {
     return [
       'text-xs lg:text-sm font-medium transition-colors uppercase tracking-wide',
       isActive
-        ? 'text-[#14110f] border-b-2 border-[#b85c38] pb-0.5'
-        : 'text-[#6b645c] hover:text-[#14110f]',
+        ? 'text-[#f1f5f4] border-b-2 border-[#2a9d8f] pb-0.5'
+        : 'text-[#a7b7b4] hover:text-[#f1f5f4]',
     ].join(' ');
   };
 
@@ -128,13 +128,13 @@ const Navigation: React.FC = () => {
     const isActive = sectionId && activeSection === sectionId;
     return [
       'font-medium py-2 transition-colors',
-      isActive ? 'text-[#14110f] font-semibold' : 'text-[#6b645c] hover:text-[#14110f]',
+      isActive ? 'text-[#f1f5f4] font-semibold' : 'text-[#a7b7b4] hover:text-[#f1f5f4]',
     ].join(' ');
   };
 
   return (
     <nav className={`fixed inset-x-3 md:inset-x-6 z-50 transition-all duration-300 ${isScrolled ? 'top-3' : 'top-4 md:top-5'}`}>
-      <div className={`max-w-6xl mx-auto px-4 lg:px-5 py-2.5 rounded-2xl flex justify-between items-center gap-2 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'glass-strong' : 'glass'}`}>
+      <div className={`max-w-6xl mx-auto px-4 lg:px-5 py-2.5 rounded-full flex justify-between items-center gap-2 transition-all duration-300 ${isScrolled || isMobileMenuOpen ? 'glass-strong' : 'glass'}`}>
 
         <a href="/" onClick={(e) => {
           if (e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
@@ -147,8 +147,8 @@ const Navigation: React.FC = () => {
           }
         }} className="flex items-center shrink-0 group">
           {/* Dark mark for cream nav */}
-          <span className="lg:hidden"><Logo size={36} /></span>
-          <span className="hidden lg:inline-flex"><Logo size={40} withWordmark /></span>
+          <span className="lg:hidden"><Logo size={25} withWordmark /></span>
+          <span className="hidden lg:inline-flex"><Logo size={30} withWordmark /></span>
         </a>
 
         <div className="hidden md:flex items-center gap-2 lg:gap-6 min-w-0">
@@ -177,7 +177,7 @@ const Navigation: React.FC = () => {
           </a>
         </div>
 
-        <button className="md:hidden text-[#14110f]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
+        <button className="md:hidden text-[#f1f5f4]" onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)} aria-label="Menu">
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>

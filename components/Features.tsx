@@ -3,7 +3,7 @@ import { Workflow, Languages, Rocket } from 'lucide-react';
 import { useI18n } from '../i18n';
 
 const ICONS = [<Workflow size={20} />, <Languages size={20} />, <Rocket size={20} />];
-const ACCENTS = ['#b85c38', '#9a4a2c', '#6b645c'];
+const ACCENTS = ['#2a9d8f', '#2a9d8f', '#92a5a1'];
 
 /** Three hub-and-spoke dots lighting up in sequence — one model directing a crew. */
 const OrchestrationVisual: React.FC<{ accent: string }> = ({ accent }) => (
@@ -35,7 +35,7 @@ const LanguageVisual: React.FC<{ accent: string }> = ({ accent }) => (
 const ShipVisual: React.FC<{ accent: string }> = ({ accent }) => (
   <div className="flex flex-col justify-center gap-1.5 h-10 px-1" aria-hidden="true">
     {[0, 0.3, 0.6].map((delay, i) => (
-      <div key={i} className="h-1 rounded-full bg-[#f0ebe1] overflow-hidden">
+      <div key={i} className="h-1 rounded-full bg-[#10191c] overflow-hidden">
         <div className="h-full rounded-full animate-bar-grow" style={{ background: accent, animationDelay: `${delay}s` }} />
       </div>
     ))}
@@ -58,13 +58,13 @@ const Features: React.FC = () => {
   }, []);
 
   return (
-    <section ref={ref} className="py-24 px-6 bg-transparent border-t border-[#e6dfd2] relative overflow-hidden">
+    <section ref={ref} className="py-24 px-6 bg-transparent border-t border-[#263437] relative overflow-hidden">
       <div className="max-w-7xl mx-auto relative">
 
         <div className={`mb-14 max-w-2xl transition-all duration-700 ${visible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-6'}`}>
-          <p className="text-[#b85c38] text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.features.eyebrow}</p>
+          <p className="text-[#2a9d8f] text-xs font-semibold uppercase tracking-[0.2em] mb-3">{dict.features.eyebrow}</p>
           <h2 className="text-3xl md:text-5xl font-semibold leading-tight">
-            {dict.features.heading1} <span className="text-[#b85c38]">{dict.features.heading2}</span>
+            {dict.features.heading1} <span className="text-[#2a9d8f]">{dict.features.heading2}</span>
           </h2>
         </div>
 
@@ -84,10 +84,10 @@ const Features: React.FC = () => {
                   {ICONS[i]}
                 </div>
                 <div>
-                  <h3 className="text-lg font-semibold text-[#14110f] leading-tight mb-2">{item.title}</h3>
-                  <p className="text-[#6b645c] text-sm leading-relaxed">{item.description}</p>
+                  <h3 className="text-lg font-semibold text-[#f1f5f4] leading-tight mb-2">{item.title}</h3>
+                  <p className="text-[#a7b7b4] text-sm leading-relaxed">{item.description}</p>
                 </div>
-                <div className="mt-auto pt-2 border-t border-[#e6dfd2]">
+                <div className="mt-auto pt-2 border-t border-[#263437]">
                   <Visual accent={ACCENTS[i]} />
                 </div>
               </div>
