@@ -12,11 +12,11 @@ const ProductFrames: React.FC = () => (
     </a>
     <a className="product-device product-device-ibni" href="https://ibni-v2.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Try IBNI AI app builder">
       <div className="device-toolbar"><b>IBNI</b><small>AI app builder</small></div>
-      <img src="/thumbnails/ibni.jpg" alt="IBNI codegen concept preview" width="960" height="540" decoding="async" />
+      <img src="/thumbnails/ibni-card.webp" alt="IBNI AI app builder: real product home page" width="960" height="540" decoding="async" />
     </a>
     <a className="product-device product-device-virlo" href="https://virlo-studio.vercel.app" target="_blank" rel="noopener noreferrer" aria-label="Open Virlo Studio">
       <div className="device-toolbar"><b>Virlo Studio</b><small>Video + image</small></div>
-      <img src="/thumbnails/virlo.jpg" alt="Virlo Studio AI video and image workspace concept" width="960" height="540" decoding="async" />
+      <img src="/thumbnails/virlo-card.webp" alt="Virlo Studio: real AI video and image studio home page" width="960" height="540" decoding="async" />
     </a>
     <div className="device-reflection" aria-hidden="true" />
   </div>

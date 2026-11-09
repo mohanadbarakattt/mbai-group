@@ -17,7 +17,7 @@ const FAQS = [
   },
   {
     q: 'What is TUT?',
-    a: 'TUT is an AI travel guide for Egypt, live at tutapp.co. Ask about prices, transport, sites or etiquette: every answer names the source page and the day it was checked, or says nobody publishes one. Free to use, in twelve languages including Egyptian Arabic and Franco.',
+    a: 'TUT is live at tutapp.co: a sourced AI travel guide, free Egypt Pass check-in with your name in hieroglyphs and a Tut or Cleopatra portrait, plus itineraries and a trips & plans library. Every answer names its source page and the day it was checked, or says nobody publishes one. Twelve languages, dark/light themes and PWA install. TUT has been shortlisted to pitch at the Global Entrepreneurship Festival (GEF), EIP programme 2026. Free for travellers, no subscriptions or paid passes. Partner listings are free for vetted businesses; TUT earns a revenue share only when it brings a booking. Partner bookings go live with pilots. GEM & attraction tickets are planned, not live.',
   },
   {
     q: 'What is IBNI?',

@@ -12,6 +12,7 @@ interface Props {
   headline: React.ReactNode;
   sub: string;
   children?: React.ReactNode;
+  details?: React.ReactNode;
   pillars: { title: string; text: string }[];
   /** Route path, e.g. "/virlo" — used for canonical/OG tags and JSON-LD. */
   path: string;
@@ -34,7 +35,7 @@ interface Props {
 /** Shared cream editorial layout for venture pages (Virlo / IBNI / TUT / Be3ly). */
 const VentureShell: React.FC<Props> = ({
   name, accent, tagline, headline, sub, children, pillars, path, status,
-  externalUrl, externalLabel, previewLabel, previewNote,
+  externalUrl, externalLabel, previewLabel, previewNote, details,
 }) => {
   useEffect(() => { window.scrollTo(0, 0); }, []);
 
@@ -85,6 +86,8 @@ const VentureShell: React.FC<Props> = ({
               </a>
             </div>
           )}
+
+          {details}
 
           {children && (
             <>

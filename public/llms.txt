@@ -11,10 +11,30 @@
 - [AutoLeadss](https://autoleadss.com): Done-for-you growth for local businesses:
   membership systems (subscription storefront, QR passes, staff redemption, owner
   dashboard), website design and rebuilds, ads management, and AI-assisted lead
-  generation. Example work: Lash Cartel store (https://lash-cartel-ten.vercel.app).
-- [TUT](https://tutapp.co): AI travel guide for Egypt ("Your boarding pass to
-  Egypt"). Answers name the source page and the date checked. Free; twelve
-  languages. Partner listings in pilot. Page: [/tut](/tut).
+  generation. Example work: Lash Cartel live client e-commerce store, with Stripe checkout
+  and referral links/codes (https://www.lashcartelcosmetics.com).
+- [TUT](https://tutapp.co): Live AI travel guide for Egypt. RAG / hyper-context
+  from a sourced Egypt knowledge file; every answer names its source page and
+  the day it was checked, or says nobody publishes one. Traveller signup is a
+  free, shareable Egypt Pass boarding-pass souvenir: name in hieroglyphs,
+  Pharaoh Me portrait as Tut or Cleopatra, stub number. Twelve languages
+  (including Egyptian Arabic and Franco), dark/light themes, PWA install,
+  itineraries / trips & plans library, practical info and verified local prices.
+  Free for travellers; no subscriptions or paid passes. Free listing for vetted
+  tour operators, guides, hotels, lodges, dive centres and transport. Revenue
+  share only when TUT brings a booking; partner bookings go live with pilots.
+  GEM & attraction tickets are planned, not live. Also on the way: licensed
+  guides, stays, group trips & shared events, museum maps and browser voice mode.
+  Guide: https://tutapp.co/guide; Pharaoh Me: https://tutapp.co/pharaoh;
+  Check in: https://tutapp.co/checkin; business partner applications:
+  https://www.tutapp.co/partners (plain business form, not traveller check-in).
+  Page on this site: [/tut](/tut).
+  Recognition: TUT has been shortlisted to pitch at the Global Entrepreneurship
+  Festival (GEF), EIP programme 2026. Selected to pitch at GEF, 6–8 November 2026,
+  JW Marriott New Cairo. This is not a claim of winning or funding.
+  Traction, as of early November 2026: 9 partners interested; 5 asked for a
+  pilot. Interest and pilot requests only; none signed yet. Source: GEF pitch
+  TUT-Pitch-EIP-GEF-2026-v12, partner email replies logged to 4 Nov 2026.
 - [IBNI](https://ibni-v2.vercel.app): AI app builder. Describe an app in Masri,
   Franco or English; it plans, codes, tests and publishes it. Preview. Page: [/ibni](/ibni).
 - [Virlo Studio](https://virlo-studio.vercel.app): Egyptian-first AI video and

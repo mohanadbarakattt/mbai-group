@@ -73,9 +73,9 @@ const en: Dict = {
       tut: {
         tagline: 'AI Travel Guide for Egypt',
         description:
-          'TUT is an AI travel guide for Egypt, live at tutapp.co. Ask about prices, transport, sites or etiquette: every answer names the source page and the day it was checked, or says nobody publishes one. Free to use, in twelve languages including Egyptian Arabic and Franco.',
+          'TUT is live at tutapp.co: a sourced AI travel guide, free Egypt Pass check-in with your name in hieroglyphs and a Tut or Cleopatra portrait, plus itineraries and a trips & plans library. Every answer names its source page and the day it was checked, or says nobody publishes one. Twelve languages, dark/light themes and PWA install. TUT has been shortlisted to pitch at the Global Entrepreneurship Festival (GEF), EIP programme 2026.',
         interpretation:
-          'Retrieval-grounded AI that shows its sources instead of guessing. Sign up and you get a shareable boarding-pass souvenir with your name in hieroglyphs.',
+          'As of early November 2026: 9 partners interested; 5 asked for a pilot. Interest and pilot requests only; none signed yet. Free for travellers and free listings for vetted partners; revenue share only when TUT brings a booking. Partner bookings go live with pilots.',
       },
       be3ly: {
         tagline: 'Affiliate & Social-Selling Connector',

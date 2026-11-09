@@ -27,7 +27,7 @@ const VENTURE_META = [
     icon: <MessageCircle size={20} />,
     accent: '#2a9d8f',
     domain: 'tutapp.co',
-    thumbnail: '/tut/tut-desktop.webp',
+    thumbnail: '/thumbnails/tut-card.webp',
   },
   {
     id: 'ibni' as const,
@@ -38,7 +38,7 @@ const VENTURE_META = [
     icon: <Hammer size={20} />,
     accent: '#2a9d8f',
     domain: 'ibni-v2.vercel.app',
-    thumbnail: '/thumbnails/ibni.jpg',
+    thumbnail: '/thumbnails/ibni-card.webp',
   },
   {
     id: 'virlo' as const,
@@ -49,7 +49,7 @@ const VENTURE_META = [
     icon: <Clapperboard size={20} />,
     accent: '#2a9d8f',
     domain: 'virlo-studio.vercel.app',
-    thumbnail: '/thumbnails/virlo.jpg',
+    thumbnail: '/thumbnails/virlo-card.webp',
   },
   {
     id: 'be3ly' as const,
@@ -169,12 +169,12 @@ const Ventures: React.FC = () => {
                   <Link href={v.href} className="block flex-1 no-underline">{card}</Link>
                 )}
                 {v.id === 'autoleadss' && (
-                  <a href="https://lash-cartel-ten.vercel.app" target="_blank" rel="noopener noreferrer" className="mt-3 glass-card rounded-2xl p-4 flex items-center gap-4 no-underline group/ex">
+                  <a href="https://www.lashcartelcosmetics.com" target="_blank" rel="noopener noreferrer" className="mt-3 glass-card rounded-2xl p-4 flex items-center gap-4 no-underline group/ex">
                     <img src="/autoleads-images/lashcartel.webp" alt="Lash Cartel Cosmetics store built by AutoLeadss" loading="lazy" decoding="async" className="w-28 aspect-video object-cover object-top rounded-lg border border-white/10 shrink-0" />
                     <span className="min-w-0">
                       <span className="block text-[10px] font-bold uppercase tracking-[0.15em] text-[#2a9d8f]">Example work · Website build</span>
                       <span className="block text-sm font-semibold text-[#f1f5f4]">Lash Cartel Cosmetics</span>
-                      <span className="block text-xs text-[#a7b7b4]">Client e-commerce store with Stripe checkout. View the preview <ArrowUpRight size={12} className="inline" /></span>
+                      <span className="block text-xs text-[#a7b7b4]">Live client e-commerce store with Stripe checkout. Visit the store <ArrowUpRight size={12} className="inline" /></span>
                     </span>
                   </a>
                 )}

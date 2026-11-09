@@ -71,9 +71,9 @@ const franco: Dict = {
       tut: {
         tagline: 'AI Travel Guide le Masr',
         description:
-          'TUT AI travel guide le Masr, live 3ala tutapp.co. Es2al 3an el as3ar wel mowasalat wel amaken: kol egaba betoul el source page w youm el check, aw te2oul en mafish 7ad nasharha. Free w be 12 logha menhom masry w Franco.',
+          'TUT live 3ala tutapp.co: AI travel guide be masader, check-in free be Egypt Pass feeh esmak bel hieroglyphs w portrait ka Tut aw Cleopatra, itineraries w trips & plans library. Kol egaba betoul el source page w youm el check, aw en mafish 7ad nasharha. 12 logha, dark/light themes w PWA install. TUT et3emallo shortlist 3ashan ye-pitch fe Global Entrepreneurship Festival (GEF), EIP programme 2026.',
         interpretation:
-          'AI beywarrik masadro badal ma ye5amman, w ma3 el signup bta5od boarding pass souvenir be esmak bel hieroglyphs.',
+          'Le awel November 2026: 9 partners interested, 5 talabo pilot. Interest w pilot requests bas, mafish partner signed lessa. Free lel travellers w listing free lel vetted partners, revenue share bas lama TUT yegeeb booking. Partner bookings betetla3 ma3 el pilots.',
       },
       be3ly: {
         tagline: 'Affiliate & Social-Selling Connector',

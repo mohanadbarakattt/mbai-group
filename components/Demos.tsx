@@ -15,6 +15,7 @@ const MasrGuideDemo = lazy(() => import('./demos/MasrGuideDemo'));
 const NeobankDemo = lazy(() => import('./demos/NeobankDemo'));
 const VirloDemo = lazy(() => import('./demos/VirloDemo'));
 const IbniDemo = lazy(() => import('./demos/IbniDemo'));
+const TutDemo = lazy(() => import('./demos/TutDemo'));
 
 type Shot = { image: string; title: string; description: string };
 
@@ -61,7 +62,8 @@ const ENTRIES: Entry[] = [
     status: 'Preview',
     demo: VirloDemo,
     pageUrl: '/virlo',
-    thumbnail: '/thumbnails/virlo.jpg',
+    externalUrl: 'https://virlo-studio.vercel.app',
+    thumbnail: '/thumbnails/virlo-card.webp',
     interpretation: 'Frontier generative media tuned for Egyptian dialect and culture.',
   },
   {
@@ -76,22 +78,23 @@ const ENTRIES: Entry[] = [
     demo: IbniDemo,
     pageUrl: '/ibni',
     externalUrl: 'https://ibni-v2.vercel.app',
-    thumbnail: '/thumbnails/ibni.jpg',
+    thumbnail: '/thumbnails/ibni-card.webp',
     interpretation: 'Software creation in the language Egyptian founders actually type.',
   },
   {
     id: 'tut',
+    demo: TutDemo,
     title: 'TUT',
     subtitle: 'AI Travel Guide for Egypt',
-    blurb: 'Ask about Egypt and see where the answer came from. TUT answers from a sourced Egypt knowledge file and names the source page and the day it was checked. Free, twelve languages, installable PWA.',
+    blurb: 'Live sourced Egypt guide, free Egypt Pass check-in with hieroglyphs and a Tut or Cleopatra portrait, trips & plans, twelve languages and PWA install. Shortlisted to pitch at GEF, EIP programme 2026. Try a scripted taste here; open tutapp.co for the live guide.',
     tags: ['RAG', 'Travel', 'Live'],
     accent: '#2a9d8f',
     icon: <MessageCircle size={22} />,
     status: 'Live',
     pageUrl: '/tut',
     externalUrl: 'https://tutapp.co',
-    thumbnail: '/tut/tut-desktop.webp',
-    interpretation: 'Grounded AI for travellers: sources over guesses, live at tutapp.co.',
+    thumbnail: '/thumbnails/tut-card.webp',
+    interpretation: 'As of early November 2026: 9 partners interested; 5 asked for a pilot. Interest and pilot requests only; none signed yet. GEM & attraction tickets and partner bookings are not live yet.',
   },
   {
     id: 'sonicboom',
@@ -239,7 +242,7 @@ const ENTRIES: Entry[] = [
 
 const DemoFallback: React.FC = () => (
   <div className="w-full h-[420px] flex items-center justify-center text-[#a7b7b4]" style={{ background: '#f0ebe1' }}>
-    <Loader2 className="animate-spin mr-2" size={18} /> Loading live demo…
+    <Loader2 className="animate-spin mr-2" size={18} /> Loading interactive demo…
   </div>
 );
 
@@ -268,6 +271,8 @@ const Demos: React.FC = () => {
     } catch { /* no-op in non-browser contexts */ }
   }, []);
 
+  const dialogRef = useRef<HTMLDivElement>(null);
+
   const openDemo = useCallback((id: string) => { setActive(id); setShotIndex(0); syncUrl(id); }, [syncUrl]);
   const closeDemo = useCallback(() => { setActive(null); syncUrl(null); }, [syncUrl]);
 
@@ -281,10 +286,22 @@ const Demos: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    document.body.style.overflow = active ? 'hidden' : '';
-    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') closeDemo(); };
-    if (active) window.addEventListener('keydown', onKey);
-    return () => { document.body.style.overflow = ''; window.removeEventListener('keydown', onKey); };
+    if (!active) return;
+    const previousFocus = document.activeElement as HTMLElement | null;
+    const previousOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    dialogRef.current?.querySelector<HTMLButtonElement>('[aria-label="Close demo"]')?.focus();
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') closeDemo();
+      if (e.key !== 'Tab') return;
+      const nodes = dialogRef.current?.querySelectorAll<HTMLElement>('a[href], button:not([disabled]), input:not([disabled]), textarea:not([disabled]), select:not([disabled]), [tabindex="0"]');
+      const items = (Array.from(nodes ?? []) as HTMLElement[]).filter(n => n.getClientRects().length > 0);
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last?.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first?.focus(); }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => { document.body.style.overflow = previousOverflow; window.removeEventListener('keydown', onKey); previousFocus?.focus({ preventScroll: true }); };
   }, [active, closeDemo]);
 
   const entry = ENTRIES.find((e) => e.id === active) || null;
@@ -301,8 +318,7 @@ const Demos: React.FC = () => {
             Ten products. <span className="text-[#2a9d8f]">Try them right here.</span>
           </h2>
           <p className="text-[#a7b7b4] max-w-2xl">
-            Every card below opens a real, interactive demo — click any one and use it live. From growth systems and AI studios
-            intelligence to Arabic NLP, fintech, and AI music. No screenshots-only tours; the actual thing, running in your browser.
+            Try nine interactive product previews right here, from AI guides and app builders to Arabic NLP, fintech and music. AutoLeadss opens its live site. The on-site TUT taste is scripted; use tutapp.co for the live sourced guide.
           </p>
         </div>
 
@@ -343,7 +359,7 @@ const Demos: React.FC = () => {
                   </div>
                   <div className="w-full py-2.5 rounded-lg font-medium flex items-center justify-center gap-2 text-sm transition-all border"
                     style={{ borderColor: `${e.accent}44`, color: e.accent, background: `${e.accent}0f` }}>
-                    {e.externalUrl ? <><ExternalLink size={15} /> Visit the live product</> : <><PlayCircle size={15} /> Launch interactive demo</>}
+                    {e.demo ? <><PlayCircle size={15} /> Launch interactive demo</> : <><ExternalLink size={15} /> Visit the live product</>}
                   </div>
                 </div>
               </div>
@@ -355,10 +371,10 @@ const Demos: React.FC = () => {
             return (
               <div key={e.id} className={wrap} style={style}>
                 <TiltCard className="h-full" max={6}>
-                  {e.externalUrl ? (
-                    <a href={e.externalUrl} target="_blank" rel="noopener noreferrer" className="block h-full no-underline">{inner}</a>
+                  {e.demo ? (
+                    <button type="button" aria-label={`Launch ${e.title} interactive demo`} onClick={() => openDemo(e.id)} className="block w-full h-full text-left">{inner}</button>
                   ) : (
-                    <div onClick={() => openDemo(e.id)} className="h-full">{inner}</div>
+                    <a href={e.externalUrl} target="_blank" rel="noopener noreferrer" className="block h-full no-underline">{inner}</a>
                   )}
                 </TiltCard>
               </div>
@@ -369,7 +385,7 @@ const Demos: React.FC = () => {
 
       {/* Modal */}
       {entry && (
-        <div className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
+        <div ref={dialogRef} role="dialog" aria-modal="true" aria-label={`${entry.title} interactive demo`} className="fixed inset-0 z-[100] flex items-start md:items-center justify-center px-3 py-6 overflow-y-auto">
           <div className="absolute inset-0 bg-[#080d0f]/45 backdrop-blur-sm" onClick={closeDemo} />
           <div className="relative w-full max-w-5xl glass-card rounded-2xl shadow-[0_24px_80px_-24px_rgba(20,17,15,0.35)] ring-1 ring-[#263437]/80 my-auto" style={{ background: '#10191c' }}>
             {/* Header */}
@@ -381,7 +397,7 @@ const Demos: React.FC = () => {
                   <p className="text-sm" style={{ color: entry.accent }}>{entry.subtitle}</p>
                 </div>
               </div>
-              <button onClick={closeDemo} className="p-2 hover:bg-[#10191c] rounded-full text-[#a7b7b4] hover:text-[#f1f5f4] transition-colors shrink-0"><X size={22} /></button>
+              <button aria-label="Close demo" onClick={closeDemo} className="p-2 hover:bg-[#10191c] rounded-full text-[#a7b7b4] hover:text-[#f1f5f4] transition-colors shrink-0"><X size={22} /></button>
             </div>
 
             <div className="p-5 md:p-6 space-y-6">
@@ -389,11 +405,14 @@ const Demos: React.FC = () => {
               {Demo && (
                 <div>
                   <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[#92a5a1] mb-2 flex items-center gap-2">
-                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: entry.accent }} /> Interactive — try it live
+                    <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: entry.accent }} /> Interactive — try it here
                   </p>
                   <div className="rounded-2xl overflow-hidden border border-[#263437]" style={{ boxShadow: `0 0 60px -20px ${entry.accent}66` }}>
                     <Suspense fallback={<DemoFallback />}><Demo /></Suspense>
                   </div>
+                  {entry.externalUrl && (
+                    <a href={entry.externalUrl} target="_blank" rel="noopener noreferrer" className="btn-primary inline-flex items-center gap-1.5 text-xs mt-3 mr-4 px-4 py-2 rounded-lg">Visit the live product <ExternalLink size={13} /></a>
+                  )}
                   {entry.pageUrl && (
                     <Link href={entry.pageUrl} className="inline-flex items-center gap-1.5 text-xs mt-3 no-underline" style={{ color: entry.accent }}>
                       Open the full {entry.title} page <ArrowUpRight size={13} />
