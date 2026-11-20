@@ -1,0 +1,11 @@
+{
+  "name": "MB AI Group portfolio (Vite + React)",
+  "install": "npm install",
+  "terminals": [
+    {
+      "name": "vite-dev",
+      "command": "npm run dev"
+    }
+  ],
+  "ports": [5000]
+}
