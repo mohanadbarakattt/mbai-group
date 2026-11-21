@@ -7,10 +7,20 @@ type Project = { name: string; kind: string; accent: string; thumbnail: string; 
 
 const PROJECTS: Project[] = [
   {
+    name: 'AutoClipper',
+    kind: 'Open source',
+    accent: '#2a9d8f',
+    thumbnail: '/thumbnails/cards/autoclipper.webp',
+    text: 'A self-hosted, $0/month stream clipper. It watches Twitch, Kick and YouTube, finds the moments chat went crazy for, and renders captioned 9:16 Shorts, Reels and TikToks on a posting schedule.',
+    repo: 'https://github.com/mohanadbarakattt/autoclipper',
+    href: '/clips',
+    hrefLabel: 'Watch clips',
+  },
+  {
     name: 'ApexOne Knowledge Assistant',
     kind: 'Assessment build',
     accent: '#2a9d8f',
-    thumbnail: '/media/repo-apexone.webp',
+    thumbnail: '/thumbnails/cards/apexone.webp',
     text: 'A CPU-only, local employee knowledge assistant built for the Kentrick.ai hiring assessment on synthetic company documents. It retrieves only authorized evidence, checks each claim and citation, and declines when it cannot support an answer. 10 assessment cases and 98 automated tests passing.',
     repo: 'https://github.com/mohanadbarakattt/apexone-knowledge-assistant',
   },
@@ -18,7 +28,7 @@ const PROJECTS: Project[] = [
     name: 'Claude HQ',
     kind: 'Open source',
     accent: '#2a9d8f',
-    thumbnail: '/media/repo-claude-hq.webp',
+    thumbnail: '/thumbnails/cards/claudehq.webp',
     text: 'Mission control for Claude Code: a live usage dashboard for rate-limit windows, searchable recall of local sessions, compiled briefings for new sessions, and a cheap-model agent trio. One stdlib Python file, no telemetry.',
     repo: 'https://github.com/mohanadbarakattt/claude-hq',
   },
@@ -26,10 +36,17 @@ const PROJECTS: Project[] = [
     name: 'Grok HQ',
     kind: 'Open source',
     accent: '#2a9d8f',
-    thumbnail: '/media/repo-grok-hq.webp',
+    thumbnail: '/thumbnails/cards/grokhq.webp',
     text: 'Mission control for builders using Grok / xAI, the open-source counterpart to Claude HQ: a stdlib Python CLI and local dashboard for usage logs, session search, digests and briefings. Your data stays on the machine.',
     repo: 'https://github.com/mohanadbarakattt/grok-hq',
   },
+];
+
+// Public repos behind shipped work that don't get a full card above.
+const MORE_REPOS = [
+  { name: 'mbai-group', url: 'https://github.com/mohanadbarakattt/mbai-group', note: 'This site' },
+  { name: 'autoleadss', url: 'https://github.com/mohanadbarakattt/autoleadss', note: 'AutoLeadss, live at autoleadss.com' },
+  { name: 'lashcartel-store', url: 'https://github.com/mohanadbarakattt/lashcartel-store', note: 'AutoLeadss client build with Stripe checkout' },
 ];
 
 const Projects: React.FC = () => (
@@ -38,9 +55,9 @@ const Projects: React.FC = () => (
       <div className="mb-12 max-w-2xl">
         <p className="text-[#2a9d8f] text-xs font-semibold uppercase tracking-[0.18em] mb-3">Open source &amp; builds</p>
         <h2 className="text-3xl md:text-5xl font-semibold mb-4 leading-tight text-[#f1f5f4]">Recent projects</h2>
-        <p className="text-[#a7b7b4] text-base md:text-lg leading-relaxed">Builds outside the five ventures: a grounded-retrieval assessment build and two open-source tools for AI coding agents.</p>
+        <p className="text-[#a7b7b4] text-base md:text-lg leading-relaxed">Builds outside the five ventures: a stream clipper, a grounded-retrieval assessment build and two open-source tools for AI coding agents.</p>
       </div>
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
         {PROJECTS.map((p) => (
           <article key={p.name} className="glass-card rounded-2xl p-6 flex flex-col">
             <img src={p.thumbnail} alt={`${p.name}: ${p.kind}`} loading="lazy" decoding="async" width={1200} height={600} className="w-full aspect-[2/1] object-cover rounded-lg border border-[#263437] mb-5" />
@@ -50,11 +67,18 @@ const Projects: React.FC = () => (
             </div>
             <p className="text-[#a7b7b4] text-sm leading-relaxed mb-5">{p.text}</p>
             <div className="mt-auto flex gap-4 text-sm font-medium">
-              {p.href && <a href={p.href} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#2a9d8f]">{p.hrefLabel} <ArrowUpRight size={14} /></a>}
+              {p.href && <a href={p.href} {...(p.href.startsWith('/') ? {} : { target: '_blank', rel: 'noopener noreferrer' })} className="inline-flex items-center gap-1 text-[#2a9d8f]">{p.hrefLabel} <ArrowUpRight size={14} /></a>}
               <a href={p.repo} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 text-[#c3cecc]"><Github size={14} /> GitHub</a>
             </div>
           </article>
         ))}
+      </div>
+      <div className="mt-10 flex flex-wrap items-center gap-3 text-sm">
+        <span className="text-[#a7b7b4] mr-1 inline-flex items-center gap-2"><Github size={14} /> More on GitHub:</span>
+        {MORE_REPOS.map((r) => (
+          <a key={r.name} href={r.url} target="_blank" rel="noopener noreferrer" title={r.note} className="font-mono text-xs px-3 py-1.5 rounded-full border border-[#263437] text-[#c3cecc] hover:border-[#2a9d8f] hover:text-[#f1f5f4] no-underline transition-colors">{r.name}</a>
+        ))}
+        <a href="https://github.com/mohanadbarakattt" target="_blank" rel="noopener noreferrer" className="text-[#2a9d8f] inline-flex items-center gap-1 no-underline">All repos <ArrowUpRight size={14} /></a>
       </div>
     </div>
   </section>

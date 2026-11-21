@@ -1,0 +1,127 @@
+{
+  "name": "AutoClipper clip portfolio",
+  "owner": "MB AI Group (Mohanad Barakat)",
+  "page": "https://mbai-group.com/clips",
+  "tool": {
+    "name": "AutoClipper",
+    "repo": "https://github.com/mohanadbarakattt/autoclipper",
+    "summary": "Self-hosted, $0/month stream clipper: finds chat-spike moments on Twitch, Kick and YouTube and renders captioned 9:16 Shorts, Reels and TikToks."
+  },
+  "contact": "mohanad.barakat@mbai-group.com",
+  "updated": "2026-11-21",
+  "clips": [
+    {
+      "id": "clip-2",
+      "title": "Kai Cenat's insane and bizarre GTA 6 mission reaction",
+      "streamer": "kaicenatlive",
+      "game": "GTA 6",
+      "score": 9.5,
+      "duration_sec": 40,
+      "caption": "Kai Cenat gets completely lost trying to solve the most bizarre puzzle in GTA 6 history. You won't believe what he has to do to pass this level!",
+      "tags": [
+        "#gta6",
+        "#kaicenat",
+        "#gta6gameplay",
+        "#funny",
+        "#gaming"
+      ],
+      "page_url": "https://mbai-group.com/clips#clip-2",
+      "video_url": "https://mbai-group.com/clips/clip-2.mp4",
+      "poster_url": "https://mbai-group.com/clips/clip-2.jpg"
+    },
+    {
+      "id": "clip-1",
+      "title": "Kai Cenat's insane skyscraper parachute jump in GTA!",
+      "streamer": "kaicenatlive",
+      "game": "GTA 6",
+      "score": 8.5,
+      "duration_sec": 26,
+      "caption": "Kai Cenat had the most cinematic reaction while parachuting over the city. You have to see how this ends!",
+      "tags": [
+        "#kaicenat",
+        "#gta6",
+        "#gtav",
+        "#gaming",
+        "#streamermoments"
+      ],
+      "page_url": "https://mbai-group.com/clips#clip-1",
+      "video_url": "https://mbai-group.com/clips/clip-1.mp4",
+      "poster_url": "https://mbai-group.com/clips/clip-1.jpg"
+    },
+    {
+      "id": "clip-3",
+      "title": "Adin Ross panics trying to land a crop-duster in GTA!",
+      "streamer": "adinross",
+      "game": "GTA 6",
+      "score": 8.5,
+      "duration_sec": 27,
+      "caption": "Adin Ross nearly loses his mind trying to land this plane. The ending is priceless!",
+      "tags": [
+        "#gta6",
+        "#adinross",
+        "#gtavclips",
+        "#gaming",
+        "#funny"
+      ],
+      "page_url": "https://mbai-group.com/clips#clip-3",
+      "video_url": "https://mbai-group.com/clips/clip-3.mp4",
+      "poster_url": "https://mbai-group.com/clips/clip-3.jpg"
+    },
+    {
+      "id": "clip-4",
+      "title": "Adin Ross insults NPC wife and immediately regrets it",
+      "streamer": "adinross",
+      "game": "GTA 6",
+      "score": 8.5,
+      "duration_sec": 18,
+      "caption": "Adin Ross could not handle how the NPC reacted to his insult. Pure chaos on stream!",
+      "tags": [
+        "#gta6",
+        "#adinross",
+        "#gamingmoments",
+        "#funny"
+      ],
+      "page_url": "https://mbai-group.com/clips#clip-4",
+      "video_url": "https://mbai-group.com/clips/clip-4.mp4",
+      "poster_url": "https://mbai-group.com/clips/clip-4.jpg"
+    },
+    {
+      "id": "clip-5",
+      "title": "Adin Ross loses his mind during chaotic GTA driving session",
+      "streamer": "adinross",
+      "game": "GTA 6",
+      "score": 7.5,
+      "duration_sec": 18,
+      "caption": "Watching Adin Ross try to drive in GTA is pure chaos. Bro could not catch a break.",
+      "tags": [
+        "#gta6",
+        "#adinross",
+        "#gtavclips",
+        "#funny",
+        "#gaming"
+      ],
+      "page_url": "https://mbai-group.com/clips#clip-5",
+      "video_url": "https://mbai-group.com/clips/clip-5.mp4",
+      "poster_url": "https://mbai-group.com/clips/clip-5.jpg"
+    },
+    {
+      "id": "clip-6",
+      "title": "GTA 6 streamer beats up tow truck driver, then steals the truck",
+      "streamer": "adinross",
+      "game": "GTA 6",
+      "score": 7.5,
+      "duration_sec": 20,
+      "caption": "Adin Ross picks a fight with a tow truck worker over nothing, knocks him out, and just drives off in the truck. Pure GTA 6 chaos.",
+      "tags": [
+        "#gta6",
+        "#adinross",
+        "#gta6gameplay",
+        "#gaming",
+        "#funnymoments"
+      ],
+      "page_url": "https://mbai-group.com/clips#clip-6",
+      "video_url": "https://mbai-group.com/clips/clip-6.mp4",
+      "poster_url": "https://mbai-group.com/clips/clip-6.jpg"
+    }
+  ]
+}

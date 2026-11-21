@@ -16,6 +16,7 @@ const en: Dict = {
     ventures: 'Ventures',
     process: 'Process',
     demos: 'Demos',
+    clips: 'Clips',
     contact: 'Contact',
     ourStory: 'Our Story',
     bookCall: 'Get in touch',

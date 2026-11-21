@@ -48,7 +48,7 @@ const ENTRIES: Entry[] = [
     icon: <Zap size={22} />,
     status: 'Live',
     externalUrl: 'https://autoleadss.com',
-    thumbnail: '/thumbnails/autoleads.png',
+    thumbnail: '/thumbnails/cards/autoleads.webp',
     interpretation: 'One partner for storefront, site, ads and leads, with 200+ leads delivered across three markets.',
   },
   {
@@ -63,7 +63,7 @@ const ENTRIES: Entry[] = [
     demo: VirloDemo,
     pageUrl: '/virlo',
     externalUrl: 'https://virlo-studio.vercel.app',
-    thumbnail: '/thumbnails/virlo-card.webp',
+    thumbnail: '/thumbnails/cards/virlo.webp',
     interpretation: 'Frontier generative media tuned for Egyptian dialect and culture.',
   },
   {
@@ -78,7 +78,7 @@ const ENTRIES: Entry[] = [
     demo: IbniDemo,
     pageUrl: '/ibni',
     externalUrl: 'https://ibni-v2.vercel.app',
-    thumbnail: '/thumbnails/ibni-card.webp',
+    thumbnail: '/thumbnails/cards/ibni.webp',
     interpretation: 'Software creation in the language Egyptian founders actually type.',
   },
   {
@@ -93,7 +93,7 @@ const ENTRIES: Entry[] = [
     status: 'Live',
     pageUrl: '/tut',
     externalUrl: 'https://tutapp.co',
-    thumbnail: '/thumbnails/tut-card.webp',
+    thumbnail: '/thumbnails/cards/tut.webp',
     interpretation: 'As of early November 2026: 9 partners interested; 5 asked for a pilot. Interest and pilot requests only; none signed yet. GEM & attraction tickets and partner bookings are not live yet.',
   },
   {

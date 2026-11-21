@@ -3,6 +3,8 @@ import { FileText } from 'lucide-react';
 import Navigation from './Navigation';
 import Experience from './Experience';
 import TechStack from './TechStack';
+import TechExpertise from './TechExpertise';
+import ClaudeSection from './ClaudeSection';
 import Footer from './Footer';
 import ResumeFAB from './ResumeFAB';
 import Seo from './Seo';
@@ -68,6 +70,8 @@ const AboutPage: React.FC = () => {
 
         <Experience />
         <TechStack />
+        <TechExpertise />
+        <ClaudeSection />
       </main>
       <ResumeFAB />
       <Footer />

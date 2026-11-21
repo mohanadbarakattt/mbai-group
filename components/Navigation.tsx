@@ -109,6 +109,7 @@ const Navigation: React.FC = () => {
   const navLinks = [
     { id: 'ventures', name: dict.nav.ventures, href: '/#ventures', sectionId: 'ventures' },
     { id: 'demos', name: dict.nav.demos, href: '/#demos', sectionId: 'demos' },
+    { id: 'clips', name: dict.nav.clips, href: '/clips', isExternal: true },
     { id: 'process', name: dict.nav.process, href: '/#how-we-work', sectionId: 'how-we-work' },
     { id: 'contact', name: dict.nav.contact, href: '/#contact', sectionId: 'contact' },
     { id: 'our-story', name: dict.nav.ourStory, href: '/about', isExternal: true },

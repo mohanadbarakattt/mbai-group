@@ -45,6 +45,7 @@ export interface Dict {
     ventures: string;
     process: string;
     demos: string;
+    clips: string;
     contact: string;
     ourStory: string;
     bookCall: string;

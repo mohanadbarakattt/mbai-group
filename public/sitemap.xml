@@ -49,6 +49,12 @@
     <priority>0.5</priority>
   </url>
   <url>
+    <loc>https://mbai-group.com/clips</loc>
+    <lastmod>2026-11-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://mbai-group.com/privacy</loc>
     <lastmod>2026-09-05</lastmod>
     <changefreq>yearly</changefreq>

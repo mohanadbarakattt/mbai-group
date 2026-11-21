@@ -50,6 +50,13 @@ const REPOS = [
     href: '/#ventures',
   },
   {
+    name: 'autoclipper',
+    description: 'Self-hosted, $0/month stream clipper: watches Twitch, Kick and YouTube and turns the best moments into captioned Shorts, Reels and TikToks.',
+    tags: ['Python', 'FFmpeg', 'Gemini'],
+    url: 'https://github.com/mohanadbarakattt/autoclipper',
+    private: false,
+  },
+  {
     name: 'claude-hq',
     description: 'Mission control for Claude Code: usage dashboard, searchable local session recall, compiled briefings and an agent trio. Python stdlib, no telemetry.',
     tags: ['Claude Code', 'CLI', 'Python'],

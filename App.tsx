@@ -5,20 +5,12 @@ import { TooltipProvider } from './autoleads/components/ui/tooltip';
 import { Toaster } from './autoleads/components/ui/toaster';
 import Navigation from './components/Navigation';
 import Hero from './components/Hero';
-import MarqueeBanner from './components/MarqueeBanner';
-import HighlightsSlider from './components/HighlightsSlider';
-import Features from './components/Features';
-import StatsSection from './components/StatsSection';
 import FounderCredentials from './components/FounderCredentials';
-import TechExpertise from './components/TechExpertise';
 import HowWeWork from './components/HowWeWork';
 import Demos from './components/Demos';
 import Ventures from './components/Ventures';
-import GitHubSection from './components/GitHubSection';
 import Projects from './components/Projects';
-import ClaudeSection from './components/ClaudeSection';
-import Comparison from './components/Comparison';
-import Benefits from './components/Benefits';
+import AutoClipperSection from './components/AutoClipperSection';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import AboutPage from './components/AboutPage';
@@ -66,6 +58,7 @@ const VirloPage = lazy(() => import('./pages/ventures/VirloPage'));
 const IbniPage = lazy(() => import('./pages/ventures/IbniPage'));
 const TutPage = lazy(() => import('./pages/ventures/TutPage'));
 const Be3lyPage = lazy(() => import('./pages/ventures/Be3lyPage'));
+const ClipsPage = lazy(() => import('./pages/ClipsPage'));
 const PrivacyPolicy = lazy(() => import('./components/legal/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/legal/TermsOfService'));
 
@@ -87,20 +80,12 @@ function Home() {
       <Navigation />
       <main>
         <Hero />
-        <HighlightsSlider />
-        <MarqueeBanner />
-        <Features />
         <Ventures />
+        <AutoClipperSection />
         <Demos />
         <Projects />
-        <GitHubSection />
-        <TechExpertise />
-        <ClaudeSection />
         <HowWeWork />
         <FounderCredentials />
-        <StatsSection />
-        <Comparison />
-        <Benefits />
         <FAQSection />
         <Contact />
       </main>
@@ -167,6 +152,9 @@ function App() {
             </Route>
             <Route path="/be3ly">
               <Suspense fallback={<PageLoader />}><Be3lyPage /></Suspense>
+            </Route>
+            <Route path="/clips">
+              <Suspense fallback={<PageLoader />}><ClipsPage /></Suspense>
             </Route>
             <Route path="/privacy">
               <Suspense fallback={<PageLoader />}><PrivacyPolicy /></Suspense>

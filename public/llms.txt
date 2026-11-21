@@ -56,6 +56,12 @@ demonstrations of engineering range, not separately incorporated ventures.
 
 - ApexOne Knowledge Assistant: CPU-only, evidence-grounded knowledge assistant
   built for a hiring assessment (https://github.com/mohanadbarakattt/apexone-knowledge-assistant).
+- AutoClipper: open-source, self-hosted $0/month stream clipper. Watches Twitch,
+  Kick and YouTube, finds chat-spike moments and renders captioned 9:16 Shorts,
+  Reels and TikToks (https://github.com/mohanadbarakattt/autoclipper).
+  Clip portfolio for streamers: https://mbai-group.com/clips
+  (machine-readable list: https://mbai-group.com/clips.json; link one clip with
+  https://mbai-group.com/clips#clip-N).
 - Claude HQ: open-source mission control for Claude Code (https://github.com/mohanadbarakattt/claude-hq).
 - Grok HQ: open-source mission control for Grok / xAI (https://github.com/mohanadbarakattt/grok-hq).
 

@@ -118,6 +118,7 @@ function CryptoRow({
               : "bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80 border border-border"
           }`}
           title={copied ? "Copied!" : `Copy ${coin.ticker} address`}
+          aria-label={copied ? "Copied" : `Copy ${coin.ticker} address`}
         >
           {copied ? <Check className="w-4 h-4" /> : <Copy className="w-4 h-4" />}
         </button>

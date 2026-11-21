@@ -12,6 +12,7 @@ const ar: Dict = {
     ventures: 'المشاريع',
     process: 'طريقة العمل',
     demos: 'التجارب التفاعلية',
+    clips: 'المقاطع',
     contact: 'تواصل معنا',
     ourStory: 'قصتنا',
     bookCall: 'تواصل معنا',

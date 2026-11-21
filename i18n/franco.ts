@@ -14,6 +14,7 @@ const franco: Dict = {
     ventures: 'El Mashari3',
     process: 'Shoghlana',
     demos: 'Demos',
+    clips: 'Clips',
     contact: 'Kalemna',
     ourStory: "2essetna",
     bookCall: 'Kalemna',
