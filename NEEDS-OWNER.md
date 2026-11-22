@@ -33,9 +33,9 @@ Items that cannot be finished honestly without owner input. Do not invent URLs, 
 - `/autoleads` rewritten to the combined offer. Removed unattributed testimonials and the old $50k crypto pricing. Process section still describes the original real-estate lead-gen workflow.
 - Ads management / website pricing not published; owner to confirm offer and prices.
 
-## Clips portfolio (/clips) — added 2026-11-22
-- Six clips from `G:\My Drive\AutoClipper` (Kai Cenat / Adin Ross GTA streams), re-encoded to 720p in `public/clips/`. Footage belongs to the streamers; the page says so and offers removal on request. **Owner: confirm you're comfortable showing other streamers' footage as a portfolio.**
+## Clips portfolio (/clips)
+- Decided 2026-11-22: keep the Kai Cenat / Adin Ross clips. The page credits the streamers and offers removal on request.
 - To add clips: copy the new MP4 + caption into `components/data/clips.ts` and `public/clips.json` (Grok Bot links to `/clips`, `/clips#clip-N` and `/clips.json`).
 
-## Crypto addresses on /autoleads
-- `autoleads/components/sections/Contact.tsx` still shows BTC / USDT / SOL / ETH wallet addresses with copy buttons. The old crypto pricing was removed but these remain. **Owner: keep or remove?**
+## Crypto payments on /autoleads
+- Removed 2026-11-22. The contact section asked for a $50,000 crypto setup fee and its form never sent anything (console.log only). It now links to email and WhatsApp. The unused `Pricing.tsx` component still describes the old $50k crypto-only offer; delete it or rewrite it before ever rendering it again.

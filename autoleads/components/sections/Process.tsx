@@ -52,13 +52,13 @@ const processSteps = [
     number: "01",
     title: "Get Started",
     badge: "Day 0",
-    desc: "Transfer your setup fee in crypto and fill out a quick form with your market details. Takes under 10 minutes. The moment your payment clears, the clock starts.",
+    desc: "Message us by email or WhatsApp with what you sell, who your customers are and what you want to grow. Takes under 10 minutes.",
   },
   {
     number: "02",
-    title: "We Confirm",
+    title: "We Send a Plan",
     badge: "24\u201348 Hours",
-    desc: "Our team verifies your payment and sends a formal confirmation. Your file is opened and assigned to the build team.",
+    desc: "We reply with a plan and a quote. Once you approve it, your project is opened and assigned to the build team.",
   },
   {
     number: "03",
